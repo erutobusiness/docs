@@ -1,9 +1,4 @@
-/**
- * アプリケーション全体で使用する色のテーマ定義
- *
- * このファイルでは、アプリケーション全体で使用される色を一元管理しています。
- * 色の変更が必要な場合は、このファイルを編集するだけで全体に反映されます。
- */
+/* アプリケーション全体で使用する色のテーマ定義 */
 
 :root {
   /* ベース色 - システム色やダークモード対応用 */
@@ -24,7 +19,7 @@
   --accent-dark: var(--color-amber-200);
 
   /* UI要素の色 */
-  --card-bg: var(--color-gray-100);
+  /* --card-bg: var(--color-gray-100); */
   --card-fg: var(--color-gray-900);
 
   --button-primary-bg: var(--color-indigo-600);
@@ -44,19 +39,4 @@
 
   --gradient-accent-from: var(--color-amber-50);
   --gradient-accent-to: var(--color-amber-100);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-
-    /* ダークモードでの色調整 */
-    --card-bg: var(--color-gray-800);
-    --card-fg: var(--color-gray-100);
-
-    --button-secondary-bg: var(--color-indigo-800);
-    --button-secondary-fg: var(--color-indigo-100);
-    --button-secondary-hover: var(--color-indigo-700);
-  }
 }

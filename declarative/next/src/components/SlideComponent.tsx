@@ -16,51 +16,85 @@ export default function SlideComponent({ slide }: SlideComponentProps) {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen w-full p-8">
-      <div className="w-full max-w-5xl bg-gradient-to-br from-amber-50 to-amber-100 rounded-xl shadow-2xl overflow-hidden border border-amber-200">
-        <div className="p-8">
-          <h2 className="text-3xl font-bold text-slate-800 mb-6 border-b border-amber-200 pb-2">
-            {slide.title}
-          </h2>
+    <div
+      className="rounded-xl shadow-2xl overflow-hidden w-full"
+      style={{
+        background:
+          'linear-gradient(to bottom right, var(--gradient-accent-from), var(--gradient-accent-to))',
+        borderWidth: '1px',
+        borderStyle: 'solid',
+        borderColor: 'var(--accent-dark)',
+      }}
+    >
+      <div className="p-4 sm:p-8">
+        <h2
+          className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 pb-2"
+          style={{
+            color: 'var(--card-fg)',
+            borderBottom: '1px solid var(--accent-dark)',
+          }}
+        >
+          {slide.title}
+        </h2>
 
-          <div className="flex flex-col md:flex-row gap-8">
-            <div className="flex-1">
-              {slide.content.map((text) => (
-                <p key={text} className="text-slate-700 mb-4">
-                  {text}
-                </p>
-              ))}
-            </div>
-
-            {(slide.imageUrl || slide.codeExample) && (
-              <div className="flex-1">
-                {slide.imageUrl && (
-                  <div className="mb-6 relative w-full h-64 border border-amber-200 rounded-lg overflow-hidden">
-                    {isMounted ? (
-                      <Image
-                        src={slide.imageUrl}
-                        alt={`${slide.title}の図解`}
-                        fill
-                        className="object-contain"
-                      />
-                    ) : (
-                      <div className="w-full h-full bg-amber-50 flex items-center justify-center text-slate-600">
-                        画像読み込み中...
-                      </div>
-                    )}
-                  </div>
-                )}
-
-                {slide.codeExample && (
-                  <div className="bg-slate-900 rounded-lg p-4 overflow-auto border border-slate-700">
-                    <pre className="text-sm text-amber-100">
-                      <code>{slide.codeExample.code}</code>
-                    </pre>
-                  </div>
-                )}
-              </div>
-            )}
+        <div className="flex flex-col md:flex-row gap-4 sm:gap-8">
+          <div className="flex-1">
+            {slide.content.map((text) => (
+              <p key={text} className="mb-2 sm:mb-4" style={{ color: 'var(--card-fg)' }}>
+                {text}
+              </p>
+            ))}
           </div>
+
+          {(slide.imageUrl || slide.codeExample) && (
+            <div className="flex-1">
+              {slide.imageUrl && (
+                <div
+                  className="mb-4 sm:mb-6 relative w-full h-48 sm:h-64 rounded-lg overflow-hidden"
+                  style={{
+                    borderWidth: '1px',
+                    borderStyle: 'solid',
+                    borderColor: 'var(--accent-dark)',
+                  }}
+                >
+                  {isMounted ? (
+                    <Image
+                      src={slide.imageUrl}
+                      alt={`${slide.title}の図解`}
+                      fill
+                      className="object-contain"
+                    />
+                  ) : (
+                    <div
+                      className="w-full h-full flex items-center justify-center"
+                      style={{
+                        backgroundColor: 'var(--accent-light)',
+                        color: 'var(--card-fg)',
+                      }}
+                    >
+                      画像読み込み中...
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {slide.codeExample && (
+                <div
+                  className="rounded-lg p-3 sm:p-4 overflow-auto max-h-[300px]"
+                  style={{
+                    backgroundColor: 'var(--color-gray-900)',
+                    borderWidth: '1px',
+                    borderStyle: 'solid',
+                    borderColor: 'var(--color-gray-700)',
+                  }}
+                >
+                  <pre className="text-xs sm:text-sm" style={{ color: 'var(--accent)' }}>
+                    <code>{slide.codeExample.code}</code>
+                  </pre>
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </div>

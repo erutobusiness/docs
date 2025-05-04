@@ -8,8 +8,28 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* スライド移動のためのアニメーション関連のカスタムプロパティ */
+:root {
+  --slide-transition-duration: 500ms;
+  --slide-transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden; /* 横スクロールバーを非表示に */
+}
+
+/* スライドトランジション効果を強化 */
+.slide-container {
+  transition: transform var(--slide-transition-duration)
+    var(--slide-transition-timing);
+  will-change: transform;
+}
+
+/* スライド要素のページめくり効果用スタイル */
+.slide-item {
+  backface-visibility: hidden;
+  perspective: 1000px;
 }

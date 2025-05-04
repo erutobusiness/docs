@@ -1,0 +1,31 @@
+/* IconButton用のスタイル定義 */
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: var(--button-secondary-bg);
+  color: var(--button-secondary-fg);
+  transition: all 0.2s ease-in-out;
+}
+
+.icon-button:hover {
+  background-color: var(--button-secondary-hover);
+  transform: scale(1.05);
+}
+
+.icon-button:active {
+  transform: scale(0.95);
+}
+
+.icon-button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.icon-color {
+  color: inherit;
+}
