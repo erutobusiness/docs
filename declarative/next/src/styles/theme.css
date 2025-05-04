@@ -1,0 +1,62 @@
+/**
+ * アプリケーション全体で使用する色のテーマ定義
+ *
+ * このファイルでは、アプリケーション全体で使用される色を一元管理しています。
+ * 色の変更が必要な場合は、このファイルを編集するだけで全体に反映されます。
+ */
+
+:root {
+  /* ベース色 - システム色やダークモード対応用 */
+  --background: #ffffff;
+  --foreground: #171717;
+
+  /* ブランドカラー - アプリケーション固有の色 */
+  --primary: var(--color-indigo-600);
+  --primary-light: var(--color-indigo-400);
+  --primary-dark: var(--color-indigo-800);
+
+  --secondary: var(--color-blue-600);
+  --secondary-light: var(--color-blue-400);
+  --secondary-dark: var(--color-blue-800);
+
+  --accent: var(--color-amber-100);
+  --accent-light: var(--color-amber-50);
+  --accent-dark: var(--color-amber-200);
+
+  /* UI要素の色 */
+  --card-bg: var(--color-gray-100);
+  --card-fg: var(--color-gray-900);
+
+  --button-primary-bg: var(--color-indigo-600);
+  --button-primary-fg: var(--color-white);
+  --button-primary-hover: var(--color-indigo-700);
+
+  --button-secondary-bg: var(--color-indigo-50);
+  --button-secondary-fg: var(--color-slate-800);
+  --button-secondary-hover: var(--color-indigo-100);
+
+  /* グラデーション背景 */
+  --gradient-primary-from: var(--color-black);
+  --gradient-primary-to: var(--color-indigo-900);
+
+  --gradient-secondary-from: var(--color-blue-50);
+  --gradient-secondary-to: var(--color-blue-100);
+
+  --gradient-accent-from: var(--color-amber-50);
+  --gradient-accent-to: var(--color-amber-100);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+
+    /* ダークモードでの色調整 */
+    --card-bg: var(--color-gray-800);
+    --card-fg: var(--color-gray-100);
+
+    --button-secondary-bg: var(--color-indigo-800);
+    --button-secondary-fg: var(--color-indigo-100);
+    --button-secondary-hover: var(--color-indigo-700);
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "ドキュメントプロジェクト",
+  "scripts": {
+    "format": "biome format --write .",
+    "lint": "biome check .",
+    "lint:fix": "biome check --apply ."
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4"
+  }
+}
