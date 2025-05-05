@@ -62,13 +62,13 @@ export default function SlideComponent({ slide }: SlideComponentProps) {
                       src={slide.imageUrl}
                       alt={`${slide.title}の図解`}
                       fill
-                      className="object-contain"
+                      className="object-contain bg-slate-800"
                     />
                   ) : (
                     <div
                       className="w-full h-full flex items-center justify-center"
                       style={{
-                        backgroundColor: 'var(--accent-light)',
+                        backgroundColor: 'var(--background)',
                         color: 'var(--card-fg)',
                       }}
                     >
@@ -82,13 +82,13 @@ export default function SlideComponent({ slide }: SlideComponentProps) {
                 <div
                   className="rounded-lg p-3 sm:p-4 overflow-auto max-h-[300px]"
                   style={{
-                    backgroundColor: 'var(--color-gray-900)',
+                    backgroundColor: 'var(--background)',
                     borderWidth: '1px',
                     borderStyle: 'solid',
-                    borderColor: 'var(--color-gray-700)',
+                    borderColor: 'var(--primary-dark)',
                   }}
                 >
-                  <pre className="text-xs sm:text-sm" style={{ color: 'var(--accent)' }}>
+                  <pre className="text-xs sm:text-sm" style={{ color: 'var(--accent-light)' }}>
                     <code>{slide.codeExample.code}</code>
                   </pre>
                 </div>

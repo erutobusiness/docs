@@ -3,8 +3,6 @@ import SlideShow from '@/components/SlideShow';
 import { getAllSlideSections, getSlideSection } from '@/data/slideData';
 import { notFound } from 'next/navigation';
 
-export const dynamic = 'force-dynamic';
-
 interface SlidePageProps {
   params: {
     slideId: string;
@@ -19,8 +17,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function SlidePage({ params }: SlidePageProps) {
-  const { slideId } = params;
+export default async function SlidePage({ params }: SlidePageProps) {
+  // params を await して解決する
+  const { slideId } = await params;
   // URLからのパラメータをデコードして元のIDに戻す
   const decodedSlideId = decodeURIComponent(slideId);
 

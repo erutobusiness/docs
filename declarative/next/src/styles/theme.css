@@ -1,42 +1,38 @@
 /* アプリケーション全体で使用する色のテーマ定義 */
 
 :root {
-  /* ベース色 - システム色やダークモード対応用 */
-  --background: #ffffff;
-  --foreground: #171717;
+  /* ベース色 - ダークモード */
+  --background: theme("colors.slate.900");
+  --foreground: theme("colors.slate.100");
 
-  /* ブランドカラー - アプリケーション固有の色 */
-  --primary: var(--color-indigo-600);
-  --primary-light: var(--color-indigo-400);
-  --primary-dark: var(--color-indigo-800);
+  /* 主要カラー - シンプルに3色のみ定義 */
+  --primary: theme("colors.indigo.600");
+  --secondary: theme("colors.blue.500");
+  --accent: theme("colors.amber.200");
 
-  --secondary: var(--color-blue-600);
-  --secondary-light: var(--color-blue-400);
-  --secondary-dark: var(--color-blue-800);
+  /* 各色の明暗バリエーション */
+  --primary-light: theme("colors.indigo.400");
+  --primary-dark: theme("colors.indigo.800");
 
-  --accent: var(--color-amber-100);
-  --accent-light: var(--color-amber-50);
-  --accent-dark: var(--color-amber-200);
+  --accent-light: theme("colors.amber.100");
+  --accent-dark: theme("colors.amber.400");
 
   /* UI要素の色 */
-  /* --card-bg: var(--color-gray-100); */
-  --card-fg: var(--color-gray-900);
+  --card-fg: theme("colors.slate.900");
 
-  --button-primary-bg: var(--color-indigo-600);
-  --button-primary-fg: var(--color-white);
-  --button-primary-hover: var(--color-indigo-700);
+  /* ボタン色 */
+  --button-primary-bg: var(--primary);
+  --button-primary-fg: theme("colors.white");
+  --button-primary-hover: var(--primary-dark);
 
-  --button-secondary-bg: var(--color-indigo-50);
-  --button-secondary-fg: var(--color-slate-800);
-  --button-secondary-hover: var(--color-indigo-100);
+  --button-secondary-bg: var(--accent-light);
+  --button-secondary-fg: var(--card-fg);
+  --button-secondary-hover: var(--accent);
 
-  /* グラデーション背景 */
-  --gradient-primary-from: var(--color-black);
-  --gradient-primary-to: var(--color-indigo-900);
+  /* グラデーション */
+  --gradient-primary-from: theme("colors.black");
+  --gradient-primary-to: theme("colors.indigo.900");
 
-  --gradient-secondary-from: var(--color-blue-50);
-  --gradient-secondary-to: var(--color-blue-100);
-
-  --gradient-accent-from: var(--color-amber-50);
-  --gradient-accent-to: var(--color-amber-100);
+  --gradient-accent-from: var(--accent-light);
+  --gradient-accent-to: var(--accent);
 }
