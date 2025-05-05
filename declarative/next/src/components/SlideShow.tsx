@@ -1,6 +1,8 @@
 'use client';
 
+import { useFullScreen } from '@/hooks/useFullScreen';
 import { useSlideShow } from '@/hooks/useSlideShow';
+import { useTextSelectMode } from '@/hooks/useTextSelectMode';
 import type { SlideSection } from '@/types/slides';
 import {
   ArrowLeftIcon,
@@ -19,12 +21,17 @@ interface SlideShowProps {
 }
 
 export default function SlideShow({ slideSection }: SlideShowProps) {
+  // フルスクリーン機能を直接useFullScreenから取得
+  const { isFullScreen, toggleFullScreen } = useFullScreen();
+
+  // テキスト選択モードの状態を新しいフックから取得
+  const { isTextSelectMode, toggleTextSelectMode } = useTextSelectMode();
+
+  // スライドショー機能をuseSlideShowから取得
   const {
     currentSlideIndex,
-    isFullScreen,
     goToNextSlide,
     goToPrevSlide,
-    toggleFullScreen,
     hasNextSlide,
     hasPrevSlide,
     handleScroll,
@@ -33,13 +40,14 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
     handleDragEnd,
     dragOffset,
     isDragging,
-    isTextSelectMode,
-    toggleTextSelectMode,
     // 波アニメーション関連の状態と関数
     waveAnimationId,
     waveDirection,
     onWaveAnimationComplete,
-  } = useSlideShow(slideSection);
+  } = useSlideShow({
+    slideSection,
+    isTextSelectMode,
+  });
 
   if (!slideSection || !slideSection.slides || slideSection.slides.length === 0) {
     return <div className="p-8">スライドがありません。</div>;
@@ -137,10 +145,11 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
           onClick={(e) => {
             e.preventDefault();
             e.stopPropagation();
-            if (hasPrevSlide) goToPrevSlide();
+            // テキスト選択モードの場合は何もしない
+            if (!isTextSelectMode && hasPrevSlide) goToPrevSlide();
           }}
-          disabled={!hasPrevSlide}
-          className={!hasPrevSlide ? 'opacity-50 cursor-not-allowed' : ''}
+          disabled={!hasPrevSlide || isTextSelectMode}
+          className={!hasPrevSlide || isTextSelectMode ? 'opacity-50 cursor-not-allowed' : ''}
         />
 
         <span
@@ -160,10 +169,11 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
           onClick={(e) => {
             e.preventDefault();
             e.stopPropagation();
-            if (hasNextSlide) goToNextSlide();
+            // テキスト選択モードの場合は何もしない
+            if (!isTextSelectMode && hasNextSlide) goToNextSlide();
           }}
-          disabled={!hasNextSlide}
-          className={!hasNextSlide ? 'opacity-50 cursor-not-allowed' : ''}
+          disabled={!hasNextSlide || isTextSelectMode}
+          className={!hasNextSlide || isTextSelectMode ? 'opacity-50 cursor-not-allowed' : ''}
         />
       </div>
     </div>

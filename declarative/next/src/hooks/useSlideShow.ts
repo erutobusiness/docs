@@ -5,10 +5,8 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 
 export interface UseSlideShowReturn {
   currentSlideIndex: number;
-  isFullScreen: boolean;
   goToNextSlide: () => void;
   goToPrevSlide: () => void;
-  toggleFullScreen: () => void;
   hasNextSlide: boolean;
   hasPrevSlide: boolean;
   handleScroll: (event: React.WheelEvent) => void;
@@ -17,22 +15,27 @@ export interface UseSlideShowReturn {
   handleDragEnd: () => void;
   dragOffset: number;
   isDragging: boolean;
-  isTextSelectMode: boolean;
-  toggleTextSelectMode: () => void;
   // 波アニメーション用の状態と関数
   waveAnimationId: number | null;
   waveDirection: 'left' | 'right';
   onWaveAnimationComplete: (id: number) => void;
 }
 
+interface UseSlideShowProps {
+  slideSection: SlideSection;
+  isTextSelectMode: boolean;
+}
+
 /**
  * スライドショーの状態管理とナビゲーションのためのカスタムフック
- * @param slideSection スライドセクションデータ
+ * @param props スライドセクションデータとテキスト選択モードの状態
  * @returns スライド操作のための状態と関数
  */
-export function useSlideShow(slideSection: SlideSection): UseSlideShowReturn {
+export function useSlideShow({
+  slideSection,
+  isTextSelectMode,
+}: UseSlideShowProps): UseSlideShowReturn {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
-  const [isFullScreen, setIsFullScreen] = useState(false);
   const [scrollTimeout, setScrollTimeout] = useState<NodeJS.Timeout | null>(null);
 
   // ドラッグ関連の状態
@@ -40,31 +43,10 @@ export function useSlideShow(slideSection: SlideSection): UseSlideShowReturn {
   const [dragStartX, setDragStartX] = useState(0);
   const [dragOffset, setDragOffset] = useState(0);
 
-  // テキスト選択モードの状態
-  const [isTextSelectMode, setIsTextSelectMode] = useState(false);
-
   // 波アニメーション関連の状態 - ユニークIDを使用
   const waveAnimationIdRef = useRef<number>(0);
   const [waveAnimationId, setWaveAnimationId] = useState<number | null>(null);
   const [waveDirection, setWaveDirection] = useState<'left' | 'right'>('right');
-
-  // フルスクリーン状態の監視
-  useEffect(() => {
-    const handleFullScreenChange = () => {
-      setIsFullScreen(!!document.fullscreenElement);
-    };
-
-    document.addEventListener('fullscreenchange', handleFullScreenChange);
-
-    return () => {
-      document.removeEventListener('fullscreenchange', handleFullScreenChange);
-    };
-  }, []);
-
-  // テキスト選択モードの切り替え
-  const toggleTextSelectMode = useCallback(() => {
-    setIsTextSelectMode((prev) => !prev);
-  }, []);
 
   // 波アニメーション完了時のハンドラ - 特定のアニメーションIDのみを処理
   const onWaveAnimationComplete = useCallback(
@@ -108,19 +90,6 @@ export function useSlideShow(slideSection: SlideSection): UseSlideShowReturn {
       setCurrentSlideIndex(currentSlideIndex - 1);
     }
   }, [currentSlideIndex]);
-
-  // フルスクリーン切り替え関数
-  const toggleFullScreen = useCallback(() => {
-    if (!document.fullscreenElement) {
-      document.documentElement.requestFullscreen().catch((err) => {
-        console.error(`フルスクリーンモード有効化エラー: ${err.message}`);
-      });
-    } else {
-      if (document.exitFullscreen) {
-        document.exitFullscreen();
-      }
-    }
-  }, []);
 
   // スクロールイベントハンドラ
   const handleScroll = useCallback(
@@ -179,7 +148,14 @@ export function useSlideShow(slideSection: SlideSection): UseSlideShowReturn {
   );
 
   const handleDragEnd = useCallback(() => {
-    if (!isDragging || isTextSelectMode) return;
+    // テキスト選択モードの場合も、必ずドラッグ状態をリセット
+    if (isTextSelectMode) {
+      setIsDragging(false);
+      setDragOffset(0);
+      return;
+    }
+
+    if (!isDragging) return;
 
     // ドラッグが一定距離以上なら、スライド移動
     const slideWidth = window.innerWidth;
@@ -208,15 +184,16 @@ export function useSlideShow(slideSection: SlideSection): UseSlideShowReturn {
   // キーボードイベントハンドラ
   const handleKeyDown = useCallback(
     (event: KeyboardEvent) => {
+      // テキスト選択モードの場合はキーボードによるスライド移動を無効化
+      if (isTextSelectMode) return;
+
       if (event.key === 'ArrowRight' || event.key === 'PageDown' || event.key === ' ') {
         goToNextSlide();
       } else if (event.key === 'ArrowLeft' || event.key === 'PageUp') {
         goToPrevSlide();
-      } else if (event.key === 'f') {
-        toggleFullScreen();
       }
     },
-    [goToNextSlide, goToPrevSlide, toggleFullScreen]
+    [goToNextSlide, goToPrevSlide, isTextSelectMode]
   );
 
   // キーボードイベントのリスナー登録
@@ -243,10 +220,8 @@ export function useSlideShow(slideSection: SlideSection): UseSlideShowReturn {
 
   return {
     currentSlideIndex,
-    isFullScreen,
     goToNextSlide,
     goToPrevSlide,
-    toggleFullScreen,
     hasNextSlide,
     hasPrevSlide,
     handleScroll,
@@ -255,8 +230,6 @@ export function useSlideShow(slideSection: SlideSection): UseSlideShowReturn {
     handleDragEnd,
     dragOffset,
     isDragging,
-    isTextSelectMode,
-    toggleTextSelectMode,
     // 波アニメーション関連の状態と関数を追加
     waveAnimationId,
     waveDirection,
