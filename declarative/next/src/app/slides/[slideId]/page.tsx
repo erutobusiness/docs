@@ -1,6 +1,7 @@
 import IconButton from '@/components/IconButton';
 import SlideShow from '@/components/SlideShow';
 import { getAllSlideSections, getSlideSection } from '@/data/slideData';
+import { HomeIcon } from '@heroicons/react/24/outline';
 import { notFound } from 'next/navigation';
 
 interface SlidePageProps {

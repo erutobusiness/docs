@@ -27,5 +27,5 @@
 }
 
 .icon-color {
-  color: inherit;
+  color: var(--card-fg);
 }

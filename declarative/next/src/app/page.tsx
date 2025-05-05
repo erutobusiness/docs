@@ -33,7 +33,7 @@ export default function Home() {
               <h2 className="text-xl font-bold mb-2" style={{ color: 'var(--primary-light)' }}>
                 {section.title}
               </h2>
-              <p style={{ color: 'var(--card-fg)' }}>{section.description}</p>
+              <p style={{ color: 'var(--accent-light)' }}>{section.description}</p>
             </div>
           </Link>
         ))}

@@ -1,7 +1,7 @@
 'use client';
 
 import type { SlideSection } from '@/types/slides';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 export interface UseSlideShowReturn {
   currentSlideIndex: number;
@@ -11,7 +11,7 @@ export interface UseSlideShowReturn {
   toggleFullScreen: () => void;
   hasNextSlide: boolean;
   hasPrevSlide: boolean;
-  handleScroll: (event: WheelEvent) => void;
+  handleScroll: (event: React.WheelEvent) => void;
   handleDragStart: (event: React.MouseEvent | React.TouchEvent) => void;
   handleDragMove: (event: React.MouseEvent | React.TouchEvent) => void;
   handleDragEnd: () => void;
@@ -19,6 +19,10 @@ export interface UseSlideShowReturn {
   isDragging: boolean;
   isTextSelectMode: boolean;
   toggleTextSelectMode: () => void;
+  // 波アニメーション用の状態と関数
+  waveAnimationId: number | null;
+  waveDirection: 'left' | 'right';
+  onWaveAnimationComplete: (id: number) => void;
 }
 
 /**
@@ -39,14 +43,52 @@ export function useSlideShow(slideSection: SlideSection): UseSlideShowReturn {
   // テキスト選択モードの状態
   const [isTextSelectMode, setIsTextSelectMode] = useState(false);
 
+  // 波アニメーション関連の状態 - ユニークIDを使用
+  const waveAnimationIdRef = useRef<number>(0);
+  const [waveAnimationId, setWaveAnimationId] = useState<number | null>(null);
+  const [waveDirection, setWaveDirection] = useState<'left' | 'right'>('right');
+
+  // フルスクリーン状態の監視
+  useEffect(() => {
+    const handleFullScreenChange = () => {
+      setIsFullScreen(!!document.fullscreenElement);
+    };
+
+    document.addEventListener('fullscreenchange', handleFullScreenChange);
+
+    return () => {
+      document.removeEventListener('fullscreenchange', handleFullScreenChange);
+    };
+  }, []);
+
   // テキスト選択モードの切り替え
   const toggleTextSelectMode = useCallback(() => {
     setIsTextSelectMode((prev) => !prev);
   }, []);
 
+  // 波アニメーション完了時のハンドラ - 特定のアニメーションIDのみを処理
+  const onWaveAnimationComplete = useCallback(
+    (id: number) => {
+      // 現在のアニメーションIDと一致する場合のみリセット
+      if (waveAnimationId === id) {
+        setWaveAnimationId(null);
+      }
+    },
+    [waveAnimationId]
+  );
+
   // 次のスライドへ移動する関数
   const goToNextSlide = useCallback(() => {
     if (currentSlideIndex < slideSection.slides.length - 1) {
+      // 新しいアニメーションIDを生成
+      const newAnimationId = waveAnimationIdRef.current + 1;
+      waveAnimationIdRef.current = newAnimationId;
+
+      // 波のアニメーション表示（右方向）
+      setWaveDirection('right');
+      setWaveAnimationId(newAnimationId);
+
+      // スライドインデックスを更新
       setCurrentSlideIndex(currentSlideIndex + 1);
     }
   }, [currentSlideIndex, slideSection.slides.length]);
@@ -54,6 +96,15 @@ export function useSlideShow(slideSection: SlideSection): UseSlideShowReturn {
   // 前のスライドへ移動する関数
   const goToPrevSlide = useCallback(() => {
     if (currentSlideIndex > 0) {
+      // 新しいアニメーションIDを生成
+      const newAnimationId = waveAnimationIdRef.current + 1;
+      waveAnimationIdRef.current = newAnimationId;
+
+      // 波のアニメーション表示（左方向）
+      setWaveDirection('left');
+      setWaveAnimationId(newAnimationId);
+
+      // スライドインデックスを更新
       setCurrentSlideIndex(currentSlideIndex - 1);
     }
   }, [currentSlideIndex]);
@@ -64,18 +115,16 @@ export function useSlideShow(slideSection: SlideSection): UseSlideShowReturn {
       document.documentElement.requestFullscreen().catch((err) => {
         console.error(`フルスクリーンモード有効化エラー: ${err.message}`);
       });
-      setIsFullScreen(true);
     } else {
       if (document.exitFullscreen) {
         document.exitFullscreen();
-        setIsFullScreen(false);
       }
     }
   }, []);
 
   // スクロールイベントハンドラ
   const handleScroll = useCallback(
-    (event: WheelEvent) => {
+    (event: React.WheelEvent) => {
       // テキスト選択モードの場合はスクロールによるスライド移動を無効化
       if (isTextSelectMode) return;
 
@@ -208,5 +257,9 @@ export function useSlideShow(slideSection: SlideSection): UseSlideShowReturn {
     isDragging,
     isTextSelectMode,
     toggleTextSelectMode,
+    // 波アニメーション関連の状態と関数を追加
+    waveAnimationId,
+    waveDirection,
+    onWaveAnimationComplete,
   };
 }

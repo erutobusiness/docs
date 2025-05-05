@@ -1,38 +1,38 @@
-/* アプリケーション全体で使用する色のテーマ定義 */
+/* アプリケーション全体で使用する色のテーマ定義 - 夜景とシャンパン風 */
 
 :root {
-  /* ベース色 - ダークモード */
-  --background: theme("colors.slate.900");
-  --foreground: theme("colors.slate.100");
+  /* ベース色 - 夜空のような深い暗さ */
+  --background: theme("colors.gray.950");
+  --foreground: theme("colors.amber.200");
 
-  /* 主要カラー - シンプルに3色のみ定義 */
-  --primary: theme("colors.indigo.600");
-  --secondary: theme("colors.blue.500");
-  --accent: theme("colors.amber.200");
+  /* 主要カラー - シャンパンとナイトライフの雰囲気 */
+  --primary: theme("colors.amber.400");
+  --secondary: theme("colors.rose.700");
+  --accent: theme("colors.yellow.300");
 
   /* 各色の明暗バリエーション */
-  --primary-light: theme("colors.indigo.400");
-  --primary-dark: theme("colors.indigo.800");
+  --primary-light: theme("colors.amber.300");
+  --primary-dark: theme("colors.amber.600");
 
-  --accent-light: theme("colors.amber.100");
-  --accent-dark: theme("colors.amber.400");
+  --accent-light: theme("colors.yellow.200");
+  --accent-dark: theme("colors.yellow.500");
 
   /* UI要素の色 */
-  --card-fg: theme("colors.slate.900");
+  --card-fg: theme("colors.gray.900");
 
   /* ボタン色 */
   --button-primary-bg: var(--primary);
-  --button-primary-fg: theme("colors.white");
+  --button-primary-fg: theme("colors.gray.900");
   --button-primary-hover: var(--primary-dark);
 
-  --button-secondary-bg: var(--accent-light);
-  --button-secondary-fg: var(--card-fg);
-  --button-secondary-hover: var(--accent);
+  --button-secondary-bg: var(--secondary);
+  --button-secondary-fg: theme("colors.amber.200");
+  --button-secondary-hover: theme("colors.rose.800");
 
   /* グラデーション */
-  --gradient-primary-from: theme("colors.black");
-  --gradient-primary-to: theme("colors.indigo.900");
+  --gradient-primary-from: theme("colors.gray.950");
+  --gradient-primary-to: theme("colors.blue.950");
 
-  --gradient-accent-from: var(--accent-light);
-  --gradient-accent-to: var(--accent);
+  --gradient-accent-from: theme("colors.amber.500");
+  --gradient-accent-to: theme("colors.yellow.600");
 }

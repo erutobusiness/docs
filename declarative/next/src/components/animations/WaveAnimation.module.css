@@ -1,0 +1,95 @@
+.waveContainer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* 画面全体をカバーするコンテナ */
+  z-index: 50;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.liquid {
+  background-color: transparent; /* 背景を透明に */
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.wave {
+  content: "";
+  width: 200%;
+  height: 150%; /* 高さを200%から150%に縮小 */
+  background-color: rgba(40, 147, 235, 0.7); /* 青色 - 透明度高め */
+  position: absolute;
+  left: -50%;
+  bottom: -145%; /* 波の位置をより下に調整 */
+  border-radius: 45%;
+  opacity: 0;
+  animation: waveAppear 0.9s ease-out forwards;
+}
+
+.wave2 {
+  content: "";
+  width: 200%;
+  height: 150%; /* 高さを200%から150%に縮小 */
+  background-color: rgba(68, 160, 235, 0.6); /* やや薄い青 */
+  position: absolute;
+  left: -50%;
+  bottom: -140%; /* 波の位置をより下に調整 */
+  border-radius: 40%;
+  opacity: 0;
+  animation: waveAppear 0.9s ease-out 0.1s forwards;
+}
+
+.fromRight .wave {
+  animation: waveAppear 0.9s ease-out forwards, animateRight 8s linear infinite;
+}
+
+.fromRight .wave2 {
+  animation: waveAppear 0.9s ease-out 0.1s forwards,
+    animateRight 10s linear infinite;
+}
+
+.fromLeft .wave {
+  animation: waveAppear 0.9s ease-out forwards, animateLeft 8s linear infinite;
+}
+
+.fromLeft .wave2 {
+  animation: waveAppear 0.9s ease-out 0.1s forwards,
+    animateLeft 10s linear infinite;
+}
+
+@keyframes waveAppear {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.9; /* 最大透明度 */
+  }
+  100% {
+    opacity: 0; /* 再び透明に */
+  }
+}
+
+@keyframes animateRight {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animateLeft {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-360deg); /* 逆方向に回転 */
+  }
+}

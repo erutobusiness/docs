@@ -5,11 +5,14 @@ import type { SlideSection } from '@/types/slides';
 import {
   ArrowLeftIcon,
   ArrowRightIcon,
+  ArrowsPointingInIcon,
   ArrowsPointingOutIcon,
   CursorArrowRaysIcon,
+  DocumentTextIcon,
 } from '@heroicons/react/24/outline';
 import IconButton from './IconButton';
 import SlideComponent from './SlideComponent';
+import WaveAnimation from './animations/WaveAnimation';
 
 interface SlideShowProps {
   slideSection: SlideSection;
@@ -18,6 +21,7 @@ interface SlideShowProps {
 export default function SlideShow({ slideSection }: SlideShowProps) {
   const {
     currentSlideIndex,
+    isFullScreen,
     goToNextSlide,
     goToPrevSlide,
     toggleFullScreen,
@@ -31,6 +35,10 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
     isDragging,
     isTextSelectMode,
     toggleTextSelectMode,
+    // 波アニメーション関連の状態と関数
+    waveAnimationId,
+    waveDirection,
+    onWaveAnimationComplete,
   } = useSlideShow(slideSection);
 
   if (!slideSection || !slideSection.slides || slideSection.slides.length === 0) {
@@ -40,7 +48,7 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
   return (
     <div
       className={`relative overflow-hidden w-full min-h-screen flex flex-col ${isTextSelectMode ? 'select-text' : 'select-none'}`}
-      onWheel={(e) => handleScroll(e as unknown as WheelEvent)}
+      onWheel={(e) => handleScroll(e)}
       onMouseDown={(e) => handleDragStart(e)}
       onMouseMove={(e) => handleDragMove(e)}
       onMouseUp={handleDragEnd}
@@ -52,11 +60,24 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
         cursor: isDragging ? 'grabbing' : isTextSelectMode ? 'text' : 'grab',
       }}
     >
+      {/* 波のアニメーションコンポーネントを追加 - アニメーションIDを使用 */}
+      <WaveAnimation
+        animationId={waveAnimationId}
+        direction={waveDirection}
+        onAnimationComplete={onWaveAnimationComplete}
+      />
+
       {/* 右上のアイコンボタン */}
       <div className="absolute top-4 right-4 z-20 flex gap-2">
         <IconButton
           href="#"
-          icon={<CursorArrowRaysIcon className="w-6 h-6 text-[var(--card-fg)]" />}
+          icon={
+            isTextSelectMode ? (
+              <DocumentTextIcon className="w-6 h-6 text-[var(--card-fg)]" />
+            ) : (
+              <CursorArrowRaysIcon className="w-6 h-6 text-[var(--card-fg)]" />
+            )
+          }
           ariaLabel="テキスト選択"
           onClick={(e) => {
             e.preventDefault();
@@ -67,7 +88,13 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
 
         <IconButton
           href="#"
-          icon={<ArrowsPointingOutIcon className="w-6 h-6 text-[var(--card-fg)]" />}
+          icon={
+            isFullScreen ? (
+              <ArrowsPointingInIcon className="w-6 h-6 text-[var(--card-fg)]" />
+            ) : (
+              <ArrowsPointingOutIcon className="w-6 h-6 text-[var(--card-fg)]" />
+            )
+          }
           ariaLabel="フルスクリーン"
           onClick={(e) => {
             e.preventDefault();
