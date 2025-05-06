@@ -15,6 +15,16 @@ export interface Slide {
   }[];
   imageUrl?: string;
   imagePosition?: 'right' | 'bottom'; // 画像の位置を指定する新しいプロパティ
+  table?: {
+    headers: string[];
+    rows: string[][];
+  }; // テーブル表示用のプロパティを追加
+  list?: {
+    groups: {
+      title: string;
+      points: string[];
+    }[];
+  }; // グループ化リスト用のプロパティを追加
 }
 
 // スライドのセクション定義

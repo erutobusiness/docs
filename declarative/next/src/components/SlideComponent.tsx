@@ -1,6 +1,8 @@
 'use client';
 
 import type { Slide } from '@/types/slides';
+import ListComponent from './common/ListComponent';
+import TableComponent from './common/TableComponent';
 import BottomImageLayout from './layouts/BottomImageLayout';
 import ComparisonLayout from './layouts/ComparisonLayout';
 import RightImageLayout from './layouts/RightImageLayout';
@@ -17,6 +19,11 @@ export default function SlideComponent({ slide, isTextSelectMode = false }: Slid
         <h2 className="text-2xl sm:text-4xl font-bold mb-4 sm:mb-6 pb-2 text-[var(--card-fg)]">
           {slide.title}
         </h2>
+
+        {/* テーブルがある場合は表示 */}
+        {slide.table && <TableComponent headers={slide.table.headers} rows={slide.table.rows} />}
+        {/* グループ化リストがある場合は表示 */}
+        {slide.list && <ListComponent groups={slide.list.groups} />}
 
         {/* コンテンツの分岐処理 */}
         {!slide.codeExamples || slide.codeExamples.length <= 1 ? (
