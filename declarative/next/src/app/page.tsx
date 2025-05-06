@@ -27,7 +27,7 @@ export default function Home() {
           <p className="text-xl">
             宣言的UIを端に、歴史やクイズを通して、モダン開発のパラダイムを理解する
           </p>
-          <p className="text-sm">……クイーンエリザベスを添えて</p>
+          <p className="text-sm">……客船クイーンエリザベスとグラン・マルニエを添えて</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

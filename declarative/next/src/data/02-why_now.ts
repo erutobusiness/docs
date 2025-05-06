@@ -24,7 +24,10 @@ export const whyNowSection: SlideSection = {
         'モバイル: SwiftUI, Flutter, React Native',
         'デスクトップ: WPF (XAML), JavaFX',
       ],
-      imageUrl: '/images/cross-platform.png',
+      image: {
+        url: '/images/cross-platform.png',
+        position: 'right',
+      },
     },
     {
       id: '02-why-3',

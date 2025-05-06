@@ -39,7 +39,7 @@ export default function SlideImage({
             style={imagePointerStyle}
           />
         ) : (
-          <div className="w-full h-48 flex items-center justify-center bg-[var(--background)] text-[var(--card-fg)]">
+          <div className="w-128 h-72 flex items-center justify-center bg-[var(--background)] text-[var(--card-fg)]">
             画像読み込み中...
           </div>
         )}

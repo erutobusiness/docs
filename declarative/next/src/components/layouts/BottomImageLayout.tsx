@@ -29,9 +29,9 @@ export default function BottomImageLayout({
         )}
       </div>
 
-      {slide.imageUrl && (
+      {slide.image && (
         <SlideImage
-          imageUrl={slide.imageUrl}
+          imageUrl={slide.image.url}
           altText={`${slide.title}の図解`}
           isTextSelectMode={isTextSelectMode}
         />

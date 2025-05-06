@@ -1,6 +1,7 @@
 'use client';
 
 import type { Slide } from '@/types/slides';
+import { Suspense } from 'react';
 import ListComponent from './common/ListComponent';
 import TableComponent from './common/TableComponent';
 import BottomImageLayout from './layouts/BottomImageLayout';
@@ -29,7 +30,7 @@ export default function SlideComponent({ slide, isTextSelectMode = false }: Slid
         {!slide.codeExamples || slide.codeExamples.length <= 1 ? (
           // 通常レイアウト（右または下に画像）
           <>
-            {!slide.imagePosition || slide.imagePosition === 'right' ? (
+            {!slide.image?.position || slide.image.position === 'right' ? (
               <RightImageLayout slide={slide} isTextSelectMode={isTextSelectMode} />
             ) : (
               <BottomImageLayout slide={slide} isTextSelectMode={isTextSelectMode} />
