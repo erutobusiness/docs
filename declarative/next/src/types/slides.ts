@@ -7,6 +7,12 @@ export interface Slide {
     language: string;
     code: string;
   };
+  codeExamples?: {
+    language: string;
+    code: string;
+    title?: string;
+    description?: string[]; // 各コードブロックの説明文を追加
+  }[];
   imageUrl?: string;
 }
 

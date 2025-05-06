@@ -134,7 +134,7 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
               className="w-full flex-shrink-0 slide-item flex justify-center items-center px-8"
               style={{
                 maxWidth: '100%',
-                height: 'calc(100vh - 120px)', // ナビゲーションとコントロールの高さを考慮
+                height: 'calc(100vh - 80px)', // 高さを大きくするために調整（120pxから80pxに変更）
               }}
             >
               <div

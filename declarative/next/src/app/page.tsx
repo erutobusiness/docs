@@ -14,8 +14,8 @@ export default function Home() {
           color: 'var(--foreground)',
         }}
       >
-        <h1 className="text-4xl font-bold mb-4">宣言的UIの世界</h1>
-        <p className="text-xl">モダンUI開発のパラダイムを理解する</p>
+        <h1 className="text-4xl font-bold mb-4">宣言的な世界</h1>
+        <p className="text-xl">モダン開発のパラダイムを理解する</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
