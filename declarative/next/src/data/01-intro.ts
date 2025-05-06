@@ -14,6 +14,7 @@ export const introSection: SlideSection = {
         '開発者はUIの最終的な状態を宣言し、状態変化に応じた更新はフレームワークが自動的に行う',
       ],
       imageUrl: '/img/宣言的UI.png',
+      imagePosition: 'bottom',
     },
     {
       id: '01-intro-2',

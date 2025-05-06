@@ -58,7 +58,7 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
 
   return (
     <div
-      className={`relative overflow-hidden w-full min-h-screen flex flex-col ${isTextSelectMode ? 'select-text' : 'select-none'} ${isDragging ? 'cursor-grabbing' : isTextSelectMode ? 'cursor-text' : 'cursor-grab'}`}
+      className={`relative overflow-hidden w-full h-screen flex flex-col ${isTextSelectMode ? 'select-text' : 'select-none'} ${isDragging ? 'cursor-grabbing' : isTextSelectMode ? 'cursor-text' : 'cursor-grab'}`}
       onWheel={(e) => handleScroll(e)}
       onMouseDown={(e) => handleDragStart(e)}
       onMouseMove={(e) => handleDragMove(e)}
@@ -121,7 +121,7 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
       </div>
 
       {/* スライダー本体を中央配置するためのコンテナ */}
-      <div className="flex-1 flex items-center justify-center overflow-hidden">
+      <div className="flex-1 flex items-center justify-center overflow-hidden mt-16">
         {/* スライド全体を包むコンテナー - スムーズなトランジション用のクラスを適用 */}
         <div
           className={`flex slide-container w-full ${!isDragging && 'transition-transform duration-300 ease-in-out'}`}
@@ -146,7 +146,7 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
                   padding: `0 ${(scaleFactor - 1) * 10}%`,
                 }}
               >
-                <SlideComponent slide={slide} />
+                <SlideComponent slide={slide} isTextSelectMode={isTextSelectMode} />
               </div>
             </div>
           ))}
@@ -154,7 +154,7 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
       </div>
 
       {/* 下部のナビゲーションコントロール */}
-      <div className="py-4 flex justify-center items-center gap-4 z-10 backdrop-blur-sm">
+      <div className="w-full py-4 flex justify-center items-center gap-4 z-10 backdrop-blur-sm bg-gradient-to-t from-[var(--gradient-primary-from)] to-transparent">
         <IconButton
           href="#"
           icon={<ArrowLeftIcon className="w-6 h-6 text-[var(--card-fg)]" />}
