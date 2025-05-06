@@ -9,7 +9,7 @@ export const quizSection: SlideSection = {
     {
       id: '04-quiz-1',
       title: 'クイズ形式で学ぶ宣言的UI',
-      content: [
+      descriptions: [
         'これから、同じUI機能を実装した命令的コードと宣言的コードを比較します',
         '両方のアプローチの違いを理解し、それぞれの特徴を把握しましょう',
         '次のスライドからクイズが始まります！',
@@ -18,7 +18,7 @@ export const quizSection: SlideSection = {
     {
       id: '04-quiz-2',
       title: 'クイズ1：リストの表示と更新',
-      content: [
+      descriptions: [
         '問題：ユーザーリストを表示し、新しいユーザーを追加する機能を実装するコードはどちらが宣言的ですか？',
       ],
       codeExample: {
@@ -69,7 +69,7 @@ function setupUserList() {
     {
       id: '04-quiz-3',
       title: 'クイズ1の解答',
-      content: [
+      descriptions: [
         '答え：コードAが宣言的UIアプローチです',
         '解説：',
         '・コードAは「何を」表示するかを記述し、userステート変更に伴うDOM更新はReactが自動的に処理',

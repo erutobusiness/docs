@@ -2,11 +2,13 @@
 
 import type { Slide } from '@/types/slides';
 import { Suspense } from 'react';
+import CodeBlock from './common/CodeBlock';
+import Descriptions from './common/Descriptions';
 import ListComponent from './common/ListComponent';
 import TableComponent from './common/TableComponent';
-import BottomImageLayout from './layouts/BottomImageLayout';
-import ComparisonLayout from './layouts/ComparisonLayout';
-import RightImageLayout from './layouts/RightImageLayout';
+import CodeComparison from './layouts/CodeComparison';
+import ImageBottom from './layouts/ImageBottom';
+import ImageRight from './layouts/ImageRight';
 
 interface SlideComponentProps {
   slide: Slide;
@@ -21,25 +23,50 @@ export default function SlideComponent({ slide, isTextSelectMode = false }: Slid
           {slide.title}
         </h2>
 
-        {/* テーブルがある場合は表示 */}
-        {slide.table && <TableComponent headers={slide.table.headers} rows={slide.table.rows} />}
-        {/* グループ化リストがある場合は表示 */}
-        {slide.list && <ListComponent groups={slide.list.groups} />}
+        <div className="mx-4 sm:mx-8">
+          {/* コンテンツがある場合は表示 */}
+          {slide.descriptions && slide.descriptions.length > 0 && (
+            <div className="mb-4">
+              <Descriptions contents={slide.descriptions} />
+            </div>
+          )}
 
-        {/* コンテンツの分岐処理 */}
-        {!slide.codeExamples || slide.codeExamples.length <= 1 ? (
-          // 通常レイアウト（右または下に画像）
-          <>
-            {!slide.image?.position || slide.image.position === 'right' ? (
-              <RightImageLayout slide={slide} isTextSelectMode={isTextSelectMode} />
-            ) : (
-              <BottomImageLayout slide={slide} isTextSelectMode={isTextSelectMode} />
-            )}
-          </>
-        ) : (
-          // 左右対比レイアウト
-          <ComparisonLayout slide={slide} />
-        )}
+          {/* テーブルがある場合は表示 */}
+          {slide.table && <TableComponent headers={slide.table.headers} rows={slide.table.rows} />}
+          {/* グループ化リストがある場合は表示 */}
+          {slide.list && <ListComponent groups={slide.list.groups} />}
+
+          {/* コードがある場合は表示 */}
+          {slide.codeExample && (
+            <div className="mb-4">
+              <Suspense fallback={<div className="h-8" />}>
+                <CodeBlock code={slide.codeExample.code} language={slide.codeExample.language} />
+              </Suspense>
+            </div>
+          )}
+          {/* コードリストがある場合は表示 */}
+          {slide.codeExamples && slide.codeExamples.length > 0 && (
+            <CodeComparison codeExamples={slide.codeExamples} />
+          )}
+
+          {/* 画像がある場合は表示 */}
+          {slide.image && slide.image.position === 'right' ? (
+            <ImageRight slide={slide} isTextSelectMode={isTextSelectMode} />
+          ) : (
+            <ImageBottom slide={slide} isTextSelectMode={isTextSelectMode} />
+          )}
+
+          {/* ビデオがある場合は表示 */}
+          {slide.video && (
+            <div className="w-full flex justify-center items-center pointer-events-none">
+              <video autoPlay muted loop className="w-auto h-auto max-h-96 rounded-lg shadow-lg">
+                <source src={slide.video.url} type="video/mp4" />
+                {/* <track kind="captions" srcLang="ja" src="" /> */}
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

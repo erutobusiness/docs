@@ -9,7 +9,7 @@ export const summarySection: SlideSection = {
     {
       id: '06-summary-1',
       title: '宣言的UIの要点',
-      content: [
+      descriptions: [
         '1. 状態（データ）に基づくUI設計：UI = f(state)',
         '2. 「何を」表示するかを記述し、「どのように」表示するかはフレームワークが担当',
         '3. 再利用可能なコンポーネントによる抽象化',
@@ -19,7 +19,7 @@ export const summarySection: SlideSection = {
     {
       id: '06-summary-2',
       title: '宣言的UIの利点',
-      content: [
+      descriptions: [
         '・コードの可読性と保守性の向上',
         '・状態の一元管理による予測可能性',
         '・テストの容易さ',
@@ -29,7 +29,7 @@ export const summarySection: SlideSection = {
     {
       id: '06-summary-3',
       title: '次のステップ',
-      content: [
+      descriptions: [
         '・異なるフレームワークを比較してみる',
         '・ReactやVueなどのフレームワークで実際に開発を行う',
         '・状態管理ライブラリ（Redux、Vuex、Recoilなど）について学ぶ',

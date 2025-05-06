@@ -78,7 +78,7 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
       </div>
 
       {/* 右上のアイコンボタンとセクションタイトル */}
-      <div className="absolute top-4 w-full pl-34 pr-4 flex justify-between items-center z-20">
+      <div className="absolute top-4 w-full pl-34 pr-4 flex justify-between items-center">
         {/* セクションタイトルを左揃えで表示 */}
         <div className="text-4xl font-medium text-[var(--primary)]">{slideSection.title}</div>
 
@@ -122,7 +122,7 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
 
       {/* スライダー本体を中央配置するためのコンテナ */}
       <div className="flex-1 flex items-center justify-center overflow-hidden mt-16">
-        {/* スライド全体を包むコンテナー - スムーズなトランジション用のクラスを適用 */}
+        {/* スライド全体を包むコンテナー */}
         <div
           className={`flex slide-container w-full ${!isDragging && 'transition-transform duration-300 ease-in-out'}`}
           style={{
@@ -130,20 +130,16 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
             width: `${slideSection.slides.length * 100}%`,
           }}
         >
-          {/* すべてのスライドを横に並べて表示 - ページめくり効果用のクラスを適用 */}
+          {/* すべてのスライドを横に並べて表示 */}
           {slideSection.slides.map((slide) => (
             <div
               key={slide.id}
               className="w-full flex-shrink-0 slide-item flex justify-center items-center px-8"
             >
               <div
-                className="w-full mx-auto origin-center"
+                className="mx-auto origin-center transition-transform duration-300 ease-in-out"
                 style={{
                   transform: `scale(${scaleFactor})`,
-                  transition: 'transform 0.3s ease-out',
-                  transformOrigin: 'center center',
-                  maxWidth: `${100 / scaleFactor}%`,
-                  padding: `0 ${(scaleFactor - 1) * 10}%`,
                 }}
               >
                 <SlideComponent slide={slide} isTextSelectMode={isTextSelectMode} />
@@ -154,7 +150,7 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
       </div>
 
       {/* 下部のナビゲーションコントロール */}
-      <div className="w-full py-4 flex justify-center items-center gap-4 z-10 backdrop-blur-sm bg-gradient-to-t from-[var(--gradient-primary-from)] to-transparent">
+      <div className="w-full py-4 flex justify-center items-center gap-4 backdrop-blur-sm bg-gradient-to-t from-[var(--gradient-primary-from)] to-transparent">
         <IconButton
           href="#"
           icon={<ArrowLeftIcon className="w-6 h-6 text-[var(--card-fg)]" />}

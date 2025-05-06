@@ -9,7 +9,7 @@ export const introSection: SlideSection = {
     {
       id: '01-intro-1',
       title: '宣言的UIとは',
-      content: [
+      descriptions: [
         '宣言的UIとは「何を」表示するかを記述し、「どのように」表示するかの詳細はフレームワークに任せるアプローチ',
         'UIの最終的な状態を宣言し、状態変化に応じた更新はフレームワークが自動的に行う',
         'UIの構造や見た目を、どう作るのかの手順を記述する（命令的）のではなく、状態に基づいて定義する（宣言的）スタイル',
@@ -22,14 +22,14 @@ export const introSection: SlideSection = {
     {
       id: '01-intro-2',
       title: 'コード比較：カウンターボタンの実装',
-      content: [
+      descriptions: [
         '同じ機能（ボタンクリックでカウントアップ）を命令的UIと宣言的UIで実装した例を比較して、アプローチの違いを明確にしてみる',
       ],
       codeExamples: [
         {
           title: '命令的UI（JavaScript DOM）',
           language: 'js',
-          description: [
+          descriptions: [
             'DOM要素を直接操作して内容を変更',
             '状態（count変数）の更新とDOMの更新を明示的に記述',
             '「どのように」UIを更新するかの手順に焦点を当てている',
@@ -52,9 +52,9 @@ function setupCounter() {
         {
           title: '宣言的UI（React）',
           language: 'jsx',
-          description: [
+          descriptions: [
             '状態(count)の変更がUIの更新を自動的にトリガー',
-            'setCount関数で状態を更新するだけでボタンの表示も自動的に更新される',
+            'setCount関数で状態を更新するだけでボタンの表示も自動的に更新',
             '「何を」表示するかを記述し、DOMの更新処理はReactが担当',
           ],
           code: `function Counter() {
@@ -72,7 +72,7 @@ function setupCounter() {
     {
       id: '01-intro-3',
       title: '両アプローチのメリット',
-      content: ['命令的UIと宣言的UIはそれぞれ異なる状況で利点がある'],
+      descriptions: ['命令的UIと宣言的UIはそれぞれ異なる状況で利点がある'],
       list: {
         groups: [
           {

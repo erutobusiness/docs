@@ -15,9 +15,9 @@ interface IconButtonProps {
 
 export default function IconButton({
   href,
-  icon = <HomeIcon className="w-6 h-6 icon-color" />,
+  icon,
+  ariaLabel,
   className = '',
-  ariaLabel = 'ホームに戻る',
   disabled = false,
   onClick,
 }: IconButtonProps) {

@@ -9,7 +9,7 @@ export const historySection: SlideSection = {
     {
       id: '03-history-1',
       title: '宣言的プログラミングの起源',
-      content: [
+      descriptions: [
         '宣言的プログラミングの概念は1970年代のPrologなどの論理型言語に始まります',
         'HTML自体も宣言的な言語：ページの構造を記述し、表示方法はブラウザに任せます',
         'SQLも宣言的：「どのようにデータを取得するか」ではなく「どのようなデータが欲しいか」を指定します',
@@ -18,7 +18,7 @@ export const historySection: SlideSection = {
     {
       id: '03-history-2',
       title: 'UIライブラリの変遷',
-      content: [
+      descriptions: [
         '2000年代前半：XMLベースのUIフレームワーク（XAML, XUL）',
         '2010年：HTMLテンプレートエンジン（Handlebars, Mustache）',
         '2013年：ReactによるVirtual DOMの革新',
@@ -29,7 +29,7 @@ export const historySection: SlideSection = {
     {
       id: '03-history-3',
       title: '現代のトレンド',
-      content: [
+      descriptions: [
         'サーバーコンポーネント：ReactやVue 3でのサーバーサイドレンダリングの発展',
         'AIとの融合：UIコード生成、設計支援',
         'メタバースやAR/VRにおける3D宣言的UI',

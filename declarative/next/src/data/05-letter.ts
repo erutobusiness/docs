@@ -9,7 +9,7 @@ export const letterSection: SlideSection = {
     {
       id: '05-letter-1',
       title: 'お便り1：宣言的UIはパフォーマンスが悪い？',
-      content: [
+      descriptions: [
         '質問：「宣言的UIは内部で多くの処理が行われるため、命令的UIより遅いのでは？」',
         '回答：',
         '・初期のフレームワークでは確かにオーバーヘッドがありました',
@@ -21,7 +21,7 @@ export const letterSection: SlideSection = {
     {
       id: '05-letter-2',
       title: 'お便り2：宣言的UIは学習コストが高い？',
-      content: [
+      descriptions: [
         '質問：「新しい概念や抽象化が多く、習得が難しいのでは？」',
         '回答：',
         '・確かに最初の学習曲線は存在します',
@@ -34,7 +34,7 @@ export const letterSection: SlideSection = {
     {
       id: '05-letter-3',
       title: 'お便り3：宣言的UIとReactは同じもの？',
-      content: [
+      descriptions: [
         '質問：「宣言的UIといえばReactのことでしょうか？」',
         '回答：',
         '・Reactは宣言的UIの代表的な実装の一つですが、同じではありません',

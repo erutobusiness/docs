@@ -35,7 +35,7 @@ export default function SlideImage({
             width={0}
             height={0}
             sizes="100vw"
-            className="w-auto h-auto max-h-[80vh] rounded-lg"
+            className="w-auto h-auto max-h-[40vh] rounded-lg"
             style={imagePointerStyle}
           />
         ) : (

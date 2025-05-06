@@ -34,7 +34,11 @@ export default async function SlidePage({ params }: SlidePageProps) {
   return (
     <main className="bg-gradient-to-br from-[var(--gradient-primary-from)] to-[var(--gradient-primary-to)] min-h-screen">
       <div className="fixed top-4 left-4 z-10">
-        <IconButton href="/" />
+        <IconButton
+          href="/"
+          icon={<HomeIcon className="w-6 h-6 icon-color" />}
+          ariaLabel="ホームに戻る"
+        />
       </div>
 
       <SlideShow slideSection={slideSection} />

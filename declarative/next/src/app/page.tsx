@@ -1,6 +1,15 @@
+'use client';
+
 import { getAllSlideSections } from '@/data/slideData';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
+
+// 画像ソースの配列
+const imageSources = [
+  '/img/CUNARD_QueenElizabeth.jpg',
+  '/img/PXL_20250426_045936180.PORTRAIT.ORIGINAL~2.jpg',
+];
 
 export default function Home() {
   const slideSections = getAllSlideSections();
@@ -9,9 +18,9 @@ export default function Home() {
     <main className="relative min-h-screen w-full">
       {/* 背景画像 - 余白を追加し、サイズを調整 */}
       <div className="absolute inset-0 z-0 p-8 md:p-12 lg:p-16 flex items-center justify-center">
-        <div className="relative w-full max-w-5xl h-[70vh] md:h-[75vh] lg:h-[80vh] overflow-hidden rounded-xl">
+        <div className="relative w-full max-w-5xl h-[70vh] md:h-[75vh] lg:h-[80vh] overflow-hidden rounded-xl opacity-75">
           <Image
-            src="/img/CUNARD_QueenElizabeth.jpg"
+            src={imageSources[Math.floor(Math.random() * imageSources.length)]} // ランダムな画像ソースを使用
             alt="Queen Elizabeth background"
             fill
             className="object-contain"

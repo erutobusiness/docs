@@ -2,7 +2,8 @@
 export interface Slide {
   id: string;
   title: string;
-  content: string[];
+  descriptions?: string[];
+  // コード例
   codeExample?: {
     language: string;
     code: string;
@@ -11,22 +12,30 @@ export interface Slide {
     language: string;
     code: string;
     title?: string;
-    description?: string[]; // 各コードブロックの説明文を追加
+    descriptions?: string[];
   }[];
+  // 画像
   image?: {
     url: string;
     position?: 'right' | 'bottom';
-  }; // 画像のプロパティを統合
+    descriptions?: string[];
+  };
+  // アルバム
+  video?: {
+    url: string;
+  };
+  // 表
   table?: {
     headers: string[];
     rows: string[][];
-  }; // テーブル表示用のプロパティを追加
+  };
+  // リスト
   list?: {
     groups: {
       title: string;
       points: string[];
     }[];
-  }; // グループ化リスト用のプロパティを追加
+  };
 }
 
 // スライドのセクション定義
