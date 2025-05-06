@@ -15,10 +15,9 @@ export interface UseSlideShowReturn {
   handleDragEnd: () => void;
   dragOffset: number;
   isDragging: boolean;
-  // 波アニメーション用の状態と関数
-  waveAnimationId: number | null;
-  waveDirection: 'left' | 'right';
-  onWaveAnimationComplete: (id: number) => void;
+  animationId: number | null;
+  animationDirection: 'left' | 'right';
+  handleAnimationComplete: (id: number) => void;
 }
 
 interface UseSlideShowProps {
@@ -38,39 +37,26 @@ export function useSlideShow({
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [scrollTimeout, setScrollTimeout] = useState<NodeJS.Timeout | null>(null);
 
+  // アニメーション関連の状態
+  const [animationId, setAnimationId] = useState<number | null>(null);
+  const [animationDirection, setAnimationDirection] = useState<'left' | 'right'>('right');
+
   // ドラッグ関連の状態
   const [isDragging, setIsDragging] = useState(false);
   const [dragStartX, setDragStartX] = useState(0);
   const [dragOffset, setDragOffset] = useState(0);
 
-  // 波アニメーション関連の状態 - ユニークIDを使用
-  const waveAnimationIdRef = useRef<number>(0);
-  const [waveAnimationId, setWaveAnimationId] = useState<number | null>(null);
-  const [waveDirection, setWaveDirection] = useState<'left' | 'right'>('right');
-
-  // 波アニメーション完了時のハンドラ - 特定のアニメーションIDのみを処理
-  const onWaveAnimationComplete = useCallback(
-    (id: number) => {
-      // 現在のアニメーションIDと一致する場合のみリセット
-      if (waveAnimationId === id) {
-        setWaveAnimationId(null);
-      }
-    },
-    [waveAnimationId]
-  );
+  // アニメーション完了時のハンドラ
+  const handleAnimationComplete = useCallback(() => {
+    setAnimationId(null);
+  }, []);
 
   // 次のスライドへ移動する関数
   const goToNextSlide = useCallback(() => {
     if (currentSlideIndex < slideSection.slides.length - 1) {
-      // 新しいアニメーションIDを生成
-      const newAnimationId = waveAnimationIdRef.current + 1;
-      waveAnimationIdRef.current = newAnimationId;
-
-      // 波のアニメーション表示（右方向）
-      setWaveDirection('right');
-      setWaveAnimationId(newAnimationId);
-
-      // スライドインデックスを更新
+      // アニメーションを設定
+      setAnimationDirection('left');
+      setAnimationId(Date.now());
       setCurrentSlideIndex(currentSlideIndex + 1);
     }
   }, [currentSlideIndex, slideSection.slides.length]);
@@ -78,15 +64,9 @@ export function useSlideShow({
   // 前のスライドへ移動する関数
   const goToPrevSlide = useCallback(() => {
     if (currentSlideIndex > 0) {
-      // 新しいアニメーションIDを生成
-      const newAnimationId = waveAnimationIdRef.current + 1;
-      waveAnimationIdRef.current = newAnimationId;
-
-      // 波のアニメーション表示（左方向）
-      setWaveDirection('left');
-      setWaveAnimationId(newAnimationId);
-
-      // スライドインデックスを更新
+      // アニメーションを設定
+      setAnimationDirection('right');
+      setAnimationId(Date.now());
       setCurrentSlideIndex(currentSlideIndex - 1);
     }
   }, [currentSlideIndex]);
@@ -230,9 +210,8 @@ export function useSlideShow({
     handleDragEnd,
     dragOffset,
     isDragging,
-    // 波アニメーション関連の状態と関数を追加
-    waveAnimationId,
-    waveDirection,
-    onWaveAnimationComplete,
+    animationId,
+    animationDirection,
+    handleAnimationComplete,
   };
 }

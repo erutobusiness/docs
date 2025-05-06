@@ -11,15 +11,15 @@ export const slideSections: SlideSection[] = [
         id: '01-intro-1',
         title: '宣言的UIとは',
         content: [
-          '宣言的UIとは「何を」表示するかを記述し、「どのように」表示するかの詳細はフレームワークに任せるアプローチです。',
-          'プログラマーはUIの最終的な状態を宣言し、状態変化に応じた更新はフレームワークが自動的に行います。',
+          '宣言的UIとは「何を」表示するかを記述し、「どのように」表示するかの詳細はフレームワークに任せるアプローチ',
+          '開発者はUIの最終的な状態を宣言し、状態変化に応じた更新はフレームワークが自動的に行う',
         ],
         codeExample: {
           language: 'jsx',
           code: `// React（宣言的UI）の例
 function Counter() {
   const [count, setCount] = useState(0);
-  
+
   return (
     <div>
       <p>カウント: {count}</p>
@@ -141,7 +141,7 @@ button.addEventListener('click', () => {
 export default async function Comments({ postId }) {
   // サーバー上で実行される非同期データ取得
   const comments = await getCommentsForPost(postId);
-  
+
   return (
     <div>
       {comments.map(comment => (
@@ -182,11 +182,11 @@ export default async function Comments({ postId }) {
           code: `// コードA：
 function UserList() {
   const [users, setUsers] = useState(['Alice', 'Bob']);
-  
+
   function addUser(name) {
     setUsers([...users, name]);
   }
-  
+
   return (
     <div>
       <ul>
@@ -204,14 +204,14 @@ function setupUserList() {
   const users = ['Alice', 'Bob'];
   const userList = document.querySelector('ul');
   const addButton = document.querySelector('button');
-  
+
   // 初期リストの描画
   users.forEach(user => {
     const li = document.createElement('li');
     li.textContent = user;
     userList.appendChild(li);
   });
-  
+
   // ボタンクリックイベント
   addButton.addEventListener('click', () => {
     const li = document.createElement('li');
@@ -342,7 +342,7 @@ export default {
           code: `// 宣言的UIの基本形
 function App() {
   const [state, setState] = useState(initialState);
-  
+
   return (
     <UI based on state />
   );

@@ -1,6 +1,7 @@
 'use client';
 
 import { useFullScreen } from '@/hooks/useFullScreen';
+import { useSlideScaling } from '@/hooks/useSlideScaling';
 import { useSlideShow } from '@/hooks/useSlideShow';
 import { useTextSelectMode } from '@/hooks/useTextSelectMode';
 import type { SlideSection } from '@/types/slides';
@@ -27,6 +28,9 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
   // テキスト選択モードの状態を新しいフックから取得
   const { isTextSelectMode, toggleTextSelectMode } = useTextSelectMode();
 
+  // スケーリング係数を専用フックから取得
+  const scaleFactor = useSlideScaling();
+
   // スライドショー機能をuseSlideShowから取得
   const {
     currentSlideIndex,
@@ -40,10 +44,9 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
     handleDragEnd,
     dragOffset,
     isDragging,
-    // 波アニメーション関連の状態と関数
-    waveAnimationId,
-    waveDirection,
-    onWaveAnimationComplete,
+    animationId,
+    animationDirection,
+    handleAnimationComplete,
   } = useSlideShow({
     slideSection,
     isTextSelectMode,
@@ -68,12 +71,14 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
         cursor: isDragging ? 'grabbing' : isTextSelectMode ? 'text' : 'grab',
       }}
     >
-      {/* 波のアニメーションコンポーネントを追加 - アニメーションIDを使用 */}
-      <WaveAnimation
-        animationId={waveAnimationId}
-        direction={waveDirection}
-        onAnimationComplete={onWaveAnimationComplete}
-      />
+      {/* アニメーションコンポーネント */}
+      <div className="absolute inset-0 origin-center pointer-events-none">
+        <WaveAnimation
+          animationId={animationId}
+          direction={animationDirection}
+          onAnimationComplete={handleAnimationComplete}
+        />
+      </div>
 
       {/* 右上のアイコンボタン */}
       <div className="absolute top-4 right-4 z-20 flex gap-2">
@@ -113,10 +118,10 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
       </div>
 
       {/* スライダー本体を中央配置するためのコンテナ */}
-      <div className="flex-1 flex items-center justify-center">
+      <div className="flex-1 flex items-center justify-center overflow-hidden">
         {/* スライド全体を包むコンテナー - スムーズなトランジション用のクラスを適用 */}
         <div
-          className={`flex slide-container w-full ${!isDragging ? 'transition-transform duration-300 ease-in-out' : ''}`}
+          className={`flex slide-container w-full ${!isDragging && 'transition-transform duration-300 ease-in-out'}`}
           style={{
             transform: `translateX(calc(-${currentSlideIndex * 100}% + ${dragOffset}px))`,
             width: `${slideSection.slides.length * 100}%`,
@@ -126,9 +131,22 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
           {slideSection.slides.map((slide) => (
             <div
               key={slide.id}
-              className="w-full flex-shrink-0 slide-item flex justify-center items-center px-4"
+              className="w-full flex-shrink-0 slide-item flex justify-center items-center px-8"
+              style={{
+                maxWidth: '100%',
+                height: 'calc(100vh - 120px)', // ナビゲーションとコントロールの高さを考慮
+              }}
             >
-              <div className="w-full max-w-5xl mx-auto">
+              <div
+                className="w-full mx-auto origin-center"
+                style={{
+                  transform: `scale(${scaleFactor})`,
+                  transition: 'transform 0.3s ease-out',
+                  transformOrigin: 'center center', // 中央を基準にスケーリング
+                  maxWidth: `${100 / scaleFactor}%`,
+                  padding: `0 ${(scaleFactor - 1) * 10}%`,
+                }}
+              >
                 <SlideComponent slide={slide} />
               </div>
             </div>
