@@ -26,20 +26,24 @@ export default function SlideImage({
     : { pointerEvents: 'none' as const }; // 通常モードではポインターイベントを無効化
 
   return (
-    <div className="relative w-full h-64 sm:h-80 rounded-lg overflow-hidden border border-[var(--accent-dark)]">
-      {isMounted ? (
-        <Image
-          src={imageUrl}
-          alt={altText}
-          fill
-          className="object-contain bg-slate-800"
-          style={imagePointerStyle}
-        />
-      ) : (
-        <div className="w-full h-full flex items-center justify-center bg-[var(--background)] text-[var(--card-fg)]">
-          画像読み込み中...
-        </div>
-      )}
+    <div className="flex justify-center w-full">
+      <div className="relative inline-block rounded-lg overflow-hidden border border-[var(--accent-dark)]">
+        {isMounted ? (
+          <Image
+            src={imageUrl}
+            alt={altText}
+            width={0}
+            height={0}
+            sizes="100vw"
+            className="w-auto h-auto max-h-[80vh] rounded-lg"
+            style={imagePointerStyle}
+          />
+        ) : (
+          <div className="w-full h-48 flex items-center justify-center bg-[var(--background)] text-[var(--card-fg)]">
+            画像読み込み中...
+          </div>
+        )}
+      </div>
     </div>
   );
 }

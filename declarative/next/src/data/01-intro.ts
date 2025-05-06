@@ -17,37 +17,6 @@ export const introSection: SlideSection = {
       imagePosition: 'bottom',
     },
     {
-      id: '01-intro-2',
-      title: '命令的UIとの違い',
-      content: [
-        '命令的UIでは「どのように」UIを変更するかの手順を記述する',
-        'DOM操作を直接行い、要素の追加・削除・更新を明示的に指示する',
-      ],
-      codeExample: {
-        language: 'js',
-        code: `// 命令的UIの例（JavaScript DOM操作）
-const counter = document.getElementById('counter');
-const button = document.getElementById('button');
-let count = 0;
-
-button.addEventListener('click', () => {
-  count++;
-  counter.textContent = \`カウント: \${count}\`;
-});`,
-      },
-    },
-    {
-      id: '01-intro-3',
-      title: '宣言的UIの特徴',
-      content: [
-        '状態を中心とした設計：UI = f(state)',
-        '再利用可能なコンポーネント',
-        '自動的なUI更新',
-        'コードの可読性と保守性の向上',
-      ],
-      imageUrl: '/images/declarative-ui-diagram.png',
-    },
-    {
       id: '01-intro-4',
       title: 'コード比較：カウンターボタンの実装',
       content: [

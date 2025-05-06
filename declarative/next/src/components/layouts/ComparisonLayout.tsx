@@ -26,7 +26,7 @@ export default function ComparisonLayout({ slide }: ComparisonLayoutProps) {
         {slide.codeExamples?.map((codeExample) => (
           <div key={codeExample.code} className="flex flex-col">
             {codeExample.title && (
-              <h3 className="text-lg font-semibold mb-3 text-[var(--card-fg)]">
+              <h3 className="text-xl font-semibold mb-3 text-[var(--card-fg)]">
                 {codeExample.title}
               </h3>
             )}
@@ -35,7 +35,7 @@ export default function ComparisonLayout({ slide }: ComparisonLayoutProps) {
             {codeExample.description && codeExample.description.length > 0 && (
               <div className="mb-3">
                 {codeExample.description.map((desc) => (
-                  <p key={desc} className="mb-2 text-sm text-[var(--card-fg)]">
+                  <p key={desc} className="mb-2 text-lg text-[var(--card-fg)]">
                     {desc}
                   </p>
                 ))}
