@@ -2,7 +2,7 @@ import type { SlideSection } from '@/types/slides';
 
 // 宣言的UIのこぼれ話（お便り形式）セクションのスライドデータ
 export const letterSection: SlideSection = {
-  id: '05 - letter',
+  id: '05-letter',
   title: '宣言的UIのこぼれ話（お便り形式）',
   description: '宣言的UIに関するよくある質問や誤解について解説',
   slides: [

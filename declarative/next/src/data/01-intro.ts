@@ -2,8 +2,8 @@ import type { SlideSection } from '@/types/slides';
 
 // イントロダクションセクションのスライドデータ
 export const introSection: SlideSection = {
-  id: '01 - intro',
-  title: '宣言的UIとはなにか？かんたんに',
+  id: '01-intro',
+  title: '宣言的UIとは？',
   description: '宣言的UIの基本概念について解説',
   slides: [
     {
@@ -13,29 +13,14 @@ export const introSection: SlideSection = {
         '宣言的UIとは「何を」表示するかを記述し、「どのように」表示するかの詳細はフレームワークに任せるアプローチ',
         '開発者はUIの最終的な状態を宣言し、状態変化に応じた更新はフレームワークが自動的に行う',
       ],
-      codeExample: {
-        language: 'jsx',
-        code: `// React（宣言的UI）の例
-function Counter() {
-  const [count, setCount] = useState(0);
-
-  return (
-    <div>
-      <p>カウント: {count}</p>
-      <button onClick={() => setCount(count + 1)}>
-        増やす
-      </button>
-    </div>
-  );
-}`,
-      },
+      imageUrl: '/img/宣言的UI.png',
     },
     {
       id: '01-intro-2',
       title: '命令的UIとの違い',
       content: [
-        '命令的UIでは「どのように」UIを変更するかの手順を記述します。',
-        'DOM操作を直接行い、要素の追加・削除・更新を明示的に指示します。',
+        '命令的UIでは「どのように」UIを変更するかの手順を記述する',
+        'DOM操作を直接行い、要素の追加・削除・更新を明示的に指示する',
       ],
       codeExample: {
         language: 'js',

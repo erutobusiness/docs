@@ -2,7 +2,7 @@ import type { SlideSection } from '@/types/slides';
 
 // まとめセクションのスライドデータ
 export const summarySection: SlideSection = {
-  id: '06 - summary',
+  id: '06-summary',
   title: 'まとめ',
   description: '宣言的UIのコンセプトと重要ポイントの復習',
   slides: [

@@ -58,7 +58,7 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
 
   return (
     <div
-      className={`relative overflow-hidden w-full min-h-screen flex flex-col ${isTextSelectMode ? 'select-text' : 'select-none'}`}
+      className={`relative overflow-hidden w-full min-h-screen flex flex-col ${isTextSelectMode ? 'select-text' : 'select-none'} ${isDragging ? 'cursor-grabbing' : isTextSelectMode ? 'cursor-text' : 'cursor-grab'}`}
       onWheel={(e) => handleScroll(e)}
       onMouseDown={(e) => handleDragStart(e)}
       onMouseMove={(e) => handleDragMove(e)}
@@ -67,9 +67,6 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
       onTouchStart={(e) => handleDragStart(e)}
       onTouchMove={(e) => handleDragMove(e)}
       onTouchEnd={handleDragEnd}
-      style={{
-        cursor: isDragging ? 'grabbing' : isTextSelectMode ? 'text' : 'grab',
-      }}
     >
       {/* アニメーションコンポーネント */}
       <div className="absolute inset-0 origin-center pointer-events-none">
@@ -80,41 +77,47 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
         />
       </div>
 
-      {/* 右上のアイコンボタン */}
-      <div className="absolute top-4 right-4 z-20 flex gap-2">
-        <IconButton
-          href="#"
-          icon={
-            isTextSelectMode ? (
-              <DocumentTextIcon className="w-6 h-6 text-[var(--card-fg)]" />
-            ) : (
-              <CursorArrowRaysIcon className="w-6 h-6 text-[var(--card-fg)]" />
-            )
-          }
-          ariaLabel="テキスト選択"
-          onClick={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            toggleTextSelectMode();
-          }}
-        />
+      {/* 右上のアイコンボタンとセクションタイトル */}
+      <div className="absolute top-4 w-full pl-34 pr-4 flex justify-between items-center z-20">
+        {/* セクションタイトルを左揃えで表示 */}
+        <div className="text-4xl font-medium text-[var(--primary)]">{slideSection.title}</div>
 
-        <IconButton
-          href="#"
-          icon={
-            isFullScreen ? (
-              <ArrowsPointingInIcon className="w-6 h-6 text-[var(--card-fg)]" />
-            ) : (
-              <ArrowsPointingOutIcon className="w-6 h-6 text-[var(--card-fg)]" />
-            )
-          }
-          ariaLabel="フルスクリーン"
-          onClick={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            toggleFullScreen();
-          }}
-        />
+        {/* アイコンボタン */}
+        <div className="flex gap-2">
+          <IconButton
+            href="#"
+            icon={
+              isTextSelectMode ? (
+                <DocumentTextIcon className="w-6 h-6 text-[var(--card-fg)]" />
+              ) : (
+                <CursorArrowRaysIcon className="w-6 h-6 text-[var(--card-fg)]" />
+              )
+            }
+            ariaLabel="テキスト選択"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              toggleTextSelectMode();
+            }}
+          />
+
+          <IconButton
+            href="#"
+            icon={
+              isFullScreen ? (
+                <ArrowsPointingInIcon className="w-6 h-6 text-[var(--card-fg)]" />
+              ) : (
+                <ArrowsPointingOutIcon className="w-6 h-6 text-[var(--card-fg)]" />
+              )
+            }
+            ariaLabel="フルスクリーン"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              toggleFullScreen();
+            }}
+          />
+        </div>
       </div>
 
       {/* スライダー本体を中央配置するためのコンテナ */}
@@ -132,17 +135,13 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
             <div
               key={slide.id}
               className="w-full flex-shrink-0 slide-item flex justify-center items-center px-8"
-              style={{
-                maxWidth: '100%',
-                height: 'calc(100vh - 80px)', // 高さを大きくするために調整（120pxから80pxに変更）
-              }}
             >
               <div
                 className="w-full mx-auto origin-center"
                 style={{
                   transform: `scale(${scaleFactor})`,
                   transition: 'transform 0.3s ease-out',
-                  transformOrigin: 'center center', // 中央を基準にスケーリング
+                  transformOrigin: 'center center',
                   maxWidth: `${100 / scaleFactor}%`,
                   padding: `0 ${(scaleFactor - 1) * 10}%`,
                 }}
@@ -170,13 +169,7 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
           className={!hasPrevSlide || isTextSelectMode ? 'opacity-50 cursor-not-allowed' : ''}
         />
 
-        <span
-          className="text-sm font-medium px-3 py-1 rounded shadow min-w-[60px] text-center h-10 flex items-center justify-center"
-          style={{
-            backgroundColor: 'var(--background)',
-            color: 'var(--foreground)',
-          }}
-        >
+        <span className="text-sm font-medium px-3 py-1 rounded shadow min-w-[60px] text-center h-10 flex items-center justify-center bg-[var(--background)] text-[var(--foreground)]">
           {currentSlideIndex + 1} / {slideSection.slides.length}
         </span>
 

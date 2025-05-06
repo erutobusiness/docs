@@ -2,7 +2,7 @@ import type { SlideSection } from '@/types/slides';
 
 // 宣言的・宣言的UIの歴史セクションのスライドデータ
 export const historySection: SlideSection = {
-  id: '03 - history',
+  id: '03-history',
   title: '宣言的・宣言的UIの歴史',
   description: '宣言的プログラミングの起源から現代のUIフレームワークまでの発展を解説',
   slides: [

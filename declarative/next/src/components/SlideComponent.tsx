@@ -16,24 +16,9 @@ export default function SlideComponent({ slide }: SlideComponentProps) {
   }, []);
 
   return (
-    <div
-      className="rounded-xl shadow-2xl overflow-hidden w-full"
-      style={{
-        background:
-          'linear-gradient(to bottom right, var(--gradient-accent-from), var(--gradient-accent-to))',
-        borderWidth: '1px',
-        borderStyle: 'solid',
-        borderColor: 'var(--accent-dark)',
-      }}
-    >
+    <div className="rounded-xl shadow-2xl overflow-hidden w-full bg-gradient-to-br from-[var(--gradient-accent-from)] to-[var(--gradient-accent-to)] border border-[var(--accent-dark)]">
       <div className="p-4 sm:p-8">
-        <h2
-          className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 pb-2"
-          style={{
-            color: 'var(--card-fg)',
-            borderBottom: '1px solid var(--accent-dark)',
-          }}
-        >
+        <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 pb-2 text-[var(--card-fg)]">
           {slide.title}
         </h2>
 
@@ -42,7 +27,7 @@ export default function SlideComponent({ slide }: SlideComponentProps) {
           <div className="flex flex-col md:flex-row gap-4 sm:gap-8">
             <div className="flex-1">
               {slide.content.map((text) => (
-                <p key={text} className="mb-2 sm:mb-4" style={{ color: 'var(--card-fg)' }}>
+                <p key={text} className="mb-2 sm:mb-4 text-[var(--card-fg)]">
                   {text}
                 </p>
               ))}
@@ -51,14 +36,7 @@ export default function SlideComponent({ slide }: SlideComponentProps) {
             {(slide.imageUrl || slide.codeExample) && (
               <div className="flex-1">
                 {slide.imageUrl && (
-                  <div
-                    className="mb-4 sm:mb-6 relative w-full h-64 sm:h-80 rounded-lg overflow-hidden" // 高さを48px/64pxから64px/80pxに増加
-                    style={{
-                      borderWidth: '1px',
-                      borderStyle: 'solid',
-                      borderColor: 'var(--accent-dark)',
-                    }}
-                  >
+                  <div className="mb-4 sm:mb-6 relative w-full h-64 sm:h-80 rounded-lg overflow-hidden border border-[var(--accent-dark)]">
                     {isMounted ? (
                       <Image
                         src={slide.imageUrl}
@@ -67,13 +45,7 @@ export default function SlideComponent({ slide }: SlideComponentProps) {
                         className="object-contain bg-slate-800"
                       />
                     ) : (
-                      <div
-                        className="w-full h-full flex items-center justify-center"
-                        style={{
-                          backgroundColor: 'var(--background)',
-                          color: 'var(--card-fg)',
-                        }}
-                      >
+                      <div className="w-full h-full flex items-center justify-center bg-[var(--background)] text-[var(--card-fg)]">
                         画像読み込み中...
                       </div>
                     )}
@@ -81,16 +53,8 @@ export default function SlideComponent({ slide }: SlideComponentProps) {
                 )}
 
                 {slide.codeExample && (
-                  <div
-                    className="rounded-lg p-3 sm:p-4 overflow-auto max-h-[400px]"
-                    style={{
-                      backgroundColor: 'var(--background)',
-                      borderWidth: '1px',
-                      borderStyle: 'solid',
-                      borderColor: 'var(--primary-dark)',
-                    }}
-                  >
-                    <pre className="text-xs sm:text-sm" style={{ color: 'var(--accent-light)' }}>
+                  <div className="rounded-lg p-3 sm:p-4 overflow-auto max-h-[400px] bg-[var(--background)] border border-[var(--primary-dark)]">
+                    <pre className="text-xs sm:text-sm text-[var(--accent-light)]">
                       <code>{slide.codeExample.code}</code>
                     </pre>
                   </div>
@@ -107,7 +71,7 @@ export default function SlideComponent({ slide }: SlideComponentProps) {
             {slide.content.length > 0 && (
               <div className="mb-6">
                 {slide.content.map((text) => (
-                  <p key={text} className="mb-2" style={{ color: 'var(--card-fg)' }}>
+                  <p key={text} className="mb-2 text-[var(--card-fg)]">
                     {text}
                   </p>
                 ))}
@@ -119,7 +83,7 @@ export default function SlideComponent({ slide }: SlideComponentProps) {
               {slide.codeExamples.map((codeExample) => (
                 <div key={codeExample.code} className="flex flex-col">
                   {codeExample.title && (
-                    <h3 className="text-lg font-semibold mb-3" style={{ color: 'var(--card-fg)' }}>
+                    <h3 className="text-lg font-semibold mb-3 text-[var(--card-fg)]">
                       {codeExample.title}
                     </h3>
                   )}
@@ -128,23 +92,15 @@ export default function SlideComponent({ slide }: SlideComponentProps) {
                   {codeExample.description && codeExample.description.length > 0 && (
                     <div className="mb-3">
                       {codeExample.description.map((desc) => (
-                        <p key={desc} className="mb-2 text-sm" style={{ color: 'var(--card-fg)' }}>
+                        <p key={desc} className="mb-2 text-sm text-[var(--card-fg)]">
                           {desc}
                         </p>
                       ))}
                     </div>
                   )}
 
-                  <div
-                    className="rounded-lg p-3 sm:p-4 overflow-auto max-h-[400px] flex-grow"
-                    style={{
-                      backgroundColor: 'var(--background)',
-                      borderWidth: '1px',
-                      borderStyle: 'solid',
-                      borderColor: 'var(--primary-dark)',
-                    }}
-                  >
-                    <pre className="text-xs sm:text-sm" style={{ color: 'var(--accent-light)' }}>
+                  <div className="rounded-lg p-3 sm:p-4 overflow-auto max-h-[400px] flex-grow bg-[var(--background)] border border-[var(--primary-dark)]">
+                    <pre className="text-xs sm:text-sm text-[var(--accent-light)]">
                       <code>{codeExample.code}</code>
                     </pre>
                   </div>

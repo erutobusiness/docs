@@ -2,7 +2,7 @@ import type { SlideSection } from '@/types/slides';
 
 // 宣言的・宣言性を学ぶメリットセクションのスライドデータ
 export const whyNowSection: SlideSection = {
-  id: '02 - why_now',
+  id: '02-why_now',
   title: '宣言的・宣言性を学ぶメリット',
   description: '宣言的アプローチがなぜ現代の開発に適しているのかを解説',
   slides: [

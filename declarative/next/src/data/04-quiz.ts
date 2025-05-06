@@ -2,7 +2,7 @@ import type { SlideSection } from '@/types/slides';
 
 // 宣言的UIの実践（クイズ形式）セクションのスライドデータ
 export const quizSection: SlideSection = {
-  id: '04 - quiz',
+  id: '04-quiz',
   title: '宣言的UIの実践（クイズ形式）',
   description: '宣言的UIと命令的UIの違いを実践的なコード例で解説',
   slides: [
