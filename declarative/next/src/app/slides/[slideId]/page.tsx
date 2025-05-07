@@ -31,7 +31,7 @@ export default async function SlidePage({ params }: SlidePageProps) {
   }
 
   return (
-    <main className="bg-gradient-to-br from-[var(--gradient-primary-from)] to-[var(--gradient-primary-to)] min-h-screen">
+    <main className="bg-linear-to-br from-(--gradient-primary-from) to-(--gradient-primary-to) min-h-screen">
       <div className="fixed top-4 left-4 z-10">
         <IconButton
           href="/"

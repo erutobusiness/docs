@@ -15,7 +15,7 @@ export default function CodeComparison({ codeExamples }: CodeComparisonProps) {
         {codeExamples?.map((codeExample) => (
           <div key={codeExample.code} className="flex flex-col">
             {codeExample.title && (
-              <h3 className="text-xl font-semibold mb-3 text-[var(--card-fg)]">
+              <h3 className="text-xl font-semibold mb-3 text-(--card-fg)">
                 {codeExample.title}
               </h3>
             )}
@@ -24,14 +24,14 @@ export default function CodeComparison({ codeExamples }: CodeComparisonProps) {
             {codeExample.descriptions && codeExample.descriptions.length > 0 && (
               <div className="mb-3">
                 {codeExample.descriptions.map((desc) => (
-                  <p key={desc} className="mb-2 text-lg text-[var(--card-fg)]">
+                  <p key={desc} className="mb-2 text-lg text-(--card-fg)">
                     {desc}
                   </p>
                 ))}
               </div>
             )}
 
-            <div className="flex-grow">
+            <div className="grow">
               <CodeBlock code={codeExample.code} language={codeExample.language} />
             </div>
           </div>

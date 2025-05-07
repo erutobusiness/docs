@@ -27,7 +27,7 @@ export default function SlideImage({
 
   return (
     <div className="flex justify-center w-full">
-      <div className="relative inline-block rounded-lg overflow-hidden border border-[var(--accent-dark)]">
+      <div className="relative inline-block rounded-lg overflow-hidden border border-(--accent-dark)">
         {isMounted ? (
           <Image
             src={imageUrl}
@@ -39,7 +39,7 @@ export default function SlideImage({
             style={imagePointerStyle}
           />
         ) : (
-          <div className="w-128 h-72 flex items-center justify-center bg-[var(--background)] text-[var(--card-fg)]">
+          <div className="w-128 h-72 flex items-center justify-center bg-(--background) text-(--card-fg)">
             画像読み込み中...
           </div>
         )}

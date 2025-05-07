@@ -24,8 +24,8 @@ export default function Home() {
 
       {/* コンテンツコンテナ - 元のスタイリングを維持 */}
       <div className="relative z-10 container mx-auto px-4 py-8">
-        <div className="mb-12 p-8 rounded-lg shadow-md backdrop-blur-sm bg-[var(--background)]/70">
-          <h1 className="text-4xl font-bold mb-4 text-[var(--primary)]">宣言的な世界</h1>
+        <div className="mb-12 p-8 rounded-lg shadow-md backdrop-blur-sm bg-(--background)/70">
+          <h1 className="text-4xl font-bold mb-4 text-(--primary)">宣言的な世界</h1>
           <p className="text-xl">
             宣言的UIを端に、歴史やクイズを通して、モダン開発のパラダイムを理解する
           </p>
@@ -35,8 +35,8 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {slideSections.map((section) => (
             <Link key={section.id} href={`/slides/${section.id}`} className="block">
-              <div className="p-6 rounded-lg shadow-md transition-transform hover:scale-105 bg-[var(--background)]/80 backdrop-blur-sm border border-[var(--accent-dark)]">
-                <h2 className="text-xl font-bold mb-2 text-[var(--primary-light)]">
+              <div className="p-6 rounded-lg shadow-md transition-transform hover:scale-105 bg-(--background)/80 backdrop-blur-sm border border-(--accent-dark)">
+                <h2 className="text-xl font-bold mb-2 text-(--primary-light)">
                   {section.title}
                 </h2>
                 <p>{section.description}</p>

@@ -129,7 +129,7 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
       {/* 右上のアイコンボタンとセクションタイトル */}
       <div className="absolute top-4 w-full pl-34 pr-4 flex justify-between items-center">
         {/* セクションタイトルを左揃えで表示 */}
-        <div className="text-4xl font-medium text-[var(--primary)]">{slideSection.title}</div>
+        <div className="text-4xl font-medium text-(--primary)">{slideSection.title}</div>
 
         {/* アイコンボタン */}
         <div className="flex gap-2">
@@ -137,9 +137,9 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
             href="#"
             icon={
               isTextSelectMode ? (
-                <DocumentTextIcon className="w-6 h-6 text-[var(--card-fg)]" />
+                <DocumentTextIcon className="w-6 h-6 text-(--card-fg)" />
               ) : (
-                <CursorArrowRaysIcon className="w-6 h-6 text-[var(--card-fg)]" />
+                <CursorArrowRaysIcon className="w-6 h-6 text-(--card-fg)" />
               )
             }
             ariaLabel="テキスト選択"
@@ -155,9 +155,9 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
             href="#"
             icon={
               isZoomEnabled ? (
-                <MagnifyingGlassPlusIcon className="w-6 h-6 text-[var(--card-fg)]" />
+                <MagnifyingGlassPlusIcon className="w-6 h-6 text-(--card-fg)" />
               ) : (
-                <MagnifyingGlassPlusIcon className="w-6 h-6 text-[var(--card-fg)]" />
+                <MagnifyingGlassPlusIcon className="w-6 h-6 text-(--card-fg)" />
               )
             }
             ariaLabel="拡大モード"
@@ -173,9 +173,9 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
             href="#"
             icon={
               isFullScreen ? (
-                <ArrowsPointingInIcon className="w-6 h-6 text-[var(--card-fg)]" />
+                <ArrowsPointingInIcon className="w-6 h-6 text-(--card-fg)" />
               ) : (
-                <ArrowsPointingOutIcon className="w-6 h-6 text-[var(--card-fg)]" />
+                <ArrowsPointingOutIcon className="w-6 h-6 text-(--card-fg)" />
               )
             }
             ariaLabel="フルスクリーン"
@@ -203,7 +203,7 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
           {slideSection.slides.map((slide) => (
             <div
               key={slide.id}
-              className="w-full flex-shrink-0 slide-item flex justify-center items-center px-8"
+              className="w-full shrink-0 slide-item flex justify-center items-center px-8"
             >
               <div
                 className="mx-auto origin-center transition-transform duration-300 ease-in-out"
@@ -219,10 +219,10 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
       </div>
 
       {/* 下部のナビゲーションコントロール */}
-      <div className="w-full py-4 flex justify-center items-center gap-4 backdrop-blur-sm bg-gradient-to-t from-[var(--gradient-primary-from)] to-transparent">
+      <div className="w-full py-4 flex justify-center items-center gap-4 backdrop-blur-sm bg-linear-to-t from-(--gradient-primary-from) to-transparent">
         <IconButton
           href="#"
-          icon={<ArrowLeftIcon className="w-6 h-6 text-[var(--card-fg)]" />}
+          icon={<ArrowLeftIcon className="w-6 h-6 text-(--card-fg)" />}
           ariaLabel="前へ"
           onClick={(e) => {
             e.preventDefault();
@@ -238,13 +238,13 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
           }
         />
 
-        <span className="text-sm font-medium px-3 py-1 rounded shadow min-w-[60px] text-center h-10 flex items-center justify-center bg-[var(--background)] text-[var(--foreground)]">
+        <span className="text-sm font-medium px-3 py-1 rounded shadow min-w-[60px] text-center h-10 flex items-center justify-center bg-(--background) text-(--foreground)">
           {currentSlideIndex + 1} / {slideSection.slides.length}
         </span>
 
         <IconButton
           href="#"
-          icon={<ArrowRightIcon className="w-6 h-6 text-[var(--card-fg)]" />}
+          icon={<ArrowRightIcon className="w-6 h-6 text-(--card-fg)" />}
           ariaLabel="次へ"
           onClick={(e) => {
             e.preventDefault();
