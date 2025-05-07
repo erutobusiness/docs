@@ -20,7 +20,19 @@ export const introSection: SlideSection = {
       },
     },
     {
-      id: '01-intro-2',
+      id: '01-intro-example',
+      title: 'よくある例え',
+      descriptions: [
+        '命令的：マニュアル車の運転のように、ギアの切り替えやクラッチ操作など、すべての手順を自分で制御する必要がある',
+        '宣言的：オートマ車の運転のように、「前に進む」「止まる」といった目的を伝えるだけで、内部の操作は車が自動で行う',
+      ],
+      image: {
+        url: '/img/DeclartiveVsImperative.png',
+        position: 'bottom',
+      },
+    },
+    {
+      id: '01-intro-code',
       title: 'コード比較：カウンターボタンの実装',
       descriptions: [
         '同じ機能（ボタンクリックでカウントアップ）を命令的UIと宣言的UIで実装した例を比較して、アプローチの違いを明確にしてみる',

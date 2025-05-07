@@ -20,7 +20,7 @@ export const historySection: SlideSection = {
       video: {
         url: '/video/PXL_20250430_012528859.mp4',
       },
-      /* 
+      /*
       【スピーカーノート】
       - ここでは「宣言的」という用語ではなく、「数学的」「論理的」「関数型」という言葉が使われていたことを強調すると良い
       - チューリングとチャーチの論争（効率 vs 抽象度）の話を入れると歴史の深みが増す
@@ -44,7 +44,7 @@ export const historySection: SlideSection = {
       video: {
         url: '/video/PXL_20250430_011702922.mp4',
       },
-      /* 
+      /*
       【スピーカーノート】
       - 「宣言的意味論」とは、プログラムの意味を「何をするか」で定義する方法で、Prologなどの論理型言語の理論的基盤となった
       - Robert Kowalskiの有名な方程式「Algorithm = Logic + Control」（1979年）について触れると良い
@@ -68,7 +68,7 @@ export const historySection: SlideSection = {
       video: {
         url: '/video/PXL_20250430_011646293.mp4',
       },
-      /* 
+      /*
       【スピーカーノート】
       - SQLの正式名称「Structured Query Language」は当初「SEQUEL」と呼ばれていたというトリビア
       - リレーショナルデータベースの理論的基盤を作ったエドガー・F・コッドの功績について触れると良い
@@ -92,7 +92,7 @@ export const historySection: SlideSection = {
       video: {
         url: '/video/PXL_20250430_012820512.mp4',
       },
-      /* 
+      /*
       【スピーカーノート】
       - ティム・バーナーズ・リーがHTMLを設計した際の理念：「情報の意味を表現し、表示方法は閲覧者に委ねる」という考え方
       - HTMLの宣言的な性質がインターネットの爆発的普及を支えた理由：異なるデバイスや環境でも同じ内容が表示できる
@@ -117,7 +117,7 @@ export const historySection: SlideSection = {
       video: {
         url: '/video/PXL_20250430_074109082.mp4',
       },
-      /* 
+      /*
       【スピーカーノート】
       - マルチコアプロセッサの普及が宣言的・関数型言語の再評価につながった理由：並行処理の扱いやすさ
       - Scalaの創始者Martin Oderskyの言葉「オブジェクト指向と関数型の良いとこ取り」を引用すると良い
@@ -142,7 +142,7 @@ export const historySection: SlideSection = {
       video: {
         url: '/video/PXL_20250430_050804115.mp4',
       },
-      /* 
+      /*
       【スピーカーノート】
       - Reactの誕生秘話：もともとFacebookの広告管理ツールのために開発されたが、その可能性に気づいてオープンソース化
       - ジョーダン・ウォーク（React開発者）の言葉「UIはただの関数 f(state) = view」を引用すると効果的
@@ -167,7 +167,7 @@ export const historySection: SlideSection = {
       video: {
         url: '/video/PXL_20250430_134315375.mp4',
       },
-      /* 
+      /*
       【スピーカーノート】
       - Kubernetesの中核理念「Desired State Configuration」は宣言的アプローチの典型
       - GitOpsの革新：「リポジトリの状態がシステムの状態」という宣言的なシステム管理のアプローチ
@@ -195,7 +195,7 @@ export const historySection: SlideSection = {
         url: '/img/PXL_20250430_135602763.PORTRAIT.ORIGINAL.jpg',
         position: 'bottom',
       },
-      /* 
+      /*
       【スピーカーノート】
       - このセクションでは、黎明期に「宣言的」という言葉がなかったことと、現代では当たり前になっていることのコントラストを強調すると効果的
       - 歴史の流れを「抽象化のレベルの向上」として説明：機械語→アセンブリ→高級言語→宣言的言語→AIとの対話
