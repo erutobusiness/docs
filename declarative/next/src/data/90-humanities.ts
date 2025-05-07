@@ -6,7 +6,7 @@ export const humanitiesSection: SlideSection = {
   description: '宣言的プログラミングと人間の認知、言語、文化の関連性を探求',
   slides: [
     {
-      id: 'humanities-1',
+      id: 'humanities-start',
       title: '番外編：人文科学の視点から見る宣言的プログラミング',
       descriptions: [
         '宣言的プログラミングは単なる技術的手法ではなく、人間の認知、言語、文化と深く関わる概念である',
@@ -14,7 +14,7 @@ export const humanitiesSection: SlideSection = {
       ],
     },
     {
-      id: 'humanities-2',
+      id: 'humanities-language-relativity',
       title: '言語相対性仮説と宣言的表現',
       descriptions: [
         'サピア＝ウォーフ仮説と宣言的プログラミング言語は関係するかもしれない',
@@ -38,7 +38,7 @@ export const humanitiesSection: SlideSection = {
       ],
     },
     {
-      id: 'humanities-3',
+      id: 'humanities-cognitive-load',
       title: '宣言的言語と人間の認知負荷',
       descriptions: [
         '宣言的言語は高レベルの抽象化を提供することで、人間の作業記憶に対する認知負荷を大幅に軽減する',
@@ -49,7 +49,7 @@ export const humanitiesSection: SlideSection = {
       ],
     },
     {
-      id: 'humanities-4',
+      id: 'humanities-performativity',
       title: 'パフォーマティビティと宣言的プログラミング',
       descriptions: [
         '宣言的コードは言語哲学者J.L.オースティンの「遂行的発話」理論と興味深い並行性を持つ',
@@ -67,7 +67,7 @@ export const humanitiesSection: SlideSection = {
       },
     },
     {
-      id: 'humanities-5',
+      id: 'humanities-cultural-context',
       title: '文化的文脈と宣言的思考',
       descriptions: [
         '異なる文化的背景がプログラミングスタイルに与える影響は、興味深い研究領域となっている',
@@ -80,7 +80,7 @@ export const humanitiesSection: SlideSection = {
       ],
     },
     {
-      id: 'humanities-6',
+      id: 'humanities-linguistic-diversity',
       title: '言語的多様性と技術的表現',
       descriptions: [
         '自然言語の多様性とプログラミング言語の設計哲学には密接な関連がある',
@@ -94,7 +94,7 @@ export const humanitiesSection: SlideSection = {
       ],
     },
     {
-      id: 'humanities-7',
+      id: 'humanities-social-constructivism',
       title: '社会構築主義的視点',
       descriptions: [
         `ソフトウェア開発における社会構築主義的視点からは、コードは単なる機能的道具ではなく、
@@ -120,7 +120,7 @@ export const humanitiesSection: SlideSection = {
       ],
     },
     {
-      id: 'humanities-8',
+      id: 'humanities-summary',
       title: '総括：学際的アプローチの価値',
       descriptions: [
         '宣言的プログラミングを人文科学の視点から分析することで、技術と人間の認知・文化の接点がより明確に浮かび上がってくる',
