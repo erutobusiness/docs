@@ -17,8 +17,8 @@ export function useSlideScaling() {
       const height = window.innerHeight;
 
       // 基準となるサイズ
-      const baseWidth = 1200;
-      const baseHeight = 900; // 800から900に変更し、より大きな縦幅に対応
+      const baseWidth = 1920;
+      const baseHeight = 1080;
 
       // 幅と高さのスケール係数を個別に計算
       const widthScale = width / baseWidth;
