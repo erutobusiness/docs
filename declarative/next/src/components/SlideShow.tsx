@@ -4,6 +4,7 @@ import { useFullScreen } from '@/hooks/useFullScreen';
 import { useSlideScaling } from '@/hooks/useSlideScaling';
 import { useSlideShow } from '@/hooks/useSlideShow';
 import { useTextSelectMode } from '@/hooks/useTextSelectMode';
+import { useZoom } from '@/hooks/useZoom';
 import type { SlideSection } from '@/types/slides';
 import {
   ArrowLeftIcon,
@@ -12,6 +13,7 @@ import {
   ArrowsPointingOutIcon,
   CursorArrowRaysIcon,
   DocumentTextIcon,
+  MagnifyingGlassPlusIcon,
 } from '@heroicons/react/24/outline';
 import IconButton from './IconButton';
 import SlideComponent from './SlideComponent';
@@ -30,6 +32,10 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
 
   // スケーリング係数を専用フックから取得
   const scaleFactor = useSlideScaling();
+
+  // ズーム機能を取得（新しい実装）
+  const { zoomFactor, isZoomEnabled, zoomOrigin, zoomAtPosition, toggleZoom, handleRightClick } =
+    useZoom();
 
   // スライドショー機能をuseSlideShowから取得
   const {
@@ -58,15 +64,58 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
 
   return (
     <div
-      className={`relative overflow-hidden w-full h-screen flex flex-col ${isTextSelectMode ? 'select-text' : 'select-none'} ${isDragging ? 'cursor-grabbing' : isTextSelectMode ? 'cursor-text' : 'cursor-grab'}`}
+      className={`relative overflow-hidden w-full h-screen flex flex-col ${isTextSelectMode ? 'select-text' : 'select-none'} ${isDragging ? 'cursor-grabbing' : isTextSelectMode ? 'cursor-text' : isZoomEnabled ? 'cursor-zoom-in' : 'cursor-grab'}`}
       onWheel={(e) => handleScroll(e)}
-      onMouseDown={(e) => handleDragStart(e)}
-      onMouseMove={(e) => handleDragMove(e)}
-      onMouseUp={handleDragEnd}
-      onMouseLeave={handleDragEnd}
-      onTouchStart={(e) => handleDragStart(e)}
-      onTouchMove={(e) => handleDragMove(e)}
-      onTouchEnd={handleDragEnd}
+      onMouseDown={(e) => {
+        if (isZoomEnabled) {
+          zoomAtPosition(e);
+        } else {
+          handleDragStart(e);
+        }
+      }}
+      onMouseMove={(e) => {
+        if (!isZoomEnabled) {
+          handleDragMove(e);
+        }
+      }}
+      onMouseUp={() => {
+        if (!isZoomEnabled) {
+          handleDragEnd();
+        }
+      }}
+      onMouseLeave={() => {
+        if (!isZoomEnabled) {
+          handleDragEnd();
+        }
+      }}
+      onTouchStart={(e) => {
+        if (isZoomEnabled) {
+          zoomAtPosition(e);
+        } else {
+          handleDragStart(e);
+        }
+      }}
+      onTouchMove={(e) => {
+        if (!isZoomEnabled) {
+          handleDragMove(e);
+        }
+      }}
+      onTouchEnd={() => {
+        if (!isZoomEnabled) {
+          handleDragEnd();
+        }
+      }}
+      onContextMenu={(e) => {
+        if (isZoomEnabled) {
+          e.preventDefault();
+          handleRightClick(e);
+        }
+      }}
+      style={{
+        transform: isZoomEnabled && zoomFactor > 1 ? `scale(${zoomFactor})` : 'scale(1)',
+        transformOrigin: `${zoomOrigin.x}% ${zoomOrigin.y}%`,
+        transition: 'transform 0.2s ease-out',
+      }}
     >
       {/* アニメーションコンポーネント */}
       <div className="absolute inset-0 origin-center pointer-events-none">
@@ -87,6 +136,24 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
           <IconButton
             href="#"
             icon={
+              isZoomEnabled ? (
+                <MagnifyingGlassPlusIcon className="w-6 h-6 text-[var(--card-fg)]" />
+              ) : (
+                <MagnifyingGlassPlusIcon className="w-6 h-6 text-[var(--card-fg)]" />
+              )
+            }
+            ariaLabel="拡大モード"
+            enabled={isZoomEnabled}
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              toggleZoom();
+            }}
+          />
+
+          <IconButton
+            href="#"
+            icon={
               isTextSelectMode ? (
                 <DocumentTextIcon className="w-6 h-6 text-[var(--card-fg)]" />
               ) : (
@@ -94,6 +161,7 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
               )
             }
             ariaLabel="テキスト選択"
+            enabled={isTextSelectMode}
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
@@ -111,6 +179,7 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
               )
             }
             ariaLabel="フルスクリーン"
+            enabled={isFullScreen}
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
@@ -161,8 +230,12 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
             // テキスト選択モードの場合は何もしない
             if (!isTextSelectMode && hasPrevSlide) goToPrevSlide();
           }}
-          disabled={!hasPrevSlide || isTextSelectMode}
-          className={!hasPrevSlide || isTextSelectMode ? 'opacity-50 cursor-not-allowed' : ''}
+          disabled={!hasPrevSlide || isTextSelectMode || isZoomEnabled}
+          className={
+            !hasPrevSlide || isTextSelectMode || isZoomEnabled
+              ? 'opacity-50 cursor-not-allowed'
+              : ''
+          }
         />
 
         <span className="text-sm font-medium px-3 py-1 rounded shadow min-w-[60px] text-center h-10 flex items-center justify-center bg-[var(--background)] text-[var(--foreground)]">
@@ -179,8 +252,12 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
             // テキスト選択モードの場合は何もしない
             if (!isTextSelectMode && hasNextSlide) goToNextSlide();
           }}
-          disabled={!hasNextSlide || isTextSelectMode}
-          className={!hasNextSlide || isTextSelectMode ? 'opacity-50 cursor-not-allowed' : ''}
+          disabled={!hasNextSlide || isTextSelectMode || isZoomEnabled}
+          className={
+            !hasNextSlide || isTextSelectMode || isZoomEnabled
+              ? 'opacity-50 cursor-not-allowed'
+              : ''
+          }
         />
       </div>
     </div>

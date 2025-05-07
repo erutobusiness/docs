@@ -26,6 +26,10 @@
   pointer-events: none;
 }
 
+.icon-button.enabled {
+  background-color: var(--button-primary-bg);
+}
+
 .icon-color {
   color: var(--card-fg);
 }

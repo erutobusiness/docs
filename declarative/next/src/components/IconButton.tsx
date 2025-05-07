@@ -1,6 +1,5 @@
 'use client';
 
-import { HomeIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import '../styles/IconButton.css'; // CSS ファイルをインポート
 
@@ -10,6 +9,7 @@ interface IconButtonProps {
   className?: string;
   ariaLabel?: string;
   disabled?: boolean;
+  enabled?: boolean;
   onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
 }
 
@@ -19,6 +19,7 @@ export default function IconButton({
   ariaLabel,
   className = '',
   disabled = false,
+  enabled = false,
   onClick,
 }: IconButtonProps) {
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -36,7 +37,7 @@ export default function IconButton({
   return (
     <Link
       href={href}
-      className={`icon-button ${disabled ? 'disabled' : ''} ${className}`}
+      className={`icon-button ${disabled ? 'disabled' : ''} ${enabled ? 'enabled' : ''} ${className}`}
       aria-label={ariaLabel}
       aria-disabled={disabled}
       onClick={handleClick}
