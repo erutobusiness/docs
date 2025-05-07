@@ -1,6 +1,6 @@
 module.exports = {
-  content: ['./src/**/*.{js,jsx,ts,tsx}', './src/app/**/*.{js,jsx,ts,tsx}'],
-  purge: ['./components/**/*.{js,ts,jsx,tsx}', './pages/**/*.{js,ts,jsx,tsx}'],
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: { extend: {} },
   plugins: [],
+  important: true,
 };
