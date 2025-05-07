@@ -7,6 +7,7 @@ import { historySection } from './03-history';
 import { quizSection } from './04-quiz';
 import { letterSection } from './05-letter';
 import { summarySection } from './06-summary';
+import { humanitiesSection } from './90-humanities';
 
 // すべてのスライドセクションの配列
 export const slideSections: SlideSection[] = [
@@ -16,6 +17,7 @@ export const slideSections: SlideSection[] = [
   quizSection,
   letterSection,
   summarySection,
+  humanitiesSection,
 ];
 
 // 特定のスライドセクションを取得する関数
