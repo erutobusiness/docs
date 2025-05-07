@@ -14,11 +14,16 @@
   --slide-transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* ズーム機能使用時のスクロールバー非表示 */
+html,
+body {
+  overflow: hidden !important; /* スクロールバーを完全に非表示に */
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans, sans-serif);
-  overflow-x: hidden; /* 横スクロールバーを非表示に */
 }
 
 /* スライドトランジション効果を強化 */

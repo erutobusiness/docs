@@ -136,24 +136,6 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
           <IconButton
             href="#"
             icon={
-              isZoomEnabled ? (
-                <MagnifyingGlassPlusIcon className="w-6 h-6 text-[var(--card-fg)]" />
-              ) : (
-                <MagnifyingGlassPlusIcon className="w-6 h-6 text-[var(--card-fg)]" />
-              )
-            }
-            ariaLabel="拡大モード"
-            enabled={isZoomEnabled}
-            onClick={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              toggleZoom();
-            }}
-          />
-
-          <IconButton
-            href="#"
-            icon={
               isTextSelectMode ? (
                 <DocumentTextIcon className="w-6 h-6 text-[var(--card-fg)]" />
               ) : (
@@ -166,6 +148,24 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
               e.preventDefault();
               e.stopPropagation();
               toggleTextSelectMode();
+            }}
+          />
+
+          <IconButton
+            href="#"
+            icon={
+              isZoomEnabled ? (
+                <MagnifyingGlassPlusIcon className="w-6 h-6 text-[var(--card-fg)]" />
+              ) : (
+                <MagnifyingGlassPlusIcon className="w-6 h-6 text-[var(--card-fg)]" />
+              )
+            }
+            ariaLabel="拡大モード"
+            enabled={isZoomEnabled}
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              toggleZoom();
             }}
           />
 
