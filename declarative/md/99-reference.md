@@ -26,3 +26,7 @@ https://stackoverflow.com/questions/1784664/what-is-the-difference-between-decla
 ### X ユーザーの Roy Derks 🚀 さん: 「Declaritive vs Imperative https://t.co/YenB1Dhpfs」 / X
 
 https://x.com/gethackteam/status/1268892357027663873
+
+### Declarative Programming - CWI
+
+https://homepages.cwi.nl/~steven/Talks/2020/01-xx-ifip/
