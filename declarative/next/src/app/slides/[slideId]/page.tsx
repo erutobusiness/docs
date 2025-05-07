@@ -4,11 +4,11 @@ import { getAllSlideSections, getSlideSection } from '@/data/slideData';
 import { HomeIcon } from '@heroicons/react/24/outline';
 import { notFound } from 'next/navigation';
 
-interface SlidePageProps {
-  params: {
+type SlidePageProps = {
+  params: Promise<{
     slideId: string;
-  };
-}
+  }>;
+};
 
 export async function generateStaticParams() {
   const slideSections = getAllSlideSections();
@@ -21,7 +21,6 @@ export async function generateStaticParams() {
 export default async function SlidePage({ params }: SlidePageProps) {
   // params を await して解決する
   const { slideId } = await params;
-  // URLからのパラメータをデコードして元のIDに戻す
   const decodedSlideId = decodeURIComponent(slideId);
 
   // スライドIDから対応するセクションを取得

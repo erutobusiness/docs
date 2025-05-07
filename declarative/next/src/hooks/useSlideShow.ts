@@ -1,7 +1,7 @@
 'use client';
 
 import type { SlideSection } from '@/types/slides';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 export interface UseSlideShowReturn {
   currentSlideIndex: number;

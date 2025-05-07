@@ -1,7 +1,6 @@
 'use client';
 
 import type { Slide } from '@/types/slides';
-import CodeBlock from '../common/CodeBlock';
 import Descriptions from '../common/Descriptions';
 import SlideImage from '../common/SlideImage';
 
