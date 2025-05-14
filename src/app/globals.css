@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import "../styles/theme.css";
+@import "../../declarative/next/theme.css";
 
 @theme inline {
   --color-background: var(--background);

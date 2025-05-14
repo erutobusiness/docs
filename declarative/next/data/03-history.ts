@@ -18,7 +18,7 @@ export const historySection: SlideSection = {
         '📝 ※興味深い事実：この時代には「宣言的プログラミング」という言葉自体はまだ使われていなかった',
       ],
       video: {
-        url: '/video/PXL_20250430_012528859.mp4',
+        url: '/declarative/next/video/PXL_20250430_012528859.mp4',
       },
       /*
       【スピーカーノート】
@@ -42,7 +42,7 @@ export const historySection: SlideSection = {
         '🎓 計算機科学での進展：この時代に「宣言的意味論（Declarative Semantics）」が学術的な専門用語として確立',
       ],
       video: {
-        url: '/video/PXL_20250430_011702922.mp4',
+        url: '/declarative/next/video/PXL_20250430_011702922.mp4',
       },
       /*
       【スピーカーノート】
@@ -66,7 +66,7 @@ export const historySection: SlideSection = {
         '🏆 40年以上経った今も現役のSQL。宣言的アプローチの「勝利」を証明する生きた化石',
       ],
       video: {
-        url: '/video/PXL_20250430_011646293.mp4',
+        url: '/declarative/next/video/PXL_20250430_011646293.mp4',
       },
       /*
       【スピーカーノート】
@@ -90,7 +90,7 @@ export const historySection: SlideSection = {
         '🧠 Haskell：「副作用なしの純粋な関数」という極限の宣言的世界を追求した言語が、実用の世界へ',
       ],
       video: {
-        url: '/video/PXL_20250430_012820512.mp4',
+        url: '/declarative/next/video/PXL_20250430_012820512.mp4',
       },
       /*
       【スピーカーノート】
@@ -115,7 +115,7 @@ export const historySection: SlideSection = {
         '🧪 関数型論理プログラミング：複数のパラダイムを組み合わせることで、より強力な表現力を実現（Hanus, 2007）',
       ],
       video: {
-        url: '/video/PXL_20250430_074109082.mp4',
+        url: '/declarative/next/video/PXL_20250430_074109082.mp4',
       },
       /*
       【スピーカーノート】
@@ -140,7 +140,7 @@ export const historySection: SlideSection = {
         '👑 「命令的」vs「宣言的」の戦いは、すでに宣言的の圧勝で終わっていた',
       ],
       video: {
-        url: '/video/PXL_20250430_050804115.mp4',
+        url: '/declarative/next/video/PXL_20250430_050804115.mp4',
       },
       /*
       【スピーカーノート】
@@ -165,7 +165,7 @@ export const historySection: SlideSection = {
         '🚀 低コード/ノーコードプラットフォーム：宣言的アプローチの究極形として、プログラミング不要のシステム構築を実現',
       ],
       video: {
-        url: '/video/PXL_20250430_134315375.mp4',
+        url: '/declarative/next/video/PXL_20250430_134315375.mp4',
       },
       /*
       【スピーカーノート】
@@ -192,7 +192,7 @@ export const historySection: SlideSection = {
         '🚀 再現性・保守性・自動化を促進する現代ソフトウェア開発における重要な考え方',
       ],
       image: {
-        url: '/img/PXL_20250430_135602763.PORTRAIT.ORIGINAL.jpg',
+        url: '/declarative/next/img/PXL_20250430_135602763.PORTRAIT.ORIGINAL.jpg',
         position: 'bottom',
       },
       /*
