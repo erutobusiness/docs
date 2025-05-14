@@ -22,22 +22,30 @@ export default function Home() {
         </div>
       </div>
 
-      {/* コンテンツコンテナ - 元のスタイリングを維持 */}
+      {/* コンテンツコンテナ */}
       <div className="relative z-10 container mx-auto px-4 py-8">
-        <div className="mb-12 p-8 rounded-lg shadow-md backdrop-blur-sm bg-(--background)/70">
-          <h1 className="text-4xl font-bold mb-4 text-(--primary)">宣言的な世界</h1>
+        <div className="mb-12 p-8 rounded-lg shadow-md backdrop-blur-sm bg-white/70 dark:bg-black/70">
+          <h1 className="text-4xl font-bold mb-4 text-black dark:text-white">宣言的な世界</h1>
           <p className="text-xl">
             宣言的UIを端に、歴史やクイズを通して、モダン開発のパラダイムを理解する
           </p>
           <p className="text-sm">……客船クイーンエリザベスとグラン・マルニエを添えて</p>
         </div>
 
+        {/* セクション一覧 */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {slideSections.map((section) => (
-            <Link key={section.id} href={`./slides/${section.id}`} className="block">
-              <div className="p-6 rounded-lg shadow-md transition-transform hover:scale-105 bg-(--background)/80 backdrop-blur-sm border border-(--accent-dark)">
-                <h2 className="text-xl font-bold mb-2 text-(--primary-light)">{section.title}</h2>
-                <p>{section.description}</p>
+            <Link
+              key={section.id}
+              href={`/slides/${section.id}`}
+              className="block p-6 rounded-lg shadow-md backdrop-blur-sm bg-white/50 dark:bg-black/50 hover:bg-white/70 dark:hover:bg-black/70 transition-colors"
+            >
+              <h2 className="text-2xl font-bold mb-2">{section.title}</h2>
+              <p className="text-gray-600 dark:text-gray-300">
+                {section.description || '説明なし'}
+              </p>
+              <div className="mt-4 text-sm text-blue-600 dark:text-blue-400">
+                スライドを見る &rarr;
               </div>
             </Link>
           ))}

@@ -38,3 +38,6 @@ next-env.d.ts
 
 # obsidian
 */**/.obsidian
+
+# 重いファイル
+*.mp4

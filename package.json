@@ -2,12 +2,35 @@
   "name": "docs",
   "version": "1.0.0",
   "description": "ドキュメントプロジェクト",
+  "private": true,
   "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
     "format": "biome format --write .",
     "lint": "biome check .",
     "lint:fix": "biome check --apply ."
   },
+  "dependencies": {
+    "@heroicons/react": "^2.2.0",
+    "framer-motion": "^12.9.4",
+    "gray-matter": "^4.0.3",
+    "next": "15.3.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-markdown": "^10.1.0",
+    "react-syntax-highlighter": "^15.6.1",
+    "react-zoom-pan-pinch": "^3.7.0",
+    "swiper": "^11.2.6"
+  },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4"
+    "@biomejs/biome": "^1.9.4",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/react-syntax-highlighter": "^15.5.13",
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }

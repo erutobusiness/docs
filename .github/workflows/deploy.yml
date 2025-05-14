@@ -26,21 +26,21 @@ jobs:
         with:
           node-version: "20"
           cache: "npm"
-          cache-dependency-path: "declarative/next/package.json"
+          cache-dependency-path: "package.json"
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
       - name: Install dependencies
-        run: cd declarative/next && npm ci
+        run: npm ci
 
       - name: Build with Next.js
-        run: cd declarative/next && npm run build
+        run: npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./declarative/next/out
+          path: ./out
 
   deploy:
     environment:
