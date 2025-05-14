@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <main className="relative min-h-screen w-full">
       {/* 背景画像 */}
-      <div className="absolute inset-0 p-8 mt-16 flex items-center justify-center">
+      <div className="absolute inset-0 p-8 mt-16 flex items-center justify-center z-0">
         <div className="relative w-full max-w-8xl h-[70vh] overflow-hidden rounded-xl opacity-75">
           <Image
             src="/img/PXL_20250426_045936180.PORTRAIT.ORIGINAL~2.jpg"

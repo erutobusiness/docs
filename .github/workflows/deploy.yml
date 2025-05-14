@@ -34,9 +34,6 @@ jobs:
       - name: Install dependencies
         run: cd declarative/next && npm ci
 
-      - name: Install postcss dependencies
-        run: cd declarative/next && npm install -D autoprefixer postcss tailwindcss
-
       - name: Build with Next.js
         run: cd declarative/next && npm run build
 
