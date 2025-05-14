@@ -34,11 +34,9 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {slideSections.map((section) => (
-            <Link key={section.id} href={`/slides/${section.id}`} className="block">
+            <Link key={section.id} href={`./slides/${section.id}`} className="block">
               <div className="p-6 rounded-lg shadow-md transition-transform hover:scale-105 bg-(--background)/80 backdrop-blur-sm border border-(--accent-dark)">
-                <h2 className="text-xl font-bold mb-2 text-(--primary-light)">
-                  {section.title}
-                </h2>
+                <h2 className="text-xl font-bold mb-2 text-(--primary-light)">{section.title}</h2>
                 <p>{section.description}</p>
               </div>
             </Link>
