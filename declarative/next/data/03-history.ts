@@ -17,9 +17,6 @@ export const historySection: SlideSection = {
         '🎨 Sketchpad（1963年）：「マウスで絵を描くと、コンピュータが理解する」という魔法のような体験を実現',
         '📝 ※興味深い事実：この時代には「宣言的プログラミング」という言葉自体はまだ使われていなかった',
       ],
-      video: {
-        url: '/declarative/next/video/PXL_20250430_012528859.mp4',
-      },
       /*
       【スピーカーノート】
       - ここでは「宣言的」という用語ではなく、「数学的」「論理的」「関数型」という言葉が使われていたことを強調すると良い
@@ -41,9 +38,6 @@ export const historySection: SlideSection = {
         '💭 考えてみよう：命令型だと「フォントサイズを12ptにして、この位置に配置して...」と100ステップ。宣言型だと「見出し」と一言で完了！',
         '🎓 計算機科学での進展：この時代に「宣言的意味論（Declarative Semantics）」が学術的な専門用語として確立',
       ],
-      video: {
-        url: '/declarative/next/video/PXL_20250430_011702922.mp4',
-      },
       /*
       【スピーカーノート】
       - 「宣言的意味論」とは、プログラムの意味を「何をするか」で定義する方法で、Prologなどの論理型言語の理論的基盤となった
@@ -65,9 +59,6 @@ export const historySection: SlideSection = {
         '🌟 SQL誕生の裏話：IBMの研究者たちは当初、一般のプログラマには難しすぎると考えていたが、その直感的さで世界を征服',
         '🏆 40年以上経った今も現役のSQL。宣言的アプローチの「勝利」を証明する生きた化石',
       ],
-      video: {
-        url: '/declarative/next/video/PXL_20250430_011646293.mp4',
-      },
       /*
       【スピーカーノート】
       - SQLの正式名称「Structured Query Language」は当初「SEQUEL」と呼ばれていたというトリビア
@@ -89,9 +80,6 @@ export const historySection: SlideSection = {
         '📊 XML：「データの意味」を構造化する方法を提供し、人間とコンピュータの両方が理解できる共通言語に',
         '🧠 Haskell：「副作用なしの純粋な関数」という極限の宣言的世界を追求した言語が、実用の世界へ',
       ],
-      video: {
-        url: '/declarative/next/video/PXL_20250430_012820512.mp4',
-      },
       /*
       【スピーカーノート】
       - ティム・バーナーズ・リーがHTMLを設計した際の理念：「情報の意味を表現し、表示方法は閲覧者に委ねる」という考え方
@@ -114,9 +102,6 @@ export const historySection: SlideSection = {
         '📱 リアクティブプログラミング：「データが変わったら、UIも自動的に変わる」という、現代UIの基盤となる概念の誕生',
         '🧪 関数型論理プログラミング：複数のパラダイムを組み合わせることで、より強力な表現力を実現（Hanus, 2007）',
       ],
-      video: {
-        url: '/declarative/next/video/PXL_20250430_074109082.mp4',
-      },
       /*
       【スピーカーノート】
       - マルチコアプロセッサの普及が宣言的・関数型言語の再評価につながった理由：並行処理の扱いやすさ
@@ -139,9 +124,6 @@ export const historySection: SlideSection = {
         '🌈 宣言的UIの爆発的普及：Vue.js、Flutter、SwiftUIなど、すべての主要プラットフォームが宣言的パラダイムを採用',
         '👑 「命令的」vs「宣言的」の戦いは、すでに宣言的の圧勝で終わっていた',
       ],
-      video: {
-        url: '/declarative/next/video/PXL_20250430_050804115.mp4',
-      },
       /*
       【スピーカーノート】
       - Reactの誕生秘話：もともとFacebookの広告管理ツールのために開発されたが、その可能性に気づいてオープンソース化
@@ -164,9 +146,6 @@ export const historySection: SlideSection = {
         '🌐 マルチパラダイム統合：関数型、論理、制約などを融合させ、さらに強力な問題解決アプローチを実現',
         '🚀 低コード/ノーコードプラットフォーム：宣言的アプローチの究極形として、プログラミング不要のシステム構築を実現',
       ],
-      video: {
-        url: '/declarative/next/video/PXL_20250430_134315375.mp4',
-      },
       /*
       【スピーカーノート】
       - Kubernetesの中核理念「Desired State Configuration」は宣言的アプローチの典型
@@ -192,7 +171,7 @@ export const historySection: SlideSection = {
         '🚀 再現性・保守性・自動化を促進する現代ソフトウェア開発における重要な考え方',
       ],
       image: {
-        url: '/declarative/next/img/PXL_20250430_135602763.PORTRAIT.ORIGINAL.jpg',
+        url: '/declarative/img/PXL_20250430_135602763.PORTRAIT.ORIGINAL.jpg',
         position: 'bottom',
       },
       /*

@@ -14,7 +14,7 @@ export const whyNowSection: SlideSection = {
         '宣言的なコードは、意図や目的が明確であるため、AIの生成物を評価しやすい',
       ],
       video: {
-        url: '/declarative/next/video/PXL_20250427_081934582.mp4',
+        url: '/declarative/video/PXL_20250427_081934582.mp4',
       },
     },
     {
@@ -25,7 +25,7 @@ export const whyNowSection: SlideSection = {
         'UI開発以外にも、IaC やデータクエリなど多様な分野で使われている宣言的な考え方は、\nシステム開発に関わるすべてのエンジニアが知っておくべき共通言語となりつつある',
       ],
       video: {
-        url: '/declarative/next/video/PXL_20250427_030640787.mp4',
+        url: '/declarative/video/PXL_20250427_030640787.mp4',
       },
     },
     {
@@ -153,7 +153,7 @@ END-PERFORM.`,
         '=> UIを入口に、宣言的アプローチ全体の歴史を振り返ることで、より深い理解を目指す',
       ],
       image: {
-        url: '/declarative/next/img/PXL_20250426_075656039.PORTRAIT.ORIGINAL.jpg',
+        url: '/declarative/img/PXL_20250426_075656039.PORTRAIT.ORIGINAL.jpg',
         position: 'bottom',
       },
     },
