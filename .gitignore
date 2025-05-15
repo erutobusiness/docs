@@ -39,5 +39,8 @@ next-env.d.ts
 # obsidian
 */**/.obsidian
 
-# 重いファイル
+# qiita
+.remote
+
+# movies
 *.mp4

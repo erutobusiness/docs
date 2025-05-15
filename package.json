@@ -10,7 +10,8 @@
     "format": "biome format --write .",
     "lint": "biome check .",
     "lint:fix": "biome check --apply .",
-    "concat:qiita-declarative": "node ./scripts/qiita-concat-declarative.js"
+    "qiita:concat:declarative": "node ./scripts/qiita-concat-declarative.js",
+    "qiita:publish:declarative": "cd qiita && qiita publish public/declarative-combined.md"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",

@@ -1,14 +1,14 @@
 ---
 title: 宣言的UIとWeb技術の進化（仮）
 tags:
-  - Next.js
-  - React
-  - TypeScript
   - JavaScript
+  - TypeScript
+  - React
+  - Next.js
   - declarative
 private: true
-updated_at: "2025-05-15T20:04:53+09:00"
-id: null
+updated_at: '2025-05-15T20:49:04+09:00'
+id: a0453a5cbff51fbad718
 organization_url_name: null
 slide: false
 ignorePublish: false
