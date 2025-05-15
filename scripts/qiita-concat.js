@@ -5,7 +5,8 @@ import path from 'node:path';
 function createHeader(qiitaConfig) {
   return `---
 title: ${qiitaConfig.title}
-tags: \n  - ${qiitaConfig.tags.join('\n  - ')}
+tags:
+  - ${qiitaConfig.tags.join('\n  - ')}
 private: ${qiitaConfig.private}
 updated_at: ${qiitaConfig.updated_at}
 id: ${qiitaConfig.id}
