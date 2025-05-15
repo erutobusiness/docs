@@ -24,6 +24,7 @@ jobs:
         with:
           fetch-depth: 0
       - run: cd qiita
+      - run: npm run qiita:concat:declarative
       - uses: increments/qiita-cli/actions/publish@v1
         with:
           qiita-token: ${{ secrets.QIITA_TOKEN }}
