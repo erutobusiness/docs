@@ -1,0 +1,25 @@
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { concatMd } from './qiita-concat.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const declarativeMdDir = path.join(__dirname, '..', 'declarative', 'md');
+const qiitaPublicDir = path.join(__dirname, '..', 'qiita', 'public');
+const outputFileName = 'declarative-combined.md';
+const outputFile = path.join(qiitaPublicDir, outputFileName);
+const excludeFiles = ['00-rules.md', '99-reference.md'];
+
+const config = {
+  title: '宣言的UIとWeb技術の進化（仮）',
+  tags: ['Next.js', 'React', 'TypeScript', 'JavaScript', 'declarative'],
+  private: true,
+  updated_at: '',
+  id: '',
+  organization_url_name: 'visionary-jp',
+  slide: false,
+  ignorePublish: false,
+};
+
+concatMd(declarativeMdDir, excludeFiles, outputFile, config);

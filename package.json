@@ -9,7 +9,8 @@
     "start": "next start",
     "format": "biome format --write .",
     "lint": "biome check .",
-    "lint:fix": "biome check --apply ."
+    "lint:fix": "biome check --apply .",
+    "concat:qiita-declarative": "node ./scripts/qiita-concat-declarative.js"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
