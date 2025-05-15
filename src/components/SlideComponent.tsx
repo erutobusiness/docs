@@ -17,7 +17,7 @@ interface SlideComponentProps {
 
 export default function SlideComponent({ slide, isTextSelectMode = false }: SlideComponentProps) {
   return (
-    <div className="rounded-xl shadow-2xl overflow-hidden max-w-1920 max-h-1080 flex flex-col bg-linear-to-br from-(--gradient-accent-from) to-(--gradient-accent-to) border border-(--accent-dark)">
+    <div className="rounded-xl shadow-2xl overflow-hidden max-w-full max-h-[70vh] flex flex-col bg-linear-to-br from-(--gradient-accent-from) to-(--gradient-accent-to) border border-(--accent-dark)">
       <div className="p-8 overflow-y-auto grow">
         <h2 className="text-2xl sm:text-4xl font-bold mb-4 sm:mb-6 pb-2 text-(--card-fg)">
           {slide.title}

@@ -35,11 +35,11 @@ export default function SlideImage({
             width={0}
             height={0}
             sizes="100vw"
-            className="w-auto h-auto max-h-[40vh] rounded-lg"
+            className="w-auto h-100 rounded-lg"
             style={imagePointerStyle}
           />
         ) : (
-          <div className="w-128 h-72 flex items-center justify-center bg-(--background) text-(--card-fg)">
+          <div className="w-128 h-100 flex items-center justify-center bg-(--background) text-(--card-fg)">
             画像読み込み中...
           </div>
         )}

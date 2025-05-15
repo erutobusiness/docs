@@ -1,7 +1,6 @@
 'use client';
 
 import { useFullScreen } from '@/hooks/useFullScreen';
-import { useSlideScaling } from '@/hooks/useSlideScaling';
 import { useSlideShow } from '@/hooks/useSlideShow';
 import { useTextSelectMode } from '@/hooks/useTextSelectMode';
 import { useZoom } from '@/hooks/useZoom';
@@ -29,9 +28,6 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
 
   // テキスト選択モードの状態を新しいフックから取得
   const { isTextSelectMode, toggleTextSelectMode } = useTextSelectMode();
-
-  // スケーリング係数を専用フックから取得
-  const scaleFactor = useSlideScaling();
 
   // ズーム機能を取得（新しい実装）
   const { zoomFactor, isZoomEnabled, zoomOrigin, zoomAtPosition, toggleZoom, handleRightClick } =
@@ -205,12 +201,7 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
               key={slide.id}
               className="w-full shrink-0 slide-item flex justify-center items-center px-8"
             >
-              <div
-                className="mx-auto origin-center transition-transform duration-300 ease-in-out"
-                style={{
-                  transform: `scale(${scaleFactor})`,
-                }}
-              >
+              <div className="mx-auto origin-center ease-in-out">
                 <SlideComponent slide={slide} isTextSelectMode={isTextSelectMode} />
               </div>
             </div>
