@@ -27,7 +27,27 @@ jobs:
         with:
           fetch-depth: 0
       - run: npm run qiita:concat:declarative
-      - uses: increments/qiita-cli/actions/publish@v1
+      # https://github.com/increments/qiita-cli/blob/main/actions/publish/action.yml
+      - uses: actions/setup-node@v4
         with:
-          qiita-token: ${{ secrets.QIITA_TOKEN }}
-          root: qiita
+          node-version: "20.16.0"
+      - name: Install qiita-cli
+        run: npm install -g @qiita/qiita-cli@v1.6.2
+        shell: bash
+      - name: Publish articles
+        run: cd qiita && qiita publish --all
+        env:
+          QIITA_TOKEN: ${{ secrets.QIITA_TOKEN }}
+        shell: bash
+      - name: Commit and push diff
+        run: |
+          git add qiita/public/*
+          if ! git diff --staged --exit-code --quiet; then
+            git config --global user.name 'github-actions[bot]'
+            git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m "${COMMIT_MESSAGE}"
+            git push
+          fi
+        shell: bash
+        env:
+          COMMIT_MESSAGE: Updated by qiita-cli
