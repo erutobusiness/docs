@@ -31,7 +31,6 @@ jobs:
       - name: Install qiita-cli
         run: npm install -g @qiita/qiita-cli@v1.6.2
         shell: bash
-      - run: echo ${{ secrets.QIITA_TOKEN }}
       - name: Publish articles
         run: cd qiita && qiita publish --all
         env:
