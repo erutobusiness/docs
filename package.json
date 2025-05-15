@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
+    "@qiita/qiita-cli": "^1.6.2",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",

@@ -9,3 +9,14 @@
 - オーナー名（owner）: `erutobusiness`
 - リポジトリ名（repo）: `docs`
 - デフォルトブランチ名: `main`
+
+# 修正時チェックリスト
+
+## Markdown
+
+- Web 検索して記載する場合、必ず注釈としてその情報源を URL 付きで記載すること
+- １文ごとに改行すること
+
+## Next.js
+
+- `npm run build` でエラーが出ないこと
