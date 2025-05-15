@@ -7,8 +7,8 @@ tags:
   - Next.js
   - declarative
 private: true
-updated_at: '2025-05-15T20:49:04+09:00'
-id: a0453a5cbff51fbad718
+updated_at: "2025-05-15T20:49:04+09:00"
+id:
 organization_url_name: null
 slide: false
 ignorePublish: false
