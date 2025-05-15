@@ -9,7 +9,7 @@ tags:
 private: true
 updated_at: 
 id: 
-organization_url_name: visionary-jp
+organization_url_name: null
 slide: false
 ignorePublish: false
 ---
