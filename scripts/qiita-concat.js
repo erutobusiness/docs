@@ -9,11 +9,12 @@ tags:
   - ${qiitaConfig.tags.join('\n  - ')}
 private: ${qiitaConfig.private}
 updated_at: ${qiitaConfig.updated_at}
-id: ${qiitaConfig.id}
+id:${qiitaConfig.id && ` ${qiitaConfig.id}`}
 organization_url_name: ${qiitaConfig.organization_url_name}
 slide: ${qiitaConfig.slide}
 ignorePublish: ${qiitaConfig.ignorePublish}
 ---
+
 `;
 }
 
