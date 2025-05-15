@@ -8,7 +8,7 @@ tags:
   - declarative
 private: true
 updated_at:
-id: a1a4bbb719071c417d2e
+id:
 organization_url_name: null
 slide: false
 ignorePublish: false
