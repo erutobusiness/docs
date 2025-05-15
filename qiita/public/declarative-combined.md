@@ -8,6 +8,7 @@ tags:
   - declarative
 private: true
 updated_at: "2025-05-15T20:04:53+09:00"
+id: null
 organization_url_name: null
 slide: false
 ignorePublish: false
