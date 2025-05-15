@@ -19,12 +19,15 @@ jobs:
   publish_articles:
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    defaults:
+      run:
+        working-directory: qiita
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - run: npm run qiita:concat:declarative
-      - run: npm install @qiita/qiita-cli --save-dev
-      - run: cd qiita && npx qiita publish --all
-        env:
+      - uses: increments/qiita-cli/actions/publish@v1
+        with:
           qiita-token: ${{ secrets.QIITA_TOKEN }}
+          root: qiita
