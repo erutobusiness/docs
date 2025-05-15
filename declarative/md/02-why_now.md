@@ -91,7 +91,7 @@ AI 生成コードを評価する際の具体的な基準として、業界の�
 3. **エッジケースの確認**: 一般的でないケースが適切に処理されているか
 4. **代替案の検討**: 同じ問題に対する異なるアプローチと比較評価
 
-宣言的なプログラミングアプローチを採用することで、AI と人間の協業がより効果的になり、最終的な製品の品質向上につながります。エンジニアは単なるコード生成の監督者ではなく、品質の守護者としての役割を果たすことが求められています（参考：[GitHub Blog「The Impact of Generative AI on Developer Productivity」2023 年](https://github.blog/2023-10-30-the-impact-of-generative-ai-on-developer-productivity/))。
+宣言的なプログラミングアプローチを採用することで、AI と人間の協業がより効果的になり、最終的な製品の品質向上につながります。エンジニアは単なるコード生成の監督者ではなく、品質の守護者としての役割を果たすことが求められています（参考：[GitHub Blog「The Impact of Generative AI on Developer Productivity」2023 年](https://github.blog/2023-10-30-the-impact-of-generative-ai-on-developer-productivity/)）。
 
 ## チーム開発での共通言語になるから
 

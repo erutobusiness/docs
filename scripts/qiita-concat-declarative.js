@@ -25,7 +25,7 @@ const config = {
     const seconds = String(d.getSeconds()).padStart(2, '0');
     return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}+09:00`;
   })()}'`, // 現在の日時を YYYY-MM-DDTHH:mm:ss+09:00 形式で設定
-  id: '', // 新規投稿の場合は空のまま
+  id: '8f65166d59776465f46a',
   organization_url_name: null,
   slide: false,
   ignorePublish: false,

@@ -23,7 +23,6 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - run: npm run qiita:concat:declarative
       # https://github.com/increments/qiita-cli/blob/main/actions/publish/action.yml
       - uses: actions/setup-node@v4
         with:
