@@ -17,7 +17,7 @@ const config = {
   private: true,
   updated_at: '',
   id: '',
-  organization_url_name: 'visionary-jp',
+  organization_url_name: '',
   slide: false,
   ignorePublish: false,
 };
