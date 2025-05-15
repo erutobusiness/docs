@@ -24,6 +24,7 @@ jobs:
         with:
           fetch-depth: 0
       - run: npm run qiita:concat:declarative
+      - run: npm install @qiita/qiita-cli --save-dev
       - run: cd qiita && npx qiita publish --all
         env:
           qiita-token: ${{ secrets.QIITA_TOKEN }}
