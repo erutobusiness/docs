@@ -15,7 +15,7 @@ const config = {
   title: '宣言的UIとWeb技術の進化（仮）',
   tags: ['Next.js', 'React', 'TypeScript', 'JavaScript', 'declarative'],
   private: true,
-  updated_at: (() => {
+  updated_at: `'${(() => {
     const d = new Date();
     const year = d.getFullYear();
     const month = String(d.getMonth() + 1).padStart(2, '0');
@@ -24,7 +24,7 @@ const config = {
     const minutes = String(d.getMinutes()).padStart(2, '0');
     const seconds = String(d.getSeconds()).padStart(2, '0');
     return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}+09:00`;
-  })(), // 現在の日時を YYYY-MM-DDTHH:mm:ss+09:00 形式で設定
+  })()}'`, // 現在の日時を YYYY-MM-DDTHH:mm:ss+09:00 形式で設定
   id: '', // 新規投稿の場合は空のまま
   organization_url_name: null,
   slide: false,

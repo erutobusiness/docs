@@ -7,7 +7,7 @@ tags:
   - JavaScript
   - declarative
 private: true
-updated_at: 2025-05-15T19:57:40+09:00
+updated_at: '2025-05-15T20:04:53+09:00'
 id:
 organization_url_name: null
 slide: false
