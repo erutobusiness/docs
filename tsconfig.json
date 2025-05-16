@@ -20,7 +20,8 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "@declarative/*": ["./declarative/next/*"]
+      "@declarative/*": ["./declarative/next/*"],
+      "@gyakusai/*": ["./gyakusai/next/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

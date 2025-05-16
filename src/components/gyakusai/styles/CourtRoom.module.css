@@ -1,0 +1,75 @@
+/* filepath: c:\docs\src\components\gyakusai\styles\CourtRoom.module.css */
+.courtRoomContainer {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.backgroundImage {
+  object-fit: cover;
+}
+
+.charactersContainer {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  padding: 0 20px;
+  min-height: 450px;
+}
+
+.dialogueContainer {
+  position: relative;
+  z-index: 20;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.evidenceContainer {
+  position: relative;
+  z-index: 30;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 900px;
+}
+
+/* テキスト表示速度のコントロール */
+.controls {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 50;
+  display: flex;
+  gap: 10px;
+}
+
+.speedToggle {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: 1px solid #6c9bd0;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.speedToggle:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+  border-color: #8eb5e5;
+}

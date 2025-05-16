@@ -20,9 +20,20 @@ const declarativeTopic: Topic = {
   link: '/slides',
 };
 
+// 逆転裁判風の話題
+const gyakusaiTopic: Topic = {
+  id: 'gyakusai',
+  title: '逆転裁判風',
+  description: '逆転裁判風のインタラクティブな体験で、法廷の熱い駆け引きを楽しむ',
+  subDescription: '……証拠と論理で真実を暴け！',
+  image: '/gyakusai/Gyakusai_Top.png',
+  link: '/gyakusai',
+};
+
 // すべての話題のリスト
 export const topics: Topic[] = [
   declarativeTopic,
+  gyakusaiTopic,
   // 将来的に他の話題を追加できるようにしておく
 ];
 

@@ -1,6 +1,6 @@
 'use client';
 
-import { getAllTopics } from '@declarative/data/topics';
+import { getAllTopics } from '@/data/topics';
 import Image from 'next/image';
 import Link from 'next/link';
 
