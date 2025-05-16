@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import styles from './styles/ObjectionAnimation.module.css';
 
 interface ObjectionAnimationProps {
   onComplete?: () => void;
@@ -26,11 +25,38 @@ export default function ObjectionAnimation({
   if (!isVisible) return null;
 
   return (
-    <div className={styles.objectionContainer}>
-      <div className={styles.objectionContent}>
-        <h1 className={styles.objectionText}>異議あり!</h1>
-        <div className={styles.objectionFlash} />
+    <div className="fixed inset-0 flex justify-center items-center z-[1000] bg-black/50 animate-fadeIn">
+      <div className="relative animate-scaleIn">
+        <h1 className="text-[5rem] font-bold text-white shadow-[0_0_10px_#ff0000,0_0_20px_#ff0000] rotate-[-5deg] m-0 relative z-[2]">
+          異議あり!
+        </h1>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-[radial-gradient(circle,white_0%,transparent_70%)] opacity-60 animate-flash z-[1]" />
       </div>
+      <style jsx global>{`
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        @keyframes scaleIn {
+          0% { transform: scale(0.5); opacity: 0; }
+          50% { transform: scale(1.2); }
+          100% { transform: scale(1); opacity: 1; }
+        }
+        @keyframes flash {
+          0% { opacity: 0; transform: translate(-50%, -50%) scale(0.1); }
+          50% { opacity: 0.8; transform: translate(-50%, -50%) scale(0.8); }
+          100% { opacity: 0; transform: translate(-50%, -50%) scale(1.2); }
+        }
+        .animate-fadeIn {
+          animation: fadeIn 0.2s ease-in-out;
+        }
+        .animate-scaleIn {
+          animation: scaleIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .animate-flash {
+          animation: flash 0.7s ease-out;
+        }
+      `}</style>
     </div>
   );
 }

@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import styles from './styles/DialogueBox.module.css';
 
 interface DialogueBoxProps {
   text: string;
@@ -58,11 +57,41 @@ export default function DialogueBox({
       onComplete?.();
     }
   };
-
   return (
-    <button type="button" className={styles.dialogueBox} onClick={handleClick}>
-      <p className={styles.text}>{displayedText}</p>
-      {!isTyping && <div className={styles.continueIndicator}>▼ クリックして次へ</div>}
+    <button
+      type="button"
+      className="bg-black/80 text-white rounded-lg border border-[#6c9bd0] p-[15px_20px] min-h-[100px] relative cursor-pointer shadow-lg w-full max-w-[800px] mx-auto text-left"
+      onClick={handleClick}
+    >
+      <p className="text-lg leading-relaxed m-0 pb-[30px] min-h-[60px]">{displayedText}</p>
+      {!isTyping && (
+        <div className="absolute bottom-[10px] right-[20px] text-base text-[#6c9bd0] bg-black/60 px-2.5 py-1 rounded border border-[#6c9bd0] animate-pulse">
+          ▼ クリックして次へ
+        </div>
+      )}
+      <style jsx>{`
+        @keyframes pulse {
+          0%, 100% { opacity: 0.7; }
+          50% { opacity: 1; }
+        }
+        .animate-pulse {
+          animation: pulse 1.5s infinite;
+        }
+        @media (max-width: 480px) {
+          button {
+            padding: 12px 15px;
+            min-height: 80px;
+          }
+          p {
+            font-size: 1rem;
+            min-height: 50px;
+          }
+          div {
+            font-size: 0.9rem;
+            padding: 3px 8px;
+          }
+        }
+      `}</style>
     </button>
   );
 }
