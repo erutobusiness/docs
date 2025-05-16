@@ -15,7 +15,7 @@ export const introSection: SlideSection = {
         'UIの構造や見た目を、どう作るのかの手順を記述する（命令的）のではなく、状態に基づいて定義する（宣言的）スタイル',
       ],
       image: {
-        url: '/declarative/img/宣言的UI.png',
+        url: '/declarative/宣言的UI.png',
         position: 'bottom',
       },
     },
@@ -27,7 +27,7 @@ export const introSection: SlideSection = {
         '宣言的：オートマ車の運転のように、「前に進む」「止まる」といった目的を伝えるだけで、内部の操作は車が自動で行う',
       ],
       image: {
-        url: '/declarative/img/DeclartiveVsImperative.png',
+        url: '/declarative/DeclartiveVsImperative.png',
         position: 'bottom',
       },
     },

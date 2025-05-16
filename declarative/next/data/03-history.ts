@@ -171,7 +171,7 @@ export const historySection: SlideSection = {
         '🚀 再現性・保守性・自動化を促進する現代ソフトウェア開発における重要な考え方',
       ],
       image: {
-        url: '/declarative/img/PXL_20250430_135602763.PORTRAIT.ORIGINAL.jpg',
+        url: '/declarative/PXL_20250430_135602763.PORTRAIT.ORIGINAL.jpg',
         position: 'bottom',
       },
       /*

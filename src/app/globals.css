@@ -1,17 +1,10 @@
-@import "tailwindcss";
-@import "../../declarative/next/theme.css";
+@import "../styles/theme.css";
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-/* スライド移動のためのアニメーション関連のカスタムプロパティ */
-:root {
-  --slide-transition-duration: 500ms;
-  --slide-transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ズーム機能使用時のスクロールバー非表示 */
@@ -24,17 +17,4 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans, sans-serif);
-}
-
-/* スライドトランジション効果を強化 */
-.slide-container {
-  transition: transform var(--slide-transition-duration)
-    var(--slide-transition-timing);
-  will-change: transform;
-}
-
-/* スライド要素のページめくり効果用スタイル */
-.slide-item {
-  backface-visibility: hidden;
-  perspective: 1000px;
 }

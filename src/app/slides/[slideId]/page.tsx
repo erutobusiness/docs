@@ -29,9 +29,8 @@ export default async function SlidePage({ params }: SlidePageProps) {
   if (!slideSection) {
     return notFound();
   }
-
   return (
-    <main className="bg-linear-to-br from-(--gradient-primary-from) to-(--gradient-primary-to) min-h-screen">
+    <main className="bg-linear-to-br from-(--declarative-gradient-primary-to) to-(--declarative-gradient-primary-from) min-h-screen">
       <div className="fixed top-4 left-4 z-10">
         <IconButton
           href="/"

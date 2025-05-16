@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+:root {
+  --background: theme("colors.gray.100"); /* 明るい灰色の背景 */
+  --foreground: theme("colors.gray.800"); /* 濃い文字色で読みやすさを確保 */
+
+  --primary: theme("colors.blue.500"); /* メインカラー - 落ち着いた青 */
+  --secondary: theme("colors.teal.600"); /* サブカラー - 落ち着いた青緑 */
+  --accent: theme(
+    "colors.indigo.400"
+  ); /* アクセントカラー - クールな紫がかった青 */
+
+  --primary-light: theme("colors.blue.400"); /* 明るいメインカラー */
+  --primary-dark: theme("colors.blue.600"); /* 暗いメインカラー */
+
+  --accent-light: theme("colors.indigo.300"); /* 明るいアクセントカラー */
+  --accent-dark: theme("colors.indigo.600"); /* 暗いアクセントカラー */
+
+  --card-fg: theme("colors.white"); /* カードの背景色 */
+  --button-primary-bg: var(--primary);
+  --button-primary-fg: theme("colors.white"); /* ボタンの文字色 */
+  --button-primary-hover: var(--primary-dark);
+
+  --button-secondary-bg: var(--secondary);
+  --button-secondary-fg: theme("colors.white");
+  --button-secondary-hover: theme("colors.teal.700");
+
+  --gradient-primary-from: theme("colors.gray.200"); /* グラデーション開始色 */
+  --gradient-primary-to: theme("colors.gray.300"); /* グラデーション終了色 */
+
+  --gradient-accent-from: theme(
+    "colors.blue.400"
+  ); /* アクセントグラデーション開始色 */
+  --gradient-accent-to: theme(
+    "colors.indigo.500"
+  ); /* アクセントグラデーション終了色 */
+}

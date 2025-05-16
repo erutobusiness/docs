@@ -16,7 +16,7 @@ const declarativeTopic: Topic = {
   title: '宣言的な世界',
   description: '宣言的UIを端に、歴史やクイズを通して、モダン開発のパラダイムを理解する',
   subDescription: '……客船クイーンエリザベスとグラン・マルニエを添えて',
-  image: '/declarative/next/img/宣言的UI.png',
+  image: '/declarative/Decralative_Top.png',
   link: '/slides',
 };
 

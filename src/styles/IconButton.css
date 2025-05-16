@@ -6,13 +6,13 @@
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  background-color: var(--button-secondary-bg);
-  color: var(--button-secondary-fg);
+  background-color: var(--declarative-button-secondary-bg);
+  color: var(--declarative-button-secondary-fg);
   transition: all 0.2s ease-in-out;
 }
 
 .icon-button:hover {
-  background-color: var(--button-secondary-hover);
+  background-color: var(--declarative-button-secondary-hover);
   transform: scale(1.05);
 }
 
@@ -27,9 +27,9 @@
 }
 
 .icon-button.enabled {
-  background-color: var(--button-primary-bg);
+  background-color: var(--declarative-button-primary-bg);
 }
 
 .icon-color {
-  color: var(--card-fg);
+  color: var(--declarative-card-fg);
 }

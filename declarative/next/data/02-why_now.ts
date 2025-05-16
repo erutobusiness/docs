@@ -144,7 +144,7 @@ END-PERFORM.`,
         '=> UIを入口に、宣言的アプローチ全体の歴史を振り返ることで、より深い理解を目指す',
       ],
       image: {
-        url: '/declarative/img/PXL_20250426_075656039.PORTRAIT.ORIGINAL.jpg',
+        url: '/declarative/PXL_20250426_075656039.PORTRAIT.ORIGINAL.jpg',
         position: 'bottom',
       },
     },

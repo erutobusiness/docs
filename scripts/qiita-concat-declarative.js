@@ -7,7 +7,7 @@ const __dirname = path.dirname(__filename);
 
 const declarativeMdDir = path.join(__dirname, '..', 'declarative', 'md');
 const qiitaPublicDir = path.join(__dirname, '..', 'qiita', 'public');
-const outputFileName = 'declarative-combined.md';
+const outputFileName = 'declarative.md';
 const outputFile = path.join(qiitaPublicDir, outputFileName);
 const excludeFiles = ['00-rules.md', '99-reference.md'];
 
