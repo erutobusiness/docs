@@ -1,0 +1,27 @@
+.dotPattern {
+  background-color: #0b1a35; /* より暗い背景色 */
+  background-image: radial-gradient(
+    rgba(128, 128, 128, 0.2) 1px,
+    transparent 1px
+  );
+  background-size: 4px 4px; /* ドットのサイズと間隔を調整 */
+  position: relative;
+  z-index: 1;
+}
+
+/* ドットパターンを少し目立たせるためのオーバーレイ効果 */
+.dotPattern::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(
+    rgba(128, 128, 128, 0.15) 4px,
+    transparent 4px
+  );
+  background-size: 6px 6px;
+  background-position: 2px 2px;
+  z-index: -1;
+}

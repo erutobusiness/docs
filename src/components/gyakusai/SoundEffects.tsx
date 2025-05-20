@@ -11,6 +11,7 @@ export default function SoundEffects({ sound, onComplete }: SoundEffectsProps) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     // クライアントサイドでのみ実行
     if (typeof window === 'undefined') return;
@@ -19,7 +20,7 @@ export default function SoundEffects({ sound, onComplete }: SoundEffectsProps) {
     if (!sound) return;
 
     // 既に再生中の場合は一度停止
-    if (audioRef.current && isPlaying) {
+    if (audioRef.current && isPlaying && audioRef.current) {
       audioRef.current.pause();
       audioRef.current.currentTime = 0;
     }
@@ -50,7 +51,7 @@ export default function SoundEffects({ sound, onComplete }: SoundEffectsProps) {
       audio.pause();
       audio.currentTime = 0;
     };
-  }, [sound, isPlaying, onComplete]);
+  }, [sound, onComplete]);
 
   // このコンポーネントは何もレンダリングしない
   return null;

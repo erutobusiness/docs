@@ -120,7 +120,7 @@ export default function SlideShow({ slideSection }: SlideShowProps) {
           direction={animationDirection}
           onAnimationComplete={handleAnimationComplete}
         />
-      </div>{' '}
+      </div>
       {/* 右上のアイコンボタンとセクションタイトル */}
       <div className="absolute top-4 w-full pl-34 pr-4 flex justify-between items-center">
         {/* セクションタイトルを左揃えで表示 */}

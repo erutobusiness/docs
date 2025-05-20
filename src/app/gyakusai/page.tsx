@@ -10,7 +10,7 @@ export default function GyakusaiHomePage() {
 
   return (
     <main className="bg-linear-to-br from-blue-900 to-gray-900 min-h-screen p-8">
-      <div className="fixed top-4 left-4 z-10">
+      <div className="fixed top-4 left-4">
         <IconButton
           href="/"
           icon={<HomeIcon className="w-6 h-6 icon-color" />}

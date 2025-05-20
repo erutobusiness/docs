@@ -25,12 +25,12 @@ export default function ObjectionAnimation({
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 flex justify-center items-center z-[1000] bg-black/50 animate-fadeIn">
+    <div className="fixed inset-0 flex justify-center items-center bg-black/50 animate-fadeIn">
       <div className="relative animate-scaleIn">
-        <h1 className="text-[5rem] font-bold text-white shadow-[0_0_10px_#ff0000,0_0_20px_#ff0000] rotate-[-5deg] m-0 relative z-[2]">
+        <h1 className="text-[5rem] font-bold text-white shadow-[0_0_10px_#ff0000,0_0_20px_#ff0000] rotate-[-5deg] m-0 relative">
           異議あり!
         </h1>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-[radial-gradient(circle,white_0%,transparent_70%)] opacity-60 animate-flash z-[1]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-[radial-gradient(circle,white_0%,transparent_70%)] opacity-60 animate-flash" />
       </div>
       <style jsx global>{`
         @keyframes fadeIn {

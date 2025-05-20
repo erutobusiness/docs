@@ -16,7 +16,6 @@ interface CourtRoomProps {
 export default function CourtRoom({ caseData }: CourtRoomProps) {
   const [currentSceneId, setCurrentSceneId] = useState<string>(caseData.initialSceneId);
   const [currentDialogueIndex, setCurrentDialogueIndex] = useState<number>(0);
-  const [skipTyping, setSkipTyping] = useState<boolean>(false); // スキップフラグをステート化して制御可能に
   const [showObjection, setShowObjection] = useState<boolean>(false);
   const [showEvidence, setShowEvidence] = useState<boolean>(false);
   const [soundToPlay, setSoundToPlay] = useState<string | null>(null);
@@ -113,18 +112,13 @@ export default function CourtRoom({ caseData }: CourtRoomProps) {
     setCurrentDialogueIndex(0);
   };
 
-  // テキスト表示スピードの切替
-  const toggleSkipTyping = () => {
-    setSkipTyping(!skipTyping);
-  };
-
   if (!currentScene || !currentDialogue) {
     return <div>シーンが見つかりません</div>;
   }
   return (
     <div className="relative w-full min-h-screen max-h-screen overflow-hidden flex flex-col justify-between">
       {/* 背景 */}
-      <div className="absolute top-0 left-0 w-full h-full z-0">
+      <div className="absolute top-0 left-0 w-full h-full">
         <Image
           src={currentScene.background}
           alt="法廷の背景"
@@ -140,7 +134,7 @@ export default function CourtRoom({ caseData }: CourtRoomProps) {
       {showObjection && <ObjectionAnimation onComplete={handleObjectionComplete} />}
       {/* キャラクター */}
       {currentCharacter && (
-        <div className="relative z-10 flex justify-center mt-auto px-5 min-h-[450px]">
+        <div className="relative flex justify-center mt-auto px-5 min-h-[450px]">
           <CharacterView
             character={currentCharacter}
             emotion={currentDialogue.emotion || 'normal'}
@@ -150,33 +144,22 @@ export default function CourtRoom({ caseData }: CourtRoomProps) {
       )}
       {/* 証拠提示 */}
       {showEvidence && currentScene.evidenceCheck && (
-        <div className="relative z-30 p-5 mx-auto my-5 max-w-[900px]">
+        <div className="relative p-5 mx-auto my-5 max-w-[900px]">
           <EvidencePresentation
             evidences={caseData.evidences}
             onSelectEvidence={handleEvidenceSelection}
             prompt={currentScene.evidenceCheck.question}
           />
         </div>
-      )}{' '}
-      {/* テキスト速度切替ボタン */}
-      <div className="absolute top-5 right-5 z-50 flex gap-2.5">
-        <button
-          type="button"
-          onClick={toggleSkipTyping}
-          className="bg-black/70 text-white border border-[#6c9bd0] rounded px-3 py-2 text-sm cursor-pointer transition-all duration-200 hover:bg-black/90 hover:border-[#8eb5e5]"
-        >
-          {skipTyping ? '通常速度' : '高速表示'}
-        </button>
-      </div>
+      )}
       {/* ダイアログボックス */}
       {!showEvidence && (
-        <div className="relative z-20 p-5 mb-5">
-          <DialogueBox
-            text={currentDialogue.text}
-            onComplete={handleDialogueComplete}
-            skipTyping={skipTyping}
-          />
-        </div>
+        <DialogueBox
+          text={currentDialogue.text}
+          characterName={currentCharacter?.name}
+          characterRole={currentCharacter?.role}
+          onComplete={handleDialogueComplete}
+        />
       )}
     </div>
   );

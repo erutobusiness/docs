@@ -77,7 +77,7 @@ export default function EvidencePresentation({
             >
               ×
             </button>
-          </div>{' '}
+          </div>
           <div className="flex gap-5 items-center sm:flex-row flex-col">
             <div className="flex-shrink-0 relative sm:w-[200px] sm:h-[200px] w-[150px] h-[150px]">
               <Image

@@ -11,13 +11,13 @@ export const sampleCase: Case = {
       name: 'エルホド',
       role: '弁護士',
       images: {
-        normal: '/gyakusai/images/characters/defense-normal.png',
-        surprised: '/gyakusai/images/characters/defense-surprised.png',
-        angry: '/gyakusai/images/characters/defense-angry.png',
-        thinking: '/gyakusai/images/characters/defense-thinking.png',
-        confident: '/gyakusai/images/characters/defense-confident.png',
-        nervous: '/gyakusai/images/characters/defense-nervous.png',
-        breakdown: '/gyakusai/images/characters/defense-breakdown.png',
+        normal: '/gyakusai/eruto-normal.png',
+        surprised: '/gyakusai/eruto-surprised.png',
+        angry: '/gyakusai/eruto-angry.png',
+        thinking: '/gyakusai/eruto-thinking.png',
+        confident: '/gyakusai/eruto-confident.png',
+        nervous: '/gyakusai/eruto-nervous.png',
+        breakdown: '/gyakusai/eruto-breakdown.png',
       },
     },
     {
@@ -25,27 +25,27 @@ export const sampleCase: Case = {
       name: 'カルマ',
       role: '検事',
       images: {
-        normal: '/gyakusai/images/characters/prosecutor-normal.png',
-        surprised: '/gyakusai/images/characters/prosecutor-surprised.png',
-        angry: '/gyakusai/images/characters/prosecutor-angry.png',
-        thinking: '/gyakusai/images/characters/prosecutor-thinking.png',
-        confident: '/gyakusai/images/characters/prosecutor-confident.png',
-        nervous: '/gyakusai/images/characters/prosecutor-nervous.png',
-        breakdown: '/gyakusai/images/characters/prosecutor-breakdown.png',
+        normal: '/gyakusai/prosecutor-normal.png',
+        surprised: '/gyakusai/prosecutor-surprised.png',
+        angry: '/gyakusai/prosecutor-angry.png',
+        thinking: '/gyakusai/prosecutor-thinking.png',
+        confident: '/gyakusai/prosecutor-confident.png',
+        nervous: '/gyakusai/prosecutor-nervous.png',
+        breakdown: '/gyakusai/prosecutor-breakdown.png',
       },
     },
     {
       id: 'judge',
-      name: 'バンチョ',
-      role: '裁判官',
+      name: 'ンチョ',
+      role: '裁判長',
       images: {
-        normal: '/gyakusai/images/characters/judge-normal.png',
-        surprised: '/gyakusai/images/characters/judge-surprised.png',
-        angry: '/gyakusai/images/characters/judge-angry.png',
-        thinking: '/gyakusai/images/characters/judge-thinking.png',
-        confident: '/gyakusai/images/characters/judge-confident.png',
-        nervous: '/gyakusai/images/characters/judge-nervous.png',
-        breakdown: '/gyakusai/images/characters/judge-breakdown.png',
+        normal: '/gyakusai/saibanchou_no_gavel.png',
+        surprised: '/gyakusai/saibanchou_no_gavel.png',
+        angry: '/gyakusai/saibanchou.png',
+        thinking: '/gyakusai/saibanchou_no_gavel.png',
+        confident: '/gyakusai/saibanchou_no_gavel.png',
+        nervous: '/gyakusai/saibanchou_no_gavel.png',
+        breakdown: '/gyakusai/saibanchou_no_gavel.png',
       },
     },
     {
@@ -53,13 +53,13 @@ export const sampleCase: Case = {
       name: '山田 太郎',
       role: '証人',
       images: {
-        normal: '/gyakusai/images/characters/witness-normal.png',
-        surprised: '/gyakusai/images/characters/witness-surprised.png',
-        angry: '/gyakusai/images/characters/witness-angry.png',
-        thinking: '/gyakusai/images/characters/witness-thinking.png',
-        confident: '/gyakusai/images/characters/witness-confident.png',
-        nervous: '/gyakusai/images/characters/witness-nervous.png',
-        breakdown: '/gyakusai/images/characters/witness-breakdown.png',
+        normal: '/gyakusai/witness-normal.png',
+        surprised: '/gyakusai/witness-surprised.png',
+        angry: '/gyakusai/witness-angry.png',
+        thinking: '/gyakusai/witness-thinking.png',
+        confident: '/gyakusai/witness-confident.png',
+        nervous: '/gyakusai/witness-nervous.png',
+        breakdown: '/gyakusai/witness-breakdown.png',
       },
     },
   ],
@@ -101,7 +101,7 @@ export const sampleCase: Case = {
   scenes: [
     {
       id: 'intro',
-      background: '/gyakusai/images/backgrounds/courtroom.jpg',
+      background: '/gyakusai/houtei_zentai.jpg',
       characters: ['judge', 'defense', 'prosecutor'],
       dialogues: [
         {
@@ -128,7 +128,7 @@ export const sampleCase: Case = {
     },
     {
       id: 'witness-testimony',
-      background: '/gyakusai/images/backgrounds/courtroom.jpg',
+      background: '/gyakusai/houtei_zentai.jpg',
       characters: ['witness', 'judge', 'defense', 'prosecutor'],
       dialogues: [
         {
@@ -160,7 +160,7 @@ export const sampleCase: Case = {
     },
     {
       id: 'cross-examination',
-      background: '/gyakusai/images/backgrounds/courtroom.jpg',
+      background: '/gyakusai/houtei_zentai.jpg',
       characters: ['defense', 'witness', 'prosecutor', 'judge'],
       dialogues: [
         {
@@ -202,7 +202,7 @@ export const sampleCase: Case = {
     },
     {
       id: 'correct-evidence',
-      background: '/gyakusai/images/backgrounds/courtroom.jpg',
+      background: '/gyakusai/houtei_zentai.jpg',
       characters: ['defense', 'witness', 'prosecutor', 'judge'],
       dialogues: [
         {
@@ -248,7 +248,7 @@ export const sampleCase: Case = {
     },
     {
       id: 'wrong-evidence',
-      background: '/gyakusai/images/backgrounds/courtroom.jpg',
+      background: '/gyakusai/houtei_zentai.jpg',
       characters: ['prosecutor', 'defense', 'judge'],
       dialogues: [
         {

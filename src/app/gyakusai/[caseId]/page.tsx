@@ -35,7 +35,7 @@ export default async function CasePage({ params }: CasePageProps) {
 
   return (
     <main className="bg-black min-h-screen overflow-hidden">
-      <div className="fixed top-4 left-4 z-50">
+      <div className="fixed top-4 left-4">
         <IconButton
           href="/gyakusai"
           icon={<HomeIcon className="w-6 h-6 text-white" />}
