@@ -21,12 +21,12 @@ export default function GyakusaiHomePage() {
       <div className="max-w-6xl mx-auto pt-16">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-            逆転裁判
-            <span className="block text-2xl md:text-3xl mt-2 text-blue-300">真実は一つ！</span>
+            ギャクサイ
+            <span className="block text-2xl md:text-3xl mt-2 text-blue-300">真実は常に一つ！</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             熱い法廷バトルで真実を暴け！
-            証拠を集め、矛盾を突き、「異議あり！」で相手の主張を論破しよう。
+            証拠品を集め、ムジュンを突き、「異議あり！」で相手の主張を論破しよう！！
           </p>
         </div>
 
