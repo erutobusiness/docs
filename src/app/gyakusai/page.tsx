@@ -10,14 +10,6 @@ export default function GyakusaiHomePage() {
 
   return (
     <main className="bg-linear-to-br from-blue-900 to-gray-900 min-h-screen p-8">
-      <div className="fixed top-4 left-4">
-        <IconButton
-          href="/"
-          icon={<HomeIcon className="w-6 h-6 icon-color" />}
-          ariaLabel="ホームに戻る"
-        />
-      </div>
-
       <div className="max-w-6xl mx-auto pt-16">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
@@ -56,6 +48,15 @@ export default function GyakusaiHomePage() {
               </div>
             </Link>
           ))}
+        </div>
+
+        {/* ホームボタン */}
+        <div className="fixed top-4 left-4">
+          <IconButton
+            href="/"
+            icon={<HomeIcon className="w-6 h-6 icon-color" />}
+            ariaLabel="ホームに戻る"
+          />
         </div>
       </div>
     </main>

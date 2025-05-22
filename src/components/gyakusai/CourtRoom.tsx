@@ -1,6 +1,6 @@
 'use client';
 
-import { type Case, type Character, Dialogue, type Evidence, Scene } from '@/types/gyakusai';
+import type { Case, Character } from '@/types/gyakusai';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import CharacterView from './CharacterView';
@@ -19,6 +19,9 @@ export default function CourtRoom({ caseData }: CourtRoomProps) {
   const [showObjection, setShowObjection] = useState<boolean>(false);
   const [showEvidence, setShowEvidence] = useState<boolean>(false);
   const [soundToPlay, setSoundToPlay] = useState<string | null>(null);
+  // タイピング状態と全文表示用の関数を管理
+  const [isTyping, setIsTyping] = useState(true);
+  const [skipTypingTrigger, setSkipTypingTrigger] = useState(0); // DialogueBoxに全文表示を指示するためのトリガー
 
   // 現在のシーンを取得
   const currentScene = caseData.scenes.find((scene) => scene.id === currentSceneId);
@@ -115,8 +118,28 @@ export default function CourtRoom({ caseData }: CourtRoomProps) {
   if (!currentScene || !currentDialogue) {
     return <div>シーンが見つかりません</div>;
   }
+
+  // グローバルクリック・Enter/Spaceで進行する関数
+  const handleGlobalAdvance = (
+    _: React.MouseEvent<HTMLButtonElement> | React.KeyboardEvent<HTMLButtonElement>
+  ) => {
+    if (showEvidence || showObjection) return;
+    if (isTyping) {
+      // タイピング中なら全文表示を指示
+      setSkipTypingTrigger((prev) => prev + 1);
+    } else {
+      handleDialogueComplete();
+    }
+  };
+
   return (
-    <div className="relative w-full min-h-screen max-h-screen overflow-hidden flex flex-col justify-between">
+    <button
+      type="button"
+      onClick={handleGlobalAdvance}
+      tabIndex={0}
+      className="relative w-full min-h-screen max-h-screen overflow-hidden cursor-pointer flex flex-col justify-between focus:outline-none appearance-none border-none p-0 bg-transparent"
+      aria-label="画面をクリックまたはEnter/Spaceで進行"
+    >
       {/* 背景 */}
       <div className="absolute top-0 left-0 w-full h-full">
         <Image
@@ -144,7 +167,11 @@ export default function CourtRoom({ caseData }: CourtRoomProps) {
       )}
       {/* 証拠提示 */}
       {showEvidence && currentScene.evidenceCheck && (
-        <div className="relative p-5 mx-auto my-5 max-w-[900px]">
+        <div
+          className="relative p-5 mx-auto my-5 max-w-[900px]"
+          onClick={(e) => e.stopPropagation()}
+          onKeyUp={(e) => e.stopPropagation()}
+        >
           <EvidencePresentation
             evidences={caseData.evidences}
             onSelectEvidence={handleEvidenceSelection}
@@ -154,13 +181,17 @@ export default function CourtRoom({ caseData }: CourtRoomProps) {
       )}
       {/* ダイアログボックス */}
       {!showEvidence && (
-        <DialogueBox
-          text={currentDialogue.text}
-          characterName={currentCharacter?.name}
-          characterRole={currentCharacter?.role}
-          onComplete={handleDialogueComplete}
-        />
+        <div onClick={(e) => e.stopPropagation()} onKeyUp={(e) => e.stopPropagation()}>
+          <DialogueBox
+            text={currentDialogue.text}
+            characterName={currentCharacter?.name}
+            characterRole={currentCharacter?.role}
+            isTyping={isTyping}
+            setIsTyping={setIsTyping}
+            skipTypingTrigger={skipTypingTrigger}
+          />
+        </div>
       )}
-    </div>
+    </button>
   );
 }

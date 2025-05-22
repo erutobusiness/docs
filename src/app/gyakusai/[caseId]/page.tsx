@@ -35,6 +35,9 @@ export default async function CasePage({ params }: CasePageProps) {
 
   return (
     <main className="bg-black min-h-screen overflow-hidden">
+      {/*  */}
+      <CourtRoom caseData={caseData} />
+      {/* ホームボタン */}
       <div className="fixed top-4 left-4">
         <IconButton
           href="/gyakusai"
@@ -42,8 +45,6 @@ export default async function CasePage({ params }: CasePageProps) {
           ariaLabel="ケース一覧へ戻る"
         />
       </div>
-
-      <CourtRoom caseData={caseData} />
     </main>
   );
 }
