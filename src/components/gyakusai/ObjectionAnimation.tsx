@@ -30,7 +30,7 @@ export default function ObjectionAnimation({
         <img
           src="/gyakusai/objection.webp"
           alt="Objection!"
-          className="w-auto h-auto max-w-full max-h-[10rem] shadow-[0_0_10px_#ff0000,0_0_20px_#ff0000] rotate-[-5deg] m-0 relative"
+          className="w-auto h-auto max-w-full max-h-[20rem] shadow-[0_0_10px_#ff0000,0_0_20px_#ff0000] rotate-[-5deg] m-0 relative"
         />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-[radial-gradient(circle,white_0%,transparent_70%)] opacity-60 animate-flash" />
       </div>
