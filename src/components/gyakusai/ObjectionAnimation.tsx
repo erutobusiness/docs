@@ -26,11 +26,11 @@ export default function ObjectionAnimation({
 
   return (
     <div className="fixed inset-0 flex justify-center items-center bg-black/50 animate-fadeIn pb-[192px]">
-      <div className="relative animate-scaleIn w-[80vw]">
+      <div className="relative animate-scaleIn w-[60vw]">
         <img
           src="/gyakusai/objection.webp"
           alt="Objection!"
-          className="w-full h-auto shadow-[0_0_10px_#ff0000,0_0_20px_#ff0000] rotate-[-5deg] m-0 relative"
+          className="w-full h-auto m-0 relative"
         />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-[radial-gradient(circle,white_0%,transparent_70%)] opacity-60 animate-flash" />
       </div>
