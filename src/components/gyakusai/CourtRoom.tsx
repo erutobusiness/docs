@@ -1,6 +1,6 @@
 'use client';
 
-import type { Case, Character } from '@/types/gyakusai';
+import type { Case, Character, Dialogue, Evidence, Testimony, TestimonyStatement } from '@/types/gyakusai'; // Testimony, TestimonyStatement を追加
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import CharacterView from './CharacterView';
@@ -8,6 +8,7 @@ import DialogueBox from './DialogueBox';
 import EvidencePresentation from './EvidencePresentation';
 import ObjectionAnimation from './ObjectionAnimation';
 import SoundEffects from './SoundEffects';
+import TestimonyView from './TestimonyView'; // 新しく作成したコンポーネントをインポート
 
 interface CourtRoomProps {
   caseData: Case;
@@ -19,14 +20,20 @@ export default function CourtRoom({ caseData }: CourtRoomProps) {
   const [showObjection, setShowObjection] = useState<boolean>(false);
   const [showEvidence, setShowEvidence] = useState<boolean>(false);
   const [soundToPlay, setSoundToPlay] = useState<string | null>(null);
-  // タイピング状態と全文表示用の関数を管理
   const [isTyping, setIsTyping] = useState(true);
-  const [skipTypingTrigger, setSkipTypingTrigger] = useState(0); // DialogueBoxに全文表示を指示するためのトリガー
+  const [skipTypingTrigger, setSkipTypingTrigger] = useState(0);
 
-  // 現在のシーンを取得
+  // Testimony states
+  const [isTestimonyPhase, setIsTestimonyPhase] = useState<boolean>(false);
+  const [currentTestimony, setCurrentTestimony] = useState<Testimony | null>(null);
+  const [currentTestimonyStatementId, setCurrentTestimonyStatementId] = useState<string | null>(null);
+  const [pendingEvidencePresentationForTestimony, setPendingEvidencePresentationForTestimony] = useState<boolean>(false);
+  const [dialogueQueue, setDialogueQueue] = useState<Dialogue[]>([]);
+  const [queuedDialogueToShow, setQueuedDialogueToShow] = useState<Dialogue | null>(null);
+  const [isDisplayingQueuedDialogue, setIsDisplayingQueuedDialogue] = useState<boolean>(false);
+
   const currentScene = caseData.scenes.find((scene) => scene.id === currentSceneId);
 
-  // キャラクターマップを作成（ID -> Character）
   const characterMap = caseData.characters.reduce(
     (map, character) => {
       map[character.id] = character;
@@ -35,102 +42,211 @@ export default function CourtRoom({ caseData }: CourtRoomProps) {
     {} as Record<string, Character>
   );
 
-  // 証拠品マップを作成（ID -> Evidence）
-  // const evidenceMap = caseData.evidences.reduce(
-  //   (map, evidence) => {
-  //     map[evidence.id] = evidence;
-  //     return map;
-  //   },
-  //   {} as Record<string, Evidence>
-  // );
+  const testimonyMap = caseData.testimonies?.reduce(
+    (map, testimony) => {
+      map[testimony.id] = testimony;
+      return map;
+    },
+    {} as Record<string, Testimony>
+  );
 
-  // 現在のダイアログを取得
+  useEffect(() => {
+    if (currentScene?.testimonyId && testimonyMap?.[currentScene.testimonyId]) {
+      setCurrentTestimony(testimonyMap[currentScene.testimonyId]);
+      setIsTestimonyPhase(true);
+      // setCurrentDialogueIndex(0); // Resetting dialogue index might not be needed if testimony handles its own flow
+    } else {
+      setIsTestimonyPhase(false);
+      setCurrentTestimony(null);
+    }
+  }, [currentScene, testimonyMap]);
+
   const currentDialogue = currentScene?.dialogues[currentDialogueIndex];
   const currentCharacter = currentDialogue ? characterMap[currentDialogue.characterId] : null;
 
   useEffect(() => {
-    if (currentDialogue?.sound) {
-      setSoundToPlay(currentDialogue.sound);
+    // This effect handles sound, objection, and evidence for the *primary* dialogue stream.
+    // Dialogue queue items might need their own handling or a unified system.
+    if (dialogueQueue.length > 0) {
+        const firstInQueue = dialogueQueue[0];
+        if (firstInQueue?.sound) setSoundToPlay(firstInQueue.sound);
+        if (firstInQueue?.isObjection) setShowObjection(true);
+        // showEvidence for queued dialogues might need specific handling if it implies interaction.
+    } else if (currentDialogue) {
+        if (currentDialogue.sound) setSoundToPlay(currentDialogue.sound);
+        if (currentDialogue.isObjection) setShowObjection(true);
+        // if (currentDialogue.showEvidence) setShowEvidence(true); // This might be handled by evidenceCheck
     }
+  }, [currentDialogue, dialogueQueue]);
 
-    if (currentDialogue?.isObjection) {
-      setShowObjection(true);
-    }
-
-    if (currentDialogue?.showEvidence) {
-      setShowEvidence(true);
-    }
-  }, [currentDialogue]);
 
   const handleDialogueComplete = () => {
+    // キューされたダイアログがあればそれを表示
+    if (dialogueQueue.length > 0) {
+      const nextDialogueFromQueue = dialogueQueue[0];
+      setDialogueQueue(prev => prev.slice(1));
+      setQueuedDialogueToShow(nextDialogueFromQueue);
+      setIsDisplayingQueuedDialogue(true);
+      setIsTyping(true); // 新しいダイアログなのでタイピング開始
+      // skipTypingTrigger はここではリセットしない（ユーザーが連続クリックした場合のため）
+      return; 
+    }
+
+    // キュー表示が終わったらリセット
+    if (isDisplayingQueuedDialogue) {
+      setIsDisplayingQueuedDialogue(false);
+      setQueuedDialogueToShow(null);
+    }
+
     if (!currentScene) return;
 
-    // 証拠チェックが必要な場合
-    if (currentScene.evidenceCheck && currentDialogueIndex === currentScene.dialogues.length - 1) {
-      setShowEvidence(true);
-      return;
+    // 証言パートへの移行 (変更なし)
+    if (currentScene.testimonyId && testimonyMap?.[currentScene.testimonyId] && !isTestimonyPhase) {
+      setIsTestimonyPhase(true);
+      setCurrentTestimony(testimonyMap[currentScene.testimonyId]);
+      // 最初の証言ステートメントIDを設定
+      if (testimonyMap[currentScene.testimonyId].statements.length > 0) {
+        setCurrentTestimonyStatementId(testimonyMap[currentScene.testimonyId].statements[0].id);
+      }
+      return; 
     }
-
-    // 選択肢がある場合
-    if (currentScene.choices && currentDialogueIndex === currentScene.dialogues.length - 1) {
-      // 選択肢表示ロジックは別途実装
-      return;
-    }
-
-    // 次のダイアログがある場合
-    if (currentDialogueIndex < currentScene.dialogues.length - 1) {
+    
+    // 通常のダイアログ進行 (既存のロジックを活用)
+    const currentDialogues = currentScene.dialogues;
+    if (currentDialogueIndex < currentDialogues.length - 1) {
       setCurrentDialogueIndex(currentDialogueIndex + 1);
-    }
-    // 現在のシーンの最後のダイアログの場合
-    else {
-      // 次のシーンを決定するロジック（仮）
-      // 実際にはストーリーの分岐などがある場合は別の処理が必要
-      const nextSceneIndex = caseData.scenes.findIndex((scene) => scene.id === currentSceneId) + 1;
-      if (nextSceneIndex < caseData.scenes.length) {
-        setCurrentSceneId(caseData.scenes[nextSceneIndex].id);
+    } else {
+      // シーン末尾の処理 (既存のロジックを活用)
+      let nextSceneIdToTransition = currentDialogues[currentDialogues.length - 1]?.nextSceneId;
+      if (!nextSceneIdToTransition) {
+        const currentSceneGlobalIndex = caseData.scenes.findIndex((scene) => scene.id === currentSceneId);
+        if (currentSceneGlobalIndex !== -1 && currentSceneGlobalIndex + 1 < caseData.scenes.length) {
+          nextSceneIdToTransition = caseData.scenes[currentSceneGlobalIndex + 1].id;
+        }
+      }
+
+      if (nextSceneIdToTransition) {
+        setIsTestimonyPhase(false); // 通常シーン遷移なので証言フェーズは確実にOFF
+        setCurrentSceneId(nextSceneIdToTransition);
         setCurrentDialogueIndex(0);
       } else {
-        // ケース終了
         // biome-ignore lint/suspicious/noConsoleLog: <explanation>
-        console.log('ケース終了');
+        console.log('ケース終了または次のシーンが定義されていません');
       }
     }
+    setIsTyping(true); // 次のダイアログのためにタイピング開始
   };
 
   const handleObjectionComplete = () => {
     setShowObjection(false);
   };
 
+  const handleTestimonyPress = (statementId: string) => {
+    if (!currentTestimony || !currentTestimony.pressActions?.[statementId]) {
+      setSoundToPlay('mutter.mp3'); // 仮の効果音
+      return;
+    }
+    const action = currentTestimony.pressActions[statementId];
+
+    if (action.reactionDialogues && action.reactionDialogues.length > 0) {
+      setDialogueQueue(prev => [...prev, ...action.reactionDialogues!]);
+      // すぐに最初のリアクションダイアログを表示開始
+      const firstReaction = action.reactionDialogues[0];
+      setQueuedDialogueToShow(firstReaction);
+      setIsDisplayingQueuedDialogue(true);
+      setIsTyping(true); 
+    } else if (action.nextSceneId) { // reactionDialogues がなく、nextSceneId がある場合
+      setIsTestimonyPhase(false);
+      setCurrentSceneId(action.nextSceneId);
+      setCurrentDialogueIndex(0);
+      setQueuedDialogueToShow(null); // 念のためリセット
+      setIsDisplayingQueuedDialogue(false);
+    }
+    // 証言更新ロジックは引き続き未実装
+    if (action.updatedStatement && currentTestimony) { // この部分は元のコードにもあったので残します
+      // biome-ignore lint/suspicious/noConsoleLog: <explanation>
+      console.log("Updating statement (not implemented yet):", action.updatedStatement);
+      // Proper state update for currentTestimony would be needed here.
+    }
+  };
+
+  const handleTestimonyPresent = (statementId: string) => {
+    if (!currentTestimony) return;
+    setCurrentTestimonyStatementId(statementId);
+    setPendingEvidencePresentationForTestimony(true);
+    setShowEvidence(true); // Show evidence selection screen
+    setIsTestimonyPhase(false); // Temporarily exit testimony UI for evidence presentation
+  };
+
+  const handleTestimonyStatementChange = (statementId: string) => {
+    setCurrentTestimonyStatementId(statementId);
+  };
+
   const handleEvidenceSelection = (evidenceId: string) => {
     setShowEvidence(false);
 
-    if (!currentScene?.evidenceCheck) return;
+    if (pendingEvidencePresentationForTestimony && currentTestimony && currentTestimonyStatementId) {
+      setPendingEvidencePresentationForTestimony(false);
+      const condition = currentTestimony.presentConditions?.[currentTestimonyStatementId];
+      let nextScene: string | undefined;
+      if (condition && evidenceId === condition.correctEvidenceId) {
+        nextScene = condition.correctNextSceneId;
+      } else {
+        nextScene = currentTestimony.defaultWrongPresentSceneId;
+      }
+      setCurrentSceneId(nextScene);
+      setCurrentDialogueIndex(0);
+      setCurrentTestimonyStatementId(null);
+      // setIsTestimonyPhase(false); // Scene will determine if it's testimony or not
+      return;
+    }
 
-    // 証拠が正しいかどうかチェック
+    if (!currentScene?.evidenceCheck) return;
     if (evidenceId === currentScene.evidenceCheck.correctEvidenceId) {
       setCurrentSceneId(currentScene.evidenceCheck.correctNextSceneId);
     } else {
       setCurrentSceneId(currentScene.evidenceCheck.wrongNextSceneId);
     }
     setCurrentDialogueIndex(0);
+    // setIsTestimonyPhase(false); // Scene change will re-evaluate
   };
 
-  if (!currentScene || !currentDialogue) {
-    return <div>シーンが見つかりません</div>;
-  }
 
-  // グローバルクリック・Enter/Spaceで進行する関数
+  // Global click/input handler
   const handleGlobalAdvance = (
     _: React.MouseEvent<HTMLButtonElement> | React.KeyboardEvent<HTMLButtonElement>
   ) => {
-    if (showEvidence || showObjection) return;
+    if (showEvidence || (isTestimonyPhase && !dialogueQueue.length && !isDisplayingQueuedDialogue) || showObjection) {
+      // 証拠表示中、または証言フェーズでリアクションダイアログがない場合、または異議あり中はTestimonyView側で処理
+      // ただし、TestimonyView内でクリックイベントが止まっていることを確認する必要がある。
+      // CourtRoom全体をボタンにしているため、TestimonyViewで e.stopPropagation() が必須。
+      return;
+    }
+
     if (isTyping) {
-      // タイピング中なら全文表示を指示
       setSkipTypingTrigger((prev) => prev + 1);
     } else {
-      handleDialogueComplete();
+      // 証言フェーズ中で、かつキューから表示するダイアログがある場合もこちら
+      if (isTestimonyPhase && (dialogueQueue.length > 0 || isDisplayingQueuedDialogue)) {
+        handleDialogueComplete(); // キューを進める、またはキュー表示後の通常フローへ
+      } else if (!isTestimonyPhase) {
+        handleDialogueComplete(); // 通常のダイアログ進行
+      }
+      // isTestimonyPhaseでキューがない場合は TestimonyView のボタンが押されるのを待つ
     }
   };
+  
+  // Determine which dialogue text and character to display
+  // This part is now simplified as DialogueBox props are determined directly in JSX
+  const activeDialogue = isDisplayingQueuedDialogue ? queuedDialogueToShow : currentDialogue;
+  const activeCharacter = activeDialogue ? characterMap[activeDialogue.characterId] : null;
+
+
+  if (!currentScene && !activeDialogue && !isTestimonyPhase) {
+    // Only if truly nothing to display and not in testimony (which has its own view)
+    return <div>シーンまたは表示すべきダイアログが見つかりません</div>;
+  }
+
 
   return (
     <button
@@ -140,10 +256,10 @@ export default function CourtRoom({ caseData }: CourtRoomProps) {
       className="relative w-full min-h-screen max-h-screen overflow-hidden cursor-pointer flex flex-col justify-between focus:outline-none appearance-none border-none p-0 bg-transparent"
       aria-label="画面をクリックまたはEnter/Spaceで進行"
     >
-      {/* 背景 */}
+      {/* Background - ensure currentScene is available or use a default */}
       <div className="absolute top-0 left-0 w-full h-full">
         <Image
-          src={currentScene.background}
+          src={currentScene?.background || '/gyakusai/houtei_zentai.jpg'} // Fallback background
           alt="法廷の背景"
           fill
           quality={100}
@@ -151,12 +267,31 @@ export default function CourtRoom({ caseData }: CourtRoomProps) {
           className="object-cover"
         />
       </div>
-      {/* 効果音 */}
+      
       <SoundEffects sound={soundToPlay} onComplete={() => setSoundToPlay(null)} />
-      {/* 「異議あり！」アニメーション */}
       {showObjection && <ObjectionAnimation onComplete={handleObjectionComplete} />}
-      {/* キャラクター */}
-      {currentCharacter && (
+
+      {/* Character Display Logic */}
+      {/* Priority: Queued dialogue character, then testimony witness, then current scene dialogue character */}
+      {isDisplayingQueuedDialogue && queuedDialogueToShow && characterMap[queuedDialogueToShow.characterId] ? (
+        <div className="relative flex justify-center mt-auto px-5 min-h-[450px]">
+          <CharacterView
+            character={characterMap[queuedDialogueToShow.characterId]}
+            emotion={queuedDialogueToShow.emotion || 'normal'}
+            isShaking={!!queuedDialogueToShow.shake}
+          />
+        </div>
+      ) : isTestimonyPhase && currentTestimony && characterMap[currentTestimony.witnessCharacterId] ? (
+        // Testimony phase (no queued dialogue): show witness
+        <div className="relative flex justify-center mt-auto px-5 min-h-[450px]">
+          <CharacterView
+            character={characterMap[currentTestimony.witnessCharacterId]}
+            emotion={'normal'} // Witness is generally normal during their testimony
+            isShaking={false} // Or based on some state if witness can shake during testimony itself
+          />
+        </div>
+      ) : !isTestimonyPhase && currentDialogue && currentCharacter ? (
+        // Regular scene dialogue (no testimony, no queued dialogue)
         <div className="relative flex justify-center mt-auto px-5 min-h-[450px]">
           <CharacterView
             character={currentCharacter}
@@ -164,9 +299,11 @@ export default function CourtRoom({ caseData }: CourtRoomProps) {
             isShaking={!!currentDialogue.shake}
           />
         </div>
-      )}
-      {/* 証拠提示 */}
-      {showEvidence && currentScene.evidenceCheck && (
+      ) : null }
+
+
+      {/* Evidence Presentation Modal */}
+      {showEvidence && (
         <div
           className="relative p-5 mx-auto my-5 max-w-[900px]"
           onClick={(e) => e.stopPropagation()}
@@ -175,12 +312,38 @@ export default function CourtRoom({ caseData }: CourtRoomProps) {
           <EvidencePresentation
             evidences={caseData.evidences}
             onSelectEvidence={handleEvidenceSelection}
-            prompt={currentScene.evidenceCheck.question}
+            prompt={
+              pendingEvidencePresentationForTestimony && currentTestimony && currentTestimonyStatementId && currentTestimony.statements.find(s=>s.id === currentTestimonyStatementId)
+                ? `「${currentTestimony.statements.find(s=>s.id === currentTestimonyStatementId)!.text.substring(0,20)}...」\nどの証拠をつきつけますか？`
+                : currentScene?.evidenceCheck?.question || 'どの証拠を提示しますか？'
+            }
           />
         </div>
       )}
-      {/* ダイアログボックス */}
-      {!showEvidence && (
+
+      {/* ダイアログボックス または 証言ビュー */}
+      {!showEvidence && isTestimonyPhase && currentTestimony && !isDisplayingQueuedDialogue ? (
+        <TestimonyView
+          testimony={currentTestimony}
+          initialStatementId={currentTestimonyStatementId || currentTestimony.statements[0]?.id}
+          onPress={handleTestimonyPress}
+          onPresent={handleTestimonyPresent}
+          onStatementChange={handleTestimonyStatementChange}
+        />
+      ) : !showEvidence && isDisplayingQueuedDialogue && queuedDialogueToShow && characterMap[queuedDialogueToShow.characterId] ? (
+        // キューされたダイアログを表示
+        <div onClick={(e) => e.stopPropagation()} onKeyUp={(e) => e.stopPropagation()}>
+          <DialogueBox
+            text={queuedDialogueToShow.text}
+            characterName={characterMap[queuedDialogueToShow.characterId]?.name}
+            characterRole={characterMap[queuedDialogueToShow.characterId]?.role}
+            isTyping={isTyping}
+            setIsTyping={setIsTyping}
+            skipTypingTrigger={skipTypingTrigger}
+          />
+        </div>
+      ) : !showEvidence && !isTestimonyPhase && currentDialogue && currentCharacter ? (
+        // 通常のシーンダイアログを表示
         <div onClick={(e) => e.stopPropagation()} onKeyUp={(e) => e.stopPropagation()}>
           <DialogueBox
             text={currentDialogue.text}
@@ -191,7 +354,7 @@ export default function CourtRoom({ caseData }: CourtRoomProps) {
             skipTypingTrigger={skipTypingTrigger}
           />
         </div>
-      )}
+      ) : null }
     </button>
   );
 }
