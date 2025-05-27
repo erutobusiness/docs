@@ -138,12 +138,20 @@ export default function CourtRoom({ caseData }: CourtRoomProps) {
   };
 
   const navigateTestimony = (direction: 'next' | 'previous') => {
-    if (!currentTestimony || !currentTestimonyStatementId) return;
+    console.log('[CourtRoom] navigateTestimony called with direction:', direction);
+    if (!currentTestimony || !currentTestimonyStatementId) {
+      console.log('[CourtRoom] navigateTestimony: currentTestimony or currentTestimonyStatementId is null. Bailing out.');
+      return;
+    }
 
     const statements = currentTestimony.statements;
     const currentIndex = statements.findIndex(s => s.id === currentTestimonyStatementId);
+    console.log(`[CourtRoom] navigateTestimony: current statementId: ${currentTestimonyStatementId}, currentIndex: ${currentIndex}`);
 
-    if (currentIndex === -1) return;
+    if (currentIndex === -1) {
+      console.log('[CourtRoom] navigateTestimony: currentIndex is -1. Bailing out.');
+      return;
+    }
 
     let nextIndex;
     if (direction === 'next') {
@@ -151,11 +159,13 @@ export default function CourtRoom({ caseData }: CourtRoomProps) {
     } else {
       nextIndex = (currentIndex - 1 + statements.length) % statements.length;
     }
+    console.log(`[CourtRoom] navigateTestimony: nextIndex calculated: ${nextIndex}`);
     setCurrentTestimonyStatementId(statements[nextIndex].id);
   };
 
   const handlePreviousTestimonyStatement = () => {
-    if (isTestimonyPhase && !isDisplayingQueuedDialogue && dialogueQueue.length === 0) {
+    console.log('[CourtRoom] handlePreviousTestimonyStatement called. isTestimonyPhase:', isTestimonyPhase, 'isDisplayingQueuedDialogue:', isDisplayingQueuedDialogue, 'dialogueQueue.length:', dialogueQueue.length);
+    if (isTestimonyPhase && !isDisplayingQueuedDialogue && dialogueQueue.length === 0 && !showEvidence && !showObjection) {
       navigateTestimony('previous');
     }
   };
@@ -240,12 +250,15 @@ export default function CourtRoom({ caseData }: CourtRoomProps) {
   const handleGlobalAdvance = (
     _: React.MouseEvent<HTMLButtonElement> | React.KeyboardEvent<HTMLButtonElement>
   ) => {
+    console.log('[CourtRoom] handleGlobalAdvance called. isTestimonyPhase:', isTestimonyPhase, 'isDisplayingQueuedDialogue:', isDisplayingQueuedDialogue, 'dialogueQueue.length:', dialogueQueue.length, 'showEvidence:', showEvidence, 'showObjection:', showObjection, 'isTyping:', isTyping);
     // isTestimonyPhaseで、リアクションダイアログ表示中でもなく、キューも空の場合に証言を進める
     if (isTestimonyPhase && !isDisplayingQueuedDialogue && dialogueQueue.length === 0 && !showEvidence && !showObjection) {
       if (isTyping) { // これは TestimonyView 内のテキストではなく、CourtRoom が管理する DialogueBox の isTyping を想定しているが、証言中は DialogueBox は表示されないはず。
                      // この条件は証言中は実質的に常にfalseになるはずだが、念のため。
+        console.log('[CourtRoom] handleGlobalAdvance: In testimony phase, isTyping is true. Calling setSkipTypingTrigger.');
         setSkipTypingTrigger((prev) => prev + 1);
       } else {
+        console.log('[CourtRoom] handleGlobalAdvance: In testimony phase, isTyping is false. Calling navigateTestimony("next").');
         navigateTestimony('next');
       }
       return;
@@ -253,16 +266,21 @@ export default function CourtRoom({ caseData }: CourtRoomProps) {
 
     // 証拠表示中、または異議あり中は進行しない
     if (showEvidence || showObjection) {
+      console.log('[CourtRoom] handleGlobalAdvance: showEvidence or showObjection is true. Returning.');
       return;
     }
 
     if (isTyping) {
+      console.log('[CourtRoom] handleGlobalAdvance: isTyping is true. Calling setSkipTypingTrigger.');
       setSkipTypingTrigger((prev) => prev + 1);
     } else {
+      console.log('[CourtRoom] handleGlobalAdvance: isTyping is false. Proceeding to dialogue completion logic.');
       // 証言フェーズ中で、かつキューから表示するダイアログがある場合もこちら
       if (dialogueQueue.length > 0 || isDisplayingQueuedDialogue) { // isTestimonyPhaseのチェックは不要、キューがあればフェーズ問わず処理
+        console.log('[CourtRoom] handleGlobalAdvance: dialogueQueue has items or isDisplayingQueuedDialogue is true. Calling handleDialogueComplete.');
         handleDialogueComplete(); // キューを進める、またはキュー表示後の通常フローへ
       } else if (!isTestimonyPhase) {
+        console.log('[CourtRoom] handleGlobalAdvance: Not in testimony phase. Calling handleDialogueComplete.');
         handleDialogueComplete(); // 通常のダイアログ進行
       }
     }
