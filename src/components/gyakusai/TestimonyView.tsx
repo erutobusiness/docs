@@ -9,6 +9,7 @@ interface TestimonyViewProps {
   initialStatementId?: string; // 特定の証言から開始する場合
   onPress: (statementId: string) => void; // 「待った！」が押されたときのコールバック
   onPresent: (statementId: string) => void; // 「つきつける」が押されたときのコールバック
+  onPreviousStatement?: () => void; // 右クリックで前の証言に戻るためのコールバック
   onStatementChange?: (statementId: string) => void; // 表示中の証言が変わったときのコールバック
 }
 
@@ -17,6 +18,7 @@ export default function TestimonyView({
   initialStatementId,
   onPress,
   onPresent,
+  onPreviousStatement,
   onStatementChange,
 }: TestimonyViewProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -38,12 +40,9 @@ export default function TestimonyView({
 
   const currentStatement = testimony.statements[currentIndex];
 
-  const handleNext = () => {
-    setCurrentIndex(prevIndex => (prevIndex + 1) % testimony.statements.length);
-  };
-
-  const handlePrevious = () => {
-    setCurrentIndex(prevIndex => (prevIndex - 1 + testimony.statements.length) % testimony.statements.length);
+  const handleContextMenu = (e: React.MouseEvent) => {
+    e.preventDefault(); // デフォルトのコンテキストメニュー表示を抑制
+    onPreviousStatement?.();
   };
 
   if (!currentStatement) {
@@ -51,10 +50,11 @@ export default function TestimonyView({
   }
 
   return (
-    <div 
+    <div
       className="absolute bottom-0 w-full h-[280px] bg-black bg-opacity-80 text-white p-4 flex flex-col justify-between border-t-4 border-yellow-400"
       onClick={(e) => e.stopPropagation()} // イベント伝播を停止
       onKeyUp={(e) => e.stopPropagation()} // イベント伝播を停止
+      onContextMenu={handleContextMenu} // 右クリックイベントをハンドル
     >
       {/* 証言タイトル */}
       {testimony.title && (
@@ -70,46 +70,37 @@ export default function TestimonyView({
 
       {/* 操作ボタンエリア */}
       <div className="flex justify-between items-center">
-        {/* 証言ナビゲーション */}
-        <div className="flex items-center">
-          <button
-            type="button"
-            onClick={handlePrevious}
-            className="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-l disabled:opacity-50"
-            disabled={testimony.statements.length <= 1}
-          >
-            &lt; 前
-          </button>
-          <span className="bg-gray-800 text-white py-2 px-3">
-            {currentIndex + 1} / {testimony.statements.length}
-          </span>
-          <button
-            type="button"
-            onClick={handleNext}
-            className="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-r disabled:opacity-50"
-            disabled={testimony.statements.length <= 1}
-          >
-            次 &gt;
-          </button>
-        </div>
+        <div /> {/* 左側のスペース確保のため空のdivを配置 */}
 
         {/* アクションボタン */}
         <div className="flex space-x-2">
           <button
             type="button"
             onClick={() => onPress(currentStatement.id)}
-            className="bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-6 rounded-lg text-lg shadow-md transition-colors icon-button" // icon-button クラスは IconButton.css から
-            style={{ backgroundImage: 'url(/gyakusai/wait.webp)' }} // 「待った！」画像 (仮)
+            className="text-white font-bold py-3 px-6 rounded-lg text-lg shadow-md transition-all duration-150 ease-in-out relative overflow-hidden focus:outline-none focus:ring-4 focus:ring-blue-300 hover:opacity-90 active:opacity-80"
+            style={{
+              backgroundImage: 'url(/gyakusai/wait.webp)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+              backgroundColor: 'rgba(59, 130, 246, 0.8)', // bg-blue-600 with some transparency
+            }}
           >
-            待った！
+            <span className="relative z-10">待った！</span>
           </button>
           <button
             type="button"
             onClick={() => onPresent(currentStatement.id)}
-            className="bg-red-600 hover:bg-red-500 text-white font-bold py-3 px-6 rounded-lg text-lg shadow-md transition-colors icon-button" // icon-button クラスは IconButton.css から
-            style={{ backgroundImage: 'url(/gyakusai/take.webp)' }} // 「つきつける！」画像 (仮)
+            className="text-white font-bold py-3 px-6 rounded-lg text-lg shadow-md transition-all duration-150 ease-in-out relative overflow-hidden focus:outline-none focus:ring-4 focus:ring-red-300 hover:opacity-90 active:opacity-80"
+            style={{
+              backgroundImage: 'url(/gyakusai/take.webp)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+              backgroundColor: 'rgba(220, 38, 38, 0.8)', // bg-red-600 with some transparency
+            }}
           >
-            つきつける
+            <span className="relative z-10">つきつける</span>
           </button>
         </div>
       </div>

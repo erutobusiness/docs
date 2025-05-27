@@ -137,6 +137,30 @@ export default function CourtRoom({ caseData }: CourtRoomProps) {
     setIsTyping(true); // 次のダイアログのためにタイピング開始
   };
 
+  const navigateTestimony = (direction: 'next' | 'previous') => {
+    if (!currentTestimony || !currentTestimonyStatementId) return;
+
+    const statements = currentTestimony.statements;
+    const currentIndex = statements.findIndex(s => s.id === currentTestimonyStatementId);
+
+    if (currentIndex === -1) return;
+
+    let nextIndex;
+    if (direction === 'next') {
+      nextIndex = (currentIndex + 1) % statements.length;
+    } else {
+      nextIndex = (currentIndex - 1 + statements.length) % statements.length;
+    }
+    setCurrentTestimonyStatementId(statements[nextIndex].id);
+  };
+
+  const handlePreviousTestimonyStatement = () => {
+    if (isTestimonyPhase && !isDisplayingQueuedDialogue && dialogueQueue.length === 0) {
+      navigateTestimony('previous');
+    }
+  };
+
+
   const handleObjectionComplete = () => {
     setShowObjection(false);
   };
@@ -216,10 +240,19 @@ export default function CourtRoom({ caseData }: CourtRoomProps) {
   const handleGlobalAdvance = (
     _: React.MouseEvent<HTMLButtonElement> | React.KeyboardEvent<HTMLButtonElement>
   ) => {
-    if (showEvidence || (isTestimonyPhase && !dialogueQueue.length && !isDisplayingQueuedDialogue) || showObjection) {
-      // 証拠表示中、または証言フェーズでリアクションダイアログがない場合、または異議あり中はTestimonyView側で処理
-      // ただし、TestimonyView内でクリックイベントが止まっていることを確認する必要がある。
-      // CourtRoom全体をボタンにしているため、TestimonyViewで e.stopPropagation() が必須。
+    // isTestimonyPhaseで、リアクションダイアログ表示中でもなく、キューも空の場合に証言を進める
+    if (isTestimonyPhase && !isDisplayingQueuedDialogue && dialogueQueue.length === 0 && !showEvidence && !showObjection) {
+      if (isTyping) { // これは TestimonyView 内のテキストではなく、CourtRoom が管理する DialogueBox の isTyping を想定しているが、証言中は DialogueBox は表示されないはず。
+                     // この条件は証言中は実質的に常にfalseになるはずだが、念のため。
+        setSkipTypingTrigger((prev) => prev + 1);
+      } else {
+        navigateTestimony('next');
+      }
+      return;
+    }
+
+    // 証拠表示中、または異議あり中は進行しない
+    if (showEvidence || showObjection) {
       return;
     }
 
@@ -227,12 +260,11 @@ export default function CourtRoom({ caseData }: CourtRoomProps) {
       setSkipTypingTrigger((prev) => prev + 1);
     } else {
       // 証言フェーズ中で、かつキューから表示するダイアログがある場合もこちら
-      if (isTestimonyPhase && (dialogueQueue.length > 0 || isDisplayingQueuedDialogue)) {
+      if (dialogueQueue.length > 0 || isDisplayingQueuedDialogue) { // isTestimonyPhaseのチェックは不要、キューがあればフェーズ問わず処理
         handleDialogueComplete(); // キューを進める、またはキュー表示後の通常フローへ
       } else if (!isTestimonyPhase) {
         handleDialogueComplete(); // 通常のダイアログ進行
       }
-      // isTestimonyPhaseでキューがない場合は TestimonyView のボタンが押されるのを待つ
     }
   };
   
@@ -328,6 +360,7 @@ export default function CourtRoom({ caseData }: CourtRoomProps) {
           initialStatementId={currentTestimonyStatementId || currentTestimony.statements[0]?.id}
           onPress={handleTestimonyPress}
           onPresent={handleTestimonyPresent}
+          onPreviousStatement={handlePreviousTestimonyStatement}
           onStatementChange={handleTestimonyStatementChange}
         />
       ) : !showEvidence && isDisplayingQueuedDialogue && queuedDialogueToShow && characterMap[queuedDialogueToShow.characterId] ? (
