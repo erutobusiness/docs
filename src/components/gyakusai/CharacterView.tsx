@@ -25,15 +25,14 @@ export default function CharacterView({
   }, [character, emotion]);
   // シェイクアニメーションのクラス名
   const shakeAnimationClass = isShaking ? styles.shakeAnimation : '';
-
   return (
-    <div className={`absolute flex flex-col items-center ${shakeAnimationClass}`}>
+    <div className={`max-h-full${shakeAnimationClass}`}>
       {imageSource && (
         <Image
           src={imageSource}
           alt={`${character.name} - ${emotion}`}
-          width={300}
-          height={400}
+          width={400}
+          height={500}
           style={{
             width: '100%',
             height: 'auto',

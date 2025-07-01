@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 interface ObjectionAnimationProps {
   onComplete?: () => void;
@@ -13,14 +13,16 @@ export default function ObjectionAnimation({
 }: ObjectionAnimationProps) {
   const [isVisible, setIsVisible] = useState(true);
 
+  const handleComplete = useCallback(() => {
+    setIsVisible(false);
+    onComplete?.();
+  }, [onComplete]);
+
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(false);
-      onComplete?.();
-    }, duration);
+    const timer = setTimeout(handleComplete, duration);
 
     return () => clearTimeout(timer);
-  }, [onComplete, duration]);
+  }, [duration, handleComplete]);
 
   if (!isVisible) return null;
 

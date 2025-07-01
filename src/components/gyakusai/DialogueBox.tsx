@@ -13,6 +13,7 @@ interface DialogueBoxProps {
   isTyping: boolean;
   setIsTyping: (v: boolean) => void;
   skipTypingTrigger: number;
+  testimonyMode?: boolean;
 }
 
 export default function DialogueBox({
@@ -24,6 +25,7 @@ export default function DialogueBox({
   isTyping,
   setIsTyping,
   skipTypingTrigger,
+  testimonyMode = false,
 }: DialogueBoxProps) {
   const [displayedText, setDisplayedText] = useState('');
 
@@ -71,11 +73,10 @@ export default function DialogueBox({
       setIsTyping(false);
     }
   }, [skipTypingTrigger]);
-
   // クリック処理・ボタン要素は不要になったので削除
   return (
     <div
-      className={`absolute bottom-0 w-full h-[160px] text-white border-t border-white shadow-lg appearance-none border-none p-0 bg-transparent ${patternStyles.dotPattern}`}
+      className={`relative w-full h-[160px] text-white border-t border-white shadow-lg appearance-none border-none p-0 bg-transparent ${patternStyles.dotPattern}`}
       aria-label="ダイアログボックス"
     >
       <div className="absolute top-0 left-0 w-full h-full flex items-start justify-center">
@@ -89,7 +90,11 @@ export default function DialogueBox({
           )}
         </div>
         {/* タイピング中のテキスト */}
-        <p className="text-2xl text-left leading-relaxed w-[1200px] m-4 mt-12">{displayedText}</p>
+        <p
+          className={`text-2xl text-left leading-relaxed w-[1200px] m-4 mt-12 ${testimonyMode ? 'text-green-400' : 'text-white'}`}
+        >
+          {displayedText}
+        </p>
       </div>
 
       {/* タイピングが終了したら、クリックして次へのメッセージを表示 */}

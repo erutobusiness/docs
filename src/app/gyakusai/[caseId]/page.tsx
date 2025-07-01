@@ -1,5 +1,6 @@
 import IconButton from '@/components/IconButton';
 import CourtRoom from '@/components/gyakusai/CourtRoom';
+import { GyakusaiErrorBoundary } from '@/components/gyakusai/GyakusaiErrorBoundary';
 import { getAllCases, getCaseById } from '@gyakusai/data/caseData';
 import { HomeIcon } from '@heroicons/react/24/outline';
 import { notFound } from 'next/navigation';
@@ -32,11 +33,11 @@ export default async function CasePage({ params }: CasePageProps) {
   if (!caseData) {
     return notFound();
   }
-
   return (
     <main className="bg-black min-h-screen overflow-hidden">
-      {/*  */}
-      <CourtRoom caseData={caseData} />
+      <GyakusaiErrorBoundary>
+        <CourtRoom caseData={caseData} />
+      </GyakusaiErrorBoundary>
       {/* ホームボタン */}
       <div className="fixed top-4 left-4">
         <IconButton
