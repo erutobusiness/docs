@@ -1,8 +1,18 @@
+import '@declarative/theme.css';
+import '@theArtOfLoving/theme.css';
 import IconButton from '@/components/IconButton';
 import SlideShow from '@/components/SlideShow';
-import { getAllSlideSections, getSlideSection } from '@declarative/data/slideData';
+import SlideThemeLoader from '@/components/SlideThemeLoader';
+import {
+  getAllSlideSections as getAllDeclarativeSlideSections,
+  getSlideSection as getDeclarativeSlideSection,
+} from '@declarative/data/slideData';
 import { HomeIcon } from '@heroicons/react/24/outline';
 import { notFound } from 'next/navigation';
+import {
+  getAllSlideSections as getAllTheArtOfLovingSlideSections,
+  getSlideSection as getTheArtOfLovingSlideSection,
+} from '@theArtOfLoving/data/slideData';
 
 type SlidePageProps = {
   params: Promise<{
@@ -11,26 +21,34 @@ type SlidePageProps = {
 };
 
 export async function generateStaticParams() {
-  const slideSections = getAllSlideSections();
-
-  return slideSections.map((section) => ({
-    slideId: encodeURIComponent(section.id),
+  const declarativeSections = getAllDeclarativeSlideSections().map((section) => ({
+    slideId: `declarative-${encodeURIComponent(section.id)}`,
   }));
+  const theArtOfLovingSections = getAllTheArtOfLovingSlideSections().map((section) => ({
+    slideId: `theArtOfLoving-${encodeURIComponent(section.id)}`,
+  }));
+
+  return [...declarativeSections, ...theArtOfLovingSections];
 }
 
 export default async function SlidePage({ params }: SlidePageProps) {
-  // params を await して解決する
   const { slideId } = await params;
-  const decodedSlideId = decodeURIComponent(slideId);
+  const [slideType, ...rest] = slideId.split('-');
+  const decodedSlideId = decodeURIComponent(rest.join('-'));
 
-  // スライドIDから対応するセクションを取得
-  const slideSection = getSlideSection(decodedSlideId);
+  let slideSection = undefined;
+  if (slideType === 'declarative') {
+    slideSection = getDeclarativeSlideSection(decodedSlideId);
+  } else if (slideType === 'theArtOfLoving') {
+    slideSection = getTheArtOfLovingSlideSection(decodedSlideId);
+  }
 
   if (!slideSection) {
     return notFound();
   }
   return (
-    <main className="bg-linear-to-br from-(--declarative-gradient-primary-to) to-(--declarative-gradient-primary-from) min-h-screen">
+    <main className="bg-linear-to-br from-[var(--slide-gradient-to)] to-[var(--slide-gradient-from)] min-h-screen">
+      <SlideThemeLoader slideType={slideType} />
       <div className="fixed top-4 left-4 z-10">
         <IconButton
           href="/"

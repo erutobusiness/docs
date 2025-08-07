@@ -1,7 +1,7 @@
 /* アプリケーション全体で使用する色のテーマ定義 - 夜景とシャンパン風 */
 @import "tailwindcss";
 
-:root {
+[data-theme="declarative"] {
   /* ベース色 - 夜空のような深い暗さ */
   --declarative-background: theme("colors.gray.950");
   --declarative-foreground: theme("colors.amber.200");
@@ -35,6 +35,10 @@
 
   --declarative-gradient-accent-from: theme("colors.amber.500");
   --declarative-gradient-accent-to: theme("colors.yellow.600");
+
+  /* --- Generic Slide Variables --- */
+  --slide-gradient-from: var(--declarative-gradient-primary-from);
+  --slide-gradient-to: var(--declarative-gradient-primary-to);
 }
 
 body {

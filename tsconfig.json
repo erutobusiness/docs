@@ -21,7 +21,8 @@
     "paths": {
       "@/*": ["./src/*"],
       "@declarative/*": ["./declarative/next/*"],
-      "@gyakusai/*": ["./gyakusai/next/*"]
+      "@gyakusai/*": ["./gyakusai/next/*"],
+      "@theArtOfLoving/*": ["./theArtOfLoving/next/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

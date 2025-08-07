@@ -17,7 +17,7 @@ const declarativeTopic: Topic = {
   description: '宣言的UIを端に、歴史やクイズを通して、モダン開発のパラダイムを理解する',
   subDescription: '……客船クイーンエリザベスとグラン・マルニエを添えて',
   image: '/declarative/Decralative_Top.png',
-  link: '/slides',
+  link: '/slides/declarative-01-intro',
 };
 
 // 逆転裁判風の話題
@@ -26,14 +26,25 @@ const gyakusaiTopic: Topic = {
   title: '逆転裁判風',
   description: '逆転裁判風のインタラクティブな体験で、法廷の熱い駆け引きを楽しむ',
   subDescription: '……証拠と論理で真実を暴け！',
-  image: '/gyakusai/Gyakusai_Top.png',
-  link: '/gyakusai',
+  image: '/gyakusai/houtei_zentai.jpg',
+  link: '/gyakusai/missing-evidence',
+};
+
+// 「愛するということ」の話題
+const theArtOfLovingTopic: Topic = {
+  id: 'theArtOfLoving',
+  title: '愛するということ',
+  description: 'エーリヒ・フロムの「愛するということ」をテーマにしたスライド',
+  subDescription: '……愛は技術である',
+  image: '/theArtOfLoving/cover.jpg',
+  link: '/slides/theArtOfLoving-01-intro',
 };
 
 // すべての話題のリスト
 export const topics: Topic[] = [
   declarativeTopic,
   gyakusaiTopic,
+  theArtOfLovingTopic,
   // 将来的に他の話題を追加できるようにしておく
 ];
 
