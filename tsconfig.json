@@ -22,7 +22,8 @@
       "@/*": ["./src/*"],
       "@declarative/*": ["./declarative/next/*"],
       "@gyakusai/*": ["./gyakusai/next/*"],
-      "@theArtOfLoving/*": ["./theArtOfLoving/next/*"]
+      "@theArtOfLoving/*": ["./theArtOfLoving/next/*"],
+      "@game/*": ["./game/next/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

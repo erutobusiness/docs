@@ -19,7 +19,7 @@ export default function Home() {
           {topics.map((topic) => (
             <Link
               key={topic.id}
-              href={topic.link}
+              href={topic.id}
               className="group flex flex-col bg-[var(--background)] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transform transition-all duration-300 hover:-translate-y-2"
             >
               <div className="relative h-48 w-full overflow-hidden">

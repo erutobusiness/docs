@@ -1,14 +1,32 @@
-'use client';
-
-import { getAllSlideSections } from '@declarative/data/slideData';
-import { getSlidesPageData } from '@declarative/data/slidesPage';
 import Image from 'next/image';
 import Link from 'next/link';
 import '../../../declarative/next/theme.css';
+import { use } from 'react';
 
-export default function SlidesPage() {
-  const slideSections = getAllSlideSections();
-  const pageData = getSlidesPageData();
+type SlideProps = {
+  params: Promise<{
+    slideName: string;
+  }>;
+};
+
+export function generateStaticParams() {
+  return [
+    { slideName: 'declarative' },
+    { slideName: 'theArtOfLoving' },
+    // 必要に応じて他のスライド名も追加
+  ];
+}
+
+export default async function SlidesPage({ params }: SlideProps) {
+  const { slideName } = await params;
+
+  const slideDataModule =
+    slideName === 'theArtOfLoving'
+      ? import('@theArtOfLoving/data/slideData')
+      : import('@declarative/data/slideData');
+
+  const slideSections = (await slideDataModule).getAllSlideSections();
+  const pageData = (await slideDataModule).getSlidesPageData();
 
   return (
     <main className="relative min-h-screen w-full">
