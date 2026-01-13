@@ -26,9 +26,7 @@ export default function TableComponent({ headers, rows }: TableProps) {
             <tr
               key={row.join('-')}
               className={
-                rowIndex % 2 === 0
-                  ? 'bg-(--background)'
-                  : 'bg-(--primary-dark-translucent)'
+                rowIndex % 2 === 0 ? 'bg-(--background)' : 'bg-(--primary-dark-translucent)'
               }
             >
               {row.map((cell) => (

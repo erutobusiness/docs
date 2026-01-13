@@ -9,9 +9,8 @@
     "start": "next start",
     "format": "biome format --write .",
     "lint": "biome check .",
-    "lint:fix": "biome check --apply .",
-    "qiita:concat:declarative": "node ./scripts/qiita-concat-declarative.js",
-    "qiita:publish:declarative": "cd qiita && qiita publish public/declarative-combined.md"
+    "lint:text": "textlint \"**/*.md\"",
+    "lint:fix": "biome check --apply ."
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
@@ -22,18 +21,20 @@
     "react-dom": "^19.0.0",
     "react-markdown": "^10.1.0",
     "react-syntax-highlighter": "^15.6.1",
-    "react-zoom-pan-pinch": "^3.7.0",
-    "swiper": "^11.2.6"
+    "rehype-raw": "^7.0.0"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
-    "@qiita/qiita-cli": "^1.6.2",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/react-syntax-highlighter": "^15.5.13",
     "tailwindcss": "^4",
+    "textlint": "^15.5.0",
+    "textlint-rule-preset-ja-spacing": "^2.4.3",
+    "textlint-rule-preset-ja-technical-writing": "^12.0.2",
+    "textlint-rule-preset-japanese": "^10.0.4",
     "typescript": "^5"
   }
 }

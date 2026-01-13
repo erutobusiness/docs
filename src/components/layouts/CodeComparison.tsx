@@ -15,9 +15,7 @@ export default function CodeComparison({ codeExamples }: CodeComparisonProps) {
         {codeExamples?.map((codeExample) => (
           <div key={codeExample.code} className="flex flex-col">
             {codeExample.title && (
-              <h3 className="text-xl font-semibold mb-3 text-(--card-fg)">
-                {codeExample.title}
-              </h3>
+              <h3 className="text-xl font-semibold mb-3 text-(--card-fg)">{codeExample.title}</h3>
             )}
 
             {/* 個別の説明文がある場合は表示 */}

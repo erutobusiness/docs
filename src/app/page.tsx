@@ -1,55 +1,37 @@
-'use client';
-
-import { getAllTopics } from '@/data/topics';
-import Image from 'next/image';
+import { getAllDocs } from '@/lib/docs';
 import Link from 'next/link';
 
 export default function Home() {
-  const topics = getAllTopics();
+  const docs = getAllDocs();
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[var(--gradient-primary-from)] to-[var(--gradient-primary-to)] p-8">
-      <div className="container mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold mb-4 text-[var(--primary)]">プレゼンテーション</h1>
-          <p className="text-xl text-[var(--foreground)]">話題を選んでください</p>
-        </div>
+    <main className="min-h-screen p-8 bg-[var(--background)] text-[var(--foreground)]">
+      <div className="container mx-auto max-w-4xl">
+        <h1 className="text-4xl font-bold mb-8 text-[var(--primary)] border-b pb-4">
+          Documentation Dashboard
+        </h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {topics.map((topic) => (
-            <Link
-              key={topic.id}
-              href={topic.id}
-              className="group flex flex-col bg-[var(--background)] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transform transition-all duration-300 hover:-translate-y-2"
-            >
-              <div className="relative h-48 w-full overflow-hidden">
-                <Image
-                  src={topic.image}
-                  alt={topic.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="p-6">
-                <h2 className="text-2xl font-bold mb-2 text-[var(--primary)]">{topic.title}</h2>
-                <p className="text-[var(--foreground)]">{topic.description}</p>
-                {topic.subDescription && (
-                  <p className="text-sm text-[var(--foreground)] mt-1">{topic.subDescription}</p>
-                )}
-                <div className="mt-4 inline-block px-4 py-2 bg-[var(--button-primary-bg)] text-[var(--button-primary-fg)] rounded-lg hover:bg-[var(--button-primary-hover)] transition-colors">
-                  選択する
+        <div className="grid gap-4">
+          {docs.length === 0 ? (
+            <p className="text-gray-500">No documents found.</p>
+          ) : (
+            docs.map((doc) => (
+              <Link
+                key={doc.slug.join('/')}
+                href={`/docs/${doc.slug.join('/')}`}
+                className="block p-6 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700"
+              >
+                <h2 className="text-xl font-semibold mb-2">{doc.title}</h2>
+                <div className="flex items-center text-sm text-gray-500 gap-4">
+                  <span className="font-mono bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">
+                    {doc.slug.join(' / ')}
+                  </span>
+                  {doc.date && <span>{doc.date}</span>}
                 </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            ))
+          )}
         </div>
-
-        {/* 将来的に追加可能な話題の案内 */}
-        {topics.length === 1 && (
-          <div className="mt-12 text-center text-[var(--foreground)]">
-            <p>今後、より多くの話題が追加される予定です。</p>
-          </div>
-        )}
       </div>
     </main>
   );

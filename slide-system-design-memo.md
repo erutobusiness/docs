@@ -45,9 +45,9 @@
 
 ### 1.5. スタイル管理
 
-- **グローバルスタイル**: `globals.css` に、全体共通のCSS変数や基本スタイルを定義する
-- **プレゼンテーションスタイル**: 各プレゼンテーションのスタイルは、各プレゼンテーション用CSSを作成して局所化する
-- **コンポーネントスタイル**: コンポーネントファイル内にスタイルを局所化する
+- **グローバルスタイル**: `src/app/globals.css` に、全体共通のCSS変数や基本スタイルを定義する
+- **プレゼンテーションスタイル**: `src/styles/themes/{presentationId}.css` でプレゼンテーション別テーマを管理し、局所化する
+- **コンポーネントスタイル**: 通常のCSS中心、アニメーション部分ではライブラリ（Framer Motion等）を使用
 
 ---
 
@@ -168,267 +168,39 @@
   }
   ```
 
-### CSS Custom Properties + Context による軽量テーマシステム
+### CSS Custom Properties + data属性による軽量テーマシステム
 
-- **改善点**: ネイティブCSS機能を最大限活用し、最小限のJavaScriptでテーマ切り替えを実現
-- **活用案**: CSS Custom Properties、prefers-color-scheme、Container Queriesを組み合わせ、ライブラリなしでダークモード対応・レスポンシブテーマシステムを構築する
+- **改善点**: CSS Custom PropertiesとHTML data属性のみを使ったシンプルなテーマ管理
+- **活用案**: プレゼンテーション別にテーマファイルを分離し、data-theme属性でテーマを切り替える
 - **設計パターン**:
 
   ```typescript
-  // CSS Custom Properties直接操作
-  function applyTheme(theme: Record<string, string>) {
-    Object.entries(theme).forEach(([key, value]) => {
-      document.documentElement.style.setProperty(`--${key}`, value);
-    });
-  }
-
-  // 軽量テーマプロバイダー
-  export function ThemeProvider({ children, themes }) {
-    const [currentTheme, setCurrentTheme] = useState('default');
-    const [colorScheme, setColorScheme] = useState('light');
-
-    // システムカラースキーム検出
+  // シンプルなテーマローダーコンポーネント
+  export function SlideThemeLoader({ slideType }: { slideType: string }) {
     useEffect(() => {
-      const mq = matchMedia('(prefers-color-scheme: dark)');
-      setColorScheme(mq.matches ? 'dark' : 'light');
-      mq.addEventListener('change', e => setColorScheme(e.matches ? 'dark' : 'light'));
-    }, []);
+      document.body.setAttribute('data-theme', slideType);
+      return () => document.body.removeAttribute('data-theme');
+    }, [slideType]);
 
-    // テーマ適用
-    useEffect(() => {
-      if (themes[currentTheme]) applyTheme(themes[currentTheme]);
-    }, [currentTheme, themes]);
-
-    return (
-      <div data-theme={currentTheme} data-color-scheme={colorScheme}>
-        {children}
-      </div>
-    );
+    return null;
   }
 
-  /* CSS例 */
-  .slide-container {
-    background: var(--color-bg);
-    color: var(--color-text);
-    container-type: inline-size;
+  /* CSS例 - プレゼンテーション別テーマ */
+  [data-theme="declarative"] {
+    --declarative-background: theme("colors.gray.950");
+    --declarative-foreground: theme("colors.amber.200");
+    --declarative-primary: theme("colors.amber.400");
+    --slide-gradient-from: var(--declarative-gradient-primary-from);
+    --slide-gradient-to: var(--declarative-gradient-primary-to);
   }
 
-  [data-color-scheme="dark"] {
-    --color-bg: #0a0a0a;
-    --color-text: #ffffff;
-  }
-
-  @container (max-width: 768px) {
-    .slide-title { font-size: var(--font-lg); }
+  [data-theme="theArtOfLoving"] {
+    --theArtOfLoving-background: theme("colors.rose.50");
+    --theArtOfLoving-primary: theme("colors.red.500");
+    --slide-gradient-from: var(--theArtOfLoving-gradient-primary-from);
+    --slide-gradient-to: var(--theArtOfLoving-gradient-primary-to);
   }
   ```
-
-### 軽量 Hybrid Rendering + Dynamic Import Strategy
-
-- **改善点**: Next.js標準機能を活用したシンプルなハイブリッドレンダリング戦略
-- **活用案**: Dynamic Import、ISR、Edge Runtimeの組み合わせで、ライブラリ依存なしに高性能なスライドシステムを実現する
-- **設計パターン**:
-
-  ```typescript
-  // 動的コンポーネント読み込み
-  function createLazyLoader() {
-    const cache = new Map();
-    return (name: string) => {
-      if (!cache.has(name)) {
-        cache.set(name, import(`@/components/slides/${name}`)
-          .then(m => m.default)
-          .catch(() => () => <div>Component not found: {name}</div>)
-        );
-      }
-      return cache.get(name);
-    };
-  }
-
-  // 静的生成設定
-  export async function generateStaticParams() {
-    const manifest = await import('@/data/slide-manifest.json');
-    return manifest.slides.map(slide => ({
-      presentationId: slide.presentationId,
-      slideId: slide.id
-    }));
-  }
-
-  // スライドページ
-  export default async function SlidePage({ params }) {
-    const data = await getSlideData(params.presentationId, params.slideId);
-
-    return (
-      <div data-slide-id={params.slideId}>
-        <Suspense fallback={<div>Loading...</div>}>
-          {data.components.map((comp, i) => (
-            <LazyComponent key={i} type={comp.type} {...comp.props} />
-          ))}
-        </Suspense>
-      </div>
-    );
-  }
-
-  export const runtime = 'edge';
-  export const revalidate = 3600;
-  ```
-
-- **Next.js標準機能による軽量ビルド最適化**
-  - **改善点**: Next.jsとNode.js標準機能のみを使った増分ビルドとキャッシュ戦略
-  - **活用案**: 外部ツールに依存せず、ファイルシステムベースの依存関係追跡と並列処理で高速ビルドを実現する
-  - **設計パターン**:
-
-    ```typescript
-    // ファイルベースの依存関係追跡
-    function createBuildDependencyTracker() {
-      const dependencyCache = new Map<string, {
-        lastModified: number;
-        dependencies: string[]
-      }>();
-
-      const getDependencies = (filePath: string): string[] => {
-        try {
-          const content = readFileSync(filePath, 'utf-8');
-          const importMatches = content.match(/import.*from\s+['"`]([^'"`]+)['"`]/g) || [];
-          return importMatches
-            .map(match => match.match(/['"`]([^'"`]+)['"`]/)?.[1])
-            .filter(Boolean) as string[];
-        } catch {
-          return [];
-        }
-      };
-
-      const hasChanged = (filePath: string): boolean => {
-        const stats = statSync(filePath, { throwIfNoEntry: false });
-        if (!stats) return true;
-
-        const cached = dependencyCache.get(filePath);
-        return !cached || cached.lastModified < stats.mtimeMs;
-      };
-
-      const updateCache = (filePath: string) => {
-        const stats = statSync(filePath, { throwIfNoEntry: false });
-        if (stats) {
-          dependencyCache.set(filePath, {
-            lastModified: stats.mtimeMs,
-            dependencies: getDependencies(filePath),
-          });
-        }
-      };
-
-      return { hasChanged, updateCache, getDependencies };
-    }
-
-    // 増分ビルド関数
-    async function buildSlidePresentation(presentationId: string) {
-      const dependencyTracker = createBuildDependencyTracker();
-      const slidesDir = `src/data/${presentationId}`;
-      const outputDir = `.next/static/slides/${presentationId}`;
-
-      try {
-        const slideFiles = readdirSync(slidesDir)
-          .filter(file => file.endsWith('.ts') || file.endsWith('.json'));
-
-        // 変更されたファイルのみ処理
-        const changedFiles = slideFiles.filter(file => 
-          dependencyTracker.hasChanged(path.join(slidesDir, file))
-        );
-
-        if (changedFiles.length === 0) {
-          console.log(`No changes in ${presentationId}, skipping build`);
-          return;
-        }
-
-        // 並列処理でビルド
-        await Promise.all(changedFiles.map(async (file) => {
-          const inputPath = path.join(slidesDir, file);
-          const outputPath = path.join(outputDir, file.replace('.ts', '.json'));
-
-          if (file.endsWith('.ts')) {
-            // TypeScript ファイルの場合は動的インポートでデータ取得
-            const module = await import(inputPath);
-            const data = module.default || module;
-            await writeFile(outputPath, JSON.stringify(data, null, 2));
-          } else {
-            // JSONファイルの場合はそのままコピー
-            await copyFile(inputPath, outputPath);
-          }
-
-          dependencyTracker.updateCache(inputPath);
-        }));
-
-        console.log(`Built ${changedFiles.length} slides for ${presentationId}`);
-      } catch (error) {
-        console.error(`Build failed for ${presentationId}:`, error);
-        throw error;
-      }
-    }
-
-    // 開発サーバーでのHot Reload
-    function setupHotReload() {
-      if (process.env.NODE_ENV !== 'development') return;
-
-      const watcher = require('chokidar').watch('src/data/**/*.{ts,json}');
-
-      watcher.on('change', async (filePath: string) => {
-        const presentationId = filePath.match(/src\/data\/([^\/]+)/)?.[1];
-        if (presentationId) {
-          try {
-            await buildSlidePresentation(presentationId);
-
-            // Next.jsの開発サーバーに変更を通知
-            if (global.__next_dev_server) {
-              global.__next_dev_server.hotReloader.send('reloadPage');
-            }
-          } catch (error) {
-            console.error('Hot reload failed:', error);
-          }
-        }
-      });
-
-      return () => watcher.close();
-    }
-
-    // 本番ビルド用の最適化
-    export async function buildAllPresentations() {
-      const dataDir = 'src/data';
-      const presentations = readdirSync(dataDir, { withFileTypes: true })
-        .filter(dirent => dirent.isDirectory())
-        .map(dirent => dirent.name);
-
-      // CPU数に基づいて並列度を決定
-      const concurrency = Math.min(require('os').cpus().length, presentations.length);
-      const chunks = [];
-
-      for (let i = 0; i < presentations.length; i += concurrency) {
-        chunks.push(presentations.slice(i, i + concurrency));
-      }
-
-      // チャンクごとに並列実行
-      for (const chunk of chunks) {
-        await Promise.all(chunk.map(buildSlidePresentation));
-      }
-
-      console.log(`Built ${presentations.length} presentations`);
-    }
-
-    // Next.js設定例
-    const nextConfig = {
-      experimental: {
-        outputFileTracingRoot: path.join(__dirname, '../../'),
-      },
-      compiler: {
-        removeConsole: process.env.NODE_ENV === 'production',
-      },
-      async generateBuildId() {
-        // ビルドIDにgitハッシュを使用してキャッシュを最適化
-        return require('child_process')
-          .execSync('git rev-parse HEAD')
-          .toString()
-          .trim()
-          .slice(0, 8);
-      },
-    };
-    ```
 
 ### react-zoom-pan-pinch + useState による軽量ズーム・パンシステム
 
@@ -526,7 +298,7 @@
         minScale={1}
       >
         <TransformComponent>
-          <div 
+          <div
             onClick={zoomAtPosition}
             onContextMenu={handleRightClick}
             style={{
@@ -542,216 +314,58 @@
   }
   ```
 
-### Web Animation API + CSS による軽量アニメーションシステム
+### Framer Motion + CSS による表現力豊かなアニメーションシステム
 
-- **改善点**: ネイティブWeb Animation API、CSS keyframes、Intersection Observerを組み合わせた高性能アニメーション
-- **活用案**: ライブラリ依存なしで複雑なアニメーションシーケンス、60fps保証、モーション軽減対応、GPU加速を実現する
-- **設計パターン**:
+- **改善点**: Framer MotionとCSSを組み合わせた宣言的アニメーション管理
+- **活用案**: AnimatePresenceでマウント/アンマウント時のアニメーション、CSS keyframesで細かい演出を分離管理
+- **設計方針**:
+  - CSS keyframesで基本アニメーション（wave、pulse、shake等）を定義
+  - Framer Motionでコンポーネントのマウント/アンマウント管理
+  - アニメーション完了はsetTimeoutで管理（CSS animation時間と同期）
 
   ```typescript
-  // Web Animation API ベースのアニメーション管理
-  function useWebAnimations() {
-    const animationMap = useRef(new Map<string, Animation>());
-    const [reducedMotion, setReducedMotion] = useState(false);
-
-    useEffect(() => {
-      const mediaQuery = matchMedia('(prefers-reduced-motion: reduce)');
-      setReducedMotion(mediaQuery.matches);
-      
-      const handler = (e: MediaQueryListEvent) => setReducedMotion(e.matches);
-      mediaQuery.addEventListener('change', handler);
-      return () => mediaQuery.removeEventListener('change', handler);
-    }, []);
-
-    const animate = useCallback((
-      element: HTMLElement,
-      keyframes: Keyframe[],
-      options: KeyframeAnimationOptions & { id?: string } = {}
-    ) => {
-      const { id, ...animationOptions } = options;
-
-      // モーション軽減対応
-      if (reducedMotion) {
-        animationOptions.duration = 100;
-        keyframes = keyframes.map(frame => ({ ...frame, opacity: frame.opacity ?? 1 }));
-      }
-
-      const animation = element.animate(keyframes, {
-        duration: 300,
-        easing: 'ease-out',
-        fill: 'forwards',
-        ...animationOptions,
-      });
-
-      if (id) {
-        // 既存のアニメーションをキャンセル
-        if (animationMap.current.has(id)) {
-          animationMap.current.get(id)?.cancel();
-        }
-        animationMap.current.set(id, animation);
-      }
-
-      return animation;
-    }, [reducedMotion]);
-
-    const createSequence = useCallback((animations: Array<{
-      element: HTMLElement;
-      keyframes: Keyframe[];
-      options?: KeyframeAnimationOptions;
-    }>) => {
-      return animations.reduce((sequence, { element, keyframes, options }, index) => {
-        return sequence.then(() => {
-          const animation = animate(element, keyframes, options);
-          return animation.finished;
-        });
-      }, Promise.resolve());
-    }, [animate]);
-
-    return { animate, createSequence };
-  }
-
-  // Intersection Observer ベースのスクロールアニメーション
-  function useScrollAnimations() {
-    const { animate } = useWebAnimations();
-    
-    useEffect(() => {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            const element = entry.target as HTMLElement;
-            const animationType = element.dataset.animation;
-            
-            if (entry.isIntersecting) {
-              switch (animationType) {
-                case 'fade-in':
-                  animate(element, [
-                    { opacity: 0, transform: 'translateY(20px)' },
-                    { opacity: 1, transform: 'translateY(0)' }
-                  ]);
-                  break;
-                case 'slide-in':
-                  animate(element, [
-                    { transform: 'translateX(-100%)' },
-                    { transform: 'translateX(0)' }
-                  ]);
-                  break;
-                case 'scale-in':
-                  animate(element, [
-                    { transform: 'scale(0.8)', opacity: 0 },
-                    { transform: 'scale(1)', opacity: 1 }
-                  ]);
-                  break;
-              }
-            }
-          });
-        },
-        {
-          threshold: 0.2,
-          rootMargin: '50px',
-        }
-      );
-
-      // data-animation属性を持つ要素を監視
-      const animatedElements = document.querySelectorAll('[data-animation]');
-      animatedElements.forEach(el => observer.observe(el));
-
-      return () => observer.disconnect();
-    }, [animate]);
-  }
-
-  // スライドトランジション用アニメーション
-  export function SlideTransition({ 
-    children, 
-    direction = 'right',
-    isActive = false 
-  }: {
-    children: React.ReactNode;
-    direction?: 'left' | 'right' | 'up' | 'down';
-    isActive?: boolean;
-  }) {
-    const containerRef = useRef<HTMLDivElement>(null);
-    const { animate } = useWebAnimations();
-
-    useEffect(() => {
-      const container = containerRef.current;
-      if (!container) return;
-
-      const directionMap = {
-        left: { from: 'translateX(-100%)', to: 'translateX(0)' },
-        right: { from: 'translateX(100%)', to: 'translateX(0)' },
-        up: { from: 'translateY(-100%)', to: 'translateY(0)' },
-        down: { from: 'translateY(100%)', to: 'translateY(0)' },
-      };
-
-      if (isActive) {
-        animate(container, [
-          { 
-            transform: directionMap[direction].from,
-            opacity: 0 
-          },
-          { 
-            transform: directionMap[direction].to,
-            opacity: 1 
-          }
-        ], { 
-          duration: 400,
-          easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
-          id: `slide-transition-${direction}` 
-        });
-      }
-    }, [isActive, direction, animate]);
+  // シンプルなアニメーションコンポーネント
+  export function WaveAnimation({ animationId, direction = 'right', onComplete }) {
+    if (animationId === null) return null;
 
     return (
-      <div ref={containerRef} className="slide-transition">
-        {children}
-      </div>
+      <AnimatePresence>
+        <motion.div
+          key={`wave-${animationId}`}
+          className={`wave-container ${direction}`}
+          initial={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onAnimationComplete={() => setTimeout(() => onComplete?.(animationId), 900)}
+        >
+          <div className="liquid">
+            <div className="wave" />
+            <div className="wave2" />
+          </div>
+        </motion.div>
+      </AnimatePresence>
     );
   }
 
-  /* CSS例（GPU最適化） */
-  .slide-transition {
-    will-change: transform, opacity;
-    backface-visibility: hidden;
-    perspective: 1000px;
-  }
-
-  /* Wave アニメーション（CSS keyframes） */
-  .wave-container {
-    --wave-color: var(--color-primary, #3b82f6);
-    --wave-duration: var(--motion-duration, 0.9s);
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    overflow: hidden;
-  }
-
+  // CSS: keyframesでアニメーション定義
   .wave {
-    width: 200%;
-    height: 150%;
-    background: var(--wave-color);
-    border-radius: 45%;
-    opacity: 0;
-    will-change: transform, opacity;
-    animation: 
-      wave-appear var(--wave-duration) ease-out forwards,
-      wave-rotate 8s linear infinite;
+    animation: waveAppear 0.9s ease-out forwards, rotate 8s linear infinite;
   }
 
-  @keyframes wave-appear {
-    0% { opacity: 0; transform: translateY(100%); }
-    50% { opacity: 0.7; }
-    100% { opacity: 0; transform: translateY(-20%); }
+  @keyframes waveAppear {
+    0% { opacity: 0; }
+    40% { opacity: 0.9; }
+    100% { opacity: 0; }
   }
 
-  @keyframes wave-rotate {
-    to { transform: rotate(360deg); }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    .wave {
-      animation-duration: 0.1s, 0s;
-      opacity: 0.3;
-    }
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
   }
   ```
 
@@ -809,26 +423,26 @@
     slides: Slide[];
   }
 
-  // 軽量コンテンツローダー
-  function useContentLoader() {
-    const [cache, setCache] = useState(new Map<string, SlideSection>());
+  // 動的インポートでスライドデータ読み込み
+  export async function generateStaticParams() {
+    return [
+      { slideName: 'declarative' },
+      { slideName: 'theArtOfLoving' }
+    ];
+  }
 
-    const loadSection = useCallback(async (sectionId: string): Promise<SlideSection | null> => {
-      const cached = cache.get(sectionId);
-      if (cached) return cached;
+  export default async function SlidePage({ params }) {
+    const { slideName } = await params;
 
-      // TypeScript の動的インポートを活用
-      const module = await import(`@/data/slides/${sectionId}`);
-      const section = module.default || module[`${sectionId}Section`];
+    // 条件分岐で動的インポート
+    const slideDataModule = slideName === 'theArtOfLoving'
+      ? import('@theArtOfLoving/data/slideData')
+      : import('@declarative/data/slideData');
 
-      setCache(prev => new Map(prev).set(sectionId, section));
-      return section;
-    }, [cache]);
+    const slideSections = (await slideDataModule).getAllSlideSections();
+    const pageData = (await slideDataModule).getSlidesPageData();
 
-    return {
-      loadSection,
-      clearCache: () => setCache(new Map()),
-    };
+    return <SlideShow slideSection={slideSections} />;
   }
   ```
 

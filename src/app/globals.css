@@ -7,11 +7,7 @@
   --font-mono: var(--font-geist-mono);
 }
 
-/* ズーム機能使用時のスクロールバー非表示 */
-html,
-body {
-  overflow: hidden !important; /* スクロールバーを完全に非表示に */
-}
+/* ズーム機能使用時のスクロールバー非表示 - 削除 */
 
 body {
   background: var(--background);

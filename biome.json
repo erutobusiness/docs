@@ -17,7 +17,7 @@
       "declarative/pdf/**",
       "declarative/img/**"
     ],
-    "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx", "**/*.json"]
+    "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx", "**/*.json", "**/*.md", "**/*.mdx"]
   },
   "formatter": {
     "enabled": true,
