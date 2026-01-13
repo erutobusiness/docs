@@ -8,7 +8,11 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: '**',
+        hostname: 'qiita-image-store.s3.ap-northeast-1.amazonaws.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'qiita-user-contents.imgix.net',
       },
     ],
     unoptimized: true, // 静的エクスポートでは画像最適化を無効にする必要がある

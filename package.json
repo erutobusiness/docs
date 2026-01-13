@@ -10,7 +10,13 @@
     "format": "biome format --write .",
     "lint": "biome check .",
     "lint:text": "textlint \"**/*.md\"",
-    "lint:fix": "biome check --apply ."
+    "lint:fix": "biome check --apply .",
+    "check": "npm run lint && npm run lint:text && npx tsc --noEmit",
+    "fix": "npm run lint:fix && npm run format",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,json,md}": ["biome check --no-errors-on-unmatched --files-ignore-unknown=true"]
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
@@ -30,6 +36,8 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/react-syntax-highlighter": "^15.5.13",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
     "tailwindcss": "^4",
     "textlint": "^15.5.0",
     "textlint-rule-preset-ja-spacing": "^2.4.3",
