@@ -1,0 +1,7 @@
+{
+  "name": "textlint-filter-rule-footnote",
+  "version": "1.0.0",
+  "description": "Filter rule to ignore rules in footnotes",
+  "main": "index.js",
+  "keywords": ["textlint", "filter", "footnote"]
+}

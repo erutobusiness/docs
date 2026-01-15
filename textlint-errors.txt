@@ -1,0 +1,576 @@
+
+[4mC:\docs\md\theArtOfLoving\91-pressure_test.md[24m
+  [90m51:70[39m   [31merror[39m  一つの文で"、"を4つ以上使用しています  [90mjapanese/max-ten[39m
+  [90m61:126[39m  [31merror[39m  一つの文で"、"を4つ以上使用しています  [90mjapanese/max-ten[39m
+
+[4mC:\docs\md\theArtOfLoving\00-script.md[24m
+   [90m37:39[39m  [31merror[39m  一つの文で"、"を4つ以上使用しています                                                         [90mjapanese/max-ten[39m
+   [90m67:38[39m  [31merror[39m  一つの文で"、"を4つ以上使用しています                                                         [90mjapanese/max-ten[39m
+   [90m75:69[39m  [31merror[39m  This sentence exceeds the maximum count of comma. Maximum is 6                                [90mja-technical-writing/max-comma[39m
+  [90m164:15[39m  [31merror[39m  漢字が7つ以上連続しています: 紀伊國屋書店版                                                   [90mja-technical-writing/max-kanji-continuous-len[39m
+  [90m168:51[39m  [31merror[39m  一つの文で"、"を4つ以上使用しています                                                         [90mjapanese/max-ten[39m
+  [90m355:41[39m  [31merror[39m  一つの文で"、"を4つ以上使用しています                                                         [90mjapanese/max-ten[39m
+  [90m377:43[39m  [31merror[39m  一つの文で"、"を4つ以上使用しています                                                         [90mjapanese/max-ten[39m
+  [90m389:25[39m  [31merror[39m  一文に二回以上利用されている助詞 "に" がみつかりました。
+
+次の助詞が連続しているため、文を読みにくくしています。
+
+- "に"
+- "に"
+
+同じ助詞を連続して利用しない、文の中で順番を入れ替える、文を分割するなどを検討してください。
+  [90mja-technical-writing/no-doubled-joshi[39m
+  [90m403:52[39m  [31merror[39m  一つの文で"、"を4つ以上使用しています                                                         [90mjapanese/max-ten[39m
+
+[4mC:\docs\md\declarative\99-reference.md[24m
+   [90m1:1[39m   [31merror[39m  【テクニカルライティング品質分析】この文書で1件の改善提案が見つかりました [内訳: 具体性: 1件]。効果的なテクニカルライティングの7つのC（Clear, Concise, Correct, Coherent, Concrete, Complete, Courteous）の原則に基づいて見直しを検討してください。詳細なガイドライン: https://github.com/textlint-ja/textlint-rule-preset-ai-writing/blob/main/docs/tech-writing-guidelines.md  [90m@textlint-ja/ai-writing/ai-tech-writing-guideline[39m
+  [90m10:67[39m  [31merror[39m  【具体性】曖昧な判断表現が検出されました。何を基準として適切なのか、具体的な条件や基準の明示を検討してください。                                                                                                                                                                                                                                                                 [90m@textlint-ja/ai-writing/ai-tech-writing-guideline[39m
+
+[4mC:\docs\md\declarative\90-humanities.md[24m
+    [90m3:44[39m  [31merror[39m  本文: "ですます"調 でなければなりません
+=> "ですます"調 であるべき箇所に、次の "である"調 の箇所があります: "である。"
+Total:
+である  : 1
+ですます: 0
+                                                                                                                                                          [90mja-technical-writing/no-mix-dearu-desumasu[39m
+    [90m6:4[39m   [31merror[39m  漢字が7つ以上連続しています: 言語相対性仮説                                                                                                                                                                                             [90mja-technical-writing/max-kanji-continuous-len[39m
+   [90m13:22[39m  [31merror[39m  漢字が7つ以上連続しています: 問題概念化方法                                                                                                                                                                                             [90mja-technical-writing/max-kanji-continuous-len[39m
+   [90m18:24[39m  [31merror[39m  「例えば、次のような言語間の思考様式の違いがある：」のような述語とコロンで終わるパターンは、読み手によっては英語の構文を直訳したような印象を与える場合があります。「次のように〜します。」のような自然な日本語表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-colon-continuation[39m
+   [90m44:44[39m  [31merror[39m  「大幅に」という表現は誇張的である可能性があります。具体的な数値や割合を示すことを検討してください。                                                                                                                                    [90m@textlint-ja/ai-writing/no-ai-hype-expressions[39m
+   [90m45:5[39m   [31merror[39m  漢字が7つ以上連続しています: 認知心理学研究                                                                                                                                                                                             [90mja-technical-writing/max-kanji-continuous-len[39m
+   [90m66:19[39m  [31merror[39m  「宣言的UIにおいても同様の構造がある：」のような述語とコロンで終わるパターンは、読み手によっては英語の構文を直訳したような印象を与える場合があります。「次のように〜します。」のような自然な日本語表現を検討してください。              [90m@textlint-ja/ai-writing/no-ai-colon-continuation[39m
+   [90m83:5[39m   [31merror[39m  漢字が7つ以上連続しています: 集団主義的文化圏                                                                                                                                                                                           [90mja-technical-writing/max-kanji-continuous-len[39m
+   [90m83:14[39m  [31merror[39m  漢字が7つ以上連続しています: 個人主義的文化圏                                                                                                                                                                                           [90mja-technical-writing/max-kanji-continuous-len[39m
+   [90m98:4[39m   [31merror[39m  漢字が7つ以上連続しています: 社会構築主義的視点                                                                                                                                                                                         [90mja-technical-writing/max-kanji-continuous-len[39m
+  [90m110:40[39m  [31merror[39m  一文に二回以上利用されている助詞 "は" がみつかりました。
+
+次の助詞が連続しているため、文を読みにくくしています。
+
+- "は"
+- "は"
+
+同じ助詞を連続して利用しない、文の中で順番を入れ替える、文を分割するなどを検討してください。
+                                                                                                                                            [90mja-technical-writing/no-doubled-joshi[39m
+
+[4mC:\docs\md\declarative\06-summary.md[24m
+    [90m1:1[39m   [31merror[39m  【テクニカルライティング品質分析】この文書で1件の改善提案が見つかりました [内訳: 具体性: 1件]。効果的なテクニカルライティングの7つのC（Clear, Concise, Correct, Coherent, Concrete, Complete, Courteous）の原則に基づいて見直しを検討してください。詳細なガイドライン: https://github.com/textlint-ja/textlint-rule-preset-ai-writing/blob/main/docs/tech-writing-guidelines.md  [90m@textlint-ja/ai-writing/ai-tech-writing-guideline[39m
+    [90m9:1[39m   [31merror[39m  リストアイテムで強調（**）とコロン（：）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。                                                                                                                                                                                                                                                   [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+   [90m10:1[39m   [31merror[39m  リストアイテムで強調（**）とコロン（：）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。                                                                                                                                                                                                                                                   [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+   [90m11:1[39m   [31merror[39m  リストアイテムで強調（**）とコロン（：）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。                                                                                                                                                                                                                                                   [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+   [90m15:1[39m   [31merror[39m  リストアイテムで強調（**）とコロン（：）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。                                                                                                                                                                                                                                                   [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+   [90m16:1[39m   [31merror[39m  リストアイテムで強調（**）とコロン（：）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。                                                                                                                                                                                                                                                   [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+   [90m17:1[39m   [31merror[39m  リストアイテムで強調（**）とコロン（：）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。                                                                                                                                                                                                                                                   [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+   [90m26:1[39m   [31merror[39m  リストアイテムで強調（**）とコロン（：）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。                                                                                                                                                                                                                                                   [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+   [90m27:1[39m   [31merror[39m  リストアイテムで強調（**）とコロン（：）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。                                                                                                                                                                                                                                                   [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+   [90m28:1[39m   [31merror[39m  リストアイテムで強調（**）とコロン（：）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。                                                                                                                                                                                                                                                   [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+   [90m29:1[39m   [31merror[39m  リストアイテムで強調（**）とコロン（：）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。                                                                                                                                                                                                                                                   [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+   [90m30:1[39m   [31merror[39m  リストアイテムで強調（**）とコロン（：）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。                                                                                                                                                                                                                                                   [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+   [90m34:1[39m   [31merror[39m  リストアイテムで強調（**）とコロン（：）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。                                                                                                                                                                                                                                                   [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+   [90m41:1[39m   [31merror[39m  リストアイテムで強調（**）とコロン（：）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。                                                                                                                                                                                                                                                   [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+   [90m51:26[39m  [31merror[39m  「宣言的アプローチの本質は以下のポイントに集約される：」のような述語とコロンで終わるパターンは、読み手によっては英語の構文を直訳したような印象を与える場合があります。「次のように〜します。」のような自然な日本語表現を検討してください。                                                                                                                                       [90m@textlint-ja/ai-writing/no-ai-colon-continuation[39m
+   [90m59:33[39m  [31merror[39m  「こうした特性により、宣言的アプローチは以下のような価値をもたらす：」のような述語とコロンで終わるパターンは、読み手によっては英語の構文を直訳したような印象を与える場合があります。「次のように〜します。」のような自然な日本語表現を検討してください。                                                                                                                         [90m@textlint-ja/ai-writing/no-ai-colon-continuation[39m
+   [90m61:1[39m   [31merror[39m  リストアイテムで強調（**）とコロン（：）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。                                                                                                                                                                                                                                                   [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+   [90m62:1[39m   [31merror[39m  リストアイテムで強調（**）とコロン（：）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。                                                                                                                                                                                                                                                   [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+   [90m63:1[39m   [31merror[39m  リストアイテムで強調（**）とコロン（：）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。                                                                                                                                                                                                                                                   [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+   [90m64:1[39m   [31merror[39m  リストアイテムで強調（**）とコロン（：）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。                                                                                                                                                                                                                                                   [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+   [90m65:1[39m   [31merror[39m  リストアイテムで強調（**）とコロン（：）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。                                                                                                                                                                                                                                                   [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+   [90m69:28[39m  [31merror[39m  本文: "ですます"調 でなければなりません
+=> "ですます"調 であるべき箇所に、次の "である"調 の箇所があります: "である："
+Total:
+である  : 2
+ですます: 0
+                                                                                                                                                                                                                                                                                                   [90mja-technical-writing/no-mix-dearu-desumasu[39m
+   [90m69:31[39m  [31merror[39m  「宣言的アプローチは万能ではなく、以下のような配慮が必要である：」のような述語とコロンで終わるパターンは、読み手によっては英語の構文を直訳したような印象を与える場合があります。「次のように〜します。」のような自然な日本語表現を検討してください。                                                                                                                             [90m@textlint-ja/ai-writing/no-ai-colon-continuation[39m
+   [90m87:48[39m  [31merror[39m  「宣言的アプローチは現代のソフトウェア開発における主要なパラダイムとしてさらに進化を続けるだろう：」のような述語とコロンで終わるパターンは、読み手によっては英語の構文を直訳したような印象を与える場合があります。「次のように〜します。」のような自然な日本語表現を検討してください。                                                                                           [90m@textlint-ja/ai-writing/no-ai-colon-continuation[39m
+  [90m109:96[39m  [31merror[39m  【具体性】曖昧な判断表現が検出されました。何を基準として適切なのか、具体的な条件や基準の明示を検討してください。                                                                                                                                                                                                                                                                 [90m@textlint-ja/ai-writing/ai-tech-writing-guideline[39m
+  [90m111:58[39m  [31merror[39m  本文: "ですます"調 でなければなりません
+=> "ですます"調 であるべき箇所に、次の "である"調 の箇所があります: "である。"
+Total:
+である  : 2
+ですます: 0
+                                                                                                                                                                                                                                                                                                   [90mja-technical-writing/no-mix-dearu-desumasu[39m
+
+[4mC:\docs\md\declarative\05-letter.md[24m
+  [90m13:8[39m   [31merror[39m  文末が"。"で終わっていません。
+理由: 句点は文の境界を明確にし、読み手の理解を助けます
+修正: 適切な文末表現で文を完結させ、句点を追加してください
+例: 「〜です。」「〜ます。」「〜でした。」など  [90mja-technical-writing/ja-no-mixed-period[39m
+  [90m63:8[39m   [31merror[39m  文末が"。"で終わっていません。
+理由: 句点は文の境界を明確にし、読み手の理解を助けます
+修正: 適切な文末表現で文を完結させ、句点を追加してください
+例: 「〜です。」「〜ます。」「〜でした。」など  [90mja-technical-writing/ja-no-mixed-period[39m
+  [90m80:8[39m   [31merror[39m  文末が"。"で終わっていません。
+理由: 句点は文の境界を明確にし、読み手の理解を助けます
+修正: 適切な文末表現で文を完結させ、句点を追加してください
+例: 「〜です。」「〜ます。」「〜でした。」など  [90mja-technical-writing/ja-no-mixed-period[39m
+  [90m89:16[39m  [31merror[39m  文末が"。"で終わっていません。
+理由: 句点は文の境界を明確にし、読み手の理解を助けます
+修正: 適切な文末表現で文を完結させ、句点を追加してください
+例: 「〜です。」「〜ます。」「〜でした。」など  [90mja-technical-writing/ja-no-mixed-period[39m
+  [90m95:23[39m  [31merror[39m  文末が"。"で終わっていません。
+理由: 句点は文の境界を明確にし、読み手の理解を助けます
+修正: 適切な文末表現で文を完結させ、句点を追加してください
+例: 「〜です。」「〜ます。」「〜でした。」など  [90mja-technical-writing/ja-no-mixed-period[39m
+
+[4mC:\docs\md\declarative\04_02-other.md[24m
+  [90m109:26[39m  [31merror[39m  一文に二回以上利用されている助詞 "が" がみつかりました。
+
+次の助詞が連続しているため、文を読みにくくしています。
+
+- "が"
+- "が"
+
+同じ助詞を連続して利用しない、文の中で順番を入れ替える、文を分割するなどを検討してください。
+  [90mja-technical-writing/no-doubled-joshi[39m
+
+[4mC:\docs\md\declarative\04_01-react.md[24m
+    [90m1:1[39m      [31merror[39m  【テクニカルライティング品質分析】この文書で2件の改善提案が見つかりました [内訳: 具体性: 2件]。効果的なテクニカルライティングの7つのC（Clear, Concise, Correct, Coherent, Concrete, Complete, Courteous）の原則に基づいて見直しを検討してください。詳細なガイドライン: https://github.com/textlint-ja/textlint-rule-preset-ai-writing/blob/main/docs/tech-writing-guidelines.md  [90m@textlint-ja/ai-writing/ai-tech-writing-guideline[39m
+    [90m3:115[39m    [31merror[39m  【具体性】曖昧な判断表現が検出されました。何を基準として適切なのか、具体的な条件や基準の明示を検討してください。                                                                                                                                                                                                                                                                 [90m@textlint-ja/ai-writing/ai-tech-writing-guideline[39m
+    [90m5:122[39m    [31merror[39m  本文: "ですます"調 でなければなりません
+=> "ですます"調 であるべき箇所に、次の "である"調 の箇所があります: "である。"
+Total:
+である  : 1
+ですます: 0
+                                                                                                                                                                                                                                                                                                   [90mja-technical-writing/no-mix-dearu-desumasu[39m
+  [90m156:91[39m     [31merror[39m  【具体性】曖昧な判断表現が検出されました。何を基準として適切なのか、具体的な条件や基準の明示を検討してください。                                                                                                                                                                                                                                                                 [90m@textlint-ja/ai-writing/ai-tech-writing-guideline[39m
+  [90m282:7938[39m   [31merror[39m  Line 282 sentence length(108) exceeds the maximum sentence length of 100.
+Over 8 characters                                                                                                                                                                                                                                                                                                        [90mjapanese/sentence-length[39m
+  [90m394:42[39m     [31merror[39m  一文に二回以上利用されている助詞 "に" がみつかりました。
+
+次の助詞が連続しているため、文を読みにくくしています。
+
+- "に"
+- "に"
+
+同じ助詞を連続して利用しない、文の中で順番を入れ替える、文を分割するなどを検討してください。
+                                                                                                                                                                                                                                                                                     [90mja-technical-writing/no-doubled-joshi[39m
+  [90m415:120[39m    [31merror[39m  「完全に」という絶対的な表現は過度に断定的である可能性があります。「多くの場合」などの表現を検討してください。                                                                                                                                                                                                                                                                   [90m@textlint-ja/ai-writing/no-ai-hype-expressions[39m
+  [90m456:3[39m      [31merror[39m  Line 456 sentence length(118) exceeds the maximum sentence length of 100.
+Over 18 characters                                                                                                                                                                                                                                                                                                        [90mjapanese/sentence-length[39m
+  [90m501:133[39m    [31merror[39m  【dict6】 "管理を実行"は冗長な表現です。"管理する"など簡潔な表現にすると文章が明瞭になります。
+解説: https://github.com/textlint-ja/textlint-rule-ja-no-redundant-expression#dict6                                                                                                                                                                                                                                                                                   [90mja-technical-writing/ja-no-redundant-expression[39m
+  [90m501:14252[39m  [31merror[39m  Line 501 sentence length(126) exceeds the maximum sentence length of 100.
+Over 26 characters                                                                                                                                                                                                                                                                                                        [90mjapanese/sentence-length[39m
+  [90m504:25[39m     [31merror[39m  一文に二回以上利用されている助詞 "が" がみつかりました。
+
+次の助詞が連続しているため、文を読みにくくしています。
+
+- "が"
+- "が"
+
+同じ助詞を連続して利用しない、文の中で順番を入れ替える、文を分割するなどを検討してください。
+                                                                                                                                                                                                                                                                                     [90mja-technical-writing/no-doubled-joshi[39m
+  [90m506:14840[39m  [31merror[39m  Line 506 sentence length(105) exceeds the maximum sentence length of 100.
+Over 5 characters                                                                                                                                                                                                                                                                                                        [90mjapanese/sentence-length[39m
+  [90m610:1[39m      [31merror[39m  Line 610 sentence length(104) exceeds the maximum sentence length of 100.
+Over 4 characters                                                                                                                                                                                                                                                                                                        [90mjapanese/sentence-length[39m
+  [90m618:5[39m      [31merror[39m  Line 618 sentence length(108) exceeds the maximum sentence length of 100.
+Over 8 characters                                                                                                                                                                                                                                                                                                        [90mjapanese/sentence-length[39m
+  [90m621:18570[39m  [31merror[39m  Line 621 sentence length(120) exceeds the maximum sentence length of 100.
+Over 20 characters                                                                                                                                                                                                                                                                                                        [90mjapanese/sentence-length[39m
+  [90m632:97[39m     [31merror[39m  一つの文で"、"を4つ以上使用しています                                                                                                                                                                                                                                                                                                                                            [90mjapanese/max-ten[39m
+  [90m632:19009[39m  [31merror[39m  Line 632 sentence length(124) exceeds the maximum sentence length of 100.
+Over 24 characters                                                                                                                                                                                                                                                                                                        [90mjapanese/sentence-length[39m
+
+[4mC:\docs\md\declarative\03-history.md[24m
+   [90m9:1[39m   [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m10:5[39m   [31merror[39m  漢字が7つ以上連続しています: 階層的記述言語                                                                                    [90mja-technical-writing/max-kanji-continuous-len[39m
+  [90m38:24[39m  [31merror[39m  一文に二回以上利用されている助詞 "が" がみつかりました。
+
+次の助詞が連続しているため、文を読みにくくしています。
+
+- "が"
+- "が"
+
+同じ助詞を連続して利用しない、文の中で順番を入れ替える、文を分割するなどを検討してください。
+                                   [90mja-technical-writing/no-doubled-joshi[39m
+  [90m44:30[39m  [31merror[39m  文末が"。"で終わっていません。
+理由: 句点は文の境界を明確にし、読み手の理解を助けます
+修正: 適切な文末表現で文を完結させ、句点を追加してください
+例: 「〜です。」「〜ます。」「〜でした。」など                                                                     [90mja-technical-writing/ja-no-mixed-period[39m
+  [90m46:1[39m   [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m50:3[39m   [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m51:1[39m   [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m54:1[39m   [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m57:1[39m   [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+
+[4mC:\docs\md\declarative\02-why_now.md[24m
+    [90m1:1[39m      [31merror[39m  【テクニカルライティング品質分析】この文書で2件の改善提案が見つかりました [内訳: 具体性: 2件]。効果的なテクニカルライティングの7つのC（Clear, Concise, Correct, Coherent, Concrete, Complete, Courteous）の原則に基づいて見直しを検討してください。詳細なガイドライン: https://github.com/textlint-ja/textlint-rule-preset-ai-writing/blob/main/docs/tech-writing-guidelines.md                                             [90m@textlint-ja/ai-writing/ai-tech-writing-guideline[39m
+    [90m4:18[39m     [31merror[39m  一つの文で"、"を4つ以上使用しています                                                                                                                                                                                                                                                                                                                                                                                       [90mjapanese/max-ten[39m
+    [90m4:34[39m     [31merror[39m  本文: "である"調 と "ですます"調 が混在
+=> "ですます"調 の文体に、次の "である"調 の箇所があります: "である。"
+Total:
+である  : 2
+ですます: 23
+                                                                                                                                                                                                                                                                                                                                                      [90mjapanese/no-mix-dearu-desumasu[39m
+    [90m4:34[39m     [31merror[39m  本文: "ですます"調 でなければなりません
+=> "ですます"調 であるべき箇所に、次の "である"調 の箇所があります: "である。"
+Total:
+である  : 2
+ですます: 23
+                                                                                                                                                                                                                                                                                                                                              [90mja-technical-writing/no-mix-dearu-desumasu[39m
+   [90m12:10[39m     [31merror[39m  漢字が7つ以上連続しています: 落合陽一責任編集生成                                                                                                                                                                                                                                                                                                                                                                           [90mja-technical-writing/max-kanji-continuous-len[39m
+   [90m12:213[39m    [31merror[39m  Line 12 sentence length(105) exceeds the maximum sentence length of 100.
+Over 5 characters                                                                                                                                                                                                                                                                                                                                                    [90mjapanese/sentence-length[39m
+   [90m24:1[39m      [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。                                                                                                                                                                                                                                                                                               [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+   [90m25:1[39m      [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。                                                                                                                                                                                                                                                                                               [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+   [90m26:1[39m      [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。                                                                                                                                                                                                                                                                                               [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+   [90m32:1[39m      [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。                                                                                                                                                                                                                                                                                               [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+   [90m33:1[39m      [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。                                                                                                                                                                                                                                                                                               [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+   [90m34:1[39m      [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。                                                                                                                                                                                                                                                                                               [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+   [90m46:104[39m    [31merror[39m  一文に二回以上利用されている助詞 "が" がみつかりました。
+
+次の助詞が連続しているため、文を読みにくくしています。
+
+- "が"
+- "が"
+
+同じ助詞を連続して利用しない、文の中で順番を入れ替える、文を分割するなどを検討してください。
+                                                                                                                                                                                                                                                                                                                                [90mja-technical-writing/no-doubled-joshi[39m
+   [90m58:2237[39m   [31merror[39m  Line 58 sentence length(110) exceeds the maximum sentence length of 100.
+Over 10 characters                                                                                                                                                                                                                                                                                                                                                    [90mjapanese/sentence-length[39m
+   [90m67:373[39m    [31merror[39m  「生成AIの普及に伴い、エンジニアに求められるスキルセットも変化しています。この変化は、GitHubの Octoverse 2023 レポートやMcKinsey & Companyの調査「How generative AI is changing software development」(2023年)などで報告されています：」のような述語とコロンで終わるパターンは、読み手によっては英語の構文を直訳したような印象を与える場合があります。「次のように〜します。」のような自然な日本語表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-colon-continuation[39m
+   [90m67:2685[39m   [31merror[39m  Line 67 sentence length(126) exceeds the maximum sentence length of 100.
+Over 26 characters                                                                                                                                                                                                                                                                                                                                                    [90mjapanese/sentence-length[39m
+   [90m70:26[39m     [31merror[39m  【具体性】曖昧な判断表現が検出されました。何を基準として適切なのか、具体的な条件や基準の明示を検討してください。                                                                                                                                                                                                                                                                                                            [90m@textlint-ja/ai-writing/ai-tech-writing-guideline[39m
+   [90m76:3271[39m   [31merror[39m  Line 76 sentence length(141) exceeds the maximum sentence length of 100.
+Over 41 characters                                                                                                                                                                                                                                                                                                                                                    [90mjapanese/sentence-length[39m
+   [90m78:1[39m      [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。                                                                                                                                                                                                                                                                                               [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+   [90m79:1[39m      [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。                                                                                                                                                                                                                                                                                               [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+   [90m80:1[39m      [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。                                                                                                                                                                                                                                                                                               [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+   [90m81:1[39m      [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。                                                                                                                                                                                                                                                                                               [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+   [90m82:1[39m      [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。                                                                                                                                                                                                                                                                                               [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+   [90m83:1[39m      [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。                                                                                                                                                                                                                                                                                               [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+   [90m87:192[39m    [31merror[39m  「開発コミュニティの実践や、Microsoft Research の「AI Pair Programming」に関する研究によると、AI生成コードを含むコードレビューでは、従来のレビュープロセスに以下の点を追加することが効果的とされています：」のような述語とコロンで終わるパターンは、読み手によっては英語の構文を直訳したような印象を与える場合があります。「次のように〜します。」のような自然な日本語表現を検討してください。                              [90m@textlint-ja/ai-writing/no-ai-colon-continuation[39m
+   [90m87:3685[39m   [31merror[39m  Line 87 sentence length(120) exceeds the maximum sentence length of 100.
+Over 20 characters                                                                                                                                                                                                                                                                                                                                                    [90mjapanese/sentence-length[39m
+   [90m94:4120[39m   [31merror[39m  Line 94 sentence length(128) exceeds the maximum sentence length of 100.
+Over 28 characters                                                                                                                                                                                                                                                                                                                                                    [90mjapanese/sentence-length[39m
+   [90m99:39[39m     [31merror[39m  一文に二回以上利用されている助詞 "が" がみつかりました。
+
+次の助詞が連続しているため、文を読みにくくしています。
+
+- "が"
+- "が"
+
+同じ助詞を連続して利用しない、文の中で順番を入れ替える、文を分割するなどを検討してください。
+                                                                                                                                                                                                                                                                                                                                [90mja-technical-writing/no-doubled-joshi[39m
+  [90m106:23[39m     [31merror[39m  一つの文で"、"を4つ以上使用しています                                                                                                                                                                                                                                                                                                                                                                                       [90mjapanese/max-ten[39m
+  [90m112:17[39m     [31merror[39m  「この前、以下のようなコードを見た：」のような述語とコロンで終わるパターンは、読み手によっては英語の構文を直訳したような印象を与える場合があります。「次のように〜します。」のような自然な日本語表現を検討してください。                                                                                                                                                                                                    [90m@textlint-ja/ai-writing/no-ai-colon-continuation[39m
+  [90m117:15[39m     [31merror[39m  「完全に」という絶対的な表現は過度に断定的である可能性があります。「多くの場合」などの表現を検討してください。                                                                                                                                                                                                                                                                                                              [90m@textlint-ja/ai-writing/no-ai-hype-expressions[39m
+  [90m121:27[39m     [31merror[39m  本文: "である"調 と "ですます"調 が混在
+=> "ですます"調 の文体に、次の "である"調 の箇所があります: "である。"
+Total:
+である  : 2
+ですます: 23
+                                                                                                                                                                                                                                                                                                                                                      [90mjapanese/no-mix-dearu-desumasu[39m
+  [90m121:27[39m     [31merror[39m  本文: "ですます"調 でなければなりません
+=> "ですます"調 であるべき箇所に、次の "である"調 の箇所があります: "である。"
+Total:
+である  : 2
+ですます: 23
+                                                                                                                                                                                                                                                                                                                                              [90mja-technical-writing/no-mix-dearu-desumasu[39m
+  [90m336:10016[39m  [31merror[39m  Line 336 sentence length(113) exceeds the maximum sentence length of 100.
+Over 13 characters                                                                                                                                                                                                                                                                                                                                                   [90mjapanese/sentence-length[39m
+  [90m358:10928[39m  [31merror[39m  Line 358 sentence length(102) exceeds the maximum sentence length of 100.
+Over 2 characters                                                                                                                                                                                                                                                                                                                                                   [90mjapanese/sentence-length[39m
+  [90m362:45[39m     [31merror[39m  箇条書き: "である"調 と "ですます"調 が混在
+=> "である"調 の文体に、次の "ですます"調 の箇所があります: "ます"
+Total:
+である  : 3
+ですます: 2
+                                                                                                                                                                                                                                                                                                                                                          [90mjapanese/no-mix-dearu-desumasu[39m
+  [90m362:45[39m     [31merror[39m  箇条書き: "である"調 でなければなりません
+=> "である"調 であるべき箇所に、次の "ですます"調 の箇所があります: "ます"
+Total:
+である  : 3
+ですます: 2
+                                                                                                                                                                                                                                                                                                                                                  [90mja-technical-writing/no-mix-dearu-desumasu[39m
+  [90m364:11157[39m  [31merror[39m  Line 364 sentence length(102) exceeds the maximum sentence length of 100.
+Over 2 characters                                                                                                                                                                                                                                                                                                                                                   [90mjapanese/sentence-length[39m
+  [90m368:11278[39m  [31merror[39m  Line 368 sentence length(161) exceeds the maximum sentence length of 100.
+Over 61 characters                                                                                                                                                                                                                                                                                                                                                   [90mjapanese/sentence-length[39m
+  [90m368:11278[39m  [31merror[39m  Line 368 sentence length(161) exceeds the maximum sentence length of 150.
+Over 11 characters                                                                                                                                                                                                                                                                                                                                                   [90mja-technical-writing/sentence-length[39m
+  [90m378:1[39m      [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。                                                                                                                                                                                                                                                                                               [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m382:1[39m      [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。                                                                                                                                                                                                                                                                                               [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m388:1[39m      [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。                                                                                                                                                                                                                                                                                               [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m400:12778[39m  [31merror[39m  Line 400 sentence length(204) exceeds the maximum sentence length of 100.
+Over 104 characters                                                                                                                                                                                                                                                                                                                                                   [90mjapanese/sentence-length[39m
+  [90m400:12778[39m  [31merror[39m  Line 400 sentence length(204) exceeds the maximum sentence length of 150.
+Over 54 characters                                                                                                                                                                                                                                                                                                                                                   [90mja-technical-writing/sentence-length[39m
+  [90m470:49[39m     [31merror[39m  一文に二回以上利用されている助詞 "が" がみつかりました。
+
+次の助詞が連続しているため、文を読みにくくしています。
+
+- "が"
+- "が"
+
+同じ助詞を連続して利用しない、文の中で順番を入れ替える、文を分割するなどを検討してください。
+                                                                                                                                                                                                                                                                                                                                [90mja-technical-writing/no-doubled-joshi[39m
+  [90m484:16463[39m  [31merror[39m  Line 484 sentence length(145) exceeds the maximum sentence length of 100.
+Over 45 characters                                                                                                                                                                                                                                                                                                                                                   [90mjapanese/sentence-length[39m
+  [90m491:22[39m     [31merror[39m  【具体性】定量化されていない変化表現が検出されました。具体的な数値や割合の提示を検討してください。                                                                                                                                                                                                                                                                                                                          [90m@textlint-ja/ai-writing/ai-tech-writing-guideline[39m
+  [90m491:22[39m     [31merror[39m  「大幅に」という表現は誇張的である可能性があります。具体的な数値や割合を示すことを検討してください。                                                                                                                                                                                                                                                                                                                        [90m@textlint-ja/ai-writing/no-ai-hype-expressions[39m
+  [90m501:35[39m     [31merror[39m  一文に二回以上利用されている助詞 "が" がみつかりました。
+
+次の助詞が連続しているため、文を読みにくくしています。
+
+- "が"
+- "が"
+
+同じ助詞を連続して利用しない、文の中で順番を入れ替える、文を分割するなどを検討してください。
+                                                                                                                                                                                                                                                                                                                                [90mja-technical-writing/no-doubled-joshi[39m
+  [90m504:17216[39m  [31merror[39m  Line 504 sentence length(110) exceeds the maximum sentence length of 100.
+Over 10 characters                                                                                                                                                                                                                                                                                                                                                   [90mjapanese/sentence-length[39m
+  [90m521:39[39m     [31merror[39m  「UIが宣言的vs命令的パラダイムの典型例として語られるのは、以下の理由による：」のような述語とコロンで終わるパターンは、読み手によっては英語の構文を直訳したような印象を与える場合があります。「次のように〜します。」のような自然な日本語表現を検討してください。                                                                                                                                                            [90m@textlint-ja/ai-writing/no-ai-colon-continuation[39m
+  [90m529:12[39m     [31merror[39m  「パラダイムシフト」という表現は定型的である可能性があります。具体的な変化を説明することを検討してください。                                                                                                                                                                                                                                                                                                                [90m@textlint-ja/ai-writing/no-ai-hype-expressions[39m
+  [90m531:18129[39m  [31merror[39m  Line 531 sentence length(164) exceeds the maximum sentence length of 100.
+Over 64 characters                                                                                                                                                                                                                                                                                                                                                   [90mjapanese/sentence-length[39m
+  [90m531:18129[39m  [31merror[39m  Line 531 sentence length(164) exceeds the maximum sentence length of 150.
+Over 14 characters                                                                                                                                                                                                                                                                                                                                                   [90mja-technical-writing/sentence-length[39m
+  [90m551:24[39m     [31merror[39m  「UI開発だけが宣言的/命令的アプローチを並置できる唯一の領域ではない。
+以下のような例も同様に両アプローチを対比できる：」のような述語とコロンで終わるパターンは、読み手によっては英語の構文を直訳したような印象を与える場合があります。「次のように〜します。」のような自然な日本語表現を検討してください。                                                                                                                                                                                        [90m@textlint-ja/ai-writing/no-ai-colon-continuation[39m
+  [90m583:19813[39m  [31merror[39m  Line 583 sentence length(114) exceeds the maximum sentence length of 100.
+Over 14 characters                                                                                                                                                                                                                                                                                                                                                   [90mjapanese/sentence-length[39m
+  [90m585:11[39m     [31merror[39m  一つの文で"、"を4つ以上使用しています                                                                                                                                                                                                                                                                                                                                                                                       [90mjapanese/max-ten[39m
+
+[4mC:\docs\md\declarative\01-intro.md[24m
+    [90m1:1[39m     [31merror[39m  【テクニカルライティング品質分析】この文書で2件の改善提案が見つかりました [内訳: 具体性: 2件]。効果的なテクニカルライティングの7つのC（Clear, Concise, Correct, Coherent, Concrete, Complete, Courteous）の原則に基づいて見直しを検討してください。詳細なガイドライン: https://github.com/textlint-ja/textlint-rule-preset-ai-writing/blob/main/docs/tech-writing-guidelines.md  [90m@textlint-ja/ai-writing/ai-tech-writing-guideline[39m
+   [90m16:34[39m    [31merror[39m  「画面に表示している数値を、２種のボタンで増減できる実装を考えてみる：」のような述語とコロンで終わるパターンは、読み手によっては英語の構文を直訳したような印象を与える場合があります。「次のように〜します。」のような自然な日本語表現を検討してください。                                                                                                                       [90m@textlint-ja/ai-writing/no-ai-colon-continuation[39m
+   [90m25:30[39m    [31merror[39m  「このHTML要素を操作するためにJavaScriptで命令的に記述する場合は、
+イベントごとに状態更新と画面更新の処理を記述することになる：」のような述語とコロンで終わるパターンは、読み手によっては英語の構文を直訳したような印象を与える場合があります。「次のように〜します。」のような自然な日本語表現を検討してください。                                                                                                                                 [90m@textlint-ja/ai-writing/no-ai-colon-continuation[39m
+   [90m45:41[39m    [31merror[39m  「一方で、Reactを使い宣言的に書くと、状態 count をもとに実装できる：」のような述語とコロンで終わるパターンは、読み手によっては英語の構文を直訳したような印象を与える場合があります。「次のように〜します。」のような自然な日本語表現を検討してください。                                                                                                                         [90m@textlint-ja/ai-writing/no-ai-colon-continuation[39m
+   [90m93:2718[39m  [31merror[39m  Line 93 sentence length(101) exceeds the maximum sentence length of 100.
+Over 1 characters                                                                                                                                                                                                                                                                                                         [90mjapanese/sentence-length[39m
+  [90m110:3[39m     [31merror[39m  【具体性】抽象的な評価表現が検出されました。何に対してどのように効率的なのか、具体的な説明を検討してください。                                                                                                                                                                                                                                                                   [90m@textlint-ja/ai-writing/ai-tech-writing-guideline[39m
+  [90m132:41[39m    [31merror[39m  本文: "である"調 と "ですます"調 が混在
+=> "ですます"調 の文体に、次の "である"調 の箇所があります: "である。"
+Total:
+である  : 3
+ですます: 3
+                                                                                                                                                                                                                                                                                                           [90mjapanese/no-mix-dearu-desumasu[39m
+  [90m132:41[39m    [31merror[39m  本文: "ですます"調 でなければなりません
+=> "ですます"調 であるべき箇所に、次の "である"調 の箇所があります: "である。"
+Total:
+である  : 3
+ですます: 3
+                                                                                                                                                                                                                                                                                                   [90mja-technical-writing/no-mix-dearu-desumasu[39m
+  [90m134:41[39m    [31merror[39m  本文: "である"調 と "ですます"調 が混在
+=> "ですます"調 の文体に、次の "である"調 の箇所があります: "である。"
+Total:
+である  : 3
+ですます: 3
+                                                                                                                                                                                                                                                                                                           [90mjapanese/no-mix-dearu-desumasu[39m
+  [90m134:41[39m    [31merror[39m  本文: "ですます"調 でなければなりません
+=> "ですます"調 であるべき箇所に、次の "である"調 の箇所があります: "である。"
+Total:
+である  : 3
+ですます: 3
+                                                                                                                                                                                                                                                                                                   [90mja-technical-writing/no-mix-dearu-desumasu[39m
+  [90m140:48[39m    [31merror[39m  一文に二回以上利用されている助詞 "で" がみつかりました。
+
+次の助詞が連続しているため、文を読みにくくしています。
+
+- "で"
+- "で"
+
+同じ助詞を連続して利用しない、文の中で順番を入れ替える、文を分割するなどを検討してください。
+                                                                                                                                                                                                                                                                                     [90mja-technical-writing/no-doubled-joshi[39m
+  [90m144:38[39m    [31merror[39m  【具体性】曖昧な判断表現が検出されました。何を基準として適切なのか、具体的な条件や基準の明示を検討してください。                                                                                                                                                                                                                                                                 [90m@textlint-ja/ai-writing/ai-tech-writing-guideline[39m
+  [90m144:56[39m    [31merror[39m  本文: "である"調 と "ですます"調 が混在
+=> "ですます"調 の文体に、次の "である"調 の箇所があります: "である。"
+Total:
+である  : 3
+ですます: 3
+                                                                                                                                                                                                                                                                                                           [90mjapanese/no-mix-dearu-desumasu[39m
+  [90m144:56[39m    [31merror[39m  本文: "ですます"調 でなければなりません
+=> "ですます"調 であるべき箇所に、次の "である"調 の箇所があります: "である。"
+Total:
+である  : 3
+ですます: 3
+                                                                                                                                                                                                                                                                                                   [90mja-technical-writing/no-mix-dearu-desumasu[39m
+
+[4mC:\docs\md\baby-cup\40_slides\49_closing.md[24m
+  [90m38:3[39m   [31merror[39m  リストアイテムでの絵文字「🎯」の使用は、読み手によっては機械的な印象を与える場合があります。テキストベースの表現も検討してみてください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m38:3[39m   [31merror[39m  リストアイテムで絵文字と太字の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。                        [90m@textlint-ja/ai-writing/no-ai-emphasis-patterns[39m
+  [90m39:3[39m   [31merror[39m  リストアイテムでの絵文字「🧠」の使用は、読み手によっては機械的な印象を与える場合があります。テキストベースの表現も検討してみてください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m40:3[39m   [31merror[39m  リストアイテムでの絵文字「⭐」の使用は、読み手によっては機械的な印象を与える場合があります。テキストベースの表現も検討してみてください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m40:3[39m   [31merror[39m  リストアイテムで絵文字と太字の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。                        [90m@textlint-ja/ai-writing/no-ai-emphasis-patterns[39m
+  [90m48:10[39m  [31merror[39m  "○" が連続して2回使われています。                                                                                                         [90mja-technical-writing/ja-no-successive-word[39m
+  [90m48:16[39m  [31merror[39m  "○" が連続して2回使われています。                                                                                                         [90mja-technical-writing/ja-no-successive-word[39m
+  [90m57:13[39m  [31merror[39m  文末が"。"で終わっていません。
+理由: 句点は文の境界を明確にし、読み手の理解を助けます
+修正: 適切な文末表現で文を完結させ、句点を追加してください
+例: 「〜です。」「〜ます。」「〜でした。」など                                                                                [90mja-technical-writing/ja-no-mixed-period[39m
+  [90m63:13[39m  [31merror[39m  文末が"。"で終わっていません。
+理由: 句点は文の境界を明確にし、読み手の理解を助けます
+修正: 適切な文末表現で文を完結させ、句点を追加してください
+例: 「〜です。」「〜ます。」「〜でした。」など                                                                                [90mja-technical-writing/ja-no-mixed-period[39m
+
+[4mC:\docs\md\baby-cup\40_slides\43_talks.md[24m
+  [90m3:23[39m  [31merror[39m  文末が"。"で終わっていません。
+理由: 句点は文の境界を明確にし、読み手の理解を助けます
+修正: 適切な文末表現で文を完結させ、句点を追加してください
+例: 「〜です。」「〜ます。」「〜でした。」など                                          [90mja-technical-writing/ja-no-mixed-period[39m
+  [90m9:1[39m   [31merror[39m  絵文字と太字の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-emphasis-patterns[39m
+
+[4mC:\docs\md\baby-cup\40_slides\42_player_intro.md[24m
+  [90m7:15[39m  [31merror[39m  文末が"。"で終わっていません。
+理由: 句点は文の境界を明確にし、読み手の理解を助けます
+修正: 適切な文末表現で文を完結させ、句点を追加してください
+例: 「〜です。」「〜ます。」「〜でした。」など  [90mja-technical-writing/ja-no-mixed-period[39m
+
+[4mC:\docs\md\baby-cup\40_slides\41_opening.md[24m
+  [90m22:1[39m  [31merror[39m  絵文字と太字の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-emphasis-patterns[39m
+  [90m64:1[39m  [31merror[39m  絵文字と太字の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-emphasis-patterns[39m
+
+[4mC:\docs\md\baby-cup\30_analogy\38_postmortem.md[24m
+  [90m40:1[39m  [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m41:1[39m  [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+
+[4mC:\docs\md\baby-cup\30_analogy\37_debugging.md[24m
+  [90m18:1[39m  [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m19:1[39m  [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m25:1[39m  [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m26:1[39m  [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m32:1[39m  [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m33:1[39m  [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+
+[4mC:\docs\md\baby-cup\30_analogy\36_feedback_loop.md[24m
+  [90m9:16[39m  [31merror[39m  一文に二回以上利用されている助詞 "も" がみつかりました。
+
+次の助詞が連続しているため、文を読みにくくしています。
+
+- "も"
+- "も"
+
+同じ助詞を連続して利用しない、文の中で順番を入れ替える、文を分割するなどを検討してください。
+  [90mjapanese/no-doubled-joshi[39m
+
+[4mC:\docs\md\baby-cup\30_analogy\35_context.md[24m
+   [90m33:1[39m  [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+   [90m34:1[39m  [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+   [90m56:1[39m  [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+   [90m57:1[39m  [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+   [90m77:1[39m  [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+   [90m78:1[39m  [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+   [90m98:1[39m  [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m119:1[39m  [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+
+[4mC:\docs\md\baby-cup\30_analogy\34_operation_phase.md[24m
+  [90m18:1[39m  [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m19:1[39m  [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m25:1[39m  [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m26:1[39m  [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m30:1[39m  [31merror[39m  「完璧な」という表現は過度に理想化している可能性があります。具体的な利点を述べることを検討してください。                       [90m@textlint-ja/ai-writing/no-ai-hype-expressions[39m
+  [90m32:1[39m  [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m33:1[39m  [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+
+[4mC:\docs\md\baby-cup\30_analogy\33_implementation_phase.md[24m
+  [90m18:1[39m  [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m19:1[39m  [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m25:1[39m  [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m26:1[39m  [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m32:1[39m  [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m33:1[39m  [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+
+[4mC:\docs\md\baby-cup\30_analogy\32_team_composition.md[24m
+  [90m18:1[39m   [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m19:1[39m   [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m25:1[39m   [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m26:1[39m   [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m32:1[39m   [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m33:1[39m   [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m39:28[39m  [31merror[39m  "△" が連続して2回使われています。                                                                                              [90mja-technical-writing/ja-no-successive-word[39m
+
+[4mC:\docs\md\baby-cup\30_analogy\31_design_phase.md[24m
+  [90m18:1[39m  [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m19:1[39m  [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m25:1[39m  [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m26:1[39m  [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+
+[4mC:\docs\md\baby-cup\00_progress\06_participants.md[24m
+  [90m16:12[39m  [31merror[39m  "○" が連続して2回使われています。                                                                                              [90mja-technical-writing/ja-no-successive-word[39m
+  [90m16:13[39m  [31merror[39m  "○" が連続して2回使われています。                                                                                              [90mja-technical-writing/ja-no-successive-word[39m
+  [90m18:1[39m   [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m19:1[39m   [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m20:1[39m   [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m24:1[39m   [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m25:1[39m   [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m29:12[39m  [31merror[39m  "○" が連続して2回使われています。                                                                                              [90mja-technical-writing/ja-no-successive-word[39m
+  [90m29:13[39m  [31merror[39m  "○" が連続して2回使われています。                                                                                              [90mja-technical-writing/ja-no-successive-word[39m
+  [90m31:1[39m   [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m32:1[39m   [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m33:1[39m   [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m37:1[39m   [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m38:1[39m   [31merror[39m  リストアイテムで強調（**）とコロン（:）の組み合わせは機械的な印象を与える可能性があります。より自然な表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-list-formatting[39m
+  [90m42:12[39m  [31merror[39m  "○" が連続して2回使われています。                                                                                              [90mja-technical-writing/ja-no-successive-word[39m
+  [90m42:13[39m  [31merror[39m  "○" が連続して2回使われています。                                                                                              [90mja-technical-writing/ja-no-successive-word[39m
+  [90m48:12[39m  [31merror[39m  "○" が連続して2回使われています。                                                                                              [90mja-technical-writing/ja-no-successive-word[39m
+  [90m48:13[39m  [31merror[39m  "○" が連続して2回使われています。                                                                                              [90mja-technical-writing/ja-no-successive-word[39m
+
+[4mC:\docs\md\baby-cup\00_progress\04_talk_topics.md[24m
+  [90m29:20[39m  [31merror[39m  文末が"。"で終わっていません。
+理由: 句点は文の境界を明確にし、読み手の理解を助けます
+修正: 適切な文末表現で文を完結させ、句点を追加してください
+例: 「〜です。」「〜ます。」「〜でした。」など  [90mja-technical-writing/ja-no-mixed-period[39m
+  [90m36:11[39m  [31merror[39m  文末が"。"で終わっていません。
+理由: 句点は文の境界を明確にし、読み手の理解を助けます
+修正: 適切な文末表現で文を完結させ、句点を追加してください
+例: 「〜です。」「〜ます。」「〜でした。」など  [90mja-technical-writing/ja-no-mixed-period[39m
+  [90m43:7[39m   [31merror[39m  文末が"。"で終わっていません。
+理由: 句点は文の境界を明確にし、読み手の理解を助けます
+修正: 適切な文末表現で文を完結させ、句点を追加してください
+例: 「〜です。」「〜ます。」「〜でした。」など  [90mja-technical-writing/ja-no-mixed-period[39m
+
+[4mC:\docs\md\baby-cup\00_progress\03_timetable.md[24m
+  [90m69:10[39m  [31merror[39m  一文に二回以上利用されている助詞 "に" がみつかりました。
+
+次の助詞が連続しているため、文を読みにくくしています。
+
+- "に"
+- "に"
+
+同じ助詞を連続して利用しない、文の中で順番を入れ替える、文を分割するなどを検討してください。
+  [90mja-technical-writing/no-doubled-joshi[39m
+
+[4mC:\docs\md\baby-cup\00_progress\02_player_intro.md[24m
+  [90m22:50[39m  [31merror[39m  文末が"。"で終わっていません。
+理由: 句点は文の境界を明確にし、読み手の理解を助けます
+修正: 適切な文末表現で文を完結させ、句点を追加してください
+例: 「〜です。」「〜ます。」「〜でした。」など  [90mja-technical-writing/ja-no-mixed-period[39m
+
+[4mC:\docs\md\baby-cup\20_strategy\23_matchup_notes.md[24m
+  [90m13:8[39m   [31merror[39m  "○" が連続して2回使われています。  [90mja-technical-writing/ja-no-successive-word[39m
+  [90m13:9[39m   [31merror[39m  "○" が連続して2回使われています。  [90mja-technical-writing/ja-no-successive-word[39m
+  [90m13:14[39m  [31merror[39m  "★" が連続して2回使われています。  [90mja-technical-writing/ja-no-successive-word[39m
+  [90m13:15[39m  [31merror[39m  "★" が連続して2回使われています。  [90mja-technical-writing/ja-no-successive-word[39m
+  [90m13:20[39m  [31merror[39m  "△" が連続して2回使われています。  [90mja-technical-writing/ja-no-successive-word[39m
+  [90m13:21[39m  [31merror[39m  "△" が連続して2回使われています。  [90mja-technical-writing/ja-no-successive-word[39m
+  [90m13:26[39m  [31merror[39m  "□" が連続して2回使われています。  [90mja-technical-writing/ja-no-successive-word[39m
+  [90m13:27[39m  [31merror[39m  "□" が連続して2回使われています。  [90mja-technical-writing/ja-no-successive-word[39m
+  [90m20:6[39m   [31merror[39m  "○" が連続して2回使われています。  [90mja-technical-writing/ja-no-successive-word[39m
+  [90m20:7[39m   [31merror[39m  "○" が連続して2回使われています。  [90mja-technical-writing/ja-no-successive-word[39m
+  [90m28:6[39m   [31merror[39m  "○" が連続して2回使われています。  [90mja-technical-writing/ja-no-successive-word[39m
+
+[4mC:\docs\md\baby-cup\20_strategy\21_basic_strategy.md[24m
+   [90m7:21[39m  [31merror[39m  「そのため、以下の立ち回りが基本となります：」のような述語とコロンで終わるパターンは、読み手によっては英語の構文を直訳したような印象を与える場合があります。「次のように〜します。」のような自然な日本語表現を検討してください。  [90m@textlint-ja/ai-writing/no-ai-colon-continuation[39m
+  [90m10:52[39m  [31merror[39m  箇条書き: "である"調 でなければなりません
+=> "である"調 であるべき箇所に、次の "ですます"調 の箇所があります: "ます。"
+Total:
+である  : 0
+ですます: 1
+                                                                                                                                                      [90mja-technical-writing/no-mix-dearu-desumasu[39m
+  [90m17:34[39m  [31merror[39m  一文に二回以上利用されている助詞 "が" がみつかりました。
+
+次の助詞が連続しているため、文を読みにくくしています。
+
+- "が"
+- "が"
+
+同じ助詞を連続して利用しない、文の中で順番を入れ替える、文を分割するなどを検討してください。
+                                                                                                                                      [90mja-technical-writing/no-doubled-joshi[39m
+
+[31m[1m✖ 246 problems (246 errors, 0 warnings, 0 infos)[22m[39m
+[31m[1m[22m[39m

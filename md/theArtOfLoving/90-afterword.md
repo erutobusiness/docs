@@ -13,4 +13,4 @@
   - `@docs\theArtOfLoving\01-pressure_test.md` に記載
     - 問題を提起して、解決したら更新する
 - 画像作成
-  - Google AI Studio で Nano Banana を使用
+  - Google AI StudioでNano Bananaを使用

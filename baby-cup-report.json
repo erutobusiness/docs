@@ -1,0 +1,114 @@
+[
+  { "messages": [], "filePath": "C:\\docs\\md\\baby-cup\\99_todo.md" },
+  { "messages": [], "filePath": "C:\\docs\\md\\baby-cup\\21_basic_strategy.md" },
+  {
+    "messages": [
+      {
+        "type": "lint",
+        "ruleId": "ja-technical-writing/no-mix-dearu-desumasu",
+        "message": "本文: \"である\"調 でなければなりません\n=> \"である\"調 であるべき箇所に、次の \"ですます\"調 の箇所があります: \"です。\"\nTotal:\nである  : 0\nですます: 1\n",
+        "index": 53,
+        "line": 3,
+        "column": 34,
+        "range": [53, 54],
+        "loc": { "start": { "line": 3, "column": 34 }, "end": { "line": 3, "column": 35 } },
+        "severity": 2
+      }
+    ],
+    "filePath": "C:\\docs\\md\\baby-cup\\00_index.md"
+  },
+  { "messages": [], "filePath": "C:\\docs\\md\\baby-cup\\40_slides\\43_talks.md" },
+  { "messages": [], "filePath": "C:\\docs\\md\\baby-cup\\40_slides\\42_player_intro.md" },
+  { "messages": [], "filePath": "C:\\docs\\md\\baby-cup\\40_slides\\41_opening.md" },
+  { "messages": [], "filePath": "C:\\docs\\md\\baby-cup\\40_slides\\40_index.md" },
+  { "messages": [], "filePath": "C:\\docs\\md\\baby-cup\\30_analogy\\39_summary.md" },
+  { "messages": [], "filePath": "C:\\docs\\md\\baby-cup\\30_analogy\\38_postmortem.md" },
+  {
+    "messages": [
+      {
+        "type": "lint",
+        "ruleId": "ja-technical-writing/max-kanji-continuous-len",
+        "message": "漢字が6つ以上連続しています: 根本原因調査",
+        "index": 500,
+        "line": 33,
+        "column": 19,
+        "range": [500, 501],
+        "loc": { "start": { "line": 33, "column": 19 }, "end": { "line": 33, "column": 20 } },
+        "severity": 1
+      }
+    ],
+    "filePath": "C:\\docs\\md\\baby-cup\\30_analogy\\37_debugging.md"
+  },
+  { "messages": [], "filePath": "C:\\docs\\md\\baby-cup\\30_analogy\\36_feedback_loop.md" },
+  {
+    "messages": [
+      {
+        "type": "lint",
+        "ruleId": "ja-technical-writing/max-kanji-continuous-len",
+        "message": "漢字が6つ以上連続しています: 種族値制限下",
+        "index": 1177,
+        "line": 71,
+        "column": 7,
+        "range": [1177, 1178],
+        "loc": { "start": { "line": 71, "column": 7 }, "end": { "line": 71, "column": 8 } },
+        "severity": 1
+      }
+    ],
+    "filePath": "C:\\docs\\md\\baby-cup\\30_analogy\\35_context.md"
+  },
+  {
+    "messages": [
+      {
+        "type": "lint",
+        "ruleId": "@textlint-ja/ai-writing/no-ai-hype-expressions",
+        "message": "「完璧な」という表現は過度に理想化している可能性があります。具体的な利点を述べることを検討してください。",
+        "index": 413,
+        "line": 30,
+        "column": 1,
+        "range": [413, 416],
+        "loc": { "start": { "line": 30, "column": 1 }, "end": { "line": 30, "column": 4 } },
+        "severity": 1
+      }
+    ],
+    "filePath": "C:\\docs\\md\\baby-cup\\30_analogy\\34_operation_phase.md"
+  },
+  {
+    "messages": [
+      {
+        "type": "lint",
+        "ruleId": "ja-technical-writing/max-kanji-continuous-len",
+        "message": "漢字が6つ以上連続しています: 使用量最適化",
+        "index": 520,
+        "line": 33,
+        "column": 30,
+        "range": [520, 521],
+        "loc": { "start": { "line": 33, "column": 30 }, "end": { "line": 33, "column": 31 } },
+        "severity": 1
+      }
+    ],
+    "filePath": "C:\\docs\\md\\baby-cup\\30_analogy\\33_implementation_phase.md"
+  },
+  { "messages": [], "filePath": "C:\\docs\\md\\baby-cup\\30_analogy\\32_team_composition.md" },
+  { "messages": [], "filePath": "C:\\docs\\md\\baby-cup\\30_analogy\\31_design_phase.md" },
+  { "messages": [], "filePath": "C:\\docs\\md\\baby-cup\\30_analogy\\30_overview.md" },
+  { "messages": [], "filePath": "C:\\docs\\md\\baby-cup\\00_progress\\05_closing.md" },
+  { "messages": [], "filePath": "C:\\docs\\md\\baby-cup\\00_progress\\04_talk_topics.md" },
+  {
+    "messages": [
+      {
+        "type": "lint",
+        "ruleId": "ja-technical-writing/no-doubled-joshi",
+        "message": "一文に二回以上利用されている助詞 \"に\" がみつかりました。\n\n次の助詞が連続しているため、文を読みにくくしています。\n\n- \"に\"\n- \"に\"\n\n同じ助詞を連続して利用しない、文の中で順番を入れ替える、文を分割するなどを検討してください。\n",
+        "index": 1635,
+        "line": 69,
+        "column": 10,
+        "range": [1635, 1636],
+        "loc": { "start": { "line": 69, "column": 10 }, "end": { "line": 69, "column": 11 } },
+        "severity": 1
+      }
+    ],
+    "filePath": "C:\\docs\\md\\baby-cup\\00_progress\\03_timetable.md"
+  },
+  { "messages": [], "filePath": "C:\\docs\\md\\baby-cup\\00_progress\\02_player_intro.md" },
+  { "messages": [], "filePath": "C:\\docs\\md\\baby-cup\\00_progress\\01_opening.md" }
+]

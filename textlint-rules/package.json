@@ -1,0 +1,10 @@
+{
+  "name": "textlint-rule-footnote-dearu-desumasu",
+  "version": "1.0.0",
+  "description": "textlint rule to check 注釈(footnote) の文体をチェック",
+  "main": "textlint-rule-footnote-dearu-desumasu.js",
+  "keywords": ["textlint", "rule", "textlint-rule", "footnote", "dearu", "desumasu"],
+  "peerDependencies": {
+    "analyze-desumasu-dearu": ">=4.0.0"
+  }
+}
