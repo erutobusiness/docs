@@ -35,7 +35,8 @@
 | [10_timetable.md](./10_flow/10_timetable.md) | タイムテーブル | 📋 本日の流れ |
 | [11_opening.md](./10_flow/11_opening.md) | 開会（コンセプト・ルール含む） | 🎬 タイトル / 大会概要 / ルール説明 |
 | [12_player_intro.md](./10_flow/12_player_intro.md) | プレイヤー紹介 | 👤 プレイヤー紹介（人数分） |
-| [13_closing.md](./10_flow/13_closing.md) | 閉会・表彰 | 🏆 結果発表 / エンディング |
+| [13_fighting.md](./10_flow/13_fighting.md) | 対戦中 | ⚔️ 対戦中画面 |
+| [14_closing.md](./10_flow/14_closing.md) | 閉会・表彰 | 🏆 結果発表 / エンディング |
 
 ### 対戦間の話題 (20番台) - エンジニアアナロジー
 
@@ -43,29 +44,20 @@
 
 | ファイル | 内容 | 用途 |
 |----------|------|------|
-| [20_basic_strategy.md](./20_topics/20_basic_strategy.md) | 基本戦略 | 対戦間トークのネタ |
-| [21_design_phase.md](./20_topics/21_design_phase.md) | 構築・考察 ⟷ 設計 | トークネタ |
-| [22_team_composition.md](./20_topics/22_team_composition.md) | チーム構成・相性 | トークネタ |
-| [23_implementation_phase.md](./20_topics/23_implementation_phase.md) | 厳選・育成 ⟷ 実装 | トークネタ |
-| [24_operation_phase.md](./20_topics/24_operation_phase.md) | 対戦 ⟷ 運用 | トークネタ |
-| [25_context.md](./20_topics/25_context.md) | コンテキスト（4人戦・メタ） | トークネタ |
-| [26_feedback_loop.md](./20_topics/26_feedback_loop.md) | フィードバックループ | トークネタ |
-| [27_debugging.md](./20_topics/27_debugging.md) | デバッグ・トラブル対応 | トークネタ |
-| [28_postmortem.md](./20_topics/28_postmortem.md) | ポストモーテム | トークネタ |
-| [29_summary.md](./20_topics/29_summary.md) | まとめ | 締め |
-
-構築論、個別対策📝
+| [21_context.md](./20_topics/21_context.md) | コンテキスト（4人戦・メタ） | トークネタ |
+| [22_sdlc.md](./20_topics/22_sdlc.md) | SDLC & エンジニアリング | トークネタ（基本戦略含む） |
 
 ### スライド用素材 (30番台)
 
-→ [30_slides/](./30_slides/) (現状空フォルダ)
+→ [30_marp/](./30_marp/)
 
 | ファイル | 内容 |
 |----------|------|
-| (未作成) | 開会スライド |
-| (未作成) | プレイヤー紹介（調整さん画面でやる？） |
-| (未作成) | トークネタ |
-| (未作成) | 閉会・表彰 |
+| [01_main.md](./30_marp/01_main.md) | メインスライド（開会〜閉会） |
+| [02_context.md](./30_marp/02_context.md) | コンテキスト解説スライド |
+| [03_sdlc.md](./30_marp/03_sdlc.md) | SDLC解説スライド |
+| [09_closing.md](./30_marp/09_closing.md) | 締めくくりスライド |
+| [README.md](./30_marp/README.md) | Marp設定・使い方 |
 
 ### 管理
 
