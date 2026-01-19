@@ -95,8 +95,9 @@ npx @marp-team/marp-cli -w 01_main.md
 ## PDF / HTML 出力
 
 ```bash
-# PDF に変換
-npx @marp-team/marp-cli 01_main.md --pdf
+# PDF に変換（※ローカル画像を含めるために --allow-local-files が必要です）
+npx @marp-team/marp-cli 01_main.md --pdf --allow-local-files -o pdfs/01_main.pdf
+
 
 # HTML に変換
 npx @marp-team/marp-cli 01_main.md --html
