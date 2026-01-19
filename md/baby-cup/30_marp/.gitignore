@@ -1,0 +1,8 @@
+# Marp generated files
+*.html
+*.pdf
+*.pptx
+01_main.md
+09_closing.md
+
+images/*
