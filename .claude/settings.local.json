@@ -8,7 +8,12 @@
       "Bash(git commit:*)",
       "Bash(npx lint-staged)",
       "Bash(npm run format:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "WebSearch",
+      "Bash(echo:*)",
+      "WebFetch(domain:ja.wikipedia.org)",
+      "WebFetch(domain:www22.atwiki.jp)",
+      "WebFetch(domain:w.atwiki.jp)"
     ]
   }
 }
