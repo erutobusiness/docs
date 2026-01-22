@@ -1,0 +1,6 @@
+# 改行コードをLFに統一
+* text=auto eol=lf
+
+# Windowsバッチファイルは例外的にCRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf

@@ -1,7 +1,7 @@
 module.exports = {
   filters: {
     'node-types': {
-      nodeTypes: ['BlockQuote'],
+      nodeTypes: ['BlockQuote', 'ListItem'],
     },
     // Filter out specific rules in footnotes
     footnote: {
@@ -9,6 +9,9 @@ module.exports = {
     },
   },
   rules: {
+    // 1行1文ルール
+    'one-sentence-per-line': true,
+
     // Custom rule to enforce 'desumasu' in footnotes
     'footnote-dearu-desumasu': true,
 
@@ -22,9 +25,9 @@ module.exports = {
         severity: 'warning',
       },
       'no-mix-dearu-desumasu': {
-        preferInBody: 'である', // Default to 'dearu', override in sub-configs if needed
-        preferInHeader: 'である',
-        preferInList: 'である',
+        preferInBody: 'ですます',
+        preferInHeader: 'ですます',
+        preferInList: 'ですます',
       },
       'no-doubled-conjunctive-particle-ga': false,
       'no-doubled-conjunction': false,
@@ -37,6 +40,11 @@ module.exports = {
       },
       'ja-no-mixed-period': {
         allowPeriodMarks: [':', '：'],
+        allowEmojiAtEnd: true,
+        forceAppendPeriod: false,
+      },
+      'ja-no-successive-word': {
+        allow: ['…'],
       },
     },
     '@textlint-ja/preset-ai-writing': {

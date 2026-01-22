@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npx textlint:*)",
+      "Bash(npm run lint:text:*)",
+      "Bash(git checkout:*)",
+      "Bash(git commit:*)",
+      "Bash(npx lint-staged)",
+      "Bash(npm run format:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}

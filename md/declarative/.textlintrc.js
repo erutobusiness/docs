@@ -14,6 +14,17 @@ module.exports = {
         preferInHeader: 'である',
         preferInList: 'である',
       },
+      // <details>タグ内の箇条書きがListItemとして認識されないため、句点チェックを無効化
+      'ja-no-mixed-period': false,
+    },
+    // 引用を多く含むドキュメントがあるため、AI品質チェックを無効化
+    '@textlint-ja/preset-ai-writing': {
+      'ai-tech-writing-guideline': false,
+      'no-ai-hype-expressions': {
+        severity: 'warning',
+      },
+      'no-ai-colon-continuation': false,
+      'no-ai-list-formatting': false,
     },
   },
 };
