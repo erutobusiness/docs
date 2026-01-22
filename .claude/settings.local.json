@@ -13,7 +13,8 @@
       "Bash(echo:*)",
       "WebFetch(domain:ja.wikipedia.org)",
       "WebFetch(domain:www22.atwiki.jp)",
-      "WebFetch(domain:w.atwiki.jp)"
+      "WebFetch(domain:w.atwiki.jp)",
+      "Bash(tree:*)"
     ]
   }
 }

@@ -39,6 +39,7 @@ created:
 ## 構成
 
 - [背景設定](setting/background.md)
+- [関連組織](setting/organizations.md)
 - [ロケーション](setting/locations.md)
 - [第1章：導入](chapters/01_introduction.md)
 - [第2章：探索](chapters/02_exploration.md)
@@ -52,6 +53,7 @@ created:
 ## NPC
 
 - [ロリ](npcs/ロリ.md)
+- [サイ レン](npcs/サイレン.md) - Vtuber / ASMR配信者
 - [ミゴ](../../characters/npc/ミゴ.md) ※グローバルNPC
 - [対話型AI](npcs/対話型AI.md)
 
