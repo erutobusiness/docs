@@ -9,14 +9,25 @@
     "start": "next start",
     "format": "biome format --write .",
     "lint": "biome check .",
-    "lint:text": "textlint --config .textlintrc.js \"*.md\" \"src/**/*.md\" \"md/*.md\" && textlint --config md/baby-cup/.textlintrc.js \"md/baby-cup/*.md\" \"md/baby-cup/10_flow/**/*.md\" \"md/baby-cup/20_topics/**/*.md\" && textlint --config md/baby-cup/30_marp/.textlintrc.js \"md/baby-cup/30_marp/**/*.md\" && textlint --config md/claude-vs-antigravity/.textlintrc.js \"md/claude-vs-antigravity/**/*.md\" && textlint --config md/declarative/.textlintrc.js \"md/declarative/**/*.md\" && textlint --config md/theArtOfLoving/.textlintrc.js \"md/theArtOfLoving/**/*.md\"",
+    "lint:text": "textlint --config .textlintrc.js \"*.md\" \"src/**/*.md\" \"md/*.md\" \"md/trpg/**/*.md\" && textlint --config md/baby-cup/.textlintrc.js \"md/baby-cup/*.md\" \"md/baby-cup/10_flow/**/*.md\" \"md/baby-cup/20_topics/**/*.md\" && textlint --config md/baby-cup/30_marp/.textlintrc.js \"md/baby-cup/30_marp/**/*.md\" && textlint --config md/claude-vs-antigravity/.textlintrc.js \"md/claude-vs-antigravity/**/*.md\" && textlint --config md/declarative/.textlintrc.js \"md/declarative/**/*.md\" && textlint --config md/theArtOfLoving/.textlintrc.js \"md/theArtOfLoving/**/*.md\"",
     "lint:fix": "biome check --apply .",
     "check": "npm run lint && npm run lint:text && npx tsc --noEmit",
     "fix": "npm run lint:fix && npm run format",
     "prepare": "husky"
   },
   "lint-staged": {
-    "*.{js,ts,tsx,json,md}": ["biome check --no-errors-on-unmatched --files-ignore-unknown=true"]
+    "*.{js,ts,tsx,json,md}": ["biome check --no-errors-on-unmatched --files-ignore-unknown=true"],
+    "md/baby-cup/30_marp/**/*.md": ["textlint --config md/baby-cup/30_marp/.textlintrc.js"],
+    "md/baby-cup/{*.md,10_flow/**/*.md,20_topics/**/*.md}": [
+      "textlint --config md/baby-cup/.textlintrc.js"
+    ],
+    "md/claude-vs-antigravity/**/*.md": [
+      "textlint --config md/claude-vs-antigravity/.textlintrc.js"
+    ],
+    "md/declarative/**/*.md": ["textlint --config md/declarative/.textlintrc.js"],
+    "md/theArtOfLoving/**/*.md": ["textlint --config md/theArtOfLoving/.textlintrc.js"],
+    "md/trpg/**/*.md": ["textlint --config .textlintrc.js"],
+    "{*.md,src/**/*.md,md/*.md}": ["textlint --config .textlintrc.js"]
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",

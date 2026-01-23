@@ -25,9 +25,9 @@ module.exports = {
         severity: 'warning',
       },
       'no-mix-dearu-desumasu': {
-        preferInBody: 'ですます',
-        preferInHeader: 'ですます',
-        preferInList: 'ですます',
+        preferInBody: 'である',
+        preferInHeader: 'である',
+        preferInList: 'である',
       },
       'no-doubled-conjunctive-particle-ga': false,
       'no-doubled-conjunction': false,
@@ -48,9 +48,7 @@ module.exports = {
       },
     },
     '@textlint-ja/preset-ai-writing': {
-      'ai-tech-writing-guideline': {
-        severity: 'warning',
-      },
+      'ai-tech-writing-guideline': false,
       'no-ai-hype-expressions': {
         severity: 'warning',
       },
