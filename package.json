@@ -54,6 +54,7 @@
     "lint-staged": "^16.2.7",
     "tailwindcss": "^4",
     "textlint": "^15.5.0",
+    "textlint-filter-rule-allowlist": "^4.0.0",
     "textlint-filter-rule-footnote": "file:textlint-filters/footnote",
     "textlint-filter-rule-node-types": "^1.1.0",
     "textlint-rule-footnote-dearu-desumasu": "file:./textlint-rules",

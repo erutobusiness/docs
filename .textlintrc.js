@@ -7,6 +7,9 @@ module.exports = {
     footnote: {
       ruleId: ['ja-technical-writing/no-mix-dearu-desumasu', 'ja-technical-writing/max-comma'],
     },
+    allowlist: {
+      allow: ['/「[^」]+」/', '/『[^』]+』/'],
+    },
   },
   rules: {
     // 1行1文ルール
