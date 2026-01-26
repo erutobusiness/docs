@@ -1,7 +1,7 @@
 module.exports = {
   filters: {
     'node-types': {
-      nodeTypes: ['BlockQuote', 'ListItem'],
+      nodeTypes: ['BlockQuote'],
     },
     // Filter out specific rules in footnotes
     footnote: {
@@ -11,6 +11,13 @@ module.exports = {
   rules: {
     // 1行1文ルール
     'one-sentence-per-line': true,
+
+    // 箇条書きの末尾に句点「。」を禁止する
+    'period-in-list-item': {
+      periodMark: '',
+      periodMarks: ['。', '．', '.'],
+      forceAppendPeriod: true,
+    },
 
     // Custom rule to enforce 'desumasu' in footnotes
     'footnote-dearu-desumasu': true,

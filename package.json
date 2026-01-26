@@ -16,7 +16,9 @@
     "prepare": "husky"
   },
   "lint-staged": {
-    "*.{js,ts,tsx,json,md}": ["biome check --no-errors-on-unmatched --files-ignore-unknown=true"],
+    "*.{js,ts,tsx,json,md}": [
+      "biome check --write --no-errors-on-unmatched --files-ignore-unknown=true"
+    ],
     "md/baby-cup/30_marp/**/*.md": ["textlint --config md/baby-cup/30_marp/.textlintrc.js"],
     "md/baby-cup/{*.md,10_flow/**/*.md,20_topics/**/*.md}": [
       "textlint --config md/baby-cup/.textlintrc.js"
@@ -56,6 +58,7 @@
     "textlint-filter-rule-node-types": "^1.1.0",
     "textlint-rule-footnote-dearu-desumasu": "file:./textlint-rules",
     "textlint-rule-one-sentence-per-line": "^2.0.0",
+    "textlint-rule-period-in-list-item": "^1.0.1",
     "textlint-rule-preset-ja-spacing": "^2.4.3",
     "textlint-rule-preset-ja-technical-writing": "^12.0.2",
     "typescript": "^5"
