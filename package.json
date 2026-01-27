@@ -57,7 +57,7 @@
     "textlint-filter-rule-allowlist": "^4.0.0",
     "textlint-filter-rule-footnote": "^1.0.2",
     "textlint-filter-rule-node-types": "^1.1.0",
-    "textlint-rule-footnote-dearu-desumasu": "file:./textlint-rules",
+    "textlint-rule-footnote-dearu-desumasu": "^1.0.0",
     "textlint-rule-one-sentence-per-line": "^2.0.0",
     "textlint-rule-period-in-list-item": "^1.0.1",
     "textlint-rule-preset-ja-spacing": "^2.4.3",
