@@ -55,7 +55,7 @@
     "tailwindcss": "^4",
     "textlint": "^15.5.0",
     "textlint-filter-rule-allowlist": "^4.0.0",
-    "textlint-filter-rule-footnote": "file:textlint-filters/footnote",
+    "textlint-filter-rule-footnote": "^1.0.2",
     "textlint-filter-rule-node-types": "^1.1.0",
     "textlint-rule-footnote-dearu-desumasu": "file:./textlint-rules",
     "textlint-rule-one-sentence-per-line": "^2.0.0",
