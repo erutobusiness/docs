@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useCallback, useState } from 'react';
+import { useCallback, useState } from "react";
 
 /**
  * テキスト選択モードを管理するためのカスタムフック

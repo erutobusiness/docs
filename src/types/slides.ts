@@ -17,7 +17,7 @@ export interface Slide {
   // 画像
   image?: {
     url: string;
-    position?: 'right' | 'bottom';
+    position?: "right" | "bottom";
     descriptions?: string[];
   };
   // アルバム

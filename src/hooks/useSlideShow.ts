@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import type { SlideSection } from '@/types/slides';
-import { useCallback, useEffect, useState } from 'react';
+import type { SlideSection } from "@/types/slides";
+import { useCallback, useEffect, useState } from "react";
 
 export interface UseSlideShowReturn {
   currentSlideIndex: number;
@@ -16,7 +16,7 @@ export interface UseSlideShowReturn {
   dragOffset: number;
   isDragging: boolean;
   animationId: number | null;
-  animationDirection: 'left' | 'right';
+  animationDirection: "left" | "right";
   handleAnimationComplete: (id: number) => void;
 }
 
@@ -35,11 +35,15 @@ export function useSlideShow({
   isTextSelectMode,
 }: UseSlideShowProps): UseSlideShowReturn {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
-  const [scrollTimeout, setScrollTimeout] = useState<NodeJS.Timeout | null>(null);
+  const [scrollTimeout, setScrollTimeout] = useState<NodeJS.Timeout | null>(
+    null
+  );
 
   // アニメーション関連の状態
   const [animationId, setAnimationId] = useState<number | null>(null);
-  const [animationDirection, setAnimationDirection] = useState<'left' | 'right'>('right');
+  const [animationDirection, setAnimationDirection] = useState<
+    "left" | "right"
+  >("right");
 
   // ドラッグ関連の状態
   const [isDragging, setIsDragging] = useState(false);
@@ -55,7 +59,7 @@ export function useSlideShow({
   const goToNextSlide = useCallback(() => {
     if (currentSlideIndex < slideSection.slides.length - 1) {
       // アニメーションを設定
-      setAnimationDirection('left');
+      setAnimationDirection("left");
       setAnimationId(Date.now());
       setCurrentSlideIndex(currentSlideIndex + 1);
     }
@@ -65,7 +69,7 @@ export function useSlideShow({
   const goToPrevSlide = useCallback(() => {
     if (currentSlideIndex > 0) {
       // アニメーションを設定
-      setAnimationDirection('right');
+      setAnimationDirection("right");
       setAnimationId(Date.now());
       setCurrentSlideIndex(currentSlideIndex - 1);
     }
@@ -107,7 +111,8 @@ export function useSlideShow({
 
       setIsDragging(true);
 
-      const clientX = 'touches' in event ? event.touches[0].clientX : event.clientX;
+      const clientX =
+        "touches" in event ? event.touches[0].clientX : event.clientX;
 
       setDragStartX(clientX);
       setDragOffset(0);
@@ -119,7 +124,8 @@ export function useSlideShow({
     (event: React.MouseEvent | React.TouchEvent) => {
       if (!isDragging || isTextSelectMode) return;
 
-      const clientX = 'touches' in event ? event.touches[0].clientX : event.clientX;
+      const clientX =
+        "touches" in event ? event.touches[0].clientX : event.clientX;
 
       const newOffset = clientX - dragStartX;
       setDragOffset(newOffset);
@@ -144,7 +150,10 @@ export function useSlideShow({
     if (dragOffset > dragThreshold && currentSlideIndex > 0) {
       // 右にドラッグで前のスライドへ
       goToPrevSlide();
-    } else if (dragOffset < -dragThreshold && currentSlideIndex < slideSection.slides.length - 1) {
+    } else if (
+      dragOffset < -dragThreshold &&
+      currentSlideIndex < slideSection.slides.length - 1
+    ) {
       // 左にドラッグで次のスライドへ
       goToNextSlide();
     }
@@ -167,9 +176,13 @@ export function useSlideShow({
       // テキスト選択モードの場合はキーボードによるスライド移動を無効化
       if (isTextSelectMode) return;
 
-      if (event.key === 'ArrowRight' || event.key === 'PageDown' || event.key === ' ') {
+      if (
+        event.key === "ArrowRight" ||
+        event.key === "PageDown" ||
+        event.key === " "
+      ) {
         goToNextSlide();
-      } else if (event.key === 'ArrowLeft' || event.key === 'PageUp') {
+      } else if (event.key === "ArrowLeft" || event.key === "PageUp") {
         goToPrevSlide();
       }
     },
@@ -178,15 +191,15 @@ export function useSlideShow({
 
   // キーボードイベントのリスナー登録
   useEffect(() => {
-    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener("keydown", handleKeyDown);
     // マウスが画面外に出た場合にドラッグ終了
-    window.addEventListener('mouseup', handleDragEnd);
-    window.addEventListener('touchend', handleDragEnd);
+    window.addEventListener("mouseup", handleDragEnd);
+    window.addEventListener("touchend", handleDragEnd);
 
     return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-      window.removeEventListener('mouseup', handleDragEnd);
-      window.removeEventListener('touchend', handleDragEnd);
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("mouseup", handleDragEnd);
+      window.removeEventListener("touchend", handleDragEnd);
       // タイムアウトのクリーンアップ
       if (scrollTimeout) {
         clearTimeout(scrollTimeout);

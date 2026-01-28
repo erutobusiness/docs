@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 /**
  * 画面サイズに応じたスライドのスケーリングを管理するカスタムフック
@@ -38,9 +38,9 @@ export function useSlideScaling() {
     calculateScale();
 
     // リサイズイベントで再計算
-    window.addEventListener('resize', calculateScale);
+    window.addEventListener("resize", calculateScale);
 
-    return () => window.removeEventListener('resize', calculateScale);
+    return () => window.removeEventListener("resize", calculateScale);
   }, []);
 
   return scaleFactor;

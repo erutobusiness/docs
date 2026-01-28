@@ -1,5 +1,5 @@
-import { getAllDocs } from '@/lib/docs';
-import Link from 'next/link';
+import { getAllDocs } from "@/lib/docs";
+import Link from "next/link";
 
 export default function Home() {
   const docs = getAllDocs();
@@ -17,14 +17,14 @@ export default function Home() {
           ) : (
             docs.map((doc) => (
               <Link
-                key={doc.slug.join('/')}
-                href={`/docs/${doc.slug.join('/')}`}
+                key={doc.slug.join("/")}
+                href={`/docs/${doc.slug.join("/")}`}
                 className="block p-6 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700"
               >
                 <h2 className="text-xl font-semibold mb-2">{doc.title}</h2>
                 <div className="flex items-center text-sm text-gray-500 gap-4">
                   <span className="font-mono bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">
-                    {doc.slug.join(' / ')}
+                    {doc.slug.join(" / ")}
                   </span>
                   {doc.date && <span>{doc.date}</span>}
                 </div>

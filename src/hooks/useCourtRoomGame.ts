@@ -1,5 +1,5 @@
-import type { Case } from '@/types/gyakusai';
-import { useCallback, useState } from 'react';
+import type { Case } from "@/types/gyakusai";
+import { useCallback, useState } from "react";
 
 export interface GameState {
   currentSceneId: string;
@@ -27,7 +27,9 @@ export function useCourtRoomGame(caseData: Case) {
   }, []);
 
   const advanceDialogue = useCallback(() => {
-    const currentScene = caseData.scenes.find((scene) => scene.id === gameState.currentSceneId);
+    const currentScene = caseData.scenes.find(
+      (scene) => scene.id === gameState.currentSceneId
+    );
     if (!currentScene) return;
 
     // 証拠チェックが必要な場合
@@ -50,12 +52,16 @@ export function useCourtRoomGame(caseData: Case) {
 
     // 次のダイアログがある場合
     if (gameState.currentDialogueIndex < currentScene.dialogues.length - 1) {
-      updateGameState({ currentDialogueIndex: gameState.currentDialogueIndex + 1 });
+      updateGameState({
+        currentDialogueIndex: gameState.currentDialogueIndex + 1,
+      });
     }
     // 現在のシーンの最後のダイアログの場合
     else {
       const nextSceneIndex =
-        caseData.scenes.findIndex((scene) => scene.id === gameState.currentSceneId) + 1;
+        caseData.scenes.findIndex(
+          (scene) => scene.id === gameState.currentSceneId
+        ) + 1;
       if (nextSceneIndex < caseData.scenes.length) {
         updateGameState({
           currentSceneId: caseData.scenes[nextSceneIndex].id,
@@ -64,14 +70,21 @@ export function useCourtRoomGame(caseData: Case) {
       } else {
         // ケース終了
         // biome-ignore lint/suspicious/noConsoleLog: ゲーム終了のログ
-        console.log('ケース終了');
+        console.log("ケース終了");
       }
     }
-  }, [caseData.scenes, gameState.currentSceneId, gameState.currentDialogueIndex, updateGameState]);
+  }, [
+    caseData.scenes,
+    gameState.currentSceneId,
+    gameState.currentDialogueIndex,
+    updateGameState,
+  ]);
 
   const handleEvidenceSelection = useCallback(
     (evidenceId: string) => {
-      const currentScene = caseData.scenes.find((scene) => scene.id === gameState.currentSceneId);
+      const currentScene = caseData.scenes.find(
+        (scene) => scene.id === gameState.currentSceneId
+      );
 
       updateGameState({ showEvidence: false });
 

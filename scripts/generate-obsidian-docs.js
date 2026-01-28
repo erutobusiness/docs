@@ -1,8 +1,8 @@
-const fs = require('node:fs');
-const path = require('node:path');
+const fs = require("node:fs");
+const path = require("node:path");
 
-const SOURCE_ROOT = path.join(__dirname, '../md');
-const DEST_ROOT = path.join(__dirname, '../_gen_obsidian_vault');
+const SOURCE_ROOT = path.join(__dirname, "../md");
+const DEST_ROOT = path.join(__dirname, "../_gen_obsidian_vault");
 
 function convertContent(content) {
   // Convert <details><summary>...</summary>...</details>
@@ -13,9 +13,9 @@ function convertContent(content) {
     (_match, summary, body) => {
       // Indent body for blockquote
       const indentedBody = body
-        .split('\n')
+        .split("\n")
         .map((line) => `> ${line}`)
-        .join('\n');
+        .join("\n");
       return `> [!NOTE]- ${summary}\n>\n${indentedBody}\n`;
     }
   );
@@ -38,8 +38,8 @@ function processDirectory(sourceDir, destDir) {
     if (stat.isDirectory()) {
       processDirectory(sourcePath, destPath);
     } else {
-      if (item.endsWith('.md')) {
-        const content = fs.readFileSync(sourcePath, 'utf8');
+      if (item.endsWith(".md")) {
+        const content = fs.readFileSync(sourcePath, "utf8");
         const newContent = convertContent(content);
         fs.writeFileSync(destPath, newContent);
       } else {

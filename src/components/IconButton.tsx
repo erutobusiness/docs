@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import '../styles/IconButton.css'; // CSS ファイルをインポート
+import Link from "next/link";
+import "../styles/IconButton.css"; // CSS ファイルをインポート
 
 interface IconButtonProps {
   href: string;
@@ -17,7 +17,7 @@ export default function IconButton({
   href,
   icon,
   ariaLabel,
-  className = '',
+  className = "",
   disabled = false,
   enabled = false,
   onClick,
@@ -37,7 +37,7 @@ export default function IconButton({
   return (
     <Link
       href={href}
-      className={`icon-button ${disabled ? 'disabled' : ''} ${enabled ? 'enabled' : ''} ${className}`}
+      className={`icon-button ${disabled ? "disabled" : ""} ${enabled ? "enabled" : ""} ${className}`}
       aria-label={ariaLabel}
       aria-disabled={disabled}
       onClick={handleClick}

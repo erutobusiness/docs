@@ -1,12 +1,12 @@
-import fs from 'node:fs';
-import path from 'node:path';
+import fs from "node:fs";
+import path from "node:path";
 
 // qiitaConfig を引数で受け取るように変更
 function createHeader(qiitaConfig) {
   return `---
 title: ${qiitaConfig.title}
 tags:
-  - ${qiitaConfig.tags.join('\n  - ')}
+  - ${qiitaConfig.tags.join("\n  - ")}
 private: ${qiitaConfig.private}
 updated_at: ${qiitaConfig.updated_at}
 id:${qiitaConfig.id && ` ${qiitaConfig.id}`}
@@ -26,22 +26,22 @@ export function concatMd(declarativeMdDir, excludeFiles, outputFile, config) {
 
   const filesToConcat = fs
     .readdirSync(declarativeMdDir)
-    .filter((file) => file.endsWith('.md') && !excludeFiles.includes(file))
+    .filter((file) => file.endsWith(".md") && !excludeFiles.includes(file))
     .sort((a, b) => {
-      const numA = Number.parseInt(a.split('-')[0], 10);
-      const numB = Number.parseInt(b.split('-')[0], 10);
+      const numA = Number.parseInt(a.split("-")[0], 10);
+      const numB = Number.parseInt(b.split("-")[0], 10);
       return numA - numB;
     });
 
   filesToConcat.forEach((file, index) => {
     const filePath = path.join(declarativeMdDir, file);
-    const content = fs.readFileSync(filePath, 'utf-8');
+    const content = fs.readFileSync(filePath, "utf-8");
     combinedContent += content;
     if (index < filesToConcat.length - 1) {
-      combinedContent += '\r\n---\r\n\r\n'; // ファイル間に区切り文字を挿入
+      combinedContent += "\r\n---\r\n\r\n"; // ファイル間に区切り文字を挿入
     }
   });
-  fs.writeFileSync(outputFile, combinedContent, 'utf-8');
+  fs.writeFileSync(outputFile, combinedContent, "utf-8");
   // biome-ignore lint/suspicious/noConsoleLog: for debugging
   console.log(`Successfully created ${outputFile}`);
 }

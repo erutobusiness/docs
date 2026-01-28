@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import Image from "next/image";
+import { useEffect, useState } from "react";
 
 interface SlideImageProps {
   imageUrl: string;
@@ -23,7 +23,7 @@ export default function SlideImage({
   // 画像のスタイルをテキスト選択モードに応じて切り替え
   const imagePointerStyle = isTextSelectMode
     ? {} // 選択モード時は通常のポインターイベント（クリック可能）
-    : { pointerEvents: 'none' as const }; // 通常モードではポインターイベントを無効化
+    : { pointerEvents: "none" as const }; // 通常モードではポインターイベントを無効化
 
   return (
     <div className="flex justify-center w-full">

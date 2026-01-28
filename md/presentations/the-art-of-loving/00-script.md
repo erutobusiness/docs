@@ -72,7 +72,7 @@
 しかし、「協働する力」と言われても、なんだか漠然として掴みどころがありません。
 どうすれば、これを体系的に学ぶ方法はあるのでしょうか？
 
-[^1]:  [Houck, B., Lowdermilk, T., Beyer, C., Clarke, S., & Hanrahan, B. (2025). The SPACE of AI: Real-World Lessons on AI's Impact on Developers. arXiv preprint arXiv:2508.00178.](https://arxiv.org/abs/2508.00178)
+[^1]: [Houck, B., Lowdermilk, T., Beyer, C., Clarke, S., & Hanrahan, B. (2025). The SPACE of AI: Real-World Lessons on AI's Impact on Developers. arXiv preprint arXiv:2508.00178.](https://arxiv.org/abs/2508.00178)
 
 <!-- 断定する表現は避ける -->
 
@@ -251,6 +251,7 @@ Googleのコードレビューガイドでも、レビュアーの責任とし�
 こうした小さな変化が、責任ある行動につながっていくと思います。
 
 <!-- [^Google_Code_Review]: [Google's Engineering Practices Documentation: Code Review](https://google.github.io/eng-practices/review/reviewer/) -->
+
 [^Google_Code_Review]: [The Standard of Code Review | eng-practices](https://google.github.io/eng-practices/review/reviewer/standard.html)
 
 ### 02-03 尊重（Respect）

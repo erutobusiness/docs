@@ -1,8 +1,8 @@
-import fs from 'node:fs';
-import path from 'node:path';
-import matter from 'gray-matter';
+import fs from "node:fs";
+import path from "node:path";
+import matter from "gray-matter";
 
-const postsDirectory = path.join(process.cwd(), 'md');
+const postsDirectory = path.join(process.cwd(), "md");
 
 export interface Doc {
   slug: string[];
@@ -23,10 +23,10 @@ export function getAllDocs(): Doc[] {
   const allDocsData = fileNames.map((fileName) => {
     // Remove "posts" from path to get slug
     const relativePath = path.relative(postsDirectory, fileName);
-    const slug = relativePath.replace(/\.md$/, '').split(path.sep);
+    const slug = relativePath.replace(/\.md$/, "").split(path.sep);
 
     // Read markdown file as string
-    const fileContents = fs.readFileSync(fileName, 'utf8');
+    const fileContents = fs.readFileSync(fileName, "utf8");
 
     // Use gray-matter to parse the post metadata section
     const { data, content } = matter(fileContents);
@@ -44,13 +44,13 @@ export function getAllDocs(): Doc[] {
 
 export function getDocBySlug(slug: string[]): Doc | null {
   try {
-    const fullPath = path.join(postsDirectory, `${slug.join('/')}.md`);
+    const fullPath = path.join(postsDirectory, `${slug.join("/")}.md`);
 
     if (!fs.existsSync(fullPath)) {
       return null;
     }
 
-    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const fileContents = fs.readFileSync(fullPath, "utf8");
     const { data, content } = matter(fileContents);
 
     return {
@@ -76,7 +76,7 @@ function getFilesRecursively(dir: string): string[] {
       results = results.concat(getFilesRecursively(filePath));
     } else {
       /* Is a file */
-      if (filePath.endsWith('.md')) {
+      if (filePath.endsWith(".md")) {
         results.push(filePath);
       }
     }

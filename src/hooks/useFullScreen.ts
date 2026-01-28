@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from "react";
 
 /**
  * フルスクリーン機能を提供するカスタムフック
@@ -36,7 +36,7 @@ export function useFullScreen() {
 
     // F11キーを直接検知するためのキーイベントリスナー
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'F11') {
+      if (event.key === "F11") {
         // F11キーが押されたらフルスクリーン状態を反転させる
         // （ブラウザの標準動作は妨げない）
         setTimeout(() => {
@@ -46,17 +46,17 @@ export function useFullScreen() {
       }
     };
 
-    document.addEventListener('fullscreenchange', handleFullScreenChange);
-    window.addEventListener('resize', handleResize);
-    window.addEventListener('keydown', handleKeyDown);
+    document.addEventListener("fullscreenchange", handleFullScreenChange);
+    window.addEventListener("resize", handleResize);
+    window.addEventListener("keydown", handleKeyDown);
 
     // 初期状態を設定
     handleResize();
 
     return () => {
-      document.removeEventListener('fullscreenchange', handleFullScreenChange);
-      window.removeEventListener('resize', handleResize);
-      window.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener("fullscreenchange", handleFullScreenChange);
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
 
@@ -66,7 +66,9 @@ export function useFullScreen() {
       document.documentElement.requestFullscreen().catch((err) => {
         console.error(`フルスクリーンモード有効化エラー: ${err.message}`);
         // APIでエラーが発生した場合、ユーザーにF11キーの使用を促す
-        alert('フルスクリーンの有効化に失敗しました。F11キーを使用してみてください。');
+        alert(
+          "フルスクリーンの有効化に失敗しました。F11キーを使用してみてください。"
+        );
       });
     } else {
       if (document.exitFullscreen) {

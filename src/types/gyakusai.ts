@@ -2,25 +2,30 @@
 
 // キャラクターの感情
 export type Emotion =
-  | 'normal'
-  | 'surprised'
-  | 'angry'
-  | 'thinking'
-  | 'confident'
-  | 'nervous'
-  | 'breakdown';
+  | "normal"
+  | "surprised"
+  | "angry"
+  | "thinking"
+  | "confident"
+  | "nervous"
+  | "breakdown";
 
 // サウンド効果の種類
-export type SoundEffect = 'objection.mp3' | 'breakdown.mp3' | 'gavel.mp3' | 'testimony.mp3' | null;
+export type SoundEffect =
+  | "objection.mp3"
+  | "breakdown.mp3"
+  | "gavel.mp3"
+  | "testimony.mp3"
+  | null;
 
 // ゲームの状態
 export type GameStatus =
-  | 'playing'
-  | 'evidence_selection'
-  | 'choice_selection'
-  | 'testimony'
-  | 'cross_examination'
-  | 'ended';
+  | "playing"
+  | "evidence_selection"
+  | "choice_selection"
+  | "testimony"
+  | "cross_examination"
+  | "ended";
 
 // キャラクター定義
 export interface Character {

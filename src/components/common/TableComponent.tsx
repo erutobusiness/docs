@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 interface TableProps {
   headers: string[];
@@ -24,9 +24,11 @@ export default function TableComponent({ headers, rows }: TableProps) {
         <tbody className="divide-y divide-(--accent-dark)">
           {rows.map((row, rowIndex) => (
             <tr
-              key={row.join('-')}
+              key={row.join("-")}
               className={
-                rowIndex % 2 === 0 ? 'bg-(--background)' : 'bg-(--primary-dark-translucent)'
+                rowIndex % 2 === 0
+                  ? "bg-(--background)"
+                  : "bg-(--primary-dark-translucent)"
               }
             >
               {row.map((cell) => (

@@ -38,7 +38,6 @@
   - DOM操作：useEffect vs useImperativeHandle
   - 視覚効果：CSSベースvs命令的DOM操作
   - 状態更新：イベントハンドラ直接更新vs useEffect間接更新
-  
 - **多様な分野での宣言的 vs 命令的**：
   - インフラ構築：Terraform vs Bash
   - コンテナ管理：Kubernetes YAML vs kubectlコマンド

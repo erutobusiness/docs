@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useCallback, useState } from 'react';
+import { useCallback, useState } from "react";
 
 // ズームの増減の刻み値
 const zoomStep = 0.25;
@@ -30,16 +30,16 @@ export function useZoom() {
         const targetElement = e.target as Element;
         // button要素やIconButtonの子要素をチェック
         if (
-          targetElement.tagName === 'BUTTON' ||
-          targetElement.closest('button') ||
-          targetElement.closest('.icon-button')
+          targetElement.tagName === "BUTTON" ||
+          targetElement.closest("button") ||
+          targetElement.closest(".icon-button")
         ) {
           return;
         }
       }
 
       // 右クリックの場合はズームをリセット
-      if ('button' in e && e.button === 2) {
+      if ("button" in e && e.button === 2) {
         resetZoom();
         return;
       }
@@ -48,7 +48,7 @@ export function useZoom() {
       let clientX = 0;
       let clientY = 0;
 
-      if ('touches' in e) {
+      if ("touches" in e) {
         // タッチイベントの場合
         clientX = e.touches[0].clientX;
         clientY = e.touches[0].clientY;

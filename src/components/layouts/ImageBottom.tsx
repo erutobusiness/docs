@@ -1,15 +1,18 @@
-'use client';
+"use client";
 
-import type { Slide } from '@/types/slides';
-import Descriptions from '../common/Descriptions';
-import SlideImage from '../common/SlideImage';
+import type { Slide } from "@/types/slides";
+import Descriptions from "../common/Descriptions";
+import SlideImage from "../common/SlideImage";
 
 interface ImageBottomProps {
   slide: Slide;
   isTextSelectMode?: boolean;
 }
 
-export default function ImageBottom({ slide, isTextSelectMode = false }: ImageBottomProps) {
+export default function ImageBottom({
+  slide,
+  isTextSelectMode = false,
+}: ImageBottomProps) {
   return (
     <div className="flex flex-col">
       {/* コンテンツがある場合は表示 */}

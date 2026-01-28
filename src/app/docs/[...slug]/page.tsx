@@ -1,8 +1,8 @@
-import { getAllDocs, getDocBySlug } from '@/lib/docs';
-import Link from 'next/link';
-import { notFound } from 'next/navigation';
-import ReactMarkdown from 'react-markdown';
-import rehypeRaw from 'rehype-raw';
+import { getAllDocs, getDocBySlug } from "@/lib/docs";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
 
 interface Props {
   params: Promise<{
@@ -29,7 +29,10 @@ export default async function DocPage({ params }: Props) {
     <main className="min-h-screen p-8 bg-[var(--background)] text-[var(--foreground)] pb-24">
       <div className="container mx-auto max-w-4xl">
         <div className="mb-6">
-          <Link href="/" className="text-blue-500 hover:text-blue-600 transition-colors">
+          <Link
+            href="/"
+            className="text-blue-500 hover:text-blue-600 transition-colors"
+          >
             ← Back to Dashboard
           </Link>
         </div>
@@ -43,7 +46,7 @@ export default async function DocPage({ params }: Props) {
                 const { src, alt, ...rest } = props;
                 // Rewrite "../img/" path to API route
                 let newSrc = src;
-                if (typeof src === 'string') {
+                if (typeof src === "string") {
                   // Logic to extract project name.
                   // Current doc slug is available in `doc.slug` (e.g., ['declarative', '02-why_now'])
                   // If src is relative like './img/foo.png' inside 'declarative',
@@ -51,12 +54,12 @@ export default async function DocPage({ params }: Props) {
 
                   const project = doc.slug[0]; // First part of slug is project name
 
-                  if (src.startsWith('./img/') || src.startsWith('img/')) {
-                    const fileName = src.replace(/^\.?\/?img\//, '');
+                  if (src.startsWith("./img/") || src.startsWith("img/")) {
+                    const fileName = src.replace(/^\.?\/?img\//, "");
                     newSrc = `/api/images?project=${project}&file=${fileName}`;
-                  } else if (src.startsWith('../img/')) {
+                  } else if (src.startsWith("../img/")) {
                     // If still using .. syntax, handle it validly or ignore
-                    const fileName = src.replace('../img/', '');
+                    const fileName = src.replace("../img/", "");
                     newSrc = `/api/images?project=${project}&file=${fileName}`;
                   }
                 }
@@ -66,7 +69,7 @@ export default async function DocPage({ params }: Props) {
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
                     src={newSrc as string}
-                    alt={alt || ''}
+                    alt={alt || ""}
                     {...rest}
                     className="max-w-full h-auto my-4 rounded-lg shadow-md"
                   />

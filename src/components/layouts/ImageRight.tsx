@@ -1,15 +1,18 @@
-'use client';
+"use client";
 
-import type { Slide } from '@/types/slides';
-import Descriptions from '../common/Descriptions';
-import SlideImage from '../common/SlideImage';
+import type { Slide } from "@/types/slides";
+import Descriptions from "../common/Descriptions";
+import SlideImage from "../common/SlideImage";
 
 interface ImageRightProps {
   slide: Slide;
   isTextSelectMode?: boolean;
 }
 
-export default function ImageRight({ slide, isTextSelectMode = false }: ImageRightProps) {
+export default function ImageRight({
+  slide,
+  isTextSelectMode = false,
+}: ImageRightProps) {
   return (
     <div className="flex flex-col md:flex-row gap-4 sm:gap-8">
       {/* コンテンツがある場合は表示 */}

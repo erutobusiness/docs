@@ -1,4 +1,4 @@
-import type { Case } from '@/types/gyakusai';
+import type { Case } from "@/types/gyakusai";
 
 export class GameManager {
   private case: Case;
@@ -24,12 +24,12 @@ export class GameManager {
       completedAt: new Date().toISOString(),
     });
 
-    localStorage.setItem('gyakusai_game_history', JSON.stringify(gameHistory));
+    localStorage.setItem("gyakusai_game_history", JSON.stringify(gameHistory));
   }
 
   private getGameHistory(): GameHistory[] {
     try {
-      const history = localStorage.getItem('gyakusai_game_history');
+      const history = localStorage.getItem("gyakusai_game_history");
       return history ? JSON.parse(history) : [];
     } catch {
       return [];
@@ -38,14 +38,20 @@ export class GameManager {
 
   public static getGameStats(caseId?: string): GameStats {
     try {
-      const history = localStorage.getItem('gyakusai_game_history');
+      const history = localStorage.getItem("gyakusai_game_history");
       const gameHistory: GameHistory[] = history ? JSON.parse(history) : [];
 
-      const filteredHistory = caseId ? gameHistory.filter((h) => h.caseId === caseId) : gameHistory;
+      const filteredHistory = caseId
+        ? gameHistory.filter((h) => h.caseId === caseId)
+        : gameHistory;
 
       const totalGames = filteredHistory.length;
-      const victories = filteredHistory.filter((h) => h.result === 'victory').length;
-      const defeats = filteredHistory.filter((h) => h.result === 'defeat').length;
+      const victories = filteredHistory.filter(
+        (h) => h.result === "victory"
+      ).length;
+      const defeats = filteredHistory.filter(
+        (h) => h.result === "defeat"
+      ).length;
 
       return {
         totalGames,
@@ -64,7 +70,7 @@ export class GameManager {
   }
 }
 
-export type GameEndResult = 'victory' | 'defeat' | 'incomplete';
+export type GameEndResult = "victory" | "defeat" | "incomplete";
 
 export interface GameHistory {
   caseId: string;
