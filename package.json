@@ -4,13 +4,10 @@
   "description": "ドキュメントプロジェクト",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
     "format": "prettier --write .",
-    "lint": "textlint --config .textlintrc.js \"*.md\" \"src/**/*.md\" \"md/*.md\" \"md/trpg/**/*.md\" && textlint --config md/baby-cup/.textlintrc.js \"md/baby-cup/*.md\" \"md/baby-cup/10_flow/**/*.md\" \"md/baby-cup/20_topics/**/*.md\" && textlint --config md/baby-cup/30_marp/.textlintrc.js \"md/baby-cup/30_marp/**/*.md\" && textlint --config md/claude-vs-antigravity/.textlintrc.js \"md/claude-vs-antigravity/**/*.md\" && textlint --config md/declarative/.textlintrc.js \"md/declarative/**/*.md\" && textlint --config md/theArtOfLoving/.textlintrc.js \"md/theArtOfLoving/**/*.md\"",
+    "lint": "textlint --config .textlintrc.js \"*.md\" \"trpg/**/*.md\" \"games/**/*.md\" \"ideas/**/*.md\" \"tech/**/*.md\" \"topics/**/*.md\" \"youtube/**/*.md\" \"templates/**/*.md\" && textlint --config presentations/baby-cup/.textlintrc.js \"presentations/baby-cup/*.md\" \"presentations/baby-cup/10_flow/**/*.md\" \"presentations/baby-cup/20_topics/**/*.md\" && textlint --config presentations/baby-cup/30_marp/.textlintrc.js \"presentations/baby-cup/30_marp/**/*.md\" && textlint --config presentations/claude-vs-antigravity/.textlintrc.js \"presentations/claude-vs-antigravity/**/*.md\" && textlint --config presentations/declarative/.textlintrc.js \"presentations/declarative/**/*.md\" && textlint --config presentations/the-art-of-loving/.textlintrc.js \"presentations/the-art-of-loving/**/*.md\" && textlint --config qiita/.textlintrc.js \"qiita/**/*.md\"",
     "lint:fix": "prettier --write .",
-    "check": "npm run lint && npx tsc --noEmit",
+    "check": "npm run lint",
     "fix": "npm run lint:fix",
     "prepare": "husky"
   },
@@ -18,53 +15,74 @@
     "*.{js,ts,tsx,json,md}": [
       "prettier --write"
     ],
-    "md/baby-cup/30_marp/**/*.md": [
-      "textlint --config md/baby-cup/30_marp/.textlintrc.js"
+    "presentations/baby-cup/30_marp/**/*.md": [
+      "textlint --config presentations/baby-cup/30_marp/.textlintrc.js"
     ],
-    "md/baby-cup/{*.md,10_flow/**/*.md,20_topics/**/*.md}": [
-      "textlint --config md/baby-cup/.textlintrc.js"
+    "presentations/baby-cup/{*.md,10_flow/**/*.md,20_topics/**/*.md}": [
+      "textlint --config presentations/baby-cup/.textlintrc.js"
     ],
-    "md/claude-vs-antigravity/**/*.md": [
-      "textlint --config md/claude-vs-antigravity/.textlintrc.js"
+    "presentations/claude-vs-antigravity/**/*.md": [
+      "textlint --config presentations/claude-vs-antigravity/.textlintrc.js"
     ],
-    "md/declarative/**/*.md": [
-      "textlint --config md/declarative/.textlintrc.js"
+    "presentations/declarative/**/*.md": [
+      "node --max-old-space-size=8192 ./node_modules/textlint/bin/textlint.js --config presentations/declarative/.textlintrc.js"
     ],
-    "md/theArtOfLoving/**/*.md": [
-      "textlint --config md/theArtOfLoving/.textlintrc.js"
+    "presentations/the-art-of-loving/**/*.md": [
+      "textlint --config presentations/the-art-of-loving/.textlintrc.js"
     ],
-    "md/trpg/**/*.md": [
+    "qiita/**/*.md": [
+      "textlint --config qiita/.textlintrc.js"
+    ],
+    "trpg/scenarios/Okami/**/*.md": [
+      "node --max-old-space-size=8192 ./node_modules/textlint/bin/textlint.js --config .textlintrc.js"
+    ],
+    "trpg/scenarios/SIREN/**/*.md": [
+      "node --max-old-space-size=8192 ./node_modules/textlint/bin/textlint.js --config .textlintrc.js"
+    ],
+    "trpg/scenarios/Toaru/**/*.md": [
       "textlint --config .textlintrc.js"
     ],
-    "{*.md,src/**/*.md,md/*.md}": [
+    "trpg/scenarios/{Alice,Hologram,Relief,_template}/**/*.md": [
+      "textlint --config .textlintrc.js"
+    ],
+    "trpg/{README.md,characters/**/*.md,items/**/*.md,memo/**/*.md,rules/**/*.md}": [
+      "textlint --config .textlintrc.js"
+    ],
+    "games/**/*.md": [
+      "textlint --config .textlintrc.js"
+    ],
+    "ideas/**/*.md": [
+      "textlint --config .textlintrc.js"
+    ],
+    "tech/**/*.md": [
+      "textlint --config .textlintrc.js"
+    ],
+    "topics/**/*.md": [
+      "textlint --config .textlintrc.js"
+    ],
+    "youtube/**/*.md": [
+      "textlint --config .textlintrc.js"
+    ],
+    "templates/**/*.md": [
+      "textlint --config .textlintrc.js"
+    ],
+    "OBSIDIAN_SETUP.md": [
+      "textlint --config .textlintrc.js"
+    ],
+    "README.md": [
       "textlint --config .textlintrc.js"
     ]
   },
   "dependencies": {
-    "@heroicons/react": "^2.2.0",
-    "@textlint-ja/textlint-rule-preset-ai-writing": "^1.6.1",
-    "framer-motion": "^12.9.4",
-    "gray-matter": "^4.0.3",
-    "next": "15.3.2",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-markdown": "^10.1.0",
-    "react-syntax-highlighter": "^15.6.1",
-    "rehype-raw": "^7.0.0"
+    "@textlint-ja/textlint-rule-preset-ai-writing": "^1.6.1"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "@types/react-syntax-highlighter": "^15.5.13",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
     "prettier": "^3.8.1",
-    "tailwindcss": "^4",
     "textlint": "^15.5.0",
     "textlint-filter-rule-allowlist": "^4.0.0",
-    "textlint-filter-rule-footnote": "^1.0.2",
+    "textlint-filter-rule-footnote": "file:../projects/textlint-filter-rule-footnote",
     "textlint-filter-rule-node-types": "^1.1.0",
     "textlint-rule-footnote-dearu-desumasu": "^1.0.0",
     "textlint-rule-one-sentence-per-line": "^2.0.0",

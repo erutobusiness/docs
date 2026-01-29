@@ -1,0 +1,228 @@
+{
+  "main": {
+    "id": "85cbcd3714c3e196",
+    "type": "split",
+    "children": [
+      {
+        "id": "00fcc4e55292d509",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "599d52a146dc8cea",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "新規タブ"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "1a050c35e08ffc39",
+    "type": "split",
+    "children": [
+      {
+        "id": "efa313b803dcfb1d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b94b94dbe30b48f2",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "ファイルエクスプローラ"
+            }
+          },
+          {
+            "id": "0e38feea25df1b8f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "検索"
+            }
+          },
+          {
+            "id": "48b5a3ac7b589473",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "ブックマーク"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "3086f8d846c58455",
+    "type": "split",
+    "children": [
+      {
+        "id": "b455869386ce6362",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "22ed72a79ca56504",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "バックリンク"
+            }
+          },
+          {
+            "id": "f7f64dae5b286a29",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "アウトゴーイングリンク"
+            }
+          },
+          {
+            "id": "8572a583a574857f",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "タグ"
+            }
+          },
+          {
+            "id": "781470414ed8a342",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "すべてのプロパティ"
+            }
+          },
+          {
+            "id": "e58a9f3dad83ede7",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "アウトライン"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:クイックスイッチャーを開く": false,
+      "graph:グラフビューを開く": false,
+      "canvas:新規キャンバスを作成": false,
+      "daily-notes:今日のデイリーノートを開く": false,
+      "templates:テンプレートを挿入": false,
+      "command-palette:コマンドパレットを開く": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "599d52a146dc8cea",
+  "lastOpenFiles": [
+    "presentations/baby-cup/30_marp/pdfs/03_sdlc.pdf",
+    "repro_footnote.md",
+    "node_modules/textlint-filter-rule-footnote/node_modules/@textlint/config-loader/node_modules/@textlint/kernel/module/src/shared/type/MessageType.d.ts.map",
+    "node_modules/textlint-filter-rule-footnote/node_modules/@textlint/config-loader/node_modules/@textlint/kernel/module/src/shared/type/MessageType.js.map",
+    "node_modules/textlint-filter-rule-footnote/node_modules/@textlint/config-loader/node_modules/@textlint/kernel/module/src/shared/type/MessageType.d.ts",
+    "node_modules/textlint-filter-rule-footnote/node_modules/@textlint/config-loader/node_modules/@textlint/kernel/module/src/shared/type/MessageType.js",
+    "node_modules/textlint-filter-rule-footnote/node_modules/@textlint/config-loader/node_modules/@textlint/kernel/lib/src/shared/type/MessageType.js.map",
+    "node_modules/textlint-filter-rule-footnote/node_modules/@textlint/config-loader/node_modules/@textlint/kernel/lib/src/shared/type/MessageType.d.ts.map",
+    "node_modules/textlint-filter-rule-footnote/node_modules/@textlint/config-loader/node_modules/@textlint/kernel/lib/src/shared/type/MessageType.js",
+    "node_modules/textlint-filter-rule-footnote/node_modules/@textlint/config-loader/node_modules/@textlint/kernel/lib/src/shared/type/MessageType.d.ts",
+    "node_modules/textlint-filter-rule-footnote/node_modules/textlint-tester/node_modules/@textlint/kernel/module/src/shared/type/MessageType.js.map",
+    "node_modules/textlint-filter-rule-footnote/node_modules/textlint-tester/node_modules/@textlint/kernel/module/src/shared/type/MessageType.d.ts.map",
+    "node_modules/textlint-filter-rule-footnote/node_modules/@textlint/config-loader/node_modules/@textlint/kernel/src/task/README.md",
+    "node_modules/textlint-filter-rule-footnote/node_modules/@textlint/config-loader/node_modules/@textlint/kernel/src/descriptor/README.md",
+    "node_modules/textlint-filter-rule-footnote/node_modules/textlint-tester/node_modules/@textlint/kernel/src/task/README.md",
+    "node_modules/textlint-filter-rule-footnote/node_modules/textlint-tester/node_modules/@textlint/kernel/src/descriptor/README.md",
+    "node_modules/textlint-filter-rule-footnote/node_modules/textlint/node_modules/@textlint/kernel/src/task/README.md",
+    "node_modules/textlint-filter-rule-footnote/node_modules/textlint/node_modules/@textlint/kernel/src/descriptor/README.md",
+    "node_modules/textlint-filter-rule-footnote/node_modules/@textlint/kernel/node_modules/@textlint/utils/README.md",
+    "node_modules/textlint-filter-rule-footnote/node_modules/@textlint/kernel/node_modules/@textlint/feature-flag/README.md",
+    "node_modules/textlint-filter-rule-footnote/node_modules/@textlint/kernel/node_modules/@textlint/types/README.md",
+    "node_modules/textlint-filter-rule-footnote/node_modules/@textlint/kernel/node_modules/@textlint/ast-traverse/README.md",
+    "node_modules/textlint-filter-rule-footnote/node_modules/@textlint/kernel/node_modules/@textlint/ast-node-types/README.md",
+    "node_modules/textlint-filter-rule-footnote/node_modules/@textlint/textlint-plugin-markdown/node_modules/@textlint/ast-node-types/README.md",
+    "node_modules/textlint-filter-rule-footnote/node_modules/@textlint/textlint-plugin-markdown/node_modules/@textlint/types/README.md",
+    "node_modules/textlint-filter-rule-footnote/node_modules/@textlint/source-code-fixer/node_modules/@textlint/types/README.md",
+    "node_modules/textlint-filter-rule-footnote/node_modules/@textlint/source-code-fixer/node_modules/@textlint/ast-node-types/README.md",
+    "node_modules/textlint-filter-rule-footnote/node_modules/@textlint/markdown-to-ast/node_modules/@textlint/ast-node-types/README.md",
+    "node_modules/textlint-filter-rule-footnote/node_modules/@textlint/config-loader/node_modules/@textlint/ast-tester/README.md",
+    "node_modules/textlint-filter-rule-footnote/node_modules/@textlint/config-loader/node_modules/@textlint/source-code-fixer/README.md",
+    "node_modules/textlint-filter-rule-footnote/node_modules/@textlint/config-loader/node_modules/@textlint/kernel/README.md",
+    "node_modules/textlint-filter-rule-footnote/node_modules/@textlint/ast-tester/node_modules/@textlint/ast-node-types/README.md",
+    "node_modules/textlint-filter-rule-footnote/node_modules/textlint-tester/node_modules/@textlint/textlint-plugin-markdown/README.md",
+    "node_modules/textlint-filter-rule-footnote/node_modules/textlint-tester/node_modules/@textlint/source-code-fixer/README.md",
+    "node_modules/textlint-filter-rule-footnote/node_modules/textlint-tester/node_modules/@textlint/markdown-to-ast/README.md",
+    "node_modules/textlint-filter-rule-footnote/node_modules/textlint-tester/node_modules/@textlint/ast-tester/README.md",
+    "presentations/the-art-of-loving/img/cover.jpg",
+    "presentations/declarative/img/宣言的パラダイムを使う技術.png",
+    "presentations/declarative/img/宣言的パラダイムを使うWeb技術.png",
+    "presentations/declarative/img/宣言的パラダイムを使うWeb外技術.png",
+    "presentations/declarative/img/宣言的なネットワーク自動化.png",
+    "presentations/declarative/img/宣言的UI.png",
+    "presentations/declarative/img/命令的UIと宣言的UI.png",
+    "presentations/declarative/img/Queen_Elizabeth.jpg",
+    "presentations/declarative/img/Decralative_Top.png",
+    "presentations/declarative/img/DeclartiveVsImperative.png"
+  ]
+}

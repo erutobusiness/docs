@@ -1,0 +1,4 @@
+{
+  "userIgnoreFilters": ["node_modules", ".*"],
+  "attachmentFolderPath": "assets"
+}
