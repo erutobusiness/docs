@@ -10,7 +10,7 @@ https://dev.classmethod.jp/articles/make-a-style-that-changes-color-with-mouse-o
   - CSS-in-JS (`makeStyles`) において、`&:hover` や `&:active` プロパティを使って擬似クラスを定義できる
 - **他要素への影響**:
   - ホバーされた要素以外のスタイルを変更したい場合、Reactの `state` (`onMouseEnter`, `onMouseLeave` 等) を使ってスタイルを動的に書き換える手法がある
-  - (補足) CSSの隣接セレクタ等でも可能な場合があるが、JS側で制御することでより柔軟な表現が可能
+  - (補足) CSSの隣接セレクタ等でも可能な場合があるが、JS側で制御することにより柔軟な表現が可能
 
 ## Mouse Stalker (マウスストーカー)
 
