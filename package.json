@@ -5,7 +5,14 @@
   "private": true,
   "scripts": {
     "format": "prettier --write .",
-    "lint": "textlint --config .textlintrc.js \"*.md\" \"trpg/**/*.md\" \"games/**/*.md\" \"ideas/**/*.md\" \"tech/**/*.md\" \"topics/**/*.md\" \"youtube/**/*.md\" \"templates/**/*.md\" && textlint --config presentations/baby-cup/.textlintrc.js \"presentations/baby-cup/*.md\" \"presentations/baby-cup/10_flow/**/*.md\" \"presentations/baby-cup/20_topics/**/*.md\" && textlint --config presentations/baby-cup/30_marp/.textlintrc.js \"presentations/baby-cup/30_marp/**/*.md\" && textlint --config presentations/claude-vs-antigravity/.textlintrc.js \"presentations/claude-vs-antigravity/**/*.md\" && textlint --config presentations/declarative/.textlintrc.js \"presentations/declarative/**/*.md\" && textlint --config presentations/the-art-of-loving/.textlintrc.js \"presentations/the-art-of-loving/**/*.md\" && textlint --config qiita/.textlintrc.js \"qiita/**/*.md\"",
+    "lint": "npm run lint:root && npm run lint:readme && npm run lint:presentations && npm run lint:qiita && npm run lint:prompt",
+    "lint:root": "textlint --config .textlintrc.js \"trpg/{characters,items,memo,rules,assets}/**/*.md\" \"trpg/scenarios/Okami/{chapters,mechanics,npcs,references,setting}/**/*.md\" \"trpg/scenarios/SIREN/{TODO.md,chapters/**/*.md,items/**/*.md,mechanics/**/*.md,npcs/**/*.md,references/**/*.md,setting/**/*.md}\" \"trpg/scenarios/Toaru/{handouts,items,maps,npcs,sessions,setting}/**/*.md\" \"trpg/scenarios/{Alice,Hologram,Relief,_template}/**/*.md\" \"games/**/*.md\" \"ideas/**/*.md\" \"tech/*.md\" \"tech/frontend/**/*.md\" \"tech/textlint/**/*.md\" \"topics/**/*.md\" \"youtube/**/*.md\" \"templates/**/*.md\"",
+    "lint:readme": "textlint --config .textlintrc.readme.js \"README.md\" \"trpg/README.md\" \"trpg/scenarios/Okami/README.md\" \"trpg/scenarios/SIREN/README.md\" \"trpg/scenarios/Toaru/README.md\"",
+    "lint:presentations": "npm run lint:presentations:baby-cup && npm run lint:presentations:others",
+    "lint:presentations:baby-cup": "textlint --config presentations/baby-cup/.textlintrc.js \"presentations/baby-cup/*.md\" \"presentations/baby-cup/10_flow/**/*.md\" \"presentations/baby-cup/20_topics/**/*.md\" && textlint --config presentations/baby-cup/30_marp/.textlintrc.js \"presentations/baby-cup/30_marp/**/*.md\"",
+    "lint:presentations:others": "textlint --config presentations/claude-vs-antigravity/.textlintrc.js \"presentations/claude-vs-antigravity/**/*.md\" && textlint --config presentations/declarative/.textlintrc.js \"presentations/declarative/**/*.md\" && textlint --config presentations/the-art-of-loving/.textlintrc.js \"presentations/the-art-of-loving/**/*.md\"",
+    "lint:qiita": "textlint --config tech/qiita/.textlintrc.js \"tech/qiita/**/*.md\"",
+    "lint:prompt": "textlint --config prompt/.textlintrc.js \"prompt/**/*.md\"",
     "lint:fix": "prettier --write .",
     "check": "npm run lint",
     "fix": "npm run lint:fix",
@@ -30,22 +37,31 @@
     "presentations/the-art-of-loving/**/*.md": [
       "textlint --config presentations/the-art-of-loving/.textlintrc.js"
     ],
-    "qiita/**/*.md": [
-      "textlint --config qiita/.textlintrc.js"
+    "tech/qiita/**/*.md": [
+      "node --max-old-space-size=8192 ./node_modules/textlint/bin/textlint.js --config tech/qiita/.textlintrc.js"
     ],
-    "trpg/scenarios/Okami/**/*.md": [
+    "trpg/scenarios/{Okami,SIREN,Toaru}/README.md": [
+      "textlint --config .textlintrc.readme.js"
+    ],
+    "trpg/scenarios/Okami/{chapters,mechanics,npcs,references,setting}/**/*.md": [
       "node --max-old-space-size=8192 ./node_modules/textlint/bin/textlint.js --config .textlintrc.js"
     ],
-    "trpg/scenarios/SIREN/**/*.md": [
+    "trpg/scenarios/SIREN/{TODO.md,chapters/**/*.md,items/**/*.md,mechanics/**/*.md,npcs/**/*.md,references/**/*.md,setting/**/*.md}": [
       "node --max-old-space-size=8192 ./node_modules/textlint/bin/textlint.js --config .textlintrc.js"
     ],
-    "trpg/scenarios/Toaru/**/*.md": [
+    "trpg/scenarios/Toaru/{handouts,items,maps,npcs,sessions,setting}/**/*.md": [
       "textlint --config .textlintrc.js"
     ],
     "trpg/scenarios/{Alice,Hologram,Relief,_template}/**/*.md": [
       "textlint --config .textlintrc.js"
     ],
-    "trpg/{README.md,characters/**/*.md,items/**/*.md,memo/**/*.md,rules/**/*.md}": [
+    "trpg/README.md": [
+      "textlint --config .textlintrc.readme.js"
+    ],
+    "trpg/{characters/**/*.md,items/**/*.md,memo/**/*.md,rules/**/*.md,assets/**/*.md}": [
+      "textlint --config .textlintrc.js"
+    ],
+    "tech/textlint/**/*.md": [
       "textlint --config .textlintrc.js"
     ],
     "games/**/*.md": [
@@ -54,7 +70,10 @@
     "ideas/**/*.md": [
       "textlint --config .textlintrc.js"
     ],
-    "tech/**/*.md": [
+    "tech/frontend/**/*.md": [
+      "textlint --config .textlintrc.js"
+    ],
+    "tech/*.md": [
       "textlint --config .textlintrc.js"
     ],
     "topics/**/*.md": [
@@ -66,11 +85,11 @@
     "templates/**/*.md": [
       "textlint --config .textlintrc.js"
     ],
-    "OBSIDIAN_SETUP.md": [
-      "textlint --config .textlintrc.js"
-    ],
     "README.md": [
-      "textlint --config .textlintrc.js"
+      "textlint --config .textlintrc.readme.js"
+    ],
+    "prompt/**/*.md": [
+      "textlint --config prompt/.textlintrc.js"
     ]
   },
   "dependencies": {
@@ -89,6 +108,7 @@
     "textlint-rule-period-in-list-item": "^1.0.1",
     "textlint-rule-preset-ja-spacing": "^2.4.3",
     "textlint-rule-preset-ja-technical-writing": "^12.0.2",
+    "textlint-rule-terminology": "^5.2.16",
     "typescript": "^5"
   }
 }

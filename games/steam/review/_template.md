@@ -24,26 +24,33 @@ https://kengo700.hatenablog.com/entry/steam_formatting
 
 ### リスト
 
-- 箇条書き:
-  [list]
-  [*] 項目1
-  [*] 項目2
-  [/list]
+#### 箇条書き
 
-- 番号付き:
-  [list=1]
-  [*] 項目1
-  [*] 項目2
-  [/list]
+```
+[list]
+[*] 項目1
+[*] 項目2
+[/list]
+```
+
+#### 番号付き
+
+```
+[list=1]
+[*] 項目1
+[*] 項目2
+[/list]
+```
 
 ### リンク・自動埋め込み
 
 - リンク: `[url=URL]リンクテキスト[/url]`
-- 自動埋め込み: YouTube, Steamストア/ワークショップのURLを貼ると自動でウィジェット化されます
+- 自動埋め込み: YouTube, Steamストア/ワークショップのURLを貼ると自動でウィジェット化
 - 水平線: `[hr][/hr]`
 
 ### テーブル(表)
 
+```
 [table]
 [tr]
 [th]ヘッダー1[/th]
@@ -54,4 +61,6 @@ https://kengo700.hatenablog.com/entry/steam_formatting
 [td]データ2[/td]
 [/tr]
 [/table]
-※ `[table noborder=1]` で枠線なし、 `[table equalcells=1]` で列幅均等
+```
+
+※ `[table noborder=1]` で枠線なし、 `[table equalcells=1]` で列幅均等。

@@ -21,7 +21,7 @@ module.exports = {
     // 箇条書きの末尾に句点「。」を禁止する
     "period-in-list-item": {
       periodMark: "",
-      periodMarks: ["。", "．", "."],
+      periodMarks: ["。", "．"],
       forceAppendPeriod: true,
     },
 

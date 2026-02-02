@@ -85,7 +85,7 @@ Please create a new repository and implement a textlint processor plugin with th
     - **Mitigation**:
       - Implement a "Post-Grafting Integrity Check" or "Safe Gifter".
       - If the expanded nodes would violate the parent's content model (e.g. Block nodes inside a node that only accepts Inline), **fall back** to outputting the content as `CodeBlock` or `Str` with a warning.
-      - **Alternative Consideration**: If Grafting proves too unstable, consider a "SourceMap / Virtual Document" approach where the CodeBlock is parsed separately and errors are mapped back. However, try Grafting first as it enables standard rules to work naturally.
+      - **Alternative Consideration**: If Grafting proves too unstable, consider a "source map / Virtual Document" approach where the CodeBlock is parsed separately and errors are mapped back. However, try Grafting first as it enables standard rules to work naturally.
 
 ### 5. Error Handling & Validation
 
@@ -156,6 +156,7 @@ _Note: The range indices above are relative to the start of the CodeBlock conten
 ### Case 1: Basic BBCode Linting & Offset
 
 - **Input**:
+
   ````markdown
   # Test
 
@@ -163,15 +164,18 @@ _Note: The range indices above are relative to the start of the CodeBlock conten
   [b]Hello![/b]
   ```
   ````
+
   ```
 
   ```
+
 - **Check**: Use `textlint-rule-no-exclamation-question-mark`.
 - **Expect**: Error detected at the specific character `!` inside the block, matching the correct line/column in the generic `.md` file.
 
 ### Case 2: Mixed Content & Position
 
 - **Input**:
+
   ````markdown
   preceding text...
 
@@ -179,10 +183,13 @@ _Note: The range indices above are relative to the start of the CodeBlock conten
   [i]Steam Content[/i]
   ```
   ````
+
   following text...
+
   ```
 
   ```
+
 - **Expect**: verify that offsets for "preceding", "Steam Content", and "following" are all correct relative to file start.
 
 ### Case 3: Invalid Tags
@@ -195,6 +202,6 @@ _Note: The range indices above are relative to the start of the CodeBlock conten
 
 ### Case 4: Normal Markdown Regression
 
-- **Input**: Standard markdown file with **NO** `steam` code blocks.
+- **Input**: Standard Markdown file with **NO** `steam` code blocks.
 - **Check**: Run standard rules (e.g., `no-todo`).
 - **Expect**: The behavior is identical to the standard `@textlint/textlint-plugin-markdown`. No crashes, no swallowed errors.
