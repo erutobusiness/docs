@@ -10,7 +10,7 @@
     "lint:readme": "textlint --config .textlintrc.readme.js \"README.md\" \"trpg/README.md\" \"trpg/scenarios/Okami/README.md\" \"trpg/scenarios/SIREN/README.md\" \"trpg/scenarios/Toaru/README.md\"",
     "lint:presentations": "npm run lint:presentations:baby-cup && npm run lint:presentations:others",
     "lint:presentations:baby-cup": "textlint --config presentations/baby-cup/.textlintrc.js \"presentations/baby-cup/*.md\" \"presentations/baby-cup/10_flow/**/*.md\" \"presentations/baby-cup/20_topics/**/*.md\" && textlint --config presentations/baby-cup/30_marp/.textlintrc.js \"presentations/baby-cup/30_marp/**/*.md\"",
-    "lint:presentations:others": "textlint --config presentations/claude-vs-antigravity/.textlintrc.js \"presentations/claude-vs-antigravity/**/*.md\" && textlint --config presentations/declarative/.textlintrc.js \"presentations/declarative/**/*.md\" && textlint --config presentations/the-art-of-loving/.textlintrc.js \"presentations/the-art-of-loving/**/*.md\"",
+    "lint:presentations:others": "textlint --config presentations/claude-vs-antigravity/.textlintrc.js --ignore-pattern \"presentations/claude-vs-antigravity/karaoke-kumikyoku/**/*.md\" \"presentations/claude-vs-antigravity/**/*.md\" && textlint --config presentations/declarative/.textlintrc.js \"presentations/declarative/**/*.md\" && textlint --config presentations/the-art-of-loving/.textlintrc.js \"presentations/the-art-of-loving/**/*.md\"",
     "lint:qiita": "textlint --config tech/qiita/.textlintrc.js \"tech/qiita/**/*.md\"",
     "lint:prompt": "textlint --config prompt/.textlintrc.js \"prompt/**/*.md\"",
     "lint:fix": "prettier --write .",
@@ -28,7 +28,7 @@
     "presentations/baby-cup/{*.md,10_flow/**/*.md,20_topics/**/*.md}": [
       "textlint --config presentations/baby-cup/.textlintrc.js"
     ],
-    "presentations/claude-vs-antigravity/**/*.md": [
+    "presentations/claude-vs-antigravity/{,!(karaoke-kumikyoku)/**/}*.md": [
       "textlint --config presentations/claude-vs-antigravity/.textlintrc.js"
     ],
     "presentations/declarative/**/*.md": [

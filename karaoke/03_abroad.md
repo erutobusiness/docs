@@ -15,3 +15,23 @@
 ## Queen
 
 - Don’t Stop Me Now
+
+## Loituma
+
+- Ievan Polkka
+
+## Caramell
+
+- Caramelldansen (ウッーウッーウマウマ(ﾟ∀ﾟ))
+
+## Paffendorf
+
+- Under My Skin
+
+## SM-Trax
+
+- Got The Groove
+
+## Françoise Hardy
+
+- Comment te dire adieu
