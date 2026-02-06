@@ -38,7 +38,7 @@ graph TD
     end
 ```
 
-## なぜこのツール選定なのか（Q&A）
+## なぜこのツール選定なのか（Q\&A）
 
 読者の皆さんは「最初からAntigravityで設計すればいいのでは？」「他のCoding Agentでいいのでは？」と思われるでしょう。
 率直な選定理由は以下の通りです。
@@ -64,9 +64,9 @@ CursorやGensparkなど多くの選択肢がありますが、Antigravityの **�
 
 ### Q3. AI任せでコード品質は大丈夫？
 
-**A. 「AI_GUIDELINES.md」と「人間のレビュー」で担保しています。**
+**A. 「AI\_GUIDELINES.md」と「人間のレビュー」で担保しています。**
 
-プロジェクト独自のガイドライン（AI_GUIDELINES.md）を読み込ませています。
+プロジェクト独自のガイドライン（AI\_GUIDELINES.md）を読み込ませています。
 これにより、命名規則やディレクトリ構造を徹底させています。
 また、最終的なマージ権限は人間が持っているため、変なコードがあればPhase 3で弾きます。
 「AIが書いたコード」ではなく「AIと一緒に育てたコード」という感覚です。
@@ -259,13 +259,13 @@ Storybookが「仕様書」として機能しています。
 
 ### 2. 役割分担の明確化
 
-| 役割               | 担当          |
-| ------------------ | ------------- |
-| 設計相談・技術選定 | Claude        |
-| API設計（型定義）  | Claude + 人間 |
-| 指示文作成         | Claude        |
-| 自律実装・検証     | Antigravity   |
-| 承認・最終レビュー | 人間          |
+|役割|担当|
+|-|-|
+|設計相談・技術選定|Claude|
+|API設計（型定義）|Claude + 人間|
+|指示文作成|Claude|
+|自律実装・検証|Antigravity|
+|承認・最終レビュー|人間|
 
 この分担により、人間は「考える」ことに集中し、「作業」はAIに任せられます。
 
@@ -315,9 +315,9 @@ Claudeが作る「指示文」が、設計意図を実装に正確に伝える�
 `react-manga-effects` は、そんな「未来の開発体験」を先取りした実験場です。
 皆さんもぜひ、AIエージェントとの「役割分担」を意識した開発フローを試してみてください。
 
----
+***
 
 ## リンク
 
-- **GitHub**: https://github.com/erutobusiness/react-manga-effects
-- **npm**: https://www.npmjs.com/package/react-manga-effects
+- **GitHub**: <https://github.com/erutobusiness/react-manga-effects>
+- **npm**: <https://www.npmjs.com/package/react-manga-effects>

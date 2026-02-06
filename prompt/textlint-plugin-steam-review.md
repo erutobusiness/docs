@@ -56,7 +56,7 @@ Please create a new repository and implement a textlint processor plugin with th
 - **List Handling**:
   - `[list]` -> `List` Node
   - `[*]` (inside list) -> `ListItem` Node
-  - **Orphan `[*]**`: If `[*]`appears outside`[list]`, treat it as a plain `Str` node (Steam behavior).
+  - \*\*Orphan `[*]**`: If `[*]`appears outside`[list]`, treat it as a plain `Str` node (Steam behavior).
 - **Tag Behaviors**:
   - `[noparse]...[/noparse]`: Content inside is **NOT** parsed. Output as a single `Str` node.
   - `[code]...[/code]`: Content inside is `CodeBlock`. Content is ignored by most textlint rules.
@@ -70,16 +70,16 @@ Please create a new repository and implement a textlint processor plugin with th
 
 - **Concept**: You are "grafting" (replacing) the `CodeBlock` node with its parsed BBCode contents.
 - **Process**:
-  1.  Parse the Markdown file using `@textlint/markdown-to-ast`.
-  2.  Traverse the AST to find `CodeBlock` nodes with `lang` == "steam".
-  3.  **Calculate Base Index**: `CodeBlock.range[0]` + opening fence text length (e.g., "```steam\n".length).
-  4.  **Parse BBCode**: Parse the content. The parser should return nodes with offsets relative to the start of the block content.
-  5.  **Adjust Offsets**: Add **Base Index** to every child node's `range` and `loc`.
-  6.  **Graft (Replace)**:
-      - Modify the **Parent Node's `children` array**.
-      - Find the index of the target `CodeBlock`.
-      - Replace that single `CodeBlock` node with the array of parsed BBCode nodes (e.g., `Paragraph`s, `Table`s).
-      - Use `flatMap` or `splice` on the parent's children array to insert the new nodes.
+  1. Parse the Markdown file using `@textlint/markdown-to-ast`.
+  2. Traverse the AST to find `CodeBlock` nodes with `lang` == "steam".
+  3. **Calculate Base Index**: `CodeBlock.range[0]` + opening fence text length (e.g., "\`\`\`steam\n".length).
+  4. **Parse BBCode**: Parse the content. The parser should return nodes with offsets relative to the start of the block content.
+  5. **Adjust Offsets**: Add **Base Index** to every child node's `range` and `loc`.
+  6. **Graft (Replace)**:
+     - Modify the **Parent Node's `children` array**.
+     - Find the index of the target `CodeBlock`.
+     - Replace that single `CodeBlock` node with the array of parsed BBCode nodes (e.g., `Paragraph`s, `Table`s).
+     - Use `flatMap` or `splice` on the parent's children array to insert the new nodes.
   - **Safety & Integrity Check**:
     - **Risk**: Expanding a `CodeBlock` into multiple nodes within a parent like `ListItem` might break TxtAST structure (ranges intersecting, invalid children).
     - **Mitigation**:
@@ -139,7 +139,7 @@ To ensure consistency, here is an example of how a BBCode input should be mapped
 }
 ```
 
-_Note: The range indices above are relative to the start of the CodeBlock content. You MUST adjust them by adding the absolute start position of the CodeBlock._
+*Note: The range indices above are relative to the start of the CodeBlock content. You MUST adjust them by adding the absolute start position of the CodeBlock.*
 
 ## Project Structure & Output
 
@@ -166,10 +166,10 @@ _Note: The range indices above are relative to the start of the CodeBlock conten
   ````
 
   ```
-
   ```
 
 - **Check**: Use `textlint-rule-no-exclamation-question-mark`.
+
 - **Expect**: Error detected at the specific character `!` inside the block, matching the correct line/column in the generic `.md` file.
 
 ### Case 2: Mixed Content & Position
@@ -187,7 +187,6 @@ _Note: The range indices above are relative to the start of the CodeBlock conten
   following text...
 
   ```
-
   ```
 
 - **Expect**: verify that offsets for "preceding", "Steam Content", and "following" are all correct relative to file start.

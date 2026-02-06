@@ -26,6 +26,6 @@ Google AntigravityはGoogleが提供するAIコーディングアシスタント
 
 （TODO: 実際に使ってみて追記）
 
----
+***
 
 > **次章**: [機能比較](./04_comparison.md)

@@ -41,6 +41,6 @@ HTML、PDF、Word など、様々な形式に変換できます。
 
 Claude CodeやGoogle Antigravityとやり取りするとき、マークダウンで指示を書くとうまくいくことが多いです。
 
----
+***
 
 > **関連コラム**: [マークダウンの書き方Tips](./column_02_markdown_tips.md)

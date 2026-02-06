@@ -84,6 +84,6 @@ const hello = "world";
 
 シンタックスハイライトが効きます。
 
----
+***
 
 > **関連コラム**: [AIとの対話のコツ](./column_03_ai_prompting.md)

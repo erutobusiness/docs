@@ -4,21 +4,21 @@
 
 ### デジタルハリウッド大学 (DHGS)
 
-https://gs.dhw.ac.jp/profile/
+<https://gs.dhw.ac.jp/profile/>
 
 - デジタルコンテンツマネジメント修士（専門職）が取得可能
 - 実務家教員が多く、クリエイティブ産業へのアプローチが強い
 
 ### 放送大学
 
-https://www.ouj.ac.jp/
+<https://www.ouj.ac.jp/>
 
 - 通信制大学・大学院
 - 働きながら修士号を取得しやすい環境
 
 ### 北陸先端科学技術大学院大学 (JAIST)
 
-https://www.jaist.ac.jp/satellite/sate/
+<https://www.jaist.ac.jp/satellite/sate/>
 
 - **東京サテライト**: 社会人向けのコースが充実している
 - 情報科学、知識科学などの分野で先端的な研究が可能

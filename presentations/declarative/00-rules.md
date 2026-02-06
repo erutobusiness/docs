@@ -13,7 +13,7 @@
 - わかりやすい構成とするために、
   短くまとまっているコテンラジオ「吉田松陰」回を参考に、
   以下の構成とする
-  https://www.youtube.com/playlist?list=PLIjh6KwR4APkr-PlvNvrhLDFOZXf60kaW
+  <https://www.youtube.com/playlist?list=PLIjh6KwR4APkr-PlvNvrhLDFOZXf60kaW>
   - 01 - 宣言的UIとはなにか？
   - 02 - 宣言的・宣言性を学ぶメリット
   - 03 - 宣言的・宣言的UIの歴史

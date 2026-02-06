@@ -40,21 +40,21 @@ ignorePublish: false
 
 ## 1.2. 単語解説
 
-| <img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/8a51dc0f-6d7a-b526-3e13-31fc130be440.png" alt="DnD 図解" width="75%" /> |
-| :---------------------------------------------------------------------------------------------------------------------------------------------------: |
-|                                                                     図2 DnD 図解                                                                      |
+|<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/8a51dc0f-6d7a-b526-3e13-31fc130be440.png" alt="DnD 図解" width="75%" />|
+|:-:|
+|図2 DnD 図解|
 
 ### マウスカーソル
 
 > コンピューターの操作画面で入力位置を示すカーソルのひとつで、マウス操作に対応する、矢印の形をしたアイコンのことである。
 
-https://www.weblio.jp/content/%E3%83%9E%E3%82%A6%E3%82%B9%E3%82%AB%E3%83%BC%E3%82%BD%E3%83%AB
+<https://www.weblio.jp/content/%E3%83%9E%E3%82%A6%E3%82%B9%E3%82%AB%E3%83%BC%E3%82%BD%E3%83%AB>
 
 タッチデバイスにおいては、マウスカーソルが存在しないことがあります。
 
 ちなみに、マウスカーソルは左右対称ではありません。
 
-https://twitter.com/YNCT_SNY/status/436134599945498624
+<https://twitter.com/YNCT_SNY/status/436134599945498624>
 
 :::note warn
 この画像の出典がこのツイートで合っているか、ご存じの方がいらっしゃいましたら、ご教示ください。
@@ -66,9 +66,9 @@ https://twitter.com/YNCT_SNY/status/436134599945498624
 > マウスカーソルの形状によって、ホットスポットの位置は異なる。
 > たとえば、矢印の形をしているマウスカーソルでは、矢印の先端がホットスポットとなる。
 
-https://kotobank.jp/word/%E3%83%9B%E3%83%83%E3%83%88%E3%82%B9%E3%83%9D%E3%83%83%E3%83%88%20%28UI%29-13997
+<https://kotobank.jp/word/%E3%83%9B%E3%83%83%E3%83%88%E3%82%B9%E3%83%9D%E3%83%83%E3%83%88%20%28UI%29-13997>
 
-タッチデバイスにおいては、圧力などによって計算された、力の中心地がホットスポットの扱いになります[要出典]。
+タッチデバイスにおいては、圧力などによって計算された、力の中心地がホットスポットの扱いになります\[要出典]。
 
 ### ドラッグ要素
 
@@ -90,13 +90,13 @@ https://kotobank.jp/word/%E3%83%9B%E3%83%83%E3%83%88%E3%82%B9%E3%83%9D%E3%83%83%
 また、いずれも pointermove のハンドラ内に実装しています。
 しかし、 requestAnimationFrame を使用したほうが、より動作が軽量になるかもしれません。
 
-https://listener.noplan.cc/coding/
+<https://listener.noplan.cc/coding/>
 
 コードは弊社の GitHub に配置しており、 GitHub Pages から確認できます。
 
-https://github.com/visionary-japan/react_ui_comparison
+<https://github.com/visionary-japan/react_ui_comparison>
 
-https://visionary-japan.github.io/react_ui_comparison/
+<https://visionary-japan.github.io/react_ui_comparison/>
 
 # 2. 基準
 
@@ -108,9 +108,9 @@ https://visionary-japan.github.io/react_ui_comparison/
 - PCではマウスカーソルがあるため直感的に思える
 - SPなどマウスカーソルのないタッチデバイスでは、指でタッチ箇所が隠れて見づらい
 
-| <img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/1eb8de67-9a9e-ba09-0a89-1a27fa969740.png" alt="基準：ポインターの座標" width="50%" /> |
-| :-----------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|                                                                     図3 基準：ポインターの座標                                                                      |
+|<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/1eb8de67-9a9e-ba09-0a89-1a27fa969740.png" alt="基準：ポインターの座標" width="50%" />|
+|:-:|
+|図3 基準：ポインターの座標|
 
 ### 実装例
 
@@ -131,9 +131,9 @@ return (
 - 主体がマウスや指ではなくドラッグ要素になる
 - ホットスポットがドロップ対象の中に入ってなくても良い
 
-| <img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/3030b55c-38ef-9f3e-1a3f-f19fdb8b11c7.png" alt="基準：ドラッグ要素の中心座標" width="50%" /> |
-| :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|                                                                     図4 基準：ドラッグ要素の中心座標                                                                      |
+|<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/3030b55c-38ef-9f3e-1a3f-f19fdb8b11c7.png" alt="基準：ドラッグ要素の中心座標" width="50%" />|
+|:-:|
+|図4 基準：ドラッグ要素の中心座標|
 
 ### 実装例
 
@@ -158,11 +158,11 @@ return (
   - 単純な四角形でない場合は処理が面倒
     - 交差オブザーバーを使用することになる？
 
-https://developer.mozilla.org/ja/docs/Web/API/Intersection_Observer_API
+<https://developer.mozilla.org/ja/docs/Web/API/Intersection_Observer_API>
 
-| <img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/9b7d9e0c-be33-af86-dd76-ab2093497dd9.png" alt="基準：重なっている面積の割合 (25%)" width="50%" /> |
-| :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|                                                                     図5 基準：重なっている面積の割合 (25%)                                                                      |
+|<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/9b7d9e0c-be33-af86-dd76-ab2093497dd9.png" alt="基準：重なっている面積の割合 (25%)" width="50%" />|
+|:-:|
+|図5 基準：重なっている面積の割合 (25%)|
 
 ### 実装例 (25%)
 
@@ -192,9 +192,9 @@ return overlapWidth * overlapHeight >= dropArea * 0.25;
 - 実装方法はドラッグ要素の中心座標と概ね同じ
 - ドラッグ要素の形状によっては直感的になる
 
-| <img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/b0a5f3a1-3796-2c8f-8493-cc9cce4ab4fb.png" alt="基準：ドラッグ要素内のいずれかの点 (中上)" width="50%" /> |
-| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|                                                                     図6 基準：ドラッグ要素内のいずれかの点 (中上)                                                                      |
+|<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/b0a5f3a1-3796-2c8f-8493-cc9cce4ab4fb.png" alt="基準：ドラッグ要素内のいずれかの点 (中上)" width="50%" />|
+|:-:|
+|図6 基準：ドラッグ要素内のいずれかの点 (中上)|
 
 ### 実装例 (中上)
 
@@ -218,9 +218,9 @@ return (
 - 光っているドラッグ要素などで出番有？
 - 割りと実装が面倒
 
-| <img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/36953bd1-bfa9-3933-9afa-74116c94d1f0.png" alt="基準：ドロップ対象の中心とドラッグ要素の中心の距離" width="50%" /> |
-| :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|                                                                     図7 基準：ドロップ対象の中心とドラッグ要素の中心の距離                                                                      |
+|<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/36953bd1-bfa9-3933-9afa-74116c94d1f0.png" alt="基準：ドロップ対象の中心とドラッグ要素の中心の距離" width="50%" />|
+|:-:|
+|図7 基準：ドロップ対象の中心とドラッグ要素の中心の距離|
 
 ### 実装例
 
@@ -245,9 +245,9 @@ return distance <= 16384; // 2^14
 - ドラッグの動きそのものに反応させたい時に使う
 - ゲームとかインタラクティブなコンテンツで使えるかも
 
-| <img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/293ac7d3-805d-be09-e279-3bd946d0ea4d.png" alt="基準：速度から移動先を予測" width="50%" /> |
-| :---------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|                                                   図8 基準：速度から移動先を予測 （赤矢印線はドラッグ要素の移動方向）                                                   |
+|<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/293ac7d3-805d-be09-e279-3bd946d0ea4d.png" alt="基準：速度から移動先を予測" width="50%" />|
+|:-:|
+|図8 基準：速度から移動先を予測 （赤矢印線はドラッグ要素の移動方向）|
 
 ### 実装例
 
@@ -263,7 +263,7 @@ return (
 );
 ```
 
-## 2.7. [調査中] 計算幾何学の活用
+## 2.7. \[調査中] 計算幾何学の活用
 
 計算幾何学における交差判定や包含判定について調査中
 React-Three-Fiber を使用すると良さそう？
@@ -274,46 +274,46 @@ React-Three-Fiber を使用すると良さそう？
 
 ### 先行研究
 
-https://tech-blog.talentio.co.jp/entry/2023/03/28/143944
+<https://tech-blog.talentio.co.jp/entry/2023/03/28/143944>
 
 ### HTML5 Drag and Drop API
 
 タッチデバイスでうまくいきませんでした。
 
-https://visionary-japan.github.io/react_ui_comparison/dnd/dnd
+<https://visionary-japan.github.io/react_ui_comparison/dnd/dnd>
 
 ### SortableJS
 
 タッチデバイスでも同様の操作感で使用できました。
 ※ react-sortablejs を使用
 
-https://visionary-japan.github.io/react_ui_comparison/dnd/sortablejs
+<https://visionary-japan.github.io/react_ui_comparison/dnd/sortablejs>
 
-### [調査中] dnd-kit
-
-調査中
-
-https://zenn.dev/castingone_dev/articles/dndkit20231031
-
-https://zenn.dev/hamo/articles/725e4189bfc54d
-
-### [調査中] react-draggable
+### \[調査中] dnd-kit
 
 調査中
 
-https://zenn.dev/xbit/articles/aa923b3c9000e5
+<https://zenn.dev/castingone_dev/articles/dndkit20231031>
 
-### [調査中] react-rnd
+<https://zenn.dev/hamo/articles/725e4189bfc54d>
 
-調査中
-
-https://zenn.dev/xbit/articles/aa923b3c9000e5
-
-### [調査中] react-beautiful-dnd
+### \[調査中] react-draggable
 
 調査中
 
-https://zenn.dev/makotoishida/articles/868e195fc42f5e
+<https://zenn.dev/xbit/articles/aa923b3c9000e5>
+
+### \[調査中] react-rnd
+
+調査中
+
+<https://zenn.dev/xbit/articles/aa923b3c9000e5>
+
+### \[調査中] react-beautiful-dnd
+
+調査中
+
+<https://zenn.dev/makotoishida/articles/868e195fc42f5e>
 
 ## 3.2. タッチデバイス用の対応まとめ
 
@@ -347,7 +347,7 @@ body {
 }
 ```
 
-https://www.webantena.net/css/webkit-tap-highlight-color/
+<https://www.webantena.net/css/webkit-tap-highlight-color/>
 
 ## 3.3. パッシブモード
 
@@ -360,4 +360,4 @@ element.addEventListener("touchmove", handleTouchMove, { passive: false });
 
 # 3.4. 再レンダリングを抑えた実装
 
-https://qiita.com/konbu310/items/46911ed52ab6819b0337
+<https://qiita.com/konbu310/items/46911ed52ab6819b0337>

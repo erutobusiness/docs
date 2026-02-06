@@ -2,7 +2,7 @@
 
 ## チェックボックスの indeterminate 状態
 
-https://feb19.jp/blog/20240314_indeterminate_checkbox_could_possibly_be_terminate
+<https://feb19.jp/blog/20240314_indeterminate_checkbox_could_possibly_be_terminate>
 
 ### 学び・要点
 
@@ -19,8 +19,8 @@ https://feb19.jp/blog/20240314_indeterminate_checkbox_could_possibly_be_terminat
 
 ## デジタル庁デザインシステム
 
-https://design.digital.go.jp/dads/
-https://www.figma.com/community/file/1255349027535859598
+<https://design.digital.go.jp/dads/>
+<https://www.figma.com/community/file/1255349027535859598>
 
 ### 学び・要点
 
@@ -33,7 +33,7 @@ https://www.figma.com/community/file/1255349027535859598
 
 ## Studio (No-Code Web Design Tool)
 
-https://studio.design/ja/
+<https://studio.design/ja/>
 
 ### 学び・要点
 

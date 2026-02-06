@@ -2,7 +2,7 @@
 
 ## EVO型賞金大会の適法性に関する理論
 
-https://x.com/ym_gamelaw/status/1442397732451151873
+<https://x.com/ym_gamelaw/status/1442397732451151873>
 
 ### 学び・要点
 

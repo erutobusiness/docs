@@ -3,8 +3,7 @@
 宣言的UIとは、UIの構造や見た目を、どう作るのかの手順を記述する（命令的）のではなく、状態に基づいて定義する（宣言的）スタイルである[^宣言的とは]。
 状態が変化するとUIが自動的に再描画されるため、開発者は「どう見せたいか」だけを記述する。
 
-[^宣言的とは]:
-    これは、Reactのみにおける定義ではなく、通念的に捉えた表記にしています。
+[^宣言的とは]: これは、Reactのみにおける定義ではなく、通念的に捉えた表記にしています。
     以下に、公式ドキュメントにおける宣言的（Declarative, Declaratively）についての言及があるページをまとめます：
     [React – A JavaScript library for building user interfaces](https://legacy.reactjs.org/)
     [Introduction | Vue.js](https://vuejs.org/guide/introduction)
@@ -136,13 +135,11 @@ Reactの例では、`setCount` で状態 `count` を更新するだけで、
 Reactに代表される宣言的UIフレームワークは、UIの状態管理を簡素化し、コードの可読性、保守性、生産性を向上させる多くの利点をもたらした。
 特にReact Hooksの登場[^React-Hooks]により、関数コンポーネントでの状態や副作用の扱いが宣言的になり、宣言的UIの設計がさらに洗練された。
 
-[^React-Hooks]:
-    React HooksはReact 16.8（2019年2月リリース）にて導入された機能であり、関数コンポーネントに状態管理やライフサイクルメソッドのような機能を追加することを可能にしました。
+[^React-Hooks]: React HooksはReact 16.8（2019年2月リリース）にて導入された機能であり、関数コンポーネントに状態管理やライフサイクルメソッドのような機能を追加することを可能にしました。
     詳細は公式ドキュメント [Introducing Hooks](https://legacy.reactjs.org/docs/hooks-intro.html) を参照してください。
 
 現代の複雑なUI開発においては、状態管理や更新処理の複雑さをフレームワークに委ねられる宣言的UIが主流となりつつある[^UI-trends]。
 ただし、プロジェクトの要件、チームスキル、パフォーマンス要件などを考慮し、プロジェクトに合ったアプローチを選択することが重要である。
 
-[^UI-trends]:
-    宣言的UIフレームワークの広がりは、React・Vue.js・Angular・SwiftUI・Flutter・Jetpack Composeなど、多くのプラットフォームで確認できます。
+[^UI-trends]: 宣言的UIフレームワークの広がりは、React・Vue.js・Angular・SwiftUI・Flutter・Jetpack Composeなど、多くのプラットフォームで確認できます。
     Stack Overflowの[2023 年開発者調査](https://survey.stackoverflow.co/2023/#section-most-popular-technologies-web-frameworks-and-technologies)によれば、フロントエンド開発者の間でReactやVueなどの宣言的UIフレームワークの採用が広く見られます。

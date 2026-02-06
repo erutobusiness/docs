@@ -34,7 +34,7 @@ ignorePublish: false
 
 弊社のGitHubに配置している。
 
-https://visionary-japan.github.io/react_ui_comparison/query
+<https://visionary-japan.github.io/react_ui_comparison/query>
 
 ## コード
 
@@ -156,7 +156,7 @@ export function useQuery() {
 - 任意のクエリ文字列を受け取って解析し、`URLSearchParams`オブジェクトを作成する
 - そのオブジェクトからクエリパラメータの取得・変更などができる
 
-https://developer.mozilla.org/ja/docs/Web/API/URLSearchParams/URLSearchParams
+<https://developer.mozilla.org/ja/docs/Web/API/URLSearchParams/URLSearchParams>
 
 ### useSearchParams
 
@@ -172,7 +172,7 @@ https://developer.mozilla.org/ja/docs/Web/API/URLSearchParams/URLSearchParams
 - そのオブジェクトからクエリパラメータを取得し、そのメソッドからクエリパラメータを変更できる
 - **React の状態として扱われているため、クエリパラメータを変更することがコンポーネントの状態変更となり、関連するコンポーネントが再レンダリングされる**
 
-https://reactrouter.com/en/main/hooks/use-search-params
+<https://reactrouter.com/en/main/hooks/use-search-params>
 
 ### useLocation
 
@@ -186,7 +186,7 @@ https://reactrouter.com/en/main/hooks/use-search-params
 - そのオブジェクトからは、URL のパス、クエリ、ハッシュなど、現在の URL について様々な情報を取得できる
 - **取得できるのみで、操作や管理には直接関与しない**
 
-https://reactrouter.com/en/main/hooks/use-location
+<https://reactrouter.com/en/main/hooks/use-location>
 
 ### 結論
 
@@ -196,7 +196,7 @@ https://reactrouter.com/en/main/hooks/use-location
 
 結果として、今回はReactを使用しているので、状態の更新とレンダリングを連動させるためには、 `useSearchParams`がクエリ変更検知元のオブジェクトとクエリ変更方法として最適となった。
 
-## 逆にReactでURLSearchParamsやuseLocationを使う場合って、どんなとき？ [調査中]
+## 逆にReactでURLSearchParamsやuseLocationを使う場合って、どんなとき？ \[調査中]
 
 - URLSearchParams は useSearchParams を使うほどでもないときに使いそう
   - そんなことってあるか？？

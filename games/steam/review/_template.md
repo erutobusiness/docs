@@ -1,14 +1,14 @@
 # Steamレビューテンプレート
 
-https://steamcommunity.com/comment/Recommendation/formattinghelp
-https://kengo700.hatenablog.com/entry/steam_formatting
+<https://steamcommunity.com/comment/Recommendation/formattinghelp>
+<https://kengo700.hatenablog.com/entry/steam_formatting>
 
 ## フォーマットチートシート
 
 ### テキスト装飾
 
 - **太字**: `[b]太字[/b]`
-- _斜体_: `[i]斜体[/i]`
+- *斜体*: `[i]斜体[/i]`
 - 下線: `[u]下線[/u]`
 - 取り消し線: `[strike]取り消し線[/strike]`
 - 隠し文字(スポイラー): `[spoiler]ネタバレ[/spoiler]`

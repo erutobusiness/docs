@@ -2,7 +2,7 @@
 
 ## 贈与税
 
-https://x.com/4ButterflyWorld/status/1735041656930623519
+<https://x.com/4ButterflyWorld/status/1735041656930623519>
 
 ### 学び・要点
 

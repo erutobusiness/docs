@@ -18,12 +18,12 @@ ignorePublish: false
 
 弊社の福利厚生の１つに、部活動があります。
 
-https://note.com/visionary_japan/n/n4b03c1aba97d#83c10f4c-f624-4c3a-a72e-c7be14044b21
+<https://note.com/visionary_japan/n/n4b03c1aba97d#83c10f4c-f624-4c3a-a72e-c7be14044b21>
 
 私が所属するマイクラ部では、Minecraftサーバーを開いています。
 Minecraftとは、世界的な人気を誇る箱庭ゲームで、現在はMicrosoftが運営しています。
 
-https://www.minecraft.net/
+<https://www.minecraft.net/>
 
 部では、MODを駆使した協力プレイをしています。
 資源集めが好きな人、建築が得意な人、自動化設備を作る人など、
@@ -46,7 +46,7 @@ MOD（Modification）とは、ユーザーが作成した拡張プログラム�
 現在の部活ワールドでは以下のMODなどを導入し、
 スチームパンクな工業と多様な魔法を両立しています：
 
-![2025-12-02_17.02.48.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/e61bba0b-c563-48e4-b028-b85f1415ec35.png)
+![2025-12-02\_17.02.48.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/e61bba0b-c563-48e4-b028-b85f1415ec35.png)
 
 - 工業系
   - Create（風車や水車などの動力を用いた自動化）
@@ -83,13 +83,12 @@ LLMの学習データや入力ソースの著作権問題は、まだ議論が�
 また、本記事ではLLMに記事を執筆させず、
 オリジナリティのある内容を自分で書くことを筆者の目的としています[^LLMの記事執筆]。
 
-[^LLMの記事執筆]:
-    最近読んだ記事に影響されています：
-    https://zenn.dev/watany/articles/ad14f8a352d62f
-    https://anond.hatelabo.jp/20251208081455
+[^LLMの記事執筆]: 最近読んだ記事に影響されています：
+    <https://zenn.dev/watany/articles/ad14f8a352d62f>
+    <https://anond.hatelabo.jp/20251208081455>
     これらの思想を押し付けたいわけではありません。
 
----
+***
 
 # 汎用LLM：ChatGPTなど
 
@@ -103,10 +102,10 @@ MinecraftのMOD攻略でも同様に、これらは強力な味方になりま�
 
 - メジャーなMODの基本情報
   - Createなどの有名MODなら、風車の作り方などの基本的な質問は正確に回答
-    https://chatgpt.com/share/692ec506-d060-800f-81d7-4c5646898ffb
+    <https://chatgpt.com/share/692ec506-d060-800f-81d7-4c5646898ffb>
 - アイデア出し
   - MODリストを渡すことで、MODの特徴を使って、装飾や自動化のアイデアを提供
-    https://chatgpt.com/share/692ee68b-e414-800f-95c6-92cff86fe0ec
+    <https://chatgpt.com/share/692ee68b-e414-800f-95c6-92cff86fe0ec>
 
 ## 課題：ハルシネーション
 
@@ -114,7 +113,7 @@ MinecraftのMOD攻略でも同様に、これらは強力な味方になりま�
 ありもしないアイテムや仕様を述べるなど、
 もっともらしく嘘をつく（ハルシネーション）ことがあります。
 
-https://www.nri.com/jp/knowledge/glossary/hallucination.html
+<https://www.nri.com/jp/knowledge/glossary/hallucination.html>
 
 汎用LLMは確率的にありそうな文章を生成しているだけで、
 仕様を参照して回答しているわけではありません。
@@ -122,7 +121,7 @@ https://www.nri.com/jp/knowledge/glossary/hallucination.html
 
 たとえば、Goetyにおける呪われた鉄の作り方を聞いてみましょう：
 
-https://chatgpt.com/share/692eed6c-481c-800f-988e-be5bd82cd3b0
+<https://chatgpt.com/share/692eed6c-481c-800f-988e-be5bd82cd3b0>
 
 ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/7f400855-d5b7-498e-97fd-d93725f744b9.png)
 
@@ -132,7 +131,7 @@ https://chatgpt.com/share/692eed6c-481c-800f-988e-be5bd82cd3b0
 
 この大問題を解決するために導入したのが、次に紹介するNotebookLMです。
 
----
+***
 
 # NotebookLM
 
@@ -142,7 +141,7 @@ https://chatgpt.com/share/692eed6c-481c-800f-988e-be5bd82cd3b0
 NotebookLMは「手元の攻略本だけを徹底的に読み込ませる」アプローチです。
 そのおかげで、正確な情報をLLMから得ることができます。
 
-https://notebooklm.google/
+<https://notebooklm.google/>
 
 メリデメは以下の通りです：
 
@@ -164,9 +163,8 @@ https://notebooklm.google/
     - 「最強の方法」などを聞いてもNotebookLMは考えてくれない
     - ただし、スタートガイドなどのMOD内の関係には強い
 
-[^ノートブックとは]:
-    NotebookLMにおけるプロジェクト、あるいはソースのコレクションのことです。
-    https://support.google.com/notebooklm/answer/16206563?hl=ja
+[^ノートブックとは]: NotebookLMにおけるプロジェクト、あるいはソースのコレクションのことです。
+    <https://support.google.com/notebooklm/answer/16206563?hl=ja>
 
 NotebookLMを活用する場合、質の良いソースを集めることが大事です。
 そこでまず、各MODのWikiを効率よく取り込む方法を考えてみましょう。
@@ -195,12 +193,12 @@ WikiをNotebookLMに取り込むには、配下ページのリンクが必要で
 サイトマップとは、Webサイトの全ページURLを一覧化したXMLファイルのことで、
 SEO用に用意されていることが多く、`/sitemap.xml` で取得できることが多いです。
 
-https://www.google.com/sitemap.xml
+<https://www.google.com/sitemap.xml>
 
 サイトマップが提供されないページはXML-Sitemapsを使用できます。
 XML-Sitemapsは、URLからサイトマップを生成するツールです。
 
-https://www.xml-sitemaps.com/
+<https://www.xml-sitemaps.com/>
 
 サイトマップXMLからURLのみを取得するには、Googleスプレッドシートを活用できます：
 
@@ -247,7 +245,7 @@ MOD内ドキュメントのソース追加前は、対象のアイテムにつ�
 
 ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/41de83a1-3387-49ad-b5f2-56a0810c5b90.png)
 
----
+***
 
 # さいごに
 
@@ -277,9 +275,8 @@ NotebookLMには、ソースを活用して画像などを作成する機能が�
 年始に社内でイベントを企画したところ、部員がNotebookLMを活用して
 ポスターのようなインフォグラフィック[^インフォグラフィック]を作成してくれました！
 
-[^インフォグラフィック]:
-    インフォグラフィックとは、ソースの情報を１枚の画像にまとめるものです：
-    https://support.google.com/notebooklm/answer/16758265
+[^インフォグラフィック]: インフォグラフィックとは、ソースの情報を１枚の画像にまとめるものです：
+    <https://support.google.com/notebooklm/answer/16758265>
 
 ![unnamed.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/df248565-6f6e-4f51-88dc-064564b64e2b.png)
 

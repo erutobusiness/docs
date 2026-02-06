@@ -26,9 +26,9 @@ ignorePublish: false
 
 # 参考記事
 
-https://zenn.dev/qnighy/articles/9c4ce0f1b68350
+<https://zenn.dev/qnighy/articles/9c4ce0f1b68350>
 
-https://qiita.com/crml1206/items/1ffe928339950c4938a4
+<https://qiita.com/crml1206/items/1ffe928339950c4938a4>
 
 # コード
 

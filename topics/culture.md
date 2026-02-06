@@ -2,7 +2,7 @@
 
 ## 世界の画線法 (Tally Marks)
 
-https://x.com/onipro/status/1324614851184881664
+<https://x.com/onipro/status/1324614851184881664>
 
 ### 学び・要点
 

@@ -66,4 +66,4 @@
 
 ## OSTER project
 
-- 恋スルVOC@LOID
+- 恋スルVOC\@LOID

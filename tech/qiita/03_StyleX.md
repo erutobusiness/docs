@@ -16,7 +16,7 @@ ignorePublish: false
 フロントエンド業務経験のないエンジニアにもわかるように、
 StyleXについて調べて得た知見を共有することを本記事の目的とした：
 
-https://www.npmjs.com/package/@stylexjs/stylex?activeTab=versions
+<https://www.npmjs.com/package/@stylexjs/stylex?activeTab=versions>
 
 <img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/6af2b81f-af1d-9547-aa4f-7bd7ff571e6f.png" width="75%" />
 
@@ -28,9 +28,9 @@ https://www.npmjs.com/package/@stylexjs/stylex?activeTab=versions
 
 # 類似記事
 
-https://qiita.com/_ytori/items/f12b7502cfabcadec9ac
+<https://qiita.com/_ytori/items/f12b7502cfabcadec9ac>
 
-https://qiita.com/xrxoxcxox/items/8605a7a92610db56011e
+<https://qiita.com/xrxoxcxox/items/8605a7a92610db56011e>
 
 ## 用語解説
 
@@ -40,13 +40,13 @@ https://qiita.com/xrxoxcxox/items/8605a7a92610db56011e
 - CSSではページ全体に適用するのに対し、CSS-in-JSではスタイルをコンポーネントに適用する
 - スタイルの衝突や名前空間汚染のリスクが低減され、プロジェクトの管理が容易になる
 
-https://zenn.dev/poteboy/articles/e9f63b87b3cd69
+<https://zenn.dev/poteboy/articles/e9f63b87b3cd69>
 
 # StyleXの紹介
 
-https://stylexjs.com/blog/introducing-stylex/
+<https://stylexjs.com/blog/introducing-stylex/>
 
-https://stylexjs.com/docs/learn/
+<https://stylexjs.com/docs/learn/>
 
 ## 高速性について
 
@@ -116,13 +116,13 @@ npm install --save @stylexjs/stylex
 - `--save-dev` - 開発に必要なものを記載 - devDependenciesに追加
   :::
 
-https://k-koh.hatenablog.com/entry/2020/04/07/165203
+<https://k-koh.hatenablog.com/entry/2020/04/07/165203>
 
-## [Vite] プラグインをインストール
+## \[Vite] プラグインをインストール
 
-https://www.npmjs.com/package/vite-plugin-stylex
+<https://www.npmjs.com/package/vite-plugin-stylex>
 
-https://github.com/HorusGoul/vite-plugin-stylex
+<https://github.com/HorusGoul/vite-plugin-stylex>
 
 <details>
 <summary>詳細</summary>
@@ -151,27 +151,27 @@ export default defineConfig({
 
 </details>
 
-https://qiita.com/xrxoxcxox/items/8605a7a92610db56011e
+<https://qiita.com/xrxoxcxox/items/8605a7a92610db56011e>
 
-## [VSCODE] 拡張機能をインストール
+## \[VSCODE] 拡張機能をインストール
 
-https://marketplace.visualstudio.com/items?itemName=yash-singh.stylex
+<https://marketplace.visualstudio.com/items?itemName=yash-singh.stylex>
 
 ## その他
 
 公式が、各種プラグインを紹介したり、各種フレームワークでの始めるためのテンプレートを共有したりしてくれている。
 
-https://stylexjs.com/docs/learn/ecosystem/
+<https://stylexjs.com/docs/learn/ecosystem/>
 
 # 使い方
 
 ## 公式コード例
 
-https://stylexjs.com/docs/learn/styling-ui/using-styles/
+<https://stylexjs.com/docs/learn/styling-ui/using-styles/>
 
-https://stylexjs.com/docs/learn/styling-ui/defining-styles/
+<https://stylexjs.com/docs/learn/styling-ui/defining-styles/>
 
-https://stylexjs.com/docs/api/javascript/keyframes/
+<https://stylexjs.com/docs/api/javascript/keyframes/>
 
 ### 通常使用
 
@@ -270,7 +270,7 @@ const styles = stylex.create({
 
 ## 私のコード
 
-https://github.com/visionary-japan/react_ui_comparison/
+<https://github.com/visionary-japan/react_ui_comparison/>
 
 :::note
 
@@ -279,7 +279,7 @@ https://github.com/visionary-japan/react_ui_comparison/
 
 ### ボタン
 
-https://visionary-japan.github.io/react_ui_comparison/
+<https://visionary-japan.github.io/react_ui_comparison/>
 
 <img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/a1983a04-798a-73e0-9151-7bf2bcdd2ddf.png" width="25%" />
 
@@ -420,7 +420,7 @@ export const Button: FC<Props> = ({
 
 ### ドロップエリア
 
-https://visionary-japan.github.io/react_ui_comparison/dnd/pointer
+<https://visionary-japan.github.io/react_ui_comparison/dnd/pointer>
 
 <img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/535b9afa-2863-55c5-ace0-e23b8c7650d5.png" width="25%" />
 
@@ -569,7 +569,7 @@ export const PointerDrop = memo(Drop);
 
 ### ドラッグ要素
 
-https://visionary-japan.github.io/react_ui_comparison/dnd/pointer
+<https://visionary-japan.github.io/react_ui_comparison/dnd/pointer>
 
 <img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/fdf9d735-6863-7c78-4042-84528caf57ac.png" width="50%" />
 
@@ -1015,7 +1015,7 @@ export const PointerDrag = memo(Drag);
 
 ### 回転するロゴ（キーフレーム使用）
 
-https://visionary-japan.github.io/react_ui_comparison/
+<https://visionary-japan.github.io/react_ui_comparison/>
 
 <img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/b03c4363-6408-7efe-1dac-0f915b3aefe9.png" width="50%" />
 
@@ -1242,14 +1242,14 @@ styled-componentなどで文字列として記述できるのは、CSSからそ�
 オブジェクトのキーにはハイフンなどが使えない仕様から、StyleXではCSSをそのままコピー・アンド・ペーストすることはできない。
 CSSから移植する場合には、スタイル名をオブジェクト用に変更したり、セミコロンをカンマに変えたりなど、他のCSS-in-JSと比べると少し手間がかかる。~~そこもかわいいけどね~~
 
----
+***
 
 # 参考
 
-https://medium.com/@huseyinsalmansoftdev/react-stylex-vite-npm-db9be1e5c5c6
+<https://medium.com/@huseyinsalmansoftdev/react-stylex-vite-npm-db9be1e5c5c6>
 
-https://stylexjs.com/docs/learn/
+<https://stylexjs.com/docs/learn/>
 
-https://qiita.com/xrxoxcxox/items/8605a7a92610db56011e
+<https://qiita.com/xrxoxcxox/items/8605a7a92610db56011e>
 
-https://qiita.com/_ytori/items/f12b7502cfabcadec9ac
+<https://qiita.com/_ytori/items/f12b7502cfabcadec9ac>

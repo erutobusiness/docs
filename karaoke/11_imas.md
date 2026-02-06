@@ -2,12 +2,12 @@
 
 ## 765プロ (ALLSTARS)
 
-- THE IDOLM@STER
+- THE IDOLM\@STER
 - GO MY WAY!!
 - READY!!
 - CHANGE!!!!
-- 自分REST@RT
-- M@STERPIECE
+- 自分REST\@RT
+- M\@STERPIECE
 - The world is all one !!
 - 団結
 - ToP!!!!!!!!!!!!!

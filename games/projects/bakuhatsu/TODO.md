@@ -13,8 +13,8 @@
 
 ### 鈴木爆発 - Wikipedia
 
-https://ja.wikipedia.org/wiki/%E9%88%B4%E6%9C%A8%E7%88%86%E7%99%BA
+<https://ja.wikipedia.org/wiki/%E9%88%B4%E6%9C%A8%E7%88%86%E7%99%BA>
 
 ### 作者LT：【A 5th Of BitSummit】通好みのゲームと100万本タイトルの差は紙一重？ 安藤氏と四井氏が語る - GAME Watch
 
-https://game.watch.impress.co.jp/docs/news/1060760.html
+<https://game.watch.impress.co.jp/docs/news/1060760.html>

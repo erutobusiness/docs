@@ -4,14 +4,14 @@
 
 ### 01 世界でバズった写真の裏ワザ4選
 
-https://youtube.com/shorts/DYuCq43tPXY?si=eQaXg4uPcQ54xkeS
+<https://youtube.com/shorts/DYuCq43tPXY?si=eQaXg4uPcQ54xkeS>
 
 スマートフォンを使ったユニークで映える写真撮影テクニック。
 動画内で解説されている具体的な4つの撮影術は以下の通り：
 
 #### 1. 縁石を使ったトリック撮影
 
-- **時間**: [[00:00](http://www.youtube.com/watch?v=DYuCq43tPXY&t=0)]～
+- **時間**: \[[00:00](http://www.youtube.com/watch?v=DYuCq43tPXY\&t=0)]～
 - **シチュエーション**: 道路脇の縁石（段差）がある場所
 - **撮影方法**:
   - 被写体：縁石に立ち、道路側に倒れる
@@ -20,7 +20,7 @@ https://youtube.com/shorts/DYuCq43tPXY?si=eQaXg4uPcQ54xkeS
 
 #### 2. 桜や背の高い木との撮影（縦パノラマ）
 
-- **時間**: [[00:05](http://www.youtube.com/watch?v=DYuCq43tPXY&t=5)]～
+- **時間**: \[[00:05](http://www.youtube.com/watch?v=DYuCq43tPXY\&t=5)]～
 - **シチュエーション**: 桜の木の下など、背の高い被写体と一緒に撮りたい時
 - **撮影方法**:
   - スマホを横向きにし、パノラマモードに切り替える
@@ -29,7 +29,7 @@ https://youtube.com/shorts/DYuCq43tPXY?si=eQaXg4uPcQ54xkeS
 
 #### 3. カフェでの「映え」撮影（遠近法の活用）
 
-- **時間**: [[00:16](http://www.youtube.com/watch?v=DYuCq43tPXY&t=16)]～
+- **時間**: \[[00:16](http://www.youtube.com/watch?v=DYuCq43tPXY\&t=16)]～
 - **シチュエーション**: おしゃれなカフェで撮影したい時
 - **撮影方法**:
   - コーヒーカップなどの小物を、テーブルの手前（カメラに近い位置）に動かす
@@ -38,10 +38,10 @@ https://youtube.com/shorts/DYuCq43tPXY?si=eQaXg4uPcQ54xkeS
 
 #### 4. 海岸でのダイナミック撮影（逆さ広角＋グリッド）
 
-- **時間**: [[00:21](http://www.youtube.com/watch?v=DYuCq43tPXY&t=21)]～
+- **時間**: \[[00:21](http://www.youtube.com/watch?v=DYuCq43tPXY\&t=21)]～
 - **シチュエーション**: 海岸や広い場所で全身を撮りたい時
 - **撮影方法**:
-  - 倍率を**「0.5倍（広角）」**にする
-  - スマホを**回転（逆さまに）**させ、カメラレンズを低い位置にする
+  - 倍率を\*\*「0.5倍（広角）」\*\*にする
+  - スマホを\*\*回転（逆さまに）\*\*させ、カメラレンズを低い位置にする
   - **「グリッドガイド」**を表示させ、画面に出る**十字（＋）マーク**にしっかりと合わせる（水平・垂直、あるいは被写体の位置をガイドに合わせる意図）
 - **効果**: ローアングルと広角レンズの効果で足が長く見え、空と海が広く写る「イカした」写真が撮影できる

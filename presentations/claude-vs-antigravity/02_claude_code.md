@@ -37,6 +37,6 @@ $ claude
 
 （TODO: 実際に使ってみて追記）
 
----
+***
 
 > **次章**: [Google Antigravityとは](./03_antigravity.md)

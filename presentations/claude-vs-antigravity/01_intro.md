@@ -15,6 +15,6 @@
 
 Claude CodeとGoogle Antigravityという、性格の異なる2つのツールを比較することで、**自分に合ったツール選び**の参考にしてもらうことが目的です。
 
----
+***
 
 > **次章**: [Claude Codeとは](./02_claude_code.md)

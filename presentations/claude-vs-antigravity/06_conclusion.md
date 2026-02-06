@@ -21,13 +21,13 @@
 
 （TODO: 使い分けの具体例）
 
----
+***
 
 ## 参考リンク
 
 - [Claude Code公式](https://claude.ai/claude-code)
 - [Google Antigravity公式](TODO)
 
----
+***
 
 **おわり**

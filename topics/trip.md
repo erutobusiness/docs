@@ -2,7 +2,7 @@
 
 ## 廃線レールサイクリング (ガッタンゴー)
 
-https://youtube.com/shorts/Z-ZjkrBCsa8
+<https://youtube.com/shorts/Z-ZjkrBCsa8>
 
 - **概要**：
   - 岐阜県飛騨市にある、廃線となった鉄道レール上を専用マウンテンバイクで走るアクティビティ

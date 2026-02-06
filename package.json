@@ -4,7 +4,9 @@
   "description": "ドキュメントプロジェクト",
   "private": true,
   "scripts": {
-    "format": "prettier --write .",
+    "format": "npm run format:prettier && npm run format:remark",
+    "format:prettier": "prettier --write .",
+    "format:remark": "remark . --output --frail",
     "lint": "npm run lint:root && npm run lint:readme && npm run lint:presentations && npm run lint:qiita && npm run lint:prompt",
     "lint:root": "textlint --config .textlintrc.js \"trpg/{characters,items,memo,rules,assets}/**/*.md\" \"trpg/scenarios/Okami/{chapters,mechanics,npcs,references,setting}/**/*.md\" \"trpg/scenarios/SIREN/{TODO.md,chapters/**/*.md,items/**/*.md,mechanics/**/*.md,npcs/**/*.md,references/**/*.md,setting/**/*.md}\" \"trpg/scenarios/Toaru/{handouts,items,maps,npcs,sessions,setting}/**/*.md\" \"trpg/scenarios/{Alice,Hologram,Relief,_template}/**/*.md\" \"games/**/*.md\" \"ideas/**/*.md\" \"tech/*.md\" \"tech/frontend/**/*.md\" \"tech/textlint/**/*.md\" \"topics/**/*.md\" \"youtube/**/*.md\" \"templates/**/*.md\"",
     "lint:readme": "textlint --config .textlintrc.readme.js \"README.md\" \"trpg/README.md\" \"trpg/scenarios/Okami/README.md\" \"trpg/scenarios/SIREN/README.md\" \"trpg/scenarios/Toaru/README.md\"",
@@ -13,14 +15,17 @@
     "lint:presentations:others": "textlint --config presentations/claude-vs-antigravity/.textlintrc.js --ignore-pattern \"presentations/claude-vs-antigravity/karaoke-kumikyoku/**/*.md\" \"presentations/claude-vs-antigravity/**/*.md\" && textlint --config presentations/declarative/.textlintrc.js \"presentations/declarative/**/*.md\" && textlint --config presentations/the-art-of-loving/.textlintrc.js \"presentations/the-art-of-loving/**/*.md\"",
     "lint:qiita": "textlint --config tech/qiita/.textlintrc.js \"tech/qiita/**/*.md\"",
     "lint:prompt": "textlint --config prompt/.textlintrc.js \"prompt/**/*.md\"",
-    "lint:fix": "prettier --write .",
+    "lint:fix": "npm run format",
     "check": "npm run lint",
     "fix": "npm run lint:fix",
     "prepare": "husky"
   },
   "lint-staged": {
-    "*.{js,ts,tsx,json,md}": [
+    "*.{js,ts,tsx,json}": [
       "prettier --write"
+    ],
+    "*.md": [
+      "remark --output --silently-ignore"
     ],
     "presentations/baby-cup/30_marp/**/*.md": [
       "textlint --config presentations/baby-cup/30_marp/.textlintrc.js"
@@ -99,6 +104,11 @@
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
     "prettier": "^3.8.1",
+    "remark-cli": "^12.0.1",
+    "remark-frontmatter": "^5.0.0",
+    "remark-gfm": "^4.0.1",
+    "remark-validate-links": "^13.1.0",
+    "remark-wiki-link": "^2.0.1",
     "textlint": "^15.5.0",
     "textlint-filter-rule-allowlist": "^4.0.0",
     "textlint-filter-rule-footnote": "file:../projects/textlint-filter-rule-footnote",

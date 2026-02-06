@@ -12,24 +12,22 @@ ignorePublish: false
 
 # 00. はじめに：なぜTypeScriptとリトアニア？
 
-リトアニアでは、クリスマス・イブの晩餐に12種ほどの料理を用意する習慣があります。
-<ruby><rb>Kūčios</rb><rt>クーチョス</rt></ruby>と呼ばれるこの伝統的な晩餐には、肉や乳製品はご法度というルールがあります[^リトアニアのクリスマス・イブ]。
+リトアニアでは、クリスマス・イブの晩餐に12種ほどの料理を用意する習慣があります。 <ruby><rb>Kūčios</rb><rt>クーチョス</rt></ruby>と呼ばれるこの伝統的な晩餐には、肉や乳製品はご法度というルールがあります[^リトアニアのクリスマス・イブ]。
 
-[^リトアニアのクリスマス・イブ]:
-    12という数字は十二使徒か1年の月の数に由来し、料理は卵や動物油も避けるそう：
+[^リトアニアのクリスマス・イブ]: 12という数字は十二使徒か1年の月の数に由来し、料理は卵や動物油も避けるそう：
     [KŪČIOS - Kauno tautinės kultūros centras](https://ktkc.lt/kucios/)
     [Kūčios – Vikipedija](https://lt.wikipedia.org/wiki/K%C5%AB%C4%8Dios)
     [クリスマス・イブの12品の晩餐 - Wikipedia](https://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%AA%E3%82%B9%E3%83%9E%E3%82%B9%E3%83%BB%E3%82%A4%E3%83%96%E3%81%AE12%E5%93%81%E3%81%AE%E6%99%A9%E9%A4%90)
     [リトアニア便り » クリスマス・イブ「クーチョス」](http://from-lt.jlfa.jp.net/archives/377)
 
-| <img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/ac0ef3f0-b22e-6321-cbde-a17c25835167.png" alt="クリスマス・イブの晩餐（筆者宅／2023）" width="50%" /> |
-| :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|                            **クリスマス・イブの晩餐（筆者宅／2023）** <br/> ~~もはやたくさんの料理をつくることが目的で、肉等禁止のルールは守っていない~~                            |
+|<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/ac0ef3f0-b22e-6321-cbde-a17c25835167.png" alt="クリスマス・イブの晩餐（筆者宅／2023）" width="50%" />|
+|:-:|
+|**クリスマス・イブの晩餐（筆者宅／2023）** <br/> ~~もはやたくさんの料理をつくることが目的で、肉等禁止のルールは守っていない~~|
 
 本記事は、クリスマスまでをカウントするアドベントカレンダーの、24日目の記事です。
 昨日23日には、 @Ai-Fukiharu さんが「Miro」について語ってくれました：
 
-https://qiita.com/Ai-Fukiharu/items/d4ecf0e3dc0a0fa78d28
+<https://qiita.com/Ai-Fukiharu/items/d4ecf0e3dc0a0fa78d28>
 
 本記事では、「アドベントカレンダー24日目には特別な味付けを」という思いから、
 ~~TypeScriptテクニックという多くの人が読んでくれそうな内容に、
@@ -45,8 +43,7 @@ TypeScriptの12種の機能と、それらに関連するテクニックを解�
 聖なる夜に並ぶ料理のように、各章が皆様の学びの糧となりますように。
 それでは、伝統を重んじる人々の目に留まらないことを祈りつつ[^バルト・ネオペイガニズム]、ご紹介します。
 
-[^バルト・ネオペイガニズム]:
-    リトアニアを含めたバルト諸国では、キリスト教が広まる以前に、バルト民族独自の多神教信仰があった：
+[^バルト・ネオペイガニズム]: リトアニアを含めたバルト諸国では、キリスト教が広まる以前に、バルト民族独自の多神教信仰があった：
     [Baltic Religion - Lietuvos nacionalinis kultūros centras](https://www.lnkc.lt/eknygos/roots/node16.html)
     [リトアニアの宗教 - Wikipedia](https://ja.wikipedia.org/wiki/%E3%83%AA%E3%83%88%E3%82%A2%E3%83%8B%E3%82%A2%E3%81%AE%E5%AE%97%E6%95%99)
     キリスト教が広まってからしばらくたったあとに、過去の信仰を重んじ、それを復興する「バルト・ネオペイガニズム」と呼ばれる運動があった：
@@ -67,29 +64,25 @@ TypeScriptの12種の機能と、それらに関連するテクニックを解�
 <ruby><rb>Kalėdaitis</rb><rt>カレダイティス</rt></ruby>は、<ruby><rb>Kūčios</rb><rt>クーチョス</rt></ruby>で欠かせない聖なるウエハースです[^聖なるウエハース]。
 水と小麦粉でつくられ、伝統的な形や模様を持ち、淡白な味を守り続けています[^水と小麦粉]。
 
-[^聖なるウエハース]:
-    <ruby><rb>Kalėdaitis</rb><rt>カレダイティス</rt></ruby>はイエス・キリストの体を象徴し、<ruby><rb>Kūčios</rb><rt>クーチョス</rt></ruby>の晩餐で家族が分かち合う聖なる存在とされている：
+[^聖なるウエハース]: <ruby><rb>Kalėdaitis</rb><rt>カレダイティス</rt></ruby>はイエス・キリストの体を象徴し、<ruby><rb>Kūčios</rb><rt>クーチョス</rt></ruby>の晩餐で家族が分かち合う聖なる存在とされている：
     [kalėdaitis - Visuotinė lietuvių enciklopedija](https://www.vle.lt/straipsnis/kaledaitis/)
     呼び方は<ruby><rb>Kalėdaitis</rb><rt>カレダイティス</rt></ruby>の他にもたくさんあり、我が家では<ruby><rb>Plotkelės</rb><rt>プロトキャーレス</rt></ruby>と呼んでいる。
 
-[^水と小麦粉]:
-    つくるのはかなり大変みたい：
+[^水と小麦粉]: つくるのはかなり大変みたい：
     [Kuklusis kalėdaitis atkeliauja iš vienuolynų | Šiaulių kraštas](https://www.skrastas.lt/aktualijos/skaitytojai-kreipiasi/kuklusis-kaledaitis-atkeliauja-is-vienuolynu)
 
-| <img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/951a88e1-90b2-32dc-c989-e326597d10b8.png" alt="3種のKalėdaitis" width="80%" /> |
-| :----------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|                         **3種の<ruby><rb>Kalėdaitis</rb><rt>カレダイティス</rt></ruby>**[^Kalėdaitis]<br />我が家もイブに頂いている                          |
+|<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/951a88e1-90b2-32dc-c989-e326597d10b8.png" alt="3種のKalėdaitis" width="80%" />|
+|:-:|
+|**3種の<ruby><rb>Kalėdaitis</rb><rt>カレダイティス</rt></ruby>**[^Kalėdaitis]<br />我が家もイブに頂いている|
 
-[^Kalėdaitis]:
-    画像は英Wikipediaから拝借：
+[^Kalėdaitis]: 画像は英Wikipediaから拝借：
     [Christmas wafer - Wikipedia](https://en.wikipedia.org/wiki/Christmas_wafer)
 
 リテラル型（Literal Types）は、「より具体的な型」です。
 主に `string`・`number`・`boolean` 型の特定の値を指定して、
 それらのみを受け付けるようにすることができるものです[^リテラル型]。
 
-[^リテラル型]:
-    リテラル型についての説明は公式ドキュメントを参考にしている：
+[^リテラル型]: リテラル型についての説明は公式ドキュメントを参考にしている：
     [TypeScript: Handbook - Literal Types](https://www.typescriptlang.org/docs/handbook/literal-types.html)
 
 たとえば、以下のように文字列変数を `let` で宣言すると、`string` 型になります：
@@ -115,14 +108,12 @@ const size = "small";
 `string` や `number` などの、より一般的な型に拡張します。
 これは「Widening」と呼ばれるTypeScriptの推論ルールによるものです[^Widening]。
 
-[^constの再代入]:
-    公式ドキュメントを参考にした表現とした：
+[^constの再代入]: 公式ドキュメントを参考にした表現とした：
     [TypeScript: Documentation - Variable Declaration](https://www.typescriptlang.org/docs/handbook/variable-declarations.html#const-declarations)
     参照する値が不変であるわけではない点に注意。
     たとえば、同じ名前のオブジェクトを再度宣言することはできないが、プロパティの値を変更することはできる。
 
-[^Widening]:
-    実は公式ドキュメントでは「Widening」と呼ばれていないが、公式サイトのプレイグラウンドに記載があるので、公式用語ではないが一般的に使われている語彙であると考えてよさそう：
+[^Widening]: 実は公式ドキュメントでは「Widening」と呼ばれていないが、公式サイトのプレイグラウンドに記載があるので、公式用語ではないが一般的に使われている語彙であると考えてよさそう：
     [TypeScript Playground - Type Widening and Narrowing](https://www.typescriptlang.org/play/?#example/type-widening-and-narrowing)
 
 たとえば、関数のパラメータにリテラル型を用いると、許容する値を限定できるため、
@@ -146,8 +137,7 @@ setSize("extra-large"); // コンパイルエラー：
 `size` には、型注釈した `"small"` や `"medium"` は代入できますが、
 `"extra-large"` はそうでないため代入できず、コンパイルエラーとなります。
 
-[^ユニオン型]:
-    ユニオン型の詳しい説明については公式ドキュメントを参照されたい：
+[^ユニオン型]: ユニオン型の詳しい説明については公式ドキュメントを参照されたい：
     [TypeScript: Handbook - Unions and Intersection Types](https://www.typescriptlang.org/docs/handbook/unions-and-intersections.html)
 
 ## Discriminated Union で Narrowing
@@ -156,8 +146,7 @@ setSize("extra-large"); // コンパイルエラー：
 「判別可能なユニオン型（Discriminated Union）」とは、
 共通の識別子となるプロパティを持つ複数の型を、ユニオン型で組み合わせたものです[^判別可能なユニオン型]。
 
-[^判別可能なユニオン型]:
-    Discriminated Unionは公式ドキュメントで、その邦訳である判別可能なユニオン型は有用な解説として知られるオープンソースドキュメント「TypeScript Deep Dive」で用いられている：
+[^判別可能なユニオン型]: Discriminated Unionは公式ドキュメントで、その邦訳である判別可能なユニオン型は有用な解説として知られるオープンソースドキュメント「TypeScript Deep Dive」で用いられている：
     [TypeScript: Documentation - Narrowing](https://www.typescriptlang.org/docs/handbook/2/narrowing.html#discriminated-unions)
     [判別可能なUnion型 | TypeScript Deep Dive 日本語版](https://typescript-jp.gitbook.io/deep-dive/type-system/discriminated-unions)
 
@@ -172,8 +161,7 @@ type WaferType =
 
 この共通プロパティがリテラル型であるため、型の絞り込み（Narrowing）ができます[^Narrowing]。
 
-[^Narrowing]:
-    公式ドキュメントにWideningについては立項されていないが、Narrowingについてはある：
+[^Narrowing]: 公式ドキュメントにWideningについては立項されていないが、Narrowingについてはある：
     [TypeScript: Documentation - Narrowing](https://www.typescriptlang.org/docs/handbook/2/narrowing.html)
     `in` や `typeof` による型ガード（Type Guard）のためのNarrowingもある。
 
@@ -212,17 +200,16 @@ function describeWafer(wafer: WaferType) {
 
 [^クチューカイ]: Kūčiukaiの発音について、文章では「クチューカイ」と「クーチュカイ」の2通りがよく見られるが、私の耳に従い「クチューカイ」を採用した。
 
-| <img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/06081a77-3f34-1cbf-2adb-fa69c1146054.jpeg" alt="2種類のKūčiukai（筆者宅／2023）" width="60%" /> |
-| :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|                                        **2種類のKūčiukai（筆者宅／2023）**<br />上のKūčiukaiが本当に硬く、父の歯を欠けさせた実績がある                                        |
+|<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/06081a77-3f34-1cbf-2adb-fa69c1146054.jpeg" alt="2種類のKūčiukai（筆者宅／2023）" width="60%" />|
+|:-:|
+|**2種類のKūčiukai（筆者宅／2023）**<br />上のKūčiukaiが本当に硬く、父の歯を欠けさせた実績がある|
 
 TypeScriptの const アサーション（Const Assertion）は
 `as const` という書き方で、この「不変性」と「安定性」を型レベルで表現します。
 これを使うと、オブジェクトや配列がリテラル型として推論されるとともに、
 要素やプロパティが `readonly` という固定的な値となり、変更を型レベルで防げます[^ConstAssertion]。
 
-[^ConstAssertion]:
-    constアサーションはTypeScript 3.4で追加された：
+[^ConstAssertion]: constアサーションはTypeScript 3.4で追加された：
     [TypeScript: Documentation - TypeScript 3.4](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-4.html#const-assertions)
 
 `as const` を使わない場合は、要素やプロパティの型は推論されます：
@@ -292,23 +279,20 @@ lithuania.sweets.kūčiukai.texture = "soft";
 <ruby><rb>Aguonų</rb><rt>アグオヌ</rt></ruby> <ruby><rb>pienas</rb><rt>ピエナス</rt></ruby>は、<ruby><rb>Kūčios</rb><rt>クーチョス</rt></ruby>の食卓によく登場する、
 ケシの実（Poppy Seeds）から作られる、白くてまろやかな飲み物です[^AguonųPienas]。
 
-[^AguonųPienas]:
-    <ruby><rb>Aguonų</rb><rt>アグオヌ</rt></ruby> <ruby><rb>pienas</rb><rt>ピエナス</rt></ruby>はハチミツや塩を使って味を調えることもあるそう：
+[^AguonųPienas]: <ruby><rb>Aguonų</rb><rt>アグオヌ</rt></ruby> <ruby><rb>pienas</rb><rt>ピエナス</rt></ruby>はハチミツや塩を使って味を調えることもあるそう：
     [Aguonų pienas](https://www.sezoninevirtuve.lt/aguonu-pienas/)
 
-|    <img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/16b24e22-7a61-91ad-60a1-6ba0d80a87c4.png" alt="黒いAguonos（ケシの実）とAguonų pienas" width="100%" />    |
-| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| **黒い<ruby><rb>Aguonos</rb><rt>アグオノス</rt></ruby>（ケシの実）と<ruby><rb>Aguonų</rb><rt>アグオヌ</rt></ruby> <ruby><rb>pienas</rb><rt>ピエナス</rt></ruby>**[^アグオヌピエナスの画像] |
+|<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/16b24e22-7a61-91ad-60a1-6ba0d80a87c4.png" alt="黒いAguonos（ケシの実）とAguonų pienas" width="100%" />|
+|:-:|
+|**黒い<ruby><rb>Aguonos</rb><rt>アグオノス</rt></ruby>（ケシの実）と<ruby><rb>Aguonų</rb><rt>アグオヌ</rt></ruby> <ruby><rb>pienas</rb><rt>ピエナス</rt></ruby>**[^アグオヌピエナスの画像]|
 
-[^アグオヌピエナスの画像]:
-    画像はリトアニアのニュースサイト「tv3.lt」から拝借：
+[^アグオヌピエナスの画像]: 画像はリトアニアのニュースサイト「tv3.lt」から拝借：
     [Išdavė skaniausią aguonų pieno receptą: užsirašykite Kūčioms | tv3.lt](https://www.tv3.lt/naujiena/gyvenimas/isdave-skaniausia-aguonu-pieno-recepta-uzsirasykite-kucioms-n1203939)
 
 TypeScript 4.9にて、`satisfies` という演算子が追加されました[^4.9]。
 値が指定した型をきちんと満たしているかをコンパイル時に保証するものです。
 
-[^4.9]:
-    TypeScript 4.9の新機能については以下を参照されたい：
+[^4.9]: TypeScript 4.9の新機能については以下を参照されたい：
     [Announcing TypeScript 4.9 - TypeScript](https://devblogs.microsoft.com/typescript/announcing-typescript-4-9/)
     [TypeScript: Documentation - TypeScript 4.9](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-9.html)
 
@@ -390,7 +374,7 @@ acceptVanillaOnly(dessertB);
 
 <ruby><rb>Aguonų</rb><rt>アグオヌ</rt></ruby> <ruby><rb>pienas</rb><rt>ピエナス</rt></ruby>は、<ruby><rb>Kūčiukai</rb><rt>クチューカイ</rt></ruby>を浸して頂くことがあります：
 
-https://x.com/Lithuaniajp/status/1738035651856269737
+<https://x.com/Lithuaniajp/status/1738035651856269737>
 
 `satisfies` 演算子も、`as const` と組み合わせて使うことが少なくありません。
 `as const satisfies 型` という記法で、
@@ -428,17 +412,15 @@ mapArray(colors.Aguonų); // as constによりwideningされないのでOK（型
 キリスト教文化の影響で、<ruby><rb>Kūčios</rb><rt>クーチョス</rt></ruby>では肉が避けられるようになり、
 代わりに魚が定着した[^キリスト教の普及による食文化の変化]おかげで、特にこの料理は多くの家庭で愛されています。
 
-[^キリスト教の普及による食文化の変化]:
-    キリスト教普及前は肉料理もOKで、料理の種類も9種類だったとのこと：
+[^キリスト教の普及による食文化の変化]: キリスト教普及前は肉料理もOKで、料理の種類も9種類だったとのこと：
     [Lietuviškos Kūčių tradicijos: valgiai ir jų simbolika | MENIU](https://www.meniu.lt/naujiena/lietuviskos-kuciu-tradicijos-valgiai-ir-ju-simbolika)
     [Žuvis Kūčioms: paprasti receptai tradiciniam Kūčių stalui](https://derlingas.lt/receptai/zuvis-kucioms-paprasti-ir-laiko-patikrinti-receptai-tradiciniam-stalui)
 
-|             <img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/d9702f02-74e5-16dd-7655-bd66bdfaea53.png" alt="Silkė su svogūnais（ニシンの玉ねぎ添え）" width="80%" />              |
-| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| **<ruby><rb>Silkė</rb><rt>シルケ</rt></ruby> <ruby><rb>su</rb><rt>ス</rt></ruby> <ruby><rb>svogūnais</rb><rt>スヴォグーナイス</rt></ruby>（ニシンの玉ねぎ添え）**[^SilkėSuSvogūnais]<br />黄色いのはじゃがいも |
+|<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/d9702f02-74e5-16dd-7655-bd66bdfaea53.png" alt="Silkė su svogūnais（ニシンの玉ねぎ添え）" width="80%" />|
+|:-:|
+|**<ruby><rb>Silkė</rb><rt>シルケ</rt></ruby> <ruby><rb>su</rb><rt>ス</rt></ruby> <ruby><rb>svogūnais</rb><rt>スヴォグーナイス</rt></ruby>（ニシンの玉ねぎ添え）**[^SilkėSuSvogūnais]<br />黄色いのはじゃがいも|
 
-[^SilkėSuSvogūnais]:
-    画像はリトアニアの園芸・農業サイトDerlingas.ltから拝借：
+[^SilkėSuSvogūnais]: 画像はリトアニアの園芸・農業サイトDerlingas.ltから拝借：
     [Silkė su svogūnais – šventinio Kūčių stalo karalienė | Derlingas.lt](https://derlingas.lt/receptai/silke-su-svogunais-sventinio-kuciu-stalo-karaliene)
     ニシンはかつてのリトアニアでは珍味で、調理されることはなかったそう。
 
@@ -479,8 +461,7 @@ const list = createList("A", 42); // 以下のエラーになる：
 ジェネリック型名には、慣習的に `T` などの大文字アルファベットを使用します[^ジェネリック型名]。
 :::
 
-[^ジェネリック型名]:
-    TypeScript公式ドキュメントを見ると、最初のジェネリック型名が `Type` だったところから、後々 `T` などになっているので、おそらく `Type` の略称として `T` を使用していると考えられる：
+[^ジェネリック型名]: TypeScript公式ドキュメントを見ると、最初のジェネリック型名が `Type` だったところから、後々 `T` などになっているので、おそらく `Type` の略称として `T` を使用していると考えられる：
     [TypeScript: Documentation - Generics](https://www.typescriptlang.org/docs/handbook/2/generics.html)
 
 これにより、一度定義したこの `createList` 関数を、
@@ -491,12 +472,11 @@ const list = createList("A", 42); // 以下のエラーになる：
 無数のレシピへと展開していく<ruby><rb>Kūčios</rb><rt>クーチョス</rt></ruby>の食卓のように、
 同じ関数が多彩な「味わい」を生み出すのです。
 
-|                                         <img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/b6fd2e40-630e-ffd9-02b0-8807967cc16c.png" alt="伝統的なSilkė su svogūnaisのレシピ" width="80%" />                                          |
-| :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| **伝統的な<ruby><rb>Silkė</rb><rt>シルケ</rt></ruby> <ruby><rb>su</rb><rt>ス</rt></ruby> <ruby><rb>svogūnais</rb><rt>スヴォグーナイス</rt></ruby>のレシピたち**[^tradicineSilkėSuSvogūnaisReceptų]<br />1000件以上のレシピが存在するほど、多彩な組み合わせが可能 |
+|<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/b6fd2e40-630e-ffd9-02b0-8807967cc16c.png" alt="伝統的なSilkė su svogūnaisのレシピ" width="80%" />|
+|:-:|
+|**伝統的な<ruby><rb>Silkė</rb><rt>シルケ</rt></ruby> <ruby><rb>su</rb><rt>ス</rt></ruby> <ruby><rb>svogūnais</rb><rt>スヴォグーナイス</rt></ruby>のレシピたち**[^tradicineSilkėSuSvogūnaisReceptų]<br />1000件以上のレシピが存在するほど、多彩な組み合わせが可能|
 
-[^tradicineSilkėSuSvogūnaisReceptų]:
-    画像はリトアニアの料理レシピサイトLa Maistasから拝借：
+[^tradicineSilkėSuSvogūnaisReceptų]: 画像はリトアニアの料理レシピサイトLa Maistasから拝借：
     [tradicine silke su svogunais | La Maistas](https://www.lamaistas.lt/paieska?q=tradicine%20silke%20su%20svogunais)
     ほかのレシピを検索すると多くても800とかなので、Silke su svogunaisのレシピは本当に豊富なことがわかる。
 
@@ -584,12 +564,10 @@ TypeScriptに標準で存在する `Array<T>` や `Promise<T>` などの型も
 また、ReactやAngular、NestJSなどのフレームワーク、各種ライブラリも
 ジェネリクスを駆使して汎用性の高いAPIを提供しています[^ライブラリでのジェネリクス使用]。
 
-[^TypeScript組み込み型]:
-    たとえばTypeScriptの `Array` なら `Array<T>` のようにジェネリクスを使っている：
+[^TypeScript組み込み型]: たとえばTypeScriptの `Array` なら `Array<T>` のようにジェネリクスを使っている：
     [TypeScript/src/lib/es5.d.ts at main · microsoft/TypeScript](https://github.com/microsoft/TypeScript/blob/main/src/lib/es5.d.ts#L1304)
 
-[^ライブラリでのジェネリクス使用]:
-    たとえばReactならGitHubの `packages/react/ReactHooks.js` を見ると、useStateにジェネリクスを使っていることがわかる：
+[^ライブラリでのジェネリクス使用]: たとえばReactならGitHubの `packages/react/ReactHooks.js` を見ると、useStateにジェネリクスを使っていることがわかる：
     [react/packages/react/src/ReactHooks.js at main · facebook/react](https://github.com/facebook/react/blob/7283a213dbbc31029e65005276f12202558558fc/packages/react/src/ReactHooks.js#L96)
 
 まさにエコシステム全体が、基本の「型料理法」を拡張しているのです。
@@ -657,20 +635,17 @@ createLocalizedRecipe(cepelinaiBase, cepelinaiTranslations);
 <ruby><rb>Koldūnai</rb><rt>コルドゥーナイ</rt></ruby>はリトアニアで親しまれるダンプリングの一種で[^ダンプリング]、
 中に肉やチーズ、キノコなど様々な具が包まれた小さな包み料理です[^Koldūnai]。
 
-[^ダンプリング]:
-    ダンプリングとは、餃子などの、練った小麦粉などを茹でたり焼いたりしたもののこと：
+[^ダンプリング]: ダンプリングとは、餃子などの、練った小麦粉などを茹でたり焼いたりしたもののこと：
     [ダンプリング - Wikipedia](https://ja.wikipedia.org/wiki/%E3%83%80%E3%83%B3%E3%83%97%E3%83%AA%E3%83%B3%E3%82%B0)
 
-[^Koldūnai]:
-    Koldūnaiはリトアニア料理というわけでもない：
+[^Koldūnai]: Koldūnaiはリトアニア料理というわけでもない：
     [カルドゥヌイ - Wikipedia](https://ja.wikipedia.org/wiki/%E3%82%AB%E3%83%AB%E3%83%89%E3%82%A5%E3%83%8C%E3%82%A4)
 
-| <img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/a2fbca7f-7003-0825-0e21-9e2515f0fe9a.png" alt="Koldūnai su grybais（キノコ入り餃子）" width="80%" />  |
-| :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| **<ruby><rb>Koldūnai</rb><rt>コルドゥーナイ</rt></ruby> <ruby><rb>su</rb><rt>ス</rt></ruby> <ruby><rb>grybais</rb><rt>グリーバイス</rt></ruby>（キノコ入り餃子）[^Koldūnaiの画像]** |
+|<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/a2fbca7f-7003-0825-0e21-9e2515f0fe9a.png" alt="Koldūnai su grybais（キノコ入り餃子）" width="80%" />|
+|:-:|
+|**<ruby><rb>Koldūnai</rb><rt>コルドゥーナイ</rt></ruby> <ruby><rb>su</rb><rt>ス</rt></ruby> <ruby><rb>grybais</rb><rt>グリーバイス</rt></ruby>（キノコ入り餃子）[^Koldūnaiの画像]**|
 
-[^Koldūnaiの画像]:
-    画像はリトアニアの園芸・農業サイトDerlingas.ltから拝借：
+[^Koldūnaiの画像]: 画像はリトアニアの園芸・農業サイトDerlingas.ltから拝借：
     [Koldūnai su grybais - tradicinis Kūčių patiekalas](https://derlingas.lt/grybu-patiekalai/koldunai-su-grybais-kucioms-tradicinis-patiekalas-valgomas-tik-karta-metuose)
 
 `keyof` 型演算子は、オブジェクトという皮の中に何が詰まっているかを
@@ -716,22 +691,20 @@ const dishColor = getProperty(dish, "color"); // コンパイルエラー：
 // Argument of type '"color"' is not assignable to parameter of type 'keyof Dish'.
 ```
 
-`keyof` は、オブジェクト型を操作するTypeScriptにおける基礎的な機能です。
-<ruby><rb>Kūčios</rb><rt>クーチョス</rt></ruby>が12皿で成り立つように、`keyof` も他の機能と組み合わせるものです。
+`keyof` は、オブジェクト型を操作するTypeScriptにおける基礎的な機能です。 <ruby><rb>Kūčios</rb><rt>クーチョス</rt></ruby>が12皿で成り立つように、`keyof` も他の機能と組み合わせるものです。
 以降の章でも `keyof` を使用しているので、その用法に注目してみてください。
 
 # 06. typeof：Kibinai
 
-<ruby><rb>Kibinai</rb><rt>キビナイ</rt></ruby>は、<ruby><rb>Koldūnai</rb><rt>コルドゥーナイ</rt></ruby>のように具を包むものですが、ダンプリングというよりはパイです[^パイ]。
-<ruby><rb>Kūčios</rb><rt>クーチョス</rt></ruby>に登場することは珍しいのですが、おいしいのでここで紹介してしまいます[^Kibinaiが美味しい理由]。
+<ruby><rb>Kibinai</rb><rt>キビナイ</rt></ruby>は、<ruby><rb>Koldūnai</rb><rt>コルドゥーナイ</rt></ruby>のように具を包むものですが、ダンプリングというよりはパイです[^パイ]。 <ruby><rb>Kūčios</rb><rt>クーチョス</rt></ruby>に登場することは珍しいのですが、おいしいのでここで紹介してしまいます[^Kibinaiが美味しい理由]。
 
 [^パイ]: さらにいうと、生地がバターを練り込むショートクラストペイストリーに近いので、パイというよりはペイストリーというほうが正しそうだが、これ以上は料理の専門家に任せることとする。
 
 [^Kibinaiが美味しい理由]: リトアニアに来ると、まずCepelinaiなど芋料理を多く食べることになるため、次の日から食べる「!(芋)料理」が非常に美味しく感じる。
 
-| <img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/a9ca2929-c98d-f887-45ed-fc11d4ef1522.png" alt="Kibinai（2018／トラカイ城周辺のレストラン）" width="80%" /> |
-| :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|                                      **Kibinai（2018／トラカイ城周辺のレストラン）**<br />Kibinaiは美味しかったし、トラカイ城は綺麗だったし、最高！                                      |
+|<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/a9ca2929-c98d-f887-45ed-fc11d4ef1522.png" alt="Kibinai（2018／トラカイ城周辺のレストラン）" width="80%" />|
+|:-:|
+|**Kibinai（2018／トラカイ城周辺のレストラン）**<br />Kibinaiは美味しかったし、トラカイ城は綺麗だったし、最高！|
 
 `typeof` 型演算子は、見た目は `keyof` 型演算子と似ていますが、機能は全く異なります。
 これは、値から型情報を抽出するものです。
@@ -830,8 +803,7 @@ const filtered = array.filter((val) => typeof val === "string");
 `instanceof` ではオブジェクトがクラスのインスタンスかを判定する際に使用します[^instanceofの用法]。
 :::
 
-[^instanceofの用法]:
-    TypeScriptにおける `instanceof` の活用については、Narrowingについての公式ドキュメントが参考になる：
+[^instanceofの用法]: TypeScriptにおける `instanceof` の活用については、Narrowingについての公式ドキュメントが参考になる：
     [TypeScript: Documentation - Narrowing](https://www.typescriptlang.org/docs/handbook/2/narrowing.html#instanceof-narrowing)
 
 この用法は、以下のような場面で便利です：
@@ -879,8 +851,7 @@ TypeScriptは `if` 下では `input` が `string` であることを判断でき
 ここでは値の型を確認していますが、主にオブジェクトや配列の、構造の確認に用います。
 `typeof` を使用した型ガードと同様に、エラーなくメソッドを実行できています。
 
-[^ユーザー定義型ガード]:
-    Type PredicatesもUser-Defined Type Guardも公式ドキュメントで使用されている言葉である：
+[^ユーザー定義型ガード]: Type PredicatesもUser-Defined Type Guardも公式ドキュメントで使用されている言葉である：
     [TypeScript: Documentation - Narrowing（旧ドキュメント）](https://www.typescriptlang.org/docs/handbook/advanced-types.html#user-defined-type-guards)
     [TypeScript: Documentation - Advanced Types（新ドキュメント）](https://www.typescriptlang.org/docs/handbook/2/narrowing.html#using-type-predicates)
 
@@ -923,8 +894,7 @@ array.forEach((val) => {
 Mapped Typesは `{ [P in K]: ... }` の構文を使い、
 ユニオンを元に新たな型を生成する機能です[^MappedTypesとは]。
 
-[^MappedTypesとは]:
-    公式ドキュメントの表現を参考にしています：
+[^MappedTypesとは]: 公式ドキュメントの表現を参考にしています：
     [TypeScript: Documentation - Mapped Types](https://www.typescriptlang.org/docs/handbook/2/mapped-types.html)
 
 Genericsと同様に強力な機能であるために、非常に多様な場面で使えます。
@@ -951,12 +921,11 @@ type Dish = {
 
 :::
 
-|                                   <img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/4771d040-371d-3f49-a95f-4ed75a655926.png" alt="Silkė su grybais ir pupelėmis（ニシンのキノコと豆添え）" width="80%" />                                    |
-| :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| **<ruby><rb>Silkė</rb><rt>シルケ</rt></ruby> <ruby><rb>su</rb><rt>ス</rt></ruby> <ruby><rb>grybais</rb><rt>グリーバイス</rt></ruby> <ruby><rb>ir</rb><rt>イル</rt></ruby> <ruby><rb>pupelėmis</rb><rt>プペレミス</rt></ruby>（ニシンのキノコと豆添え）**[^SilkėSuGrybais] |
+|<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/4771d040-371d-3f49-a95f-4ed75a655926.png" alt="Silkė su grybais ir pupelėmis（ニシンのキノコと豆添え）" width="80%" />|
+|:-:|
+|**<ruby><rb>Silkė</rb><rt>シルケ</rt></ruby> <ruby><rb>su</rb><rt>ス</rt></ruby> <ruby><rb>grybais</rb><rt>グリーバイス</rt></ruby> <ruby><rb>ir</rb><rt>イル</rt></ruby> <ruby><rb>pupelėmis</rb><rt>プペレミス</rt></ruby>（ニシンのキノコと豆添え）**[^SilkėSuGrybais]|
 
-[^SilkėSuGrybais]:
-    画像はLa Maistasから拝借：
+[^SilkėSuGrybais]: 画像はLa Maistasから拝借：
     [Silkė su grybais ir pupelėmis - receptas | La Maistas](https://www.lamaistas.lt/receptas/silke-su-grybais-ir-pupelemis-65417)
 
 <ruby><rb>Silkė</rb><rt>シルケ</rt></ruby> <ruby><rb>su</rb><rt>ス</rt></ruby> <ruby><rb>grybais</rb><rt>グリーバイス</rt></ruby>（ニシンのキノコ添え）では
@@ -969,20 +938,18 @@ Mapped Typesは元の型をもとにプロパティを自在に組み直し、
 TypeScriptには、GenericsやMapped Typesを用いて実装された
 便利なUtility Types（ユーティリティ型）が数多く用意されています。
 
-|     <img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/affee0f1-3b34-0940-c0a7-6941a5d10434.png" alt="Silkė burokėlių patale（ニシンのビーツ乗せ）" width="100%" />     |
-| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| **<ruby><rb>Silkė</rb><rt>シルケ</rt></ruby> <ruby><rb>burokėlių</rb><rt>ブロケーリウ</rt></ruby> <ruby><rb>patale</rb><rt>パタレ</rt></ruby>（ニシンのビーツ乗せ）**[^GreitaSilkėBurokėliųPatale] |
+|<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/affee0f1-3b34-0940-c0a7-6941a5d10434.png" alt="Silkė burokėlių patale（ニシンのビーツ乗せ）" width="100%" />|
+|:-:|
+|**<ruby><rb>Silkė</rb><rt>シルケ</rt></ruby> <ruby><rb>burokėlių</rb><rt>ブロケーリウ</rt></ruby> <ruby><rb>patale</rb><rt>パタレ</rt></ruby>（ニシンのビーツ乗せ）**[^GreitaSilkėBurokėliųPatale]|
 
-[^GreitaSilkėBurokėliųPatale]:
-    画像はLa Maistasから拝借：
+[^GreitaSilkėBurokėliųPatale]: 画像はLa Maistasから拝借：
     [Greita silkė burokėlių patale - receptas | La Maistas](https://www.lamaistas.lt/receptas/silke-burokeliu-patale-11771)
 
 :::note info
 コードは `lib.es5.d.ts` を参照しています[^lib.es5.d.ts]。
 :::
 
-[^lib.es5.d.ts]:
-    GitHubから確認できます：
+[^lib.es5.d.ts]: GitHubから確認できます：
     [TypeScript/src/lib/es5.d.ts at main · microsoft/TypeScript](https://github.com/microsoft/TypeScript/blob/main/src/lib/es5.d.ts)
 
 Genericsで柔軟に型を適用し、Mapped Typesで動的に型構造を再構成し、
@@ -1006,8 +973,7 @@ type Partial<T> = {
 このように、Mapped Typesを使うことで、
 将来の拡張や不完全なデータへの対応が容易になります。
 
-[^オプショナル]:
-    オプショナルとは、通常は設定されている必要のあるプロパティを、プロパティを設定するかは任意にすることができる機能である：
+[^オプショナル]: オプショナルとは、通常は設定されている必要のあるプロパティを、プロパティを設定するかは任意にすることができる機能である：
     [TypeScript: Documentation - Object Types](https://www.typescriptlang.org/docs/handbook/2/objects.html#optional-properties)
 
 逆に、すべてのプロパティを必須にする `Required` も存在します：
@@ -1051,8 +1017,8 @@ type Record<K extends keyof any, T> = {
 };
 ```
 
-`Record<K, T>` は指定したキーと値型で、新たな「材料の対応表」を作ることができます。  
-たとえば、`Record<string, number>` は「食材名：必要量」のような辞書型を表現できます。  
+`Record<K, T>` は指定したキーと値型で、新たな「材料の対応表」を作ることができます。
+たとえば、`Record<string, number>` は「食材名：必要量」のような辞書型を表現できます。
 リトアニアの食卓で、各家庭が独自のスパイスやハーブ、野菜を組み合わせて、
 それぞれの「味の辞書」を紡ぎ出すイメージです。
 
@@ -1085,27 +1051,26 @@ type Omit<T, K extends keyof any> = Pick<T, Exclude<keyof T, K>>;
 
 # 09. Index Signature：Mišrainė
 
-GenericsやMapped Types、Utility Typesは、  
-オブジェクトのプロパティを柔軟に扱う手段を提供しました。  
+GenericsやMapped Types、Utility Typesは、
+オブジェクトのプロパティを柔軟に扱う手段を提供しました。
 しかし、キー名が事前にわからないオブジェクトもあります。
 
 TypeScriptは、Index Signature（インデックス型）でこの問題に対処します[^IndexSignature]。
 たとえば `[key: string]: T` という書き方で、
 「キー名は自由だが、値の型は `T`」というルールを表します。
 
-[^IndexSignature]:
-    Index Signatureについての表現は公式ドキュメントを参照している：
+[^IndexSignature]: Index Signatureについての表現は公式ドキュメントを参照している：
     [TypeScript: Documentation - Object Types](https://www.typescriptlang.org/docs/handbook/2/objects.html#index-signatures)
 
-| <img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/af7c7c8e-b6f4-dca4-8ab5-219501a35c53.png" alt="ビーツや豆、コハダなどを用いたMišrainė（筆者宅／2021）" width="80%" /> |
-| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|                **ビーツや豆、コハダなどを用いた<ruby><rb>Mišrainė</rb><rt>ミシュライネ</rt></ruby>（筆者宅／2021）**<br />今年の社内忘年会では、じゃがいもを使ったものを提供しました                |
+|<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/af7c7c8e-b6f4-dca4-8ab5-219501a35c53.png" alt="ビーツや豆、コハダなどを用いたMišrainė（筆者宅／2021）" width="80%" />|
+|:-:|
+|**ビーツや豆、コハダなどを用いた<ruby><rb>Mišrainė</rb><rt>ミシュライネ</rt></ruby>（筆者宅／2021）**<br />今年の社内忘年会では、じゃがいもを使ったものを提供しました|
 
 <ruby><rb>Mišrainė</rb><rt>ミシュライネ</rt></ruby>に決まった材料はありません。
 野菜、豆、穀物、時には卵や魚まで、多様な食材が入りえます。
 共通するのは、すべてが細かく刻まれ、混ざり合って一皿を構成することです。
 
-以下は、Index Signatureで<ruby><rb>Mišrainė</rb><rt>ミシュライネ</rt></ruby>を表した例です。  
+以下は、Index Signatureで<ruby><rb>Mišrainė</rb><rt>ミシュライネ</rt></ruby>を表した例です。
 このサラダは、どんな食材名でも受け入れますが、値は常に同じ型構造を保ちます：
 
 ```ts
@@ -1180,8 +1145,7 @@ Index Signatureの値に自身を含むことで、ネストできるように�
 この再帰的な構造は、複雑な階層的データを自然に表現できるようになり、
 フロントエンドではCSSセレクタを構造で示せるようになります[^再帰によるネストへの対応]。
 
-[^再帰によるネストへの対応]:
-    TypeScript Deep Driveによれば、JSライブラリにおけるCSSの共通パターンでも、この再帰が使われている：
+[^再帰によるネストへの対応]: TypeScript Deep Driveによれば、JSライブラリにおけるCSSの共通パターンでも、この再帰が使われている：
     [Index signature（インデックス型） | TypeScript Deep Dive 日本語版](https://typescript-jp.gitbook.io/deep-dive/type-system/index-signatures#dezainpatnnesutosaretaindekkusushigunecha)
 
 以下は、<ruby><rb>Mišrainė</rb><rt>ミシュライネ</rt></ruby>の複雑な構造を、ネストしたIndex Signatureで示したものです：
@@ -1307,18 +1271,16 @@ const ng3: TopLevelIngredients = {
 トッピングやビーツの量などの条件によって味のバリエーションが生まれます。
 また、ポーランドではChłodnik litewskiと呼ばれ、土地柄でも風味に変化があります。
 
-| <img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/6b2ddb66-7b26-98bf-292b-0850f447c8c5.png" alt="Šaltibarščiai" width="80%" /> |
-| :--------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|                             **<ruby><rb>Šaltibarščiai</rb><rt>シャルティバルシチェイ</rt></ruby>**[^Šaltibarščiaiの画像]<br/>                              |
+|<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/6b2ddb66-7b26-98bf-292b-0850f447c8c5.png" alt="Šaltibarščiai" width="80%" />|
+|:-:|
+|**<ruby><rb>Šaltibarščiai</rb><rt>シャルティバルシチェイ</rt></ruby>**[^Šaltibarščiaiの画像]<br/>|
 
-[^Šaltibarščiaiの画像]:
-    La Maistasより拝借：
+[^Šaltibarščiaiの画像]: La Maistasより拝借：
     [Šaltibarščiai - receptas | La Maistas](https://www.lamaistas.lt/receptas/saltibarsciai-11127)
 
 Conditional Types（条件型）は以下の通り、条件次第で型を選び分けるものです[^ConditionalTypes]：
 
-[^ConditionalTypes]:
-    Conditional Typesの詳細は
+[^ConditionalTypes]: Conditional Typesの詳細は
     [TypeScript: Documentation - Conditional Types](https://www.typescriptlang.org/docs/handbook/2/conditional-types.html)
 
 ```ts
@@ -1413,18 +1375,16 @@ type PartialDish = DeepPartial<Dish>;
 リトアニアでは<ruby><rb>Juoda</rb><rt>ユオダ</rt></ruby> <ruby><rb>Ruginė</rb><rt>ルギネ</rt></ruby> <ruby><rb>Duona</rb><rt>ドゥオナ</rt></ruby>（黒いライ麦パン）と言い、
 パンの日やパン祭りがあるほどに親しまれています[^パンの日]。
 
-[^パンの日]:
-    2月5日がパンの日で、民間伝承でもパンが重要な立ち位置にあるそうです：
+[^パンの日]: 2月5日がパンの日で、民間伝承でもパンが重要な立ち位置にあるそうです：
     [Juoda lietuviška duona išlieka mylimiausia – patarimai, padėsiantys ja mėgautis ilgiau](https://ve.lt/gyvenimas/laisvalaikis/juoda-lietuviska-duona-islieka-mylimiausia-patarimai-padesiantys-ja-megautis)
     パンを逆さまに置くと、家が火事になるとか……：
     [Tauragės krašto muziejus » Vasario 5-ąją minima Šv. Agotos, Duonos diena](https://tauragesmuziejus.lt/naujienos/vasario-5-aja-minima-sv-agotos-duonos-diena/)
 
-| <img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/44409f89-83e6-1643-80fa-0171a7273764.png" alt="業務スーパーのライブレッド" width="100%" /> |
-| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|                                                 **業務スーパーのライブレッド**[^ライブレッド]<br />冷凍で売っていました                                                  |
+|<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/44409f89-83e6-1643-80fa-0171a7273764.png" alt="業務スーパーのライブレッド" width="100%" />|
+|:-:|
+|**業務スーパーのライブレッド**[^ライブレッド]<br />冷凍で売っていました|
 
-[^ライブレッド]:
-    画像は業務スーパーから拝借：
+[^ライブレッド]: 画像は業務スーパーから拝借：
     [ライブレッド - 商品紹介｜プロの品質とプロの価格の業務スーパー](https://www.gyomusuper.jp/product/detail.php?go_id=6875)
 
 `infer` 演算子は、Conditional Typesの中で型を推論（Infer）し、一部を抽出するものです。
@@ -1476,14 +1436,12 @@ TypeScript 4.5で新たなUtility Types `Awaited` が追加されました[^4.5]
 `Promise<T>` の解決値の型を簡単に抽出できるもので、
 これにより、複雑な非同期処理の型管理がより直感的かつ効率的になります。
 
-[^4.5]:
-    下記の公式ドキュメントに記載がある：
+[^4.5]: 下記の公式ドキュメントに記載がある：
     [TypeScript: Documentation - TypeScript 4.5](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-5.html#the-awaited-type-and-promise-improvements)
 
 `Awaited` のソースは以下です[^Awaited]：
 
-[^Awaited]:
-    ソースは以下を参照：
+[^Awaited]: ソースは以下を参照：
     [TypeScript/src/lib/es5.d.ts at main · microsoft/TypeScript · GitHub](https://github.com/microsoft/TypeScript/blob/main/src/lib/es5.d.ts#L1545)
 
 ```ts
@@ -1554,32 +1512,28 @@ type Props = ExtractProps<typeof DuonaComponent>; // DuonaPropsと同じ
 
 # 12. Type Assertion：Cepelinai
 
-型アサーションの説明には、リトアニアの国民食「<ruby><rb>Cepelinai</rb><rt>ツェペリナイ</rt></ruby>」が最適です[^ツェペリナイ]。
-<ruby><rb>Cepelinai</rb><rt>ツェペリナイ</rt></ruby>はすりおろしたじゃがいもを「成形」して、中に肉を詰めた料理です。
+型アサーションの説明には、リトアニアの国民食「<ruby><rb>Cepelinai</rb><rt>ツェペリナイ</rt></ruby>」が最適です[^ツェペリナイ]。 <ruby><rb>Cepelinai</rb><rt>ツェペリナイ</rt></ruby>はすりおろしたじゃがいもを「成形」して、中に肉を詰めた料理です。
 その形状は飛行船「ツェッペリン」に似ており、名前の由来にもなっています。
 
 [^ツェペリナイ]: 私が好きなリトアニア料理。芋料理なので食べすぎに注意。
 
-| <img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/219624a8-d259-4fef-9fbf-c92f9e72d3dd.png" alt="Cepelinai" width="80%" /> |
-| :----------------------------------------------------------------------------------------------------------------------------------------------------: |
-|                **<ruby><rb>Cepelinai</rb><rt>ツェペリナイ</rt></ruby>**[^Cepelinai] <br />リトアニアに来たら、まずはこれを食べましょう                 |
+|<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/219624a8-d259-4fef-9fbf-c92f9e72d3dd.png" alt="Cepelinai" width="80%" />|
+|:-:|
+|**<ruby><rb>Cepelinai</rb><rt>ツェペリナイ</rt></ruby>**[^Cepelinai] <br />リトアニアに来たら、まずはこれを食べましょう|
 
-[^Cepelinai]:
-    本当においしい。好きすぎていつも画像を撮り忘れてしまう。画像は以下から拝借：
+[^Cepelinai]: 本当においしい。好きすぎていつも画像を撮り忘れてしまう。画像は以下から拝借：
     [ツェペリナイ - Wikipedia](https://ja.wikipedia.org/wiki/%E3%83%84%E3%82%A7%E3%83%9A%E3%83%AA%E3%83%8A%E3%82%A4)
 
 型アサーション（Type Assertion）は、TypeScriptの型を「成形」する機能です[^型アサーション]。
 `Vite` で `React` プロジェクト開始時に生成される `src/main.tsx` でも使われています[^Vite]：
 
-[^型アサーション]:
-    後述するが、型アサーションは型を書き換えるわけではない。
+[^型アサーション]: 後述するが、型アサーションは型を書き換えるわけではない。
     あくまでコンパイル時に型を主張するのみで、実行には影響しない。
     型アサーションについての説明は以下を参考にしている：
     [型アサーション「as」(type assertion) | TypeScript入門『サバイバルTypeScript』](https://typescriptbook.jp/reference/values-types-variables/type-assertion-as)
     [型アサーション「Type Assertion（型アサーション） | TypeScript Deep Dive 日本語版](https://typescript-jp.gitbook.io/deep-dive/type-system/type-assertion)
 
-[^Vite]:
-    Viteは高速なフロントエンドビルドツールで、はじめてTypeScriptに触る場合にもオススメ：
+[^Vite]: Viteは高速なフロントエンドビルドツールで、はじめてTypeScriptに触る場合にもオススメ：
     [Vite | Next Generation Frontend Tooling](https://vite.dev/)
     また、 `create-react-app` で開始した `React` プロジェクトでも `src/index.tsx` で同様に `as HTMLElement` で型アサーションが使用されている。
 
@@ -1608,8 +1562,7 @@ constアサーション `as const` における `as` とは異なります。
 型アサーションはデータの型を意図した形に成形することを説明しました。
 
 しかし、形を整えるだけでは真の完成には至りません。
-次に、型アサーションの具体的な応用テクニックを掘り下げるとともに、
-<ruby><rb>Cepelinai</rb><rt>ツェペリナイ</rt></ruby>との共通の注意事項についても詳しく見ていきましょう。
+次に、型アサーションの具体的な応用テクニックを掘り下げるとともに、 <ruby><rb>Cepelinai</rb><rt>ツェペリナイ</rt></ruby>との共通の注意事項についても詳しく見ていきましょう。
 
 ## 型推論が不完全な場面での補完
 
@@ -1645,8 +1598,7 @@ console.log(element.innerHTML); // null と undefined の可能性を除外
 TypeScriptベースの言語であるASでは、TypeScriptと同様の形式で、
 拡張子 `.ts`でプログラムを記述してWebAssemblyを出力することができます[^ASコンパイル]。
 
-[^ASコンパイル]:
-    AssemblyScriptの公式ドキュメントのポータビリティ章に記載がある：
+[^ASコンパイル]: AssemblyScriptの公式ドキュメントのポータビリティ章に記載がある：
     [Using the compiler | The AssemblyScript Book](https://www.assemblyscript.org/compiler.html#portability)
 
 以下はASで画像をグレースケールにする関数です：
@@ -1677,12 +1629,10 @@ export function grayscale(imageData: Uint8ClampedArray): Uint8ClampedArray {
 `new Uint8ClampedArray()` で生成された `result` は、符号なし整数値の配列です[^Uint8ClampedArray]。
 `Math.round()` の返却型 `number` はASでは64桁の浮動小数点数 `f64` に変換されます[^ASのnumber]。
 
-[^Uint8ClampedArray]:
-    `Uint8ClampedArray` は 8 ビットの符号なし整数値のビューで、設定値は0と255その範囲内に制限される：
+[^Uint8ClampedArray]: `Uint8ClampedArray` は 8 ビットの符号なし整数値のビューで、設定値は0と255その範囲内に制限される：
     [TypedArray | The AssemblyScript Book](https://www.assemblyscript.org/stdlib/typedarray.html)
 
-[^ASのnumber]:
-    具体的には、 `Number` クラスの静的メンバーとして `F32` や `F64` が定義されており、これらはそれぞれ32ビットおよび64ビットの浮動小数点数型を表す：
+[^ASのnumber]: 具体的には、 `Number` クラスの静的メンバーとして `F32` や `F64` が定義されており、これらはそれぞれ32ビットおよび64ビットの浮動小数点数型を表す：
     [Number | The AssemblyScript Book](https://www.assemblyscript.org/stdlib/number.html)
     ASの型について詳細が気になる場合は以下を参照されたい：
     [Types | The AssemblyScript Book](https://www.assemblyscript.org/types.html)
@@ -1740,8 +1690,7 @@ FAILURE 3 compile error(s)
 そこで、 `gray` の宣言にて `as u32` で水を絞り切ることで、生地（型）が
 正しく成形され、コンパイラという厳しいシェフの検査にも合格するわけです。
 
-[^型アサーションとキャストの違い]:
-    サバイバルTypeScriptによれば、TypeScriptにおける型アサーションはキャストと異なる：
+[^型アサーションとキャストの違い]: サバイバルTypeScriptによれば、TypeScriptにおける型アサーションはキャストと異なる：
     [型アサーション「as」(type assertion) | TypeScript入門『サバイバルTypeScript』](https://typescriptbook.jp/reference/values-types-variables/type-assertion-as#%E5%9E%8B%E3%82%A2%E3%82%B5%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%A8%E3%82%AD%E3%83%A3%E3%82%B9%E3%83%88%E3%81%AE%E9%81%95%E3%81%84)
     キャストは実行時に型を変換するものである。
     しかし、型アサーションは実行時に影響せず、コンパイラに型を主張するのみで、型変換しない。
@@ -1825,7 +1774,7 @@ TypeScriptは、素直に型を注釈するだけで多くの場合きれいに�
 もし型アサーションを使う時があるとすれば、それはあくまで最終手段として、
 **あなたがコンパイラよりもその値や型についてよく理解できているとき**でしょう。
 
----
+***
 
 # 13. さいごに
 
@@ -1837,7 +1786,7 @@ TypeScriptは、素直に型を注釈するだけで多くの場合きれいに�
 明日は25日クリスマス、Qiitaアドベントカレンダー2024の最終日です。
 @fuchiy さんのDocker環境についての話にも注目しましょう。
 
----
+***
 
 # 99. 脚注
 

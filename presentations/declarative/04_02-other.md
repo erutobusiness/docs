@@ -30,7 +30,7 @@ aws ec2 create-vpc --cidr-block 10.0.0.0/16 \
 Terraform の方がより宣言的かつ冪等性が高い。リソースの望ましい状態を宣言するだけで、作成済みかどうかを自動判定し、必要な差分のみ適用する。Bash + AWS CLI は実行するたびに create コマンドを発行し続けるため、冪等性を保証しにくい。
 </details>
 
----
+***
 
 ## 問題 2: コンテナオーケストレーション
 
@@ -59,7 +59,7 @@ kubectl scale deployment webserver --replicas=5
 Kubernetes マニフェスト（YAML）の修正が宣言的。望ましい状態（replicas: 5）を宣言し、`kubectl apply` を再実行するだけで差分適用される。一方、kubectl scale は命令的にその場で実行する操作。
 </details>
 
----
+***
 
 ## 問題 3: CI/CD パイプライン定義
 
@@ -102,7 +102,7 @@ pipeline {
 GitHub Actions の YAML の方が宣言的で保守性が高い。対象ブランチを `on.push.branches` で一箇所宣言でき、変更もそこだけで済む。一方 Jenkinsfile はシェルスクリプトで分散しているため、修正箇所が増えやすい。
 </details>
 
----
+***
 
 ## 問題 4: データ操作言語
 
@@ -129,7 +129,7 @@ const average = sum / users.length;
 SQL の方が宣言性が高い。「何を求めたいか（平均）」だけを宣言し、集計ロジックは DB エンジンに委ねられる。JavaScript のループは手続き的に各要素を処理する必要があり、実装の手順が細かく記述される。
 </details>
 
----
+***
 
 ## 問題 5: 構成管理
 
@@ -158,7 +158,7 @@ ssh webserver02 'sudo yum update nginx'
 Ansible の方が宣言的。設定ファイルに望ましい状態を記述し、ツールが複数ホストに対して一貫して適用する。シェルはホストごとに手順を明示する必要があり、再現性やメンテナンス性が低い。
 </details>
 
----
+***
 
 ## 問題 6: ビルド定義
 
@@ -188,7 +188,7 @@ lib.a: lib.cc
 Bazel の BUILD ファイルは依存関係グラフを宣言し、変更されたファイルのみを再ビルドする。Makefile はルールを定義するものの、手続きを順次記述するため、依存関係の定義と手順が混在しやすい。
 </details>
 
----
+***
 
 ## 問題 7: ネットワークポリシー
 
@@ -222,7 +222,7 @@ iptables -A INPUT -p tcp --dport 443 -s 10.0.0.0/8 -j ACCEPT
 NetworkPolicy の YAML が宣言的。望ましいポリシーを定義し、Kubernetes が適用と維持を自動化する。iptables は逐次コマンドを実行する手続き的操作。
 </details>
 
----
+***
 
 ## 問題 8: アクセス制御 (IAM)
 
@@ -256,7 +256,7 @@ aws iam put-user-policy \
 IAM ポリシーの JSON が宣言的。ポリシーとして何を許可するかを記述し、AWS が適用管理する。CLI は命令的に API 呼び出しを行う操作。
 </details>
 
----
+***
 
 ## 問題 9: データパイプライン / ETL
 
@@ -281,7 +281,7 @@ def my_dag():
 Airflow は DAG で依存関係と再実行、モニタリングを宣言的に管理。cron は手続き的にスクリプトを順次実行するだけで、個別実行や失敗時のリトライ管理が難しい。
 </details>
 
----
+***
 
 ## 問題 10: プログラミング言語パラダイム
 
@@ -306,7 +306,7 @@ int add(int x, int y) {
 Haskell の純関数は副作用を持たず、同じ入力に対して同じ結果を返すことを宣言する。並列化やメモ化が容易。C の関数は命令的だが、純粋関数とは限らず、副作用が起こり得る。
 </details>
 
----
+***
 
 ## 問題 11: テスト記述
 
@@ -331,7 +331,7 @@ assertEquals("Welcome", msg.getText());
 Gherkin + Cypress はシナリオとして期待状態を自然言語ライクに宣言し、should チェーンで最終状態を検証。Selenium は命令型に要素取得・比較を記述。
 </details>
 
----
+***
 
 ## 問題 12: ML パイプライン定義
 

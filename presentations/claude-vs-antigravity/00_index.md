@@ -19,7 +19,7 @@ AIコーディングアシスタントの二大巨頭、**Claude Code**と**Goog
 - [Column 2: マークダウンの書き方Tips](./column_02_markdown_tips.md)
 - [Column 3: AIとの対話のコツ](./column_03_ai_prompting.md)
 
----
+***
 
 ## このドキュメントについて
 
