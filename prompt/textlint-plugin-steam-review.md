@@ -56,7 +56,7 @@ Please create a new repository and implement a textlint processor plugin with th
 - **List Handling**:
   - `[list]` -> `List` Node
   - `[*]` (inside list) -> `ListItem` Node
-  - \*\*Orphan `[*]**`: If `[*]`appears outside`[list]`, treat it as a plain `Str` node (Steam behavior).
+  - **Orphan `[*]**`: If `[*]`appears outside`[list]`, treat it as a plain `Str` node (Steam behavior).
 - **Tag Behaviors**:
   - `[noparse]...[/noparse]`: Content inside is **NOT** parsed. Output as a single `Str` node.
   - `[code]...[/code]`: Content inside is `CodeBlock`. Content is ignored by most textlint rules.

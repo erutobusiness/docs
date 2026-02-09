@@ -54,7 +54,7 @@ ignorePublish: false
 
 ちなみに、マウスカーソルは左右対称ではありません。
 
-<https://twitter.com/YNCT_SNY/status/436134599945498624>
+[https://twitter.com/YNCT_SNY/status/436134599945498624](https://twitter.com/YNCT_SNY/status/436134599945498624)
 
 :::note warn
 この画像の出典がこのツイートで合っているか、ご存じの方がいらっしゃいましたら、ご教示ください。
@@ -68,7 +68,7 @@ ignorePublish: false
 
 <https://kotobank.jp/word/%E3%83%9B%E3%83%83%E3%83%88%E3%82%B9%E3%83%9D%E3%83%83%E3%83%88%20%28UI%29-13997>
 
-タッチデバイスにおいては、圧力などによって計算された、力の中心地がホットスポットの扱いになります\[要出典]。
+タッチデバイスにおいては、圧力などによって計算された、力の中心地がホットスポットの扱いになります[要出典]。
 
 ### ドラッグ要素
 
@@ -94,9 +94,9 @@ ignorePublish: false
 
 コードは弊社の GitHub に配置しており、 GitHub Pages から確認できます。
 
-<https://github.com/visionary-japan/react_ui_comparison>
+[https://github.com/visionary-japan/react_ui_comparison](https://github.com/visionary-japan/react_ui_comparison)
 
-<https://visionary-japan.github.io/react_ui_comparison/>
+[https://visionary-japan.github.io/react_ui_comparison/](https://visionary-japan.github.io/react_ui_comparison/)
 
 # 2. 基準
 
@@ -158,7 +158,7 @@ return (
   - 単純な四角形でない場合は処理が面倒
     - 交差オブザーバーを使用することになる？
 
-<https://developer.mozilla.org/ja/docs/Web/API/Intersection_Observer_API>
+[https://developer.mozilla.org/ja/docs/Web/API/Intersection_Observer_API](https://developer.mozilla.org/ja/docs/Web/API/Intersection_Observer_API)
 
 |<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3534741/9b7d9e0c-be33-af86-dd76-ab2093497dd9.png" alt="基準：重なっている面積の割合 (25%)" width="50%" />|
 |:-:|
@@ -263,7 +263,7 @@ return (
 );
 ```
 
-## 2.7. \[調査中] 計算幾何学の活用
+## 2.7. [調査中] 計算幾何学の活用
 
 計算幾何学における交差判定や包含判定について調査中
 React-Three-Fiber を使用すると良さそう？
@@ -280,36 +280,36 @@ React-Three-Fiber を使用すると良さそう？
 
 タッチデバイスでうまくいきませんでした。
 
-<https://visionary-japan.github.io/react_ui_comparison/dnd/dnd>
+[https://visionary-japan.github.io/react_ui_comparison/dnd/dnd](https://visionary-japan.github.io/react_ui_comparison/dnd/dnd)
 
 ### SortableJS
 
 タッチデバイスでも同様の操作感で使用できました。
 ※ react-sortablejs を使用
 
-<https://visionary-japan.github.io/react_ui_comparison/dnd/sortablejs>
+[https://visionary-japan.github.io/react_ui_comparison/dnd/sortablejs](https://visionary-japan.github.io/react_ui_comparison/dnd/sortablejs)
 
-### \[調査中] dnd-kit
+### [調査中] dnd-kit
 
 調査中
 
-<https://zenn.dev/castingone_dev/articles/dndkit20231031>
+[https://zenn.dev/castingone_dev/articles/dndkit20231031](https://zenn.dev/castingone_dev/articles/dndkit20231031)
 
 <https://zenn.dev/hamo/articles/725e4189bfc54d>
 
-### \[調査中] react-draggable
+### [調査中] react-draggable
 
 調査中
 
 <https://zenn.dev/xbit/articles/aa923b3c9000e5>
 
-### \[調査中] react-rnd
+### [調査中] react-rnd
 
 調査中
 
 <https://zenn.dev/xbit/articles/aa923b3c9000e5>
 
-### \[調査中] react-beautiful-dnd
+### [調査中] react-beautiful-dnd
 
 調査中
 

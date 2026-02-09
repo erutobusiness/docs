@@ -18,7 +18,7 @@ ignorePublish: false
 
 弊社の福利厚生の１つに、部活動があります。
 
-<https://note.com/visionary_japan/n/n4b03c1aba97d#83c10f4c-f624-4c3a-a72e-c7be14044b21>
+[https://note.com/visionary_japan/n/n4b03c1aba97d#83c10f4c-f624-4c3a-a72e-c7be14044b21](https://note.com/visionary_japan/n/n4b03c1aba97d#83c10f4c-f624-4c3a-a72e-c7be14044b21)
 
 私が所属するマイクラ部では、Minecraftサーバーを開いています。
 Minecraftとは、世界的な人気を誇る箱庭ゲームで、現在はMicrosoftが運営しています。

@@ -31,7 +31,7 @@
 音楽的モチーフと世界観の参考。
 タイの人魚伝説をモチーフにした「似非ワールド・ミュージック」アルバム（1996年発売）。
 
-詳細は [album\_SIREN.md](./album_SIREN.md) を参照。
+詳細は [album_SIREN.md](./album_SIREN.md) を参照。
 
 ## サブインスピレーション
 
@@ -99,7 +99,7 @@
 
 参考画像：
 
-- <https://commons.m.wikimedia.org/wiki/File:Brain_diagram_ja.svg>
+- [https://commons.m.wikimedia.org/wiki/File:Brain_diagram_ja.svg](https://commons.m.wikimedia.org/wiki/File:Brain_diagram_ja.svg)
 
 ### 使用する脳部位
 

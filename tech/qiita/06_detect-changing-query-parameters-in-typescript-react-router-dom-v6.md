@@ -34,7 +34,7 @@ ignorePublish: false
 
 弊社のGitHubに配置している。
 
-<https://visionary-japan.github.io/react_ui_comparison/query>
+[https://visionary-japan.github.io/react_ui_comparison/query](https://visionary-japan.github.io/react_ui_comparison/query)
 
 ## コード
 
@@ -196,7 +196,7 @@ export function useQuery() {
 
 結果として、今回はReactを使用しているので、状態の更新とレンダリングを連動させるためには、 `useSearchParams`がクエリ変更検知元のオブジェクトとクエリ変更方法として最適となった。
 
-## 逆にReactでURLSearchParamsやuseLocationを使う場合って、どんなとき？ \[調査中]
+## 逆にReactでURLSearchParamsやuseLocationを使う場合って、どんなとき？ [調査中]
 
 - URLSearchParams は useSearchParams を使うほどでもないときに使いそう
   - そんなことってあるか？？

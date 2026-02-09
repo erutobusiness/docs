@@ -11,4 +11,4 @@
 - [[Alice/TODO|Alice]] - 不思議の国のアリス (CoC7)
 - [[Hologram/TODO|Hologram]]
 - [[Relief/TODO|Relief]]
-- [[\\\\\\\\\\\\\\\_template/README|テンプレート]]
+- [[\_template/README|テンプレート]]

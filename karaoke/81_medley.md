@@ -8,7 +8,7 @@
 
 ### 曲リスト
 
-<https://docs.google.com/spreadsheets/d/1xK_QiiHs0ctF-IJNLsP2D2ICa0cA5-Jv56dIaVdXEW8>
+[https://docs.google.com/spreadsheets/d/1xK_QiiHs0ctF-IJNLsP2D2ICa0cA5-Jv56dIaVdXEW8](https://docs.google.com/spreadsheets/d/1xK_QiiHs0ctF-IJNLsP2D2ICa0cA5-Jv56dIaVdXEW8)
 
 ### 曲一覧
 
@@ -200,7 +200,7 @@
 |11|モンタギュー家とキャピュレット家|ロミオとジュリエット (プロコフィエフ)|
 |12|I'm lovin' it|マクドナルドCM|
 |13|The Last Wolf Suite|るろうに剣心 -明治剣客浪漫譚-|
-|14|クリアまでは眠らない!|チームねこかん\[猫]|
+|14|クリアまでは眠らない!|チームねこかん[猫]|
 |15|未来への咆哮|マブラヴ オルタネイティヴ|
 |16|エアーマンが倒せない|せら|
 |17|メルト|supercell|
@@ -215,7 +215,7 @@
 |26|God knows...|涼宮ハルヒの憂鬱|
 |27|冒険でしょでしょ? (イントロ)|涼宮ハルヒの憂鬱|
 |28|レッツゴー!陰陽師|新・豪血寺一族 -煩悩解放-|
-|29|みくみくにしてあげる♪【してやんよ】|ika\_mo|
+|29|みくみくにしてあげる♪【してやんよ】|ika_mo|
 |30|あいつこそがテニスの王子様|ミュージカル テニスの王子様|
 |31|ケロ⑨destiny|Silver Forest (東方Project)|
 
@@ -304,7 +304,7 @@
 |No.|タイトル|出典|
 |:-|:-|:-|
 |00|イントロ|ラスト4曲のメロディーの一部を使用。よくFinalFantasyシリーズの『プレリュード』と間違われるが、しもによるとそうではないとの事。|
-|01|ENDLESS RAIN|X-JAPAN(参考：sm460exit\_nicovideo)|
+|01|ENDLESS RAIN|X-JAPAN(参考：sm460exit_nicovideo)|
 |02|粉雪|レミオロメン(ニコニコ初の弾幕動画とされる)|
 |03|GREEN GREENS|ゲーム『星のカービィシリーズ』ステージBGM|
 |04-1|Here we go!|ゲーム『スーパーマリオワールド』BGM|
@@ -312,7 +312,7 @@
 |05-1|SMILES\&TEARS|ゲーム『MOTHER2』エンディングテーマ|
 |05-2(06)|Eight Melodies|ゲーム『MOTHER』メインテーマ|
 |05-3(07)|愛のテーマ|ゲーム『MOTHER3』メインテーマ|
-|08|CANDY POP|Heartsdales feat. SOUL'd OUT(参考：sm510840exit\_nicovideo)|
+|08|CANDY POP|Heartsdales feat. SOUL'd OUT(参考：sm510840exit_nicovideo)|
 |09-1|GO MY WAY!!|ゲーム『THE IDOLM\@STER』収録曲|
 |09-2(05)|SMILES\&TEARS|ゲーム『MOTHER2』エンディングテーマ|
 |10-1|もってけ!セーラーふく|アニメ『らき☆すた』オープニングテーマ|
@@ -321,8 +321,8 @@
 |13|ハレ晴レユカイ|アニメ『涼宮ハルヒの憂鬱』エンディングテーマ|
 |14-1|人として軸がぶれている|アニメ『さよなら絶望先生』オープニングテーマ|
 |14-2(13)|ハレ晴レユカイ|アニメ『涼宮ハルヒの憂鬱』エンディングテーマ|
-|15|PRIDE|世界最強の国技 SUMOU(sm493258exit\_nicovideo) (総合格闘技PRIDE　テーマソング)|
-|16|盆回り|イチローのレーザービームで人類滅亡(sm811361exit\_nicovideo) (8時だョ!全員集合 オチ・転換BGM)|
+|15|PRIDE|世界最強の国技 SUMOU(sm493258exit_nicovideo) (総合格闘技PRIDE　テーマソング)|
+|16|盆回り|イチローのレーザービームで人類滅亡(sm811361exit_nicovideo) (8時だョ!全員集合 オチ・転換BGM)|
 |17|駆けろ！スパイダーマン|特撮ドラマ『スパイダーマン』オープニングテーマ|
 |18|Ievan Polkka|フィンランド民謡|
 |19|巫女みこナース・愛のテーマ|ゲーム『巫女みこナース』テーマソング|
@@ -332,12 +332,12 @@
 |22-2(23)|患部で止まってすぐ溶ける～狂気の優曇華院|東方系アレンジCD「東方月燈籠」(IOSYS)収録曲 (原曲：狂気の瞳 ～ Invisible Full Moon)|
 |24-1|Help me, ERINNNNNN!!|東方系アレンジCD「東方ストライク」(COOL\&CREATE)収録曲 (原曲：竹取飛翔 ～ Lunatic Princess)|
 |24-2(25)|まっがーれ↓スペクタクル|アニメ『涼宮ハルヒの憂鬱』古泉一樹キャラクターソング|
-|26-1|さくらんぼ|大塚愛(参考跡地：sm248exit\_nicovideo)|
+|26-1|さくらんぼ|大塚愛(参考跡地：sm248exit_nicovideo)|
 |26-2(27)|恋のミクル伝説|『朝比奈ミクルの冒険 Episode00』主題歌(アニメ『涼宮ハルヒの憂鬱』第１話)|
 |26-3(28)|||
 |28|ビッグブリッヂの死闘|ビッグブリッヂのししとう ゲーム『ファイナルファンタジーⅤ』BGM|
 |29|あいつこそがテニスの王子様(中盤・「下剋上」部分)|ミュージカル『テニスの王子様』劇中歌|
-|30|雪と子供|ねこ鍋(sm772924exit\_nicovideo)BGM Web音楽素材サイトMusMus|
+|30|雪と子供|ねこ鍋(sm772924exit_nicovideo)BGM Web音楽素材サイトMusMus|
 |31|対象a|アニメ『ひぐらしのなく頃に解』エンディングテーマ|
 |32|奈落の花|アニメ『ひぐらしのなく頃に解』オープニングテーマ|
 |33-1|月のワルツ|NHK『みんなのうた』2004年10-11月放送曲|

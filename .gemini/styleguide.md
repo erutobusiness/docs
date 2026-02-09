@@ -5,7 +5,7 @@ This file defines the operational context and strict rules for Google Antigravit
 ## 1. Core Instructions (Single Source of Truth)
 
 **MUST READ AT START OF SESSION**:
-@\[../.ai/instructions.md]
+@[../.ai/instructions.md]
 
 ## 2. Zero-Tolerance Formatting Rules
 

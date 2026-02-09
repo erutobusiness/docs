@@ -38,7 +38,7 @@
 
 ### 萩原雪歩
 
-- ALRIGHT\*
+- ALRIGHT*
 - Kosmos, Cosmos
 
 ### 菊地真

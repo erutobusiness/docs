@@ -34,5 +34,5 @@ Sonyの空間再現ディスプレイ。
 - [Sony Spatial Reality Display (ELF-SR1)](https://www.sony.jp/spatial-reality-display/)
 - [Ultraleap (formerly Leap Motion)](https://www.ultraleap.com/)
 
-> \[!NOTE]
+> [!NOTE]
 > VoxelKei氏によるELF-SR1に関する詳細な記事は見当たりませんでしたが、氏はフォトグラメトリやVRChatなどの3D技術に造詣が深く、これらの技術を組み合わせた実験的な試みとしてツイートされたものと考えられます。

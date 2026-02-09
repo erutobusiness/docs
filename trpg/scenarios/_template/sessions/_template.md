@@ -6,14 +6,14 @@ participants: []
 tags: [session]
 ---
 
-# セッション {{session\_number}} - {{date}}
+# セッション {{session_number}} - {{date}}
 
 ## 参加者
 
 |役割|名前|PC|
 |-|-|-|
 |KP||-|
-|PL||\[\[]]|
+|PL||[[]]|
 
 ## 今回の目標
 

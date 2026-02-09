@@ -32,40 +32,40 @@
 
 当日の進行に沿って使用するファイル：
 
-- [10\_flow/](./10_flow/)
+- [10_flow/](./10_flow/)
 
 |ファイル|内容|スライド|
 |-|-|-|
-|[10\_timetable.md](./10_flow/10_timetable.md)|タイムテーブル|📋 本日の流れ|
-|[11\_opening.md](./10_flow/11_opening.md)|開会（コンセプト・ルール含む）|🎬 タイトル / 大会概要 / ルール説明|
-|[12\_player\_intro.md](./10_flow/12_player_intro.md)|プレイヤー紹介|👤 プレイヤー紹介（人数分）|
-|[13\_fighting.md](./10_flow/13_fighting.md)|対戦中|⚔️ 対戦中画面|
-|[14\_closing.md](./10_flow/14_closing.md)|閉会・表彰|🏆 結果発表 / エンディング|
+|[10_timetable.md](./10_flow/10_timetable.md)|タイムテーブル|📋 本日の流れ|
+|[11_opening.md](./10_flow/11_opening.md)|開会（コンセプト・ルール含む）|🎬 タイトル / 大会概要 / ルール説明|
+|[12_player_intro.md](./10_flow/12_player_intro.md)|プレイヤー紹介|👤 プレイヤー紹介（人数分）|
+|[13_fighting.md](./10_flow/13_fighting.md)|対戦中|⚔️ 対戦中画面|
+|[14_closing.md](./10_flow/14_closing.md)|閉会・表彰|🏆 結果発表 / エンディング|
 
 ### 対戦間の話題 (20番台) - エンジニアアナロジー
 
-→ [20\_topics/](./20_topics/)
+→ [20_topics/](./20_topics/)
 
 |ファイル|内容|用途|
 |-|-|-|
-|[21\_context.md](./20_topics/21_context.md)|コンテキスト（4人戦・メタ）|トークネタ|
-|[22\_sdlc.md](./20_topics/22_sdlc.md)|SDLC & エンジニアリング|トークネタ（基本戦略含む）|
+|[21_context.md](./20_topics/21_context.md)|コンテキスト（4人戦・メタ）|トークネタ|
+|[22_sdlc.md](./20_topics/22_sdlc.md)|SDLC & エンジニアリング|トークネタ（基本戦略含む）|
 
 ### スライド用素材 (30番台)
 
-→ [30\_marp/](./30_marp/)
+→ [30_marp/](./30_marp/)
 
 |ファイル|内容|
 |-|-|
-|[01\_opening.md](./30_marp/01_opening.md)|メインスライド（開会〜閉会）|
-|[02\_context.md](./30_marp/02_context.md)|コンテキスト解説スライド|
-|[03\_sdlc.md](./30_marp/03_sdlc.md)|SDLC解説スライド|
-|[09\_closing.md](./30_marp/09_closing.md)|締めくくりスライド|
+|[01_opening.md](./30_marp/01_opening.md)|メインスライド（開会〜閉会）|
+|[02_context.md](./30_marp/02_context.md)|コンテキスト解説スライド|
+|[03_sdlc.md](./30_marp/03_sdlc.md)|SDLC解説スライド|
+|[09_closing.md](./30_marp/09_closing.md)|締めくくりスライド|
 |[README.md](./30_marp/README.md)|Marp設定・使い方|
 
 ### 管理
 
-- [99\_todo.md](./99_todo.md) - TODO
+- [99_todo.md](./99_todo.md) - TODO
 
 ***
 
