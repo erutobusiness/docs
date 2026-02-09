@@ -59,10 +59,19 @@ module.exports = {
       "ja-no-successive-word": {
         allow: ["…"],
       },
+      "ja-no-redundant-expression": {
+        severity: "warning",
+      },
+      "max-comma": {
+        severity: "warning",
+      },
     },
     "@textlint-ja/preset-ai-writing": {
       "ai-tech-writing-guideline": false,
       "no-ai-hype-expressions": {
+        severity: "warning",
+      },
+      "no-ai-emphasis-patterns": {
         severity: "warning",
       },
       "no-ai-colon-continuation": false,

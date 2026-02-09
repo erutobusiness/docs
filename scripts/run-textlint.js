@@ -12,9 +12,12 @@ let hasError = false;
 
 for (const target of lintTargets) {
   const files = target.files.map((f) => `"${f}"`).join(" ");
-  const ignoreFlag = target.ignorePattern
-    ? ` --ignore-pattern "${target.ignorePattern}"`
-    : "";
+  const allIgnorePatterns = [];
+  if (target.ignorePattern) allIgnorePatterns.push(target.ignorePattern);
+  if (target.ignorePatterns) allIgnorePatterns.push(...target.ignorePatterns);
+  const ignoreFlag = allIgnorePatterns
+    .map((p) => ` --ignore-pattern "${p}"`)
+    .join("");
   const cmd = `textlint --config ${target.config}${ignoreFlag} ${files}`;
 
   console.log(`\n[textlint:${target.name}] ${cmd}\n`);

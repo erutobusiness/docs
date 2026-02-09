@@ -39,6 +39,10 @@ npx textlint --config .textlintrc.js <file>
 
 **CRITICAL**: Never modify `.textlintrc.js` rules without explicit user approval.
 
+**PostToolUse hook**: MD ファイルの Write/Edit 後に textlint が自動実行される。
+違反フィードバックを受けたら即座に修正すること。
+手動チェック: `node scripts/textlint-file.js <path>`
+
 ## 6. Project Structure
 
 |Directory|Purpose|

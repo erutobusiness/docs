@@ -27,3 +27,20 @@ The following rules have high priority and are often violated. **Verify these be
 - **External Communication (Chat/Artifacts)**: **JAPANESE** only.
 - **Internal Thought**: **ENGLISH** permitted for logic precision.
 - **Verification**: If uncertain about style, check `.textlintrc.js` or run `npm run lint:text`.
+
+## 4. MD File Post-Check
+
+After creating or editing any `.md` file, run the single-file textlint checker:
+
+```bash
+node scripts/textlint-file.js <path>
+```
+
+This script resolves the correct `.textlintrc.js` automatically from `lint-targets.js`.
+Fix all violations before considering the task complete.
+
+### Common Violations
+
+- **One sentence per line**: Do not break a single sentence across multiple lines (`one-sentence-per-line`)
+- **No period in list items**: List items must not end with `。` (`period-in-list-item`)
+- **Consistent style (dearu/desumasu)**: Check `.textlintrc.js` for the expected writing style and do not mix styles

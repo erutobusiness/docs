@@ -34,3 +34,12 @@
 
 - **新規 `.textlintrc.js` を追加する場合**: 新しいディレクトリに `.textlintrc.js` を作成した場合、`package.json` の `lint-staged` にも対応するエントリを追加すること
   - より具体的なパス（サブディレクトリ）のエントリは、親ディレクトリのエントリより前に配置する（lint-staged はより具体的なパターンを優先するため）
+
+- **自動チェック（Claude Code hooks）**: Claude Code では PostToolUse hook により、MD ファイルの Write/Edit 後に textlint が自動実行される
+  - 違反が検出された場合は即座にフィードバックが返されるため、指摘内容に従って修正すること
+  - 手動で単一ファイルをチェックする場合: `node scripts/textlint-file.js <path>`
+
+- **よくある違反パターン**:
+  - 1行1文ルール違反: 1つの文を途中で改行してしまう（`one-sentence-per-line`）
+  - 箇条書き句点: リストアイテムの末尾に「。」を付けてしまう（`period-in-list-item`）
+  - である/ですます混在: `.textlintrc.js` で指定された文体と異なる文末表現を使う
