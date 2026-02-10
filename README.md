@@ -1,76 +1,32 @@
-# md
+# docs
 
-ドキュメントコンテンツを格納するディレクトリです。
+個人のドキュメント・メモ・発表資料を管理するリポジトリです。
 
-## declarative
+## 記法ルール
 
-宣言的、宣言的 UI について紹介します。
-特に、学ぶメリットや、他のパラダイムとの相性についても触れます。
+Markdownの記法ルールです。
+詳細は `.ai/instructions.md` を参照してください。
 
-### サブディレクトリ
-
-- **html**: スライドを作成するための HTML
-- **img**: スライドやマークダウンに埋め込む画像
-- **md**: Qiita のマークダウン
-
-## baby-cup
-
-VJ イベント「Baby Cup」の司会進行用ドキュメント。
-
-## theArtOfLoving
-
-エーリヒ・フロムの「愛するということ」を基にした発表資料。
+|ルール|例|
+|-|-|
+|1行1文|文の途中で改行しない|
+|箇条書きに句点なし|`- 項目` (`- 項目。` はNG)|
+|情報源のURL明記|脚注 `[^1]: https://...` で出典を示す|
+|WikiLink|`[[filename]]` や `[[filename\|表示名]]` で他ファイルを参照|
 
 ## 開発コマンド
 
-### フォーマット
-
 |コマンド|説明|
 |-|-|
-|`npm run format`|Prettier + Remark で全ファイルをフォーマット|
-|`npm run format:prettier`|Prettier のみ実行|
-|`npm run format:remark`|Remark のみ実行|
+|`npm run lint`|format + textlint を全ファイルに実行|
+|`npm run format`|Prettier + Remark でフォーマット|
+|`node scripts/textlint-file.js <path>`|個別ファイルのlint|
 
-### Lint
+## AI設定
 
-|コマンド|説明|
+|ファイル|対象|
 |-|-|
-|`npm run lint`|全ての textlint を実行|
-|`npm run lint:root`|trpg, games, ideas, tech, topics 等のlint|
-|`npm run lint:readme`|README ファイル専用lint|
-|`npm run lint:presentations`|プレゼンテーション資料のlint|
-|`npm run lint:qiita`|Qiita 記事のlint|
-|`npm run lint:prompt`|プロンプトファイルのlint|
-
-### ショートカット
-
-|コマンド|説明|
-|-|-|
-|`npm run check`|`lint` のエイリアス|
-|`npm run fix`|`lint:fix` のエイリアス（フォーマット実行）|
-
-### 個別ファイルのlint
-
-特定ファイルをlintする場合は直接textlintを実行:
-
-```bash
-npx textlint --config .textlintrc.js <file>
-```
-
-## Index (Auto-generated)
-
-### Folders
-
-- [[games/README|games]]
-- [[ideas/README|ideas]]
-- [[presentations/README|presentations]]
-- [[scripts/README|scripts]]
-- [[tech/README|tech]]
-- [[topics/README|topics]]
-- [[trpg/README|trpg]]
-- [[youtube/README|youtube]]
-
-### Files
-
-- [[CLAUDE]]
-- [[TODO]]
+|`.ai/instructions.md`|全AIアシスタント共通ルール|
+|`CLAUDE.md`|Claude Code|
+|`GEMINI.md`|Gemini Code Assist|
+|`.github/copilot-instructions.md`|GitHub Copilot|

@@ -22,7 +22,6 @@ const lintTargets = [
       "trpg/scenarios/Toaru/{handouts,items,maps,npcs,sessions,setting}/**/*.md",
       "trpg/scenarios/{Alice,Hologram,Relief,_template}/**/*.md",
       "games/**/*.md",
-      "ideas/**/*.md",
       "tech/**/*.md",
       "topics/**/*.md",
       "youtube/**/*.md",
@@ -70,6 +69,11 @@ const lintTargets = [
     name: "presentations:the-art-of-loving",
     config: "presentations/the-art-of-loving/.textlintrc.js",
     files: ["presentations/the-art-of-loving/**/*.md"],
+  },
+  {
+    name: "presentations:markdown-not-rotting",
+    config: "presentations/markdown-and-the-art-of-not-rotting/.textlintrc.js",
+    files: ["presentations/markdown-and-the-art-of-not-rotting/**/*.md"],
   },
   {
     name: "qiita",

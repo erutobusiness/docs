@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@textlint-ja/textlint-rule-preset-ai-writing": "^1.6.1",
-    "remark-disable-text-escape": "file:../projects/remark-disable-text-escape"
+    "remark-disable-text-escape": "^1.1.0"
   },
   "devDependencies": {
     "husky": "^9.1.7",
@@ -29,7 +29,7 @@
     "remark-wiki-link": "^2.0.1",
     "textlint": "^15.5.0",
     "textlint-filter-rule-allowlist": "^4.0.0",
-    "textlint-filter-rule-footnote": "file:../projects/textlint-filter-rule-footnote",
+    "textlint-filter-rule-footnote": "^1.0.2",
     "textlint-filter-rule-node-types": "^1.1.0",
     "textlint-rule-footnote-dearu-desumasu": "^1.0.0",
     "textlint-rule-one-sentence-per-line": "^2.0.0",

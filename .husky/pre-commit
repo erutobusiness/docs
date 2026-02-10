@@ -1,1 +1,12 @@
-npx lint-staged --no-stash --concurrent false
+case "$(uname -s)" in
+  MINGW*|MSYS*)
+    exec wsl.exe -e sh -c '
+      export NVM_DIR="$HOME/.nvm"
+      [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+      npx lint-staged --no-stash --concurrent false
+    '
+    ;;
+  *)
+    npx lint-staged --no-stash --concurrent false
+    ;;
+esac

@@ -2,7 +2,7 @@
 
 ## 1. Core Instructions (Single Source of Truth)
 
-**READ FIRST**: [Shared AI Instructions](../.ai/instructions.md)
+**READ FIRST**: @.ai/instructions.md
 
 ## 2. Response Protocol
 
