@@ -39,41 +39,51 @@ const lintTargets = [
       "trpg/scenarios/Toaru/README.md",
     ],
   },
+  // slides
   {
-    name: "presentations:baby-cup",
-    config: "presentations/baby-cup/.textlintrc.js",
+    name: "presentations:slides:baby-cup",
+    config: "presentations/slides/baby-cup/.textlintrc.js",
+    files: ["presentations/slides/baby-cup/**/*.md"],
+  },
+  {
+    name: "presentations:slides:spanish-cuisine-siesta",
+    config: "presentations/slides/spanish-cuisine-siesta/.textlintrc.js",
+    files: ["presentations/slides/spanish-cuisine-siesta/**/*.md"],
+  },
+  // scripts
+  {
+    name: "presentations:scripts:baby-cup",
+    config: "presentations/scripts/baby-cup/.textlintrc.js",
     files: [
-      "presentations/baby-cup/*.md",
-      "presentations/baby-cup/10_flow/**/*.md",
-      "presentations/baby-cup/20_topics/**/*.md",
+      "presentations/scripts/baby-cup/*.md",
+      "presentations/scripts/baby-cup/flow/**/*.md",
+      "presentations/scripts/baby-cup/topics/**/*.md",
     ],
   },
   {
-    name: "presentations:baby-cup:marp",
-    config: "presentations/baby-cup/30_marp/.textlintrc.js",
-    files: ["presentations/baby-cup/30_marp/**/*.md"],
-  },
-  {
-    name: "presentations:claude-vs-antigravity",
-    config: "presentations/claude-vs-antigravity/.textlintrc.js",
-    files: ["presentations/claude-vs-antigravity/**/*.md"],
+    name: "presentations:scripts:claude-vs-antigravity",
+    config: "presentations/scripts/claude-vs-antigravity/.textlintrc.js",
+    files: ["presentations/scripts/claude-vs-antigravity/**/*.md"],
     ignorePattern:
-      "presentations/claude-vs-antigravity/karaoke-kumikyoku/**/*.md",
+      "presentations/scripts/claude-vs-antigravity/karaoke-kumikyoku/**/*.md",
   },
   {
-    name: "presentations:declarative",
-    config: "presentations/declarative/.textlintrc.js",
-    files: ["presentations/declarative/**/*.md"],
+    name: "presentations:scripts:declarative",
+    config: "presentations/scripts/declarative/.textlintrc.js",
+    files: ["presentations/scripts/declarative/**/*.md"],
   },
   {
-    name: "presentations:the-art-of-loving",
-    config: "presentations/the-art-of-loving/.textlintrc.js",
-    files: ["presentations/the-art-of-loving/**/*.md"],
+    name: "presentations:scripts:the-art-of-loving",
+    config: "presentations/scripts/the-art-of-loving/.textlintrc.js",
+    files: ["presentations/scripts/the-art-of-loving/**/*.md"],
   },
   {
-    name: "presentations:markdown-not-rotting",
-    config: "presentations/markdown-and-the-art-of-not-rotting/.textlintrc.js",
-    files: ["presentations/markdown-and-the-art-of-not-rotting/**/*.md"],
+    name: "presentations:scripts:markdown-not-rotting",
+    config:
+      "presentations/scripts/markdown-and-the-art-of-not-rotting/.textlintrc.js",
+    files: [
+      "presentations/scripts/markdown-and-the-art-of-not-rotting/**/*.md",
+    ],
   },
   {
     name: "qiita",
