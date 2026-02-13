@@ -52,6 +52,6 @@ Rate Your Musicにて「史上最高の日本の音楽アルバム」15位にラ
 
 ## 参考リンク
 
-- [SIREN (平沢進のアルバム) - Wikipedia](https://ja.wikipedia.org/wiki/SIREN_\(%E5%B9%B3%E6%B2%A2%E9%80%B2%E3%81%AE%E3%82%A2%E3%83%AB%E3%83%90%E3%83%A0\))
+- [SIREN (平沢進のアルバム) - Wikipedia](<https://ja.wikipedia.org/wiki/SIREN_(%E5%B9%B3%E6%B2%A2%E9%80%B2%E3%81%AE%E3%82%A2%E3%83%AB%E3%83%90%E3%83%A0)>)
 - [日本コロムビア公式](https://columbia.jp/artist-info/hirasawa/discography/COCP-35524.html)
 - [Susumu Hirasawa Wiki](https://www22.atwiki.jp/susumuhirasawa/pages/27.amp)

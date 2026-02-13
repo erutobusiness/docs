@@ -62,7 +62,7 @@ Richard Sennettは著書『The Craftsman』でこう述べています[^2]。
 
 > Making is thinking.
 
-[^2]: Richard Sennett "The Craftsman" (2008) -- 手を動かすことで思考が深まるという職人的知性を論じた著作 [https://en.wikipedia.org/wiki/The_Craftsman_(book)](https://en.wikipedia.org/wiki/The_Craftsman_\(book\))
+[^2]: Richard Sennett "The Craftsman" (2008) -- 手を動かすことで思考が深まるという職人的知性を論じた著作 <https://en.wikipedia.org/wiki/The_Craftsman_(book)>
 
 スライドを作る過程で、自分の考えが整理されます。
 何を伝えたいのか、どう伝えるべきか、考えが深まります。

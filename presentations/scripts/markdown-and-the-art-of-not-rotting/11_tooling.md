@@ -18,9 +18,9 @@ Lintという名前は1978年にBell LabsのStephen C. Johnsonが開発したC�
 ESLint[^23]がJavaScriptの品質を守るように、textlintは文章の品質を守ります。
 textlintのアーキテクチャはESLintと同じプラガブル設計で、テキストをAST[^22]に変換し、ルールがASTノードを走査する仕組みです。
 
-[^21]: Lint(ソフトウェア)は1978年、Bell LabsのStephen C. Johnsonが開発したC言語向け静的解析ツールに由来する [https://en.wikipedia.org/wiki/Lint_(software)](https://en.wikipedia.org/wiki/Lint_\(software\))
+[^21]: Lint(ソフトウェア)は1978年、Bell LabsのStephen C. Johnsonが開発したC言語向け静的解析ツールに由来する <https://en.wikipedia.org/wiki/Lint_(software)>
 
-[^22]: 抽象構文木(Abstract Syntax Tree)とは、ソースコードの構文構造を木構造で表現したデータ構造である [https://en.wikipedia.org/wiki/Abstract_syntax_tree](https://en.wikipedia.org/wiki/Abstract_syntax_tree)
+[^22]: 抽象構文木(Abstract Syntax Tree)とは、ソースコードの構文構造を木構造で表現したデータ構造である <https://en.wikipedia.org/wiki/Abstract_syntax_tree>
 
 [^23]: ESLintはJavaScript/TypeScript向けのプラガブルなLintツールである <https://eslint.org/>
 
@@ -204,7 +204,7 @@ remarkと組み合わせて、Markdownの書式も統一します。
 プレゼンテーション、技術記事、TRPGシナリオなど、ディレクトリごとに異なるtextlint設定を持つプロジェクトで、どのファイルにどの設定を適用するかを定義します。
 lint-staged、手動Lint、CIのすべてがこのファイルを参照する、Single Source of Truth[^25]です。
 
-[^25]: Single Source of Truthとは、情報の正規の情報源を一箇所にまとめるソフトウェア工学の原則である [https://en.wikipedia.org/wiki/Single_source_of_truth](https://en.wikipedia.org/wiki/Single_source_of_truth)
+[^25]: Single Source of Truthとは、情報の正規の情報源を一箇所にまとめるソフトウェア工学の原則である <https://en.wikipedia.org/wiki/Single_source_of_truth>
 
 ## 「原則がコードになる」瞬間
 

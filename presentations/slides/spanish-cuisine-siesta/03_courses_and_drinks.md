@@ -300,7 +300,7 @@ paginate: true
 同じ製法だが、使用するブドウ品種が異なる
 カバはシャンパンよりも手頃な価格で良コスパ
 
-<small>写真: [Unsplash](https://unsplash.com/photos/photo-1578911373434-0cb395d2cbfb)</small> <small>出典: [Cava (Spanish wine) - Wikipedia](https://en.wikipedia.org/wiki/Cava_\(Spanish_wine\)) / [Traditional Method - Cava.wine](https://www.cava.wine/en/origin-cava/traditional-method-champenoise/)</small>
+<small>写真: [Unsplash](https://unsplash.com/photos/photo-1578911373434-0cb395d2cbfb)</small> <small>出典: [Cava (Spanish wine) - Wikipedia](<https://en.wikipedia.org/wiki/Cava_(Spanish_wine)>) / [Traditional Method - Cava.wine](https://www.cava.wine/en/origin-cava/traditional-method-champenoise/)</small>
 
 ***
 

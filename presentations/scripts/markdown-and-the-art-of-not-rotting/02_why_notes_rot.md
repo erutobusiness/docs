@@ -8,7 +8,7 @@
 これはソフトウェア工学でビットロット(bit rot)[^1]と呼ばれる現象と同じ構造です。
 問題は、この劣化に書いた本人が気づかないことです。
 
-[^1]: ビットロットとは、ソフトウェアやデータが明示的な変更なしに徐々に劣化する現象を指す [https://en.wikipedia.org/wiki/Software_rot](https://en.wikipedia.org/wiki/Software_rot)
+[^1]: ビットロットとは、ソフトウェアやデータが明示的な変更なしに徐々に劣化する現象を指す <https://en.wikipedia.org/wiki/Software_rot>
 
 ## 腐敗の4パターン
 
@@ -24,7 +24,7 @@
 である調とですます調が混在し、略語の使い方も統一されていません。
 読み返すたびに、認知負荷理論[^2]でいう外的負荷が発生します。
 
-[^2]: 認知負荷理論(Cognitive Load Theory)はJohn Swellerが1988年に提唱した学習理論で、情報処理における認知的コストを分類した [https://en.wikipedia.org/wiki/Cognitive_load](https://en.wikipedia.org/wiki/Cognitive_load)
+[^2]: 認知負荷理論(Cognitive Load Theory)はJohn Swellerが1988年に提唱した学習理論で、情報処理における認知的コストを分類した <https://en.wikipedia.org/wiki/Cognitive_load>
 
 ### リンク切れ
 

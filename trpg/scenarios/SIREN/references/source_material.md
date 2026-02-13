@@ -99,7 +99,7 @@
 
 参考画像：
 
-- [https://commons.m.wikimedia.org/wiki/File:Brain_diagram_ja.svg](https://commons.m.wikimedia.org/wiki/File:Brain_diagram_ja.svg)
+- <https://commons.m.wikimedia.org/wiki/File:Brain_diagram_ja.svg>
 
 ### 使用する脳部位
 
@@ -234,7 +234,7 @@ Project Gemini（1961-1966）←「月への架け橋」
 - [ギリシャ神話から読み解くふたご座の由来](https://hoshi.furby.co.jp/greek-gemini/)
 - [ふたご座にまつわるお話](https://www.okuminavi.jp/star/column/detail/74/)
 - [ジェミニ計画 - Wikipedia](https://ja.wikipedia.org/wiki/ジェミニ計画)
-- [SIREN (平沢進のアルバム) - Wikipedia](https://ja.wikipedia.org/wiki/SIREN_\(平沢進のアルバム\))
+- [SIREN (平沢進のアルバム) - Wikipedia](<https://ja.wikipedia.org/wiki/SIREN_(平沢進のアルバム)>)
 - [How Google's Gemini AI model got its name](https://blog.google/technology/ai/google-gemini-ai-name-meaning/)
 
 ## 未確認の参考資料
