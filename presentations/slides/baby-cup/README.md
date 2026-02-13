@@ -11,14 +11,14 @@
 
 ## 台本・トークネタ
 
-→ [[presentations/scripts/baby-cup/00\_index|scripts/baby-cup/]]
+→ [[presentations/scripts/baby-cup/00_index|scripts/baby-cup/]]
 
 |スライド|対応する台本|
 |-|-|
-|01_opening|[[11\_opening]], [[12\_player\_intro]], [[13\_fighting]]|
-|02_context|[[21\_context]]|
-|03_sdlc|[[22\_sdlc]]|
-|09_closing|[[14\_closing]]|
+|01_opening|[[11_opening]], [[12_player_intro]], [[13_fighting]]|
+|02_context|[[21_context]]|
+|03_sdlc|[[22_sdlc]]|
+|09_closing|[[14_closing]]|
 
 ## このプレゼンテーションについて
 

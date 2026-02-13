@@ -7,5 +7,5 @@ tags: [reference, index]
 
 # 参考資料一覧
 
-- [[kp\_faq]] - KP向けFAQ
-- [[source\_material]] - 参考資料・設計意図
+- [[kp_faq]] - KP向けFAQ
+- [[source_material]] - 参考資料・設計意図

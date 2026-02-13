@@ -12,6 +12,6 @@ tags: [map, index]
 
 ## ロケーション情報の所在
 
-- [[locations\_yokohama]] - 横浜のロケーション
-- [[locations\_vienna]] - ウィーンのロケーション
+- [[locations_yokohama]] - 横浜のロケーション
+- [[locations_vienna]] - ウィーンのロケーション
 - 各チャプターの概要ファイルにも拠点構造の記述がある
