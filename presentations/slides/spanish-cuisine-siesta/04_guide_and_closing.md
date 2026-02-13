@@ -63,7 +63,7 @@ paginate: true
 
 <!-- _footer: '<small>写真: <a href="https://unsplash.com/photos/photo-1498429152472-9a433d9ddf3b">Unsplash</a></small>' -->
 
-![bg brightness:.4](https://images.unsplash.com/photo-1498429152472-9a433d9ddf3b?w=1920\&q=80)
+![bg brightness:.4](https://images.unsplash.com/photo-1498429152472-9a433d9ddf3b?w=1920&q=80)
 
 # Salud!
 

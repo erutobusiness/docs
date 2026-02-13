@@ -239,7 +239,7 @@ paginate: true
 
 ## スペインワイン概論
 
-![bg right:35%](https://images.unsplash.com/photo-1515779122185-2390ccdf060b?w=1920\&q=80)
+![bg right:35%](https://images.unsplash.com/photo-1515779122185-2390ccdf060b?w=1920&q=80)
 
 ### 栽培面積 世界第1位 / 生産量 世界第3位
 
@@ -261,7 +261,7 @@ paginate: true
 
 ## 注目ドリンク: サングリア
 
-![bg right:35%](https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=1920\&q=80)
+![bg right:35%](https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=1920&q=80)
 
 ワインにフルーツを漬け込んだスペインの代表的ドリンク
 赤ワインベースが定番だが、
@@ -286,7 +286,7 @@ paginate: true
 
 ## 注目ドリンク: カバ
 
-![bg right:35%](https://images.unsplash.com/photo-1578911373434-0cb395d2cbfb?w=1920\&q=80)
+![bg right:35%](https://images.unsplash.com/photo-1578911373434-0cb395d2cbfb?w=1920&q=80)
 
 スペインが誇るスパークリングワイン
 

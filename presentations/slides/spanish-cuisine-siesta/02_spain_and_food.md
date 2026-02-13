@@ -112,7 +112,7 @@ paginate: true
 
 ## Sobremesa（ソブレメサ）
 
-![bg right:40%](https://images.unsplash.com/photo-1753351055246-a7efae066eef?w=1920\&q=80)
+![bg right:40%](https://images.unsplash.com/photo-1753351055246-a7efae066eef?w=1920&q=80)
 
 > テーブルの上（sobre + mesa）
 

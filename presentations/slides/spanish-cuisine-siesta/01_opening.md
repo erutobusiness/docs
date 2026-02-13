@@ -10,7 +10,7 @@ paginate: true
 
 <!-- _footer: '<small>写真: <a href="https://unsplash.com/photos/photo-1677779455198-7773892a8021">Unsplash</a></small>' -->
 
-![bg brightness:.4](https://images.unsplash.com/photo-1677779455198-7773892a8021?w=1920\&q=80)
+![bg brightness:.4](https://images.unsplash.com/photo-1677779455198-7773892a8021?w=1920&q=80)
 
 # グルメ探求部 -- スペイン料理の夕べ
 
