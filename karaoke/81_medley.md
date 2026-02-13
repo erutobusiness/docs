@@ -141,7 +141,7 @@
 |1|エージェント夜を往く|THE IDOLM\@STER|
 |2|ハレ晴レユカイ|涼宮ハルヒの憂鬱|
 |3|患部で止まってすぐ溶ける ～ 狂気の優曇華院|IOSYS (東方Project)|
-|4|Help me, ERINNNNNN!!|COOL\&CREATE (東方Project)|
+|4|Help me, ERINNNNNN!!|COOL&CREATE (東方Project)|
 |5|nowhere|MADLAX|
 |6|クリティウスの牙|遊☆戯☆王デュエルモンスターズ|
 |7|GONG|第3次スーパーロボット大戦α 終焉の銀河へ|
@@ -309,12 +309,12 @@
 |03|GREEN GREENS|ゲーム『星のカービィシリーズ』ステージBGM|
 |04-1|Here we go!|ゲーム『スーパーマリオワールド』BGM|
 |04-2(03)|GREEN GREENS|ゲーム『星のカービィシリーズ』ステージBGM|
-|05-1|SMILES\&TEARS|ゲーム『MOTHER2』エンディングテーマ|
+|05-1|SMILES&TEARS|ゲーム『MOTHER2』エンディングテーマ|
 |05-2(06)|Eight Melodies|ゲーム『MOTHER』メインテーマ|
 |05-3(07)|愛のテーマ|ゲーム『MOTHER3』メインテーマ|
 |08|CANDY POP|Heartsdales feat. SOUL'd OUT(参考：sm510840exit_nicovideo)|
 |09-1|GO MY WAY!!|ゲーム『THE IDOLM\@STER』収録曲|
-|09-2(05)|SMILES\&TEARS|ゲーム『MOTHER2』エンディングテーマ|
+|09-2(05)|SMILES&TEARS|ゲーム『MOTHER2』エンディングテーマ|
 |10-1|もってけ!セーラーふく|アニメ『らき☆すた』オープニングテーマ|
 |10-2(11)|God knows...|アニメ『涼宮ハルヒの憂鬱』挿入歌|
 |12|エージェント夜を往く|ゲーム『THE IDOLM\@STER』収録曲|
@@ -330,7 +330,7 @@
 |21-1|ウサテイ|東方系アレンジＣＤ「東方萃翠酒酔」(IOSYS)収録曲 (原曲： お宇佐さまの素い幡・シンデレラケージ～Kagome-Kagome)|
 |22-1|ガチャガチャきゅ～と・ふぃぎゅ@メイト|ゲーム『ふぃぎゅ@メイト』オープニングテーマゲーム|
 |22-2(23)|患部で止まってすぐ溶ける～狂気の優曇華院|東方系アレンジCD「東方月燈籠」(IOSYS)収録曲 (原曲：狂気の瞳 ～ Invisible Full Moon)|
-|24-1|Help me, ERINNNNNN!!|東方系アレンジCD「東方ストライク」(COOL\&CREATE)収録曲 (原曲：竹取飛翔 ～ Lunatic Princess)|
+|24-1|Help me, ERINNNNNN!!|東方系アレンジCD「東方ストライク」(COOL&CREATE)収録曲 (原曲：竹取飛翔 ～ Lunatic Princess)|
 |24-2(25)|まっがーれ↓スペクタクル|アニメ『涼宮ハルヒの憂鬱』古泉一樹キャラクターソング|
 |26-1|さくらんぼ|大塚愛(参考跡地：sm248exit_nicovideo)|
 |26-2(27)|恋のミクル伝説|『朝比奈ミクルの冒険 Episode00』主題歌(アニメ『涼宮ハルヒの憂鬱』第１話)|

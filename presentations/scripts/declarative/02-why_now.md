@@ -293,7 +293,7 @@ struct CounterView: View {
     var body: some View {
         VStack {
             // 3. 状態に基づいてUIを記述
-            Text("Count: \(count)") // 状態を表示
+            Text("Count: (count)") // 状態を表示
                 .font(.title)
 
             // 4. ユーザー操作で状態を変更

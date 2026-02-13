@@ -7,7 +7,7 @@
 - OP1: fripSide「only my railgun」
 - OP2: fripSide「LEVEL5-judgelight-」
 - ED1: ELISA「Dear My Friend -まだ見ぬ未来へ-」
-- ED(12話): ELISA「SMILE -You\&Me-」
+- ED(12話): ELISA「SMILE -You&Me-」
 - ED2: ELISA「Real Force」
 
 ### OVA
@@ -28,7 +28,7 @@
 
 - OP1: fripSide「final phase」
 - OP2: fripSide「dual existence」
-- ED1: 岸田教団\&THE明星ロケッツ「nameless story」
+- ED1: 岸田教団&THE明星ロケッツ「nameless story」
 - ED2: sajou no hana「青嵐のあとで」
 
 ***

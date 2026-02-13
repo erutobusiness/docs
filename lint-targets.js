@@ -42,12 +42,12 @@ const lintTargets = [
   // slides
   {
     name: "presentations:slides:baby-cup",
-    config: "presentations/slides/baby-cup/.textlintrc.js",
+    config: "presentations/slides/.textlintrc.js",
     files: ["presentations/slides/baby-cup/**/*.md"],
   },
   {
     name: "presentations:slides:spanish-cuisine-siesta",
-    config: "presentations/slides/spanish-cuisine-siesta/.textlintrc.js",
+    config: "presentations/slides/.textlintrc.js",
     files: ["presentations/slides/spanish-cuisine-siesta/**/*.md"],
   },
   // scripts

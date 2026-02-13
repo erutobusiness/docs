@@ -1,127 +1,27 @@
----
-marp: true
-theme: default
-paginate: false
-backgroundColor: #1a1a2e
-color: #eaeaea
-style: |
-  section {
-    font-family: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
-    padding: 40px 60px;
-  }
-  h1 {
-    color: #ffd700;
-    text-align: center;
-  }
-  h2 {
-    color: #00d4ff;
-    border-bottom: 2px solid #00d4ff;
-    padding-bottom: 0.3em;
-  }
-  h3 {
-    color: #00d4ff;
-  }
-  code {
-    background: #16213e;
-    padding: 0.2em 0.4em;
-    border-radius: 4px;
-  }
-  pre {
-    background: #16213e !important;
-    padding: 1em;
-    border-radius: 8px;
-    border-left: 4px solid #00d4ff;
-  }
-  pre code {
-    color: #00ff88 !important;
-    background: transparent !important;
-  }
-  table {
-    font-size: 0.85em;
-    margin: 0 auto;
-  }
-  th {
-    background: #16213e !important;
-    color: #ffd700 !important;
-  }
-  td {
-    background: #1a1a2e !important;
-  }
----
+# Baby Cup in VJ -- LEGENDS Z-A
 
-<!-- _class: lead -->
+ポケモン LEGENDS Z-A のBaby Cup（種族値300以下限定戦）を題材にした、エンジニアリングプレゼンテーション
 
-# 📝 Marp Slides
+## 目次
 
-## Baby Cup プレゼン資料
+1. [オープニング・ルール・選手紹介](./01_opening.md)
+2. [コンテキストの重要性](./02_context.md)
+3. [SDLC -- Baby Cupで学ぶシステム開発](./03_sdlc.md)
+4. [閉会・表彰](./09_closing.md)
 
-***
+## 台本・トークネタ
 
-## ファイル構成
+→ [[presentations/scripts/baby-cup/00\_index|scripts/baby-cup/]]
 
-|ファイル|説明|
-|:-|:-|
-|`01_main.md`|メインスライド（発表用）|
-|`images/`|スライド内で使用する画像|
+|スライド|対応する台本|
+|-|-|
+|01_opening|[[11\_opening]], [[12\_player\_intro]], [[13\_fighting]]|
+|02_context|[[21\_context]]|
+|03_sdlc|[[22\_sdlc]]|
+|09_closing|[[14\_closing]]|
 
-***
+## このプレゼンテーションについて
 
-## 起動方法
-
-### サーバーモード (`-s`) — 推奨
-
-ディレクトリ全体をホストし、ブラウザでファイル一覧から選択。
-
-```bash
-npx @marp-team/marp-cli -s .
-```
-
-`http://localhost:8080/` → ファイルを選択。
-
-***
-
-### ウォッチモード (`-w`)
-
-特定のファイルを直接プレビュー。
-
-```bash
-npx @marp-team/marp-cli -w 01_main.md
-```
-
-どちらのモードでも、保存時に自動更新 ✨
-
-***
-
-## PDF / HTML 出力
-
-```bash
-# PDF に変換（※ローカル画像を含めるために --allow-local-files が必要です）
-npx @marp-team/marp-cli 01_main.md --pdf --allow-local-files -o pdfs/01_main.pdf
-
-
-# HTML に変換
-npx @marp-team/marp-cli 01_main.md --html
-```
-
-***
-
-<!-- _class: lead -->
-
-# 🎮 Good Luck!
-
-スライドを編集して
-素敵なプレゼンを作りましょう。
-
-## Index (Auto-generated)
-
-### Folders
-
-- [[images/README|images]]
-- [[pdfs/README|pdfs]]
-
-### Files
-
-- [[01\\\_opening]]
-- [[02\\\_context]]
-- [[03\\\_sdlc]]
-- [[09\\\_closing]]
+- **テーマ**: ポケモン対戦をエンジニアリングの観点から読み解く
+- **対象**: 社内エンジニア
+- **構成**: 全4章

@@ -53,15 +53,14 @@
 
 ### スライド用素材
 
-→ [slides/baby-cup/](../../slides/baby-cup/)
+→ [[presentations/slides/baby-cup/README|slides/baby-cup/]]
 
-|ファイル|内容|
-|-|-|
-|[01_opening.md](../../slides/baby-cup/01_opening.md)|メインスライド（開会〜閉会）|
-|[02_context.md](../../slides/baby-cup/02_context.md)|コンテキスト解説スライド|
-|[03_sdlc.md](../../slides/baby-cup/03_sdlc.md)|SDLC解説スライド|
-|[09_closing.md](../../slides/baby-cup/09_closing.md)|締めくくりスライド|
-|[README.md](../../slides/baby-cup/README.md)|Marp設定・使い方|
+|ファイル|内容||
+|-|-|-|
+|[[presentations/slides/baby-cup/01_opening|01_opening]]|メインスライド（開会〜閉会）|
+|[[02\_context]]|コンテキスト解説スライド||
+|[[03\_sdlc]]|SDLC解説スライド||
+|[[09\_closing]]|締めくくりスライド||
 
 ### 管理
 

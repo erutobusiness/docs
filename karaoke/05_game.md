@@ -57,7 +57,7 @@
 ## MOTHERシリーズ
 
 - Eight Melodies (MOTHER)
-- SMILES\&TEARS (MOTHER2)
+- SMILES&TEARS (MOTHER2)
 - 愛のテーマ (MOTHER3)
 
 ## チーターマン2
